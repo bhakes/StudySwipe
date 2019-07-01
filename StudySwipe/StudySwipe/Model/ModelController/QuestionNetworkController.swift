@@ -64,14 +64,7 @@ class QuestionNetworkController {
                 return completion(nil, nil)
             }
             
-            let moc = CoreDataStack.shared.container.newBackgroundContext()
-            
-            var tempQuestions: [Question] = []
-            for question in results.feed.entry {
-                let newQuestion = Question(questionRepresentation: question, context: moc)
-                tempQuestions.append(newQuestion)
-            }
-            self.questions = tempQuestions
+            self.coreDataImporter.syncQuestions(questionRepresentations: results.feed.entry)
             
             completion(results, nil)
             return
@@ -87,7 +80,7 @@ class QuestionNetworkController {
         return url
     }()
     
-    var questions: [Question] = []
+    var coreDataImporter = CoreDataImporter()
     
 }
 
