@@ -10,9 +10,11 @@ import UIKit
 
 class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
     
-    static let horizontalInset: CGFloat = 12.0
+    static let horizontalInset: CGFloat = 10.0
     
-    static let verticalInset: CGFloat = 12.0
+    static let verticalInset: CGFloat = 10.0
+    
+    static var preferredWidth: CGFloat = 300.0
     
     var dataSource: SwipeableCardViewDataSource? {
         didSet {
@@ -44,6 +46,7 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
     /// calls the dataSource to layout new card views.
     func reloadData() {
         removeAllCardViews()
+        SwipeableCardViewContainer.preferredWidth = bounds.width - 24
         guard let dataSource = dataSource else {
             return
         }
