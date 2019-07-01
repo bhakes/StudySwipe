@@ -31,9 +31,10 @@ class SwipeableCard: SwipeableView {
         questionLabel.font = UIFont.systemFont(ofSize: 32)
         questionLabel.lineBreakMode = .byWordWrapping
         questionLabel.textAlignment = .center
-        questionLabel.preferredMaxLayoutWidth = SwipeableCardViewContainer.preferredWidth
+//        questionLabel.preferredMaxLayoutWidth = SwipeableCardViewContainer.preferredWidth
         
-        questionLabel.constrainToSuperView(self, safeArea: false, top: 12, leading: 12, trailing: -12)
+        questionLabel.constrainToSuperView(self, safeArea: false, top: 12, leading: 12, trailing: 12)
+        self.layoutSubviews()
 
     }
     
