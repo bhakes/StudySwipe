@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SwipeableCard: SwipeableView{
+class SwipeableCard: SwipeableView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

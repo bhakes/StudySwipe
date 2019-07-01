@@ -32,7 +32,7 @@ class SwipeableView: UIView {
     
     // MARK: Card Finalize Swipe Animation
     
-    static var finalizeSwipeActionAnimationDuration: TimeInterval = 0.8
+    static var finalizeSwipeActionAnimationDuration: TimeInterval = 0.2
     
     // MARK: Card Reset Animation
     
@@ -142,14 +142,20 @@ class SwipeableView: UIView {
     
     private func endedPanAnimation() {
         if let dragDirection = dragDirection, dragPercentage >= SwipeableView.swipePercentageMargin {
+            CATransaction.begin()
             let translationAnimation = CABasicAnimation(keyPath: "transform")
             translationAnimation.duration = SwipeableView.finalizeSwipeActionAnimationDuration
             translationAnimation.fromValue = layer.transform
             let endPoint = animationPointForDirection(dragDirection)
             let endTransform = CATransform3DTranslate(layer.transform, endPoint.x, endPoint.y, 0)
             translationAnimation.toValue = endTransform
+            layer.transform = endTransform
+            
+            CATransaction.setCompletionBlock {
+                self.delegate?.didEndSwipe(onView: self)
+            }
             layer.add(translationAnimation, forKey: "transform")
-            self.delegate?.didEndSwipe(onView: self)
+            CATransaction.commit()
         } else {
             resetCardViewPosition()
         }
@@ -157,9 +163,9 @@ class SwipeableView: UIView {
     
     private func animationPointForDirection(_ direction: SwipeDirection) -> CGPoint {
         let point = direction.point
-        let animatePoint = CGPoint(x: point.x * 4, y: point.y * 4)
-        let retPoint = animatePoint.screenPointForSize(UIScreen.main.bounds.size)
-        return retPoint
+        let animatePoint = CGPoint(x: point.x * 400, y: point.y * 400)
+//        let retPoint = animatePoint.screenPointForSize(UIScreen.main.bounds.size)
+        return animatePoint
     }
     
     private func resetCardViewPosition() {

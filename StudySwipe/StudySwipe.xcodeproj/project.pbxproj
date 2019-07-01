@@ -21,6 +21,7 @@
 		34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */; };
 		34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */; };
 		34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */; };
+		34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48D22CA89BC0047FAEA /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDataSource.swift; sourceTree = "<group>"; };
 		34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewContainer.swift; sourceTree = "<group>"; };
 		34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCard.swift; sourceTree = "<group>"; };
+		34FBA48D22CA89BC0047FAEA /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,6 @@
 		347FDC0422CA5F3E004F6656 = {
 			isa = PBXGroup;
 			children = (
-				34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */,
 				347FDC0F22CA5F3E004F6656 /* StudySwipe */,
 				347FDC2422CA5F40004F6656 /* StudySwipeTests */,
 				347FDC0E22CA5F3E004F6656 /* Products */,
@@ -116,6 +117,7 @@
 		34FBA48A22CA7D600047FAEA /* Card Swiping */ = {
 			isa = PBXGroup;
 			children = (
+				34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */,
 				34FBA47A22CA7C230047FAEA /* SwipeableView.swift */,
 				34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */,
 				34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */,
@@ -124,6 +126,7 @@
 				34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */,
 				34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */,
 				34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */,
+				34FBA48D22CA89BC0047FAEA /* TestViewController.swift */,
 			);
 			path = "Card Swiping";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			files = (
 				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
 				34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */,
+				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
 				34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */,
 				34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */,
