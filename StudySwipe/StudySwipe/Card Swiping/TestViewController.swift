@@ -12,22 +12,17 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     let testQuestion = Question(answer: "Just checking", category: .designPatterns, difficulty: .easy, question: "Is this a test?", track: .iOSDeveloper)
     var cardContainer: SwipeableCardViewContainer!
+    var infoBar: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cardContainer = SwipeableCardViewContainer()
-        cardContainer.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(cardContainer)
+        infoBar = UIView()
+        infoBar.constrainToSuperView(view, top: 8, leading: 0, trailing: 0, height: 60)
         
-        NSLayoutConstraint.activate([
-            cardContainer.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor,
-                                                  constant: -64),
-            cardContainer.widthAnchor.constraint(equalTo: view.widthAnchor,
-                                                 constant: -40),
-            cardContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            cardContainer.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            ])
+        cardContainer = SwipeableCardViewContainer()
+        cardContainer.constrainToSuperView(view, bottom: 20 + SwipeableCardViewContainer.verticalInset*2, leading: 20, trailing: 20)
+        cardContainer.constrainToSiblingView(infoBar, below: 8)
         
         cardContainer.alpha = 0
         cardContainer.dataSource = self

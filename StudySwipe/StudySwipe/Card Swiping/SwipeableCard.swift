@@ -32,14 +32,9 @@ class SwipeableCard: SwipeableView {
         questionLabel.lineBreakMode = .byWordWrapping
         questionLabel.textAlignment = .center
         questionLabel.preferredMaxLayoutWidth = SwipeableCardViewContainer.preferredWidth
-        questionLabel.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(questionLabel)
         
-        NSLayoutConstraint.activate([
-            questionLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 12),
-            questionLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -12),
-            questionLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
-        ])
+        questionLabel.constrainToSuperView(self, safeArea: false, top: 12, leading: 12, trailing: -12)
+
     }
     
     let sampleText = """
