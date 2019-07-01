@@ -26,6 +26,16 @@
 		D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */; };
 		D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95822CA8865001EED6C /* Question+Convenience.swift */; };
 		D194E95C22CA8BE0001EED6C /* TestObservation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95B22CA8BE0001EED6C /* TestObservation+Convenience.swift */; };
+		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
+		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
+		34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */; };
+		34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */; };
+		34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */; };
+		34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */; };
+		34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */; };
+		34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */; };
+		34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */; };
+    
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +72,16 @@
 		D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepresentation.swift; sourceTree = "<group>"; };
 		D194E95822CA8865001EED6C /* Question+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Question+Convenience.swift"; sourceTree = "<group>"; };
 		D194E95B22CA8BE0001EED6C /* TestObservation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestObservation+Convenience.swift"; sourceTree = "<group>"; };
+		34FBA47A22CA7C230047FAEA /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
+		34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
+		34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
+		34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+SwipeableAdditions.swift"; sourceTree = "<group>"; };
+		34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+SwipableAdditions.swift"; sourceTree = "<group>"; };
+		34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDelegate.swift; sourceTree = "<group>"; };
+		34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDataSource.swift; sourceTree = "<group>"; };
+		34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewContainer.swift; sourceTree = "<group>"; };
+		34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCard.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +105,7 @@
 		347FDC0422CA5F3E004F6656 = {
 			isa = PBXGroup;
 			children = (
+				34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */,
 				347FDC0F22CA5F3E004F6656 /* StudySwipe */,
 				347FDC2422CA5F40004F6656 /* StudySwipeTests */,
 				347FDC0E22CA5F3E004F6656 /* Products */,
@@ -106,6 +127,7 @@
 				D194E92D22CA7023001EED6C /* Helpers */,
 				D194E92622CA6D80001EED6C /* Model */,
 				347FDC1022CA5F3E004F6656 /* AppDelegate.swift */,
+				34FBA48A22CA7D600047FAEA /* Card Swiping */,
 				347FDC1422CA5F3E004F6656 /* Main.storyboard */,
 				347FDC1722CA5F40004F6656 /* Assets.xcassets */,
 				347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */,
@@ -123,6 +145,7 @@
 			path = StudySwipeTests;
 			sourceTree = "<group>";
 		};
+
 		D194E92622CA6D80001EED6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +228,21 @@
 				D194E95B22CA8BE0001EED6C /* TestObservation+Convenience.swift */,
 			);
 			path = TestObservation;
+			sourceTree = "<group>";
+		};      
+		34FBA48A22CA7D600047FAEA /* Card Swiping */ = {
+			isa = PBXGroup;
+			children = (
+				34FBA47A22CA7C230047FAEA /* SwipeableView.swift */,
+				34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */,
+				34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */,
+				34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */,
+				34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */,
+				34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */,
+				34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */,
+				34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */,
+			);
+			path = "Card Swiping";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */,
 				D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */,
 				D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */,
@@ -323,6 +362,17 @@
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
+				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
+				34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */,
+				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
+				34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */,
+				34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */,
+				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
+				34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */,
+				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,
+				34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */,
+				34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */,
+        
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
