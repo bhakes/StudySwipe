@@ -10,13 +10,8 @@ import UIKit
 
 class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource {
     
+    let testQuestion = Question(answer: "Just checking", category: .designPatterns, difficulty: .easy, question: "Is this a test?", track: .iOSDeveloper)
     var cardContainer: SwipeableCardViewContainer!
-    
-//    override func loadView() {
-//        view = UIView()
-//        view.backgroundColor = .white
-//    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +29,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             cardContainer.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
         
-        cardContainer.backgroundColor = .gray
         cardContainer.alpha = 0
         cardContainer.dataSource = self
         
@@ -53,7 +47,8 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     func card(forItemAtIndex index: Int) -> SwipeableCard {
         let card = SwipeableCard()
-        card.backgroundColor = index % 2 == 0 ? .red : .blue
+        card.backgroundColor = .white
+        card.fillWithQuestion(testQuestion)
         return card
     }
     

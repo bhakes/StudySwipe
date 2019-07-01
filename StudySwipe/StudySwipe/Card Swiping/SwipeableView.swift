@@ -38,7 +38,7 @@ class SwipeableView: UIView {
     
     static var cardViewResetAnimationSpringBounciness: CGFloat = 10.0
     
-    static var cardViewResetAnimationSpringSpeed: CGFloat = 20.0
+    static var cardViewResetAnimationSpringSpeed: CGFloat = 12.0
     
     static var cardViewResetAnimationDuration: TimeInterval = 0.2
     
@@ -141,7 +141,7 @@ class SwipeableView: UIView {
     }
     
     private func endedPanAnimation() {
-        if let dragDirection = dragDirection, dragPercentage >= SwipeableView.swipePercentageMargin {
+        if let dragDirection = dragDirection, dragPercentage >= SwipeableView.swipePercentageMargin, dragDirection != .up, dragDirection != .down {
             CATransaction.begin()
             let translationAnimation = CABasicAnimation(keyPath: "transform")
             translationAnimation.duration = SwipeableView.finalizeSwipeActionAnimationDuration
