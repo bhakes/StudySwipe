@@ -48,6 +48,7 @@
 		D194E97522CA9F61001EED6C /* APICallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97422CA9F61001EED6C /* APICallType.swift */; };
 		D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97722CAA623001EED6C /* NetworkingStructs.swift */; };
 		D194E97C22CABB4C001EED6C /* CoreDataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97B22CABB4C001EED6C /* CoreDataImporter.swift */; };
+		D194E98022CAC86A001EED6C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97F22CAC86A001EED6C /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		D194E97422CA9F61001EED6C /* APICallType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallType.swift; sourceTree = "<group>"; };
 		D194E97722CAA623001EED6C /* NetworkingStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingStructs.swift; sourceTree = "<group>"; };
 		D194E97B22CABB4C001EED6C /* CoreDataImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataImporter.swift; sourceTree = "<group>"; };
+		D194E97F22CAC86A001EED6C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +320,7 @@
 			children = (
 				D194E93322CA715E001EED6C /* HTTPMethod.swift */,
 				D194E97422CA9F61001EED6C /* APICallType.swift */,
+				D194E97F22CAC86A001EED6C /* Reachability.swift */,
 			);
 			path = "Networking Helpers";
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,
 				34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */,
 				34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */,
+				D194E98022CAC86A001EED6C /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
