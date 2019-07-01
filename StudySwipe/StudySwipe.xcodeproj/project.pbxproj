@@ -42,6 +42,10 @@
 		D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */; };
 		D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96A22CA95C9001EED6C /* AlertPageViewController.swift */; };
 		D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96C22CA95FF001EED6C /* WalkthroughViewController.swift */; };
+		D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */; };
+		D194E97222CA9B57001EED6C /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97122CA9B57001EED6C /* APIKeys.swift */; };
+		D194E97522CA9F61001EED6C /* APICallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97422CA9F61001EED6C /* APICallType.swift */; };
+		D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97722CAA623001EED6C /* NetworkingStructs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +98,10 @@
 		D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPageViewDelegate.swift; sourceTree = "<group>"; };
 		D194E96A22CA95C9001EED6C /* AlertPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPageViewController.swift; sourceTree = "<group>"; };
 		D194E96C22CA95FF001EED6C /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionNetworkController.swift; sourceTree = "<group>"; };
+		D194E97122CA9B57001EED6C /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		D194E97422CA9F61001EED6C /* APICallType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallType.swift; sourceTree = "<group>"; };
+		D194E97722CAA623001EED6C /* NetworkingStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingStructs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +147,7 @@
 				D194E95D22CA94D4001EED6C /* Protocols */,
 				D194E96022CA9515001EED6C /* Views */,
 				D194E92D22CA7023001EED6C /* Helpers */,
+				D194E96E22CA99A3001EED6C /* ModelController */,
 				D194E92622CA6D80001EED6C /* Model */,
 				347FDC1022CA5F3E004F6656 /* AppDelegate.swift */,
 				34FBA48A22CA7D600047FAEA /* Card Swiping */,
@@ -177,6 +186,7 @@
 		D194E92622CA6D80001EED6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D194E97622CAA5F0001EED6C /* NetworkingStructs */,
 				D194E95A22CA8BC2001EED6C /* TestObservation */,
 				D194E95522CA877E001EED6C /* TestAnalytics */,
 				D194E94822CA78D1001EED6C /* Question */,
@@ -185,6 +195,7 @@
 				D194E94122CA76D8001EED6C /* QuestionObservation */,
 				D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */,
 				D194E93122CA70BF001EED6C /* CoreDataStack.swift */,
+				D194E97122CA9B57001EED6C /* APIKeys.swift */,
 				D194E93922CA744F001EED6C /* CustomTypes */,
 			);
 			path = Model;
@@ -193,7 +204,7 @@
 		D194E92D22CA7023001EED6C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				D194E93322CA715E001EED6C /* HTTPMethod.swift */,
+				D194E97322CA9F38001EED6C /* Networking Helpers */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -285,6 +296,32 @@
 				D194E96C22CA95FF001EED6C /* WalkthroughViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		D194E96E22CA99A3001EED6C /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */,
+			);
+			name = ModelController;
+			path = Model/ModelController;
+			sourceTree = "<group>";
+		};
+		D194E97322CA9F38001EED6C /* Networking Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D194E93322CA715E001EED6C /* HTTPMethod.swift */,
+				D194E97422CA9F61001EED6C /* APICallType.swift */,
+			);
+			path = "Networking Helpers";
+			sourceTree = "<group>";
+		};
+		D194E97622CAA5F0001EED6C /* NetworkingStructs */ = {
+			isa = PBXGroup;
+			children = (
+				D194E97722CAA623001EED6C /* NetworkingStructs.swift */,
+			);
+			path = NetworkingStructs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +427,7 @@
 			files = (
 				D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */,
 				D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */,
+				D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */,
 				D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */,
 				D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */,
 				D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */,
@@ -410,9 +448,12 @@
 				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
 				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
 				34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */,
+				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
+				D194E97222CA9B57001EED6C /* APIKeys.swift in Sources */,
 				D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */,
 				34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */,
+				D194E97522CA9F61001EED6C /* APICallType.swift in Sources */,
 				34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */,
 				D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
