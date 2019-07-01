@@ -30,9 +30,9 @@
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterviewTest" inverseName="relationship" inverseEntity="InterviewTest" syncable="YES"/>
     </entity>
     <elements>
-        <element name="QuestionObservation" positionX="-311.140625" positionY="50" width="128" height="118"/>
         <element name="InterviewTest" positionX="60.98828125" positionY="18.30859375" width="128" height="28"/>
         <element name="Question" positionX="-90" positionY="18" width="128" height="150"/>
+        <element name="QuestionObservation" positionX="-311.140625" positionY="50" width="128" height="118"/>
         <element name="TestObservation" positionX="-81" positionY="27" width="128" height="30"/>
     </elements>
 </model>
