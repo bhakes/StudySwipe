@@ -12,6 +12,15 @@
 		347FDC1822CA5F40004F6656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1722CA5F40004F6656 /* Assets.xcassets */; };
 		347FDC1B22CA5F40004F6656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */; };
 		347FDC2622CA5F40004F6656 /* StudySwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */; };
+		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
+		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
+		34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */; };
+		34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */; };
+		34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */; };
+		34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */; };
+		34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */; };
+		34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */; };
+		34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */; };
 		D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */; };
 		D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93122CA70BF001EED6C /* CoreDataStack.swift */; };
 		D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93322CA715E001EED6C /* HTTPMethod.swift */; };
@@ -26,16 +35,13 @@
 		D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */; };
 		D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95822CA8865001EED6C /* Question+Convenience.swift */; };
 		D194E95C22CA8BE0001EED6C /* TestObservation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95B22CA8BE0001EED6C /* TestObservation+Convenience.swift */; };
-		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
-		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
-		34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */; };
-		34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */; };
-		34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */; };
-		34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */; };
-		34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */; };
-		34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */; };
-		34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */; };
-    
+		D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */; };
+		D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96222CA9532001EED6C /* AlertOnboarding.swift */; };
+		D194E96522CA955A001EED6C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96422CA955A001EED6C /* Alert.swift */; };
+		D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96622CA9576001EED6C /* AlertChildPageViewController.swift */; };
+		D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */; };
+		D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96A22CA95C9001EED6C /* AlertPageViewController.swift */; };
+		D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96C22CA95FF001EED6C /* WalkthroughViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +64,15 @@
 		347FDC2122CA5F40004F6656 /* StudySwipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudySwipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySwipeTests.swift; sourceTree = "<group>"; };
 		347FDC2722CA5F40004F6656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34FBA47A22CA7C230047FAEA /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
+		34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
+		34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
+		34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+SwipeableAdditions.swift"; sourceTree = "<group>"; };
+		34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+SwipableAdditions.swift"; sourceTree = "<group>"; };
+		34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDelegate.swift; sourceTree = "<group>"; };
+		34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDataSource.swift; sourceTree = "<group>"; };
+		34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewContainer.swift; sourceTree = "<group>"; };
+		34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCard.swift; sourceTree = "<group>"; };
 		D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
 		D194E93122CA70BF001EED6C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D194E93322CA715E001EED6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -72,16 +87,13 @@
 		D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepresentation.swift; sourceTree = "<group>"; };
 		D194E95822CA8865001EED6C /* Question+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Question+Convenience.swift"; sourceTree = "<group>"; };
 		D194E95B22CA8BE0001EED6C /* TestObservation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestObservation+Convenience.swift"; sourceTree = "<group>"; };
-		34FBA47A22CA7C230047FAEA /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
-		34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
-		34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
-		34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+SwipeableAdditions.swift"; sourceTree = "<group>"; };
-		34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+SwipableAdditions.swift"; sourceTree = "<group>"; };
-		34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDelegate.swift; sourceTree = "<group>"; };
-		34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewDataSource.swift; sourceTree = "<group>"; };
-		34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCardViewContainer.swift; sourceTree = "<group>"; };
-		34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableCard.swift; sourceTree = "<group>"; };
-
+		D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOnboardingDelegate.swift; sourceTree = "<group>"; };
+		D194E96222CA9532001EED6C /* AlertOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOnboarding.swift; sourceTree = "<group>"; };
+		D194E96422CA955A001EED6C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		D194E96622CA9576001EED6C /* AlertChildPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertChildPageViewController.swift; sourceTree = "<group>"; };
+		D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPageViewDelegate.swift; sourceTree = "<group>"; };
+		D194E96A22CA95C9001EED6C /* AlertPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPageViewController.swift; sourceTree = "<group>"; };
+		D194E96C22CA95FF001EED6C /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,8 @@
 		347FDC0F22CA5F3E004F6656 /* StudySwipe */ = {
 			isa = PBXGroup;
 			children = (
+				D194E95D22CA94D4001EED6C /* Protocols */,
+				D194E96022CA9515001EED6C /* Views */,
 				D194E92D22CA7023001EED6C /* Helpers */,
 				D194E92622CA6D80001EED6C /* Model */,
 				347FDC1022CA5F3E004F6656 /* AppDelegate.swift */,
@@ -145,7 +159,21 @@
 			path = StudySwipeTests;
 			sourceTree = "<group>";
 		};
-
+		34FBA48A22CA7D600047FAEA /* Card Swiping */ = {
+			isa = PBXGroup;
+			children = (
+				34FBA47A22CA7C230047FAEA /* SwipeableView.swift */,
+				34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */,
+				34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */,
+				34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */,
+				34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */,
+				34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */,
+				34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */,
+				34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */,
+			);
+			path = "Card Swiping";
+			sourceTree = "<group>";
+		};
 		D194E92622CA6D80001EED6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,20 +257,34 @@
 			);
 			path = TestObservation;
 			sourceTree = "<group>";
-		};      
-		34FBA48A22CA7D600047FAEA /* Card Swiping */ = {
+		};
+		D194E95D22CA94D4001EED6C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				34FBA47A22CA7C230047FAEA /* SwipeableView.swift */,
-				34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */,
-				34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */,
-				34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */,
-				34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */,
-				34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */,
-				34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */,
-				34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */,
+				D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */,
+				D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */,
 			);
-			path = "Card Swiping";
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D194E96022CA9515001EED6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D194E96122CA951D001EED6C /* Onboarding */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D194E96122CA951D001EED6C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				D194E96222CA9532001EED6C /* AlertOnboarding.swift */,
+				D194E96422CA955A001EED6C /* Alert.swift */,
+				D194E96622CA9576001EED6C /* AlertChildPageViewController.swift */,
+				D194E96A22CA95C9001EED6C /* AlertPageViewController.swift */,
+				D194E96C22CA95FF001EED6C /* WalkthroughViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,14 +388,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
+				D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */,
 				D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */,
 				D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */,
 				D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */,
 				D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */,
 				D194E95222CA85A3001EED6C /* QuestionAnalytics.swift in Sources */,
 				D194E95C22CA8BE0001EED6C /* TestObservation+Convenience.swift in Sources */,
+				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
+				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
+				D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */,
 				D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */,
 				D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */,
 				D194E93622CA71B6001EED6C /* Response.swift in Sources */,
@@ -362,17 +407,19 @@
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
+				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
 				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
 				34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
+				D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */,
 				34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */,
 				34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */,
+				D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */,
 				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,
 				34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */,
 				34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */,
-        
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

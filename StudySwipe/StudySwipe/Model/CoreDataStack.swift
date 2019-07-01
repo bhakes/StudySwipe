@@ -64,9 +64,9 @@ class CoreDataStack {
     
     func resetCoreData() {
         self.deleteAllData("Question")
-        self.deleteAllData("Test")
+        self.deleteAllData("InterviewTest")
         self.deleteAllData("QuestionObservation")
-        self.deleteAllData("QuestionAnalytics")
+        self.deleteAllData("TestObservation")
     }
 }
 
