@@ -17,18 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        let qnc = QuestionNetworkController.shared
-//        
-//        qnc.getQuestions { (result, error) in
-//            guard let questions = result?.feed.entry else { print ("Could not get questions")
-//            fatalError()
-//            }
-//            
-//            for question in questions {
-//                print(question.question.question)
-//            }
-//
-//        }
+        let qnc = QuestionNetworkController.shared
+        
+        qnc.getQuestions { (result, error) in
+            guard let questions = result?.feed.entry else { print ("Could not get questions")
+            fatalError()
+            }
+            
+            for question in questions {
+                print(question.question.question)
+            }
+
+        }
         return true
     }
 
