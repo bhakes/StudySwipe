@@ -19,17 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let qnc = QuestionNetworkController.shared
         
-        qnc.getQuestions { (result, error) in
-            guard let questions = result?.feed.entry else { print ("Could not get questions")
-            fatalError()
-            }
-            
-            for question in questions {
-                print(question.question.question)
-            }
-
+        if Reachability.isConnectedToNetwork(){
+            print("Internet Connection Available!")
+            qnc.getQuestions {_,_ in }
+        }else{
+            print("Internet Connection not Available!")
         }
+        
         return true
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
