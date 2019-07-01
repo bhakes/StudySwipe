@@ -34,12 +34,12 @@ extension Question {
     
     convenience init(questionRepresentation: QuestionRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        let answer = questionRepresentation.answer
-        let category = questionRepresentation.category
-        let difficulty = questionRepresentation.difficulty
-        let question = questionRepresentation.question
-        let questionID = questionRepresentation.questionID
-        let track = questionRepresentation.track
+        let answer = questionRepresentation.answer.answer
+        let category = questionRepresentation.category.category
+        let difficulty = questionRepresentation.difficulty.difficulty
+        let question = questionRepresentation.question.question
+        let questionID = questionRepresentation.questionID.questionID
+        let track = questionRepresentation.track.track
         
         self.init(answer: answer, category: category, difficulty: difficulty, question: question, questionID: questionID, track: track, context: context)
     }
