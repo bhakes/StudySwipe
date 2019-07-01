@@ -26,7 +26,7 @@ class SwipeableCard: SwipeableView {
     
     func fillWithQuestion(_ question: Question) {
         let questionLabel = UILabel()
-        questionLabel.text = question.question ?? question.sampleText
+        questionLabel.text = question.question ?? sampleText
         questionLabel.numberOfLines = 0
         questionLabel.font = UIFont.systemFont(ofSize: 32)
         questionLabel.lineBreakMode = .byWordWrapping
@@ -41,5 +41,9 @@ class SwipeableCard: SwipeableView {
             questionLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 12),
         ])
     }
+    
+    let sampleText = """
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non cursus velit. Sed varius ipsum a diam dapibus ullamcorper.
+    """
     
 }
