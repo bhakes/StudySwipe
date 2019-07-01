@@ -48,6 +48,7 @@
 		D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */; };
 		D194E97522CA9F61001EED6C /* APICallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97422CA9F61001EED6C /* APICallType.swift */; };
 		D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97722CAA623001EED6C /* NetworkingStructs.swift */; };
+		D194E97C22CABB4C001EED6C /* CoreDataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97B22CABB4C001EED6C /* CoreDataImporter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionNetworkController.swift; sourceTree = "<group>"; };
 		D194E97422CA9F61001EED6C /* APICallType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallType.swift; sourceTree = "<group>"; };
 		D194E97722CAA623001EED6C /* NetworkingStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingStructs.swift; sourceTree = "<group>"; };
+		D194E97B22CABB4C001EED6C /* CoreDataImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataImporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */,
+				D194E97B22CABB4C001EED6C /* CoreDataImporter.swift */,
 			);
 			name = ModelController;
 			path = Model/ModelController;
@@ -435,6 +438,7 @@
 				D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */,
 				D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */,
 				D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */,
+				D194E97C22CABB4C001EED6C /* CoreDataImporter.swift in Sources */,
 				D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */,
 				D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */,
 				D194E95222CA85A3001EED6C /* QuestionAnalytics.swift in Sources */,
