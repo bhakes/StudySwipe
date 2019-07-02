@@ -9,7 +9,13 @@
 import Foundation
 
 public enum Track: String, Codable {
+    
+    public var description: String {
+        return "\(rawValue)"
+    }
+    
     case iOSDeveloper = "iOSDeveloper"
-    case webDeveloper = "webDeveloper"
-    case productManager = "productManager"
+    case WebDeveloper = "webDeveloper"
+    case ProductManager = "productManager"
+    case All = "All"
 }
