@@ -73,7 +73,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection) {
-        print("The user swiped: \(direction.horizontalPosition.description())")
+//        print("The user swiped: \(direction.horizontalPosition.description())")
     }
     
     // MARK: Private Methods
