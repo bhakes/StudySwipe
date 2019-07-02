@@ -29,6 +29,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
             
+            if let newQObservations = qfc.getAllQuestionObservations() {
+                for ob in newQObservations {
+                    print(ob.questionID?.uuidString)
+                }
+            }
+            
         }else{
             print("Internet Connection not Available!")
         }
