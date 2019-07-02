@@ -55,6 +55,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     @objc func closeTest() {
+        if testObservation != nil {
+            coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
+        }
         if let action = closeButtonAction {
             action()
         } else {

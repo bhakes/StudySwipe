@@ -65,7 +65,7 @@ class CoreDataFetchController {
     }
     
     func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) {
-        
+        print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {
                 try CoreDataStack.shared.save()
