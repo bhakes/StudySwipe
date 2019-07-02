@@ -95,7 +95,7 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
         
         cardViewFrame.size.width -= 2 * horizontalInset
         cardViewFrame.origin.x += horizontalInset
-        cardViewFrame.origin.y += verticalInset
+        cardViewFrame.origin.y -= verticalInset
         
         cardView.frame = cardViewFrame
     }

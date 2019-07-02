@@ -7,31 +7,20 @@
 //
 
 import UIKit
+import CoreData
 
 class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource {
     
-    let testQuestion = Question(answer: "Just checking", category: .designPatterns, difficulty: .easy, question: "Is this a test?", track: .iOSDeveloper)
     var cardContainer: SwipeableCardViewContainer!
+    var infoBar: UIView!
+    
+    var questions: [Question] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cardContainer = SwipeableCardViewContainer()
-        cardContainer.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(cardContainer)
-        
-        NSLayoutConstraint.activate([
-            cardContainer.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor,
-                                                  constant: -64),
-            cardContainer.widthAnchor.constraint(equalTo: view.widthAnchor,
-                                                 constant: -40),
-            cardContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            cardContainer.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            ])
-        
-        cardContainer.alpha = 0
-        cardContainer.dataSource = self
-        
+        setupViews()
+        loadQuestions()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,13 +31,15 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     func numberOfCards() -> Int {
-        return 20
+        return questions.count
     }
     
     func card(forItemAtIndex index: Int) -> SwipeableCard {
         let card = SwipeableCard()
         card.backgroundColor = .white
-        card.fillWithQuestion(testQuestion)
+        
+        let question = questions[index]
+        card.fillWithQuestion(question)
         return card
     }
     
@@ -61,7 +52,30 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     
-    
+    private func setupViews() {
+        infoBar = UIView()
+        infoBar.constrainToSuperView(view, top: 8, leading: 0, trailing: 0, height: 60)
+        
+        cardContainer = SwipeableCardViewContainer()
+        cardContainer.constrainToSuperView(view, bottom: 20 + SwipeableCardViewContainer.verticalInset*2, leading: 20, trailing: 20)
+        cardContainer.constrainToSiblingView(infoBar, below: 8)
+        
+        cardContainer.alpha = 0
+        cardContainer.dataSource = self
+        
+    }
 
+    private func loadQuestions() {
+        let fetchRequest: NSFetchRequest<Question> = Question.fetchRequest()
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "question", ascending: true)]
+        let moc = CoreDataStack.shared.mainContext
+        moc.performAndWait {
+            do {
+                questions = try moc.fetch(fetchRequest)
+            } catch {
+                print("Error loading questions: \(error)")
+            }
+        }
+    }
     
 }
