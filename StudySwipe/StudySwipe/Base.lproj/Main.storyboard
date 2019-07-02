@@ -36,7 +36,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NdD-4S-YZV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Rku-Pu-zYh"/>
+                    <tabBarItem key="tabBarItem" title="Review" image="literature" id="Rku-Pu-zYh"/>
                     <navigationItem key="navigationItem" title="StudySwipe" id="gis-b6-wQa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GO-df-Gb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -63,6 +63,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="literature" width="30" height="30"/>
         <image name="play" width="30" height="30"/>
     </resources>
 </document>
