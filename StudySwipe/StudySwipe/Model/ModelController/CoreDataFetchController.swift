@@ -225,19 +225,16 @@ class CoreDataFetchController {
                 NSLog("Error fetching list of Question: \(error)") // if the fetch request throws an error, NSLog it
             }
             
-            // if there are no results, early return
-            guard var result = result else { return }
-            
             // randomize and truncate the results accordingly
             if let count = count {
                 if random {
-                    result = result.count > count ? Array(result.shuffled().prefix(count)) : result
+                    result = result?.count ?? count + 1 > count ? Array((result?.shuffled().prefix(count))!) : result
                 } else {
-                    result = result.count > count ? Array(result.prefix(count)) : result
+                    result = result?.count ?? count + 1 > count ? Array((result?.prefix(count))!) : result
                 }
             } else {
                 if random {
-                    result = Array(result.shuffled())
+                    result = Array((result?.shuffled())!)
                 }
             }
             
