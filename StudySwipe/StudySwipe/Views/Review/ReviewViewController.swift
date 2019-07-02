@@ -31,10 +31,10 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
         let difficulty = difficulty ?? .All
         let category = category ?? .All
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let questions = coreDataFetchController.getFilteredQuestions(difficulties: [difficulty], categories: [category]) else { return }
+        let test = coreDataFetchController.makeTest(with: "New Review", difficulties: [difficulty], categories: [category])
         
         testViewController = TestViewController()
-        testViewController.questions = questions
+        testViewController.test = test
         testViewController.dismissButtonTitle = "Dismiss"
         testViewController.closeButtonAction = { [weak self] in
             self?.animateTableViewIn()
