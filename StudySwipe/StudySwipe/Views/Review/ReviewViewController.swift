@@ -44,12 +44,22 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
     }
     
     private func setupViews() {
+        let headerHeight: CGFloat = 80
+        let headerView = UIView()
+        headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
+        
+        let label = UILabel()
+        label.text = "Pick a topic to study"
+        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        
+        label.constrainToSuperView(headerView, safeArea: false, leading: 12, trailing: 12, centerY: 0)
+        
         tableViewContainer = UIView()
         tableViewContainer.backgroundColor = .gray
-        tableViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: 0)
+        tableViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
         tableViewContainerConstraint = tableViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         tableViewContainerConstraint.isActive = true
-        
+        headerView.constrainToSiblingView(tableViewContainer, above: 0)
         
         tableViewController = ReviewSelectionTableViewController()
         tableViewController.delegate = self

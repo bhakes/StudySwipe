@@ -22,9 +22,7 @@ class ReviewSelectionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SelectionCell")
-        
-        tableView.separatorStyle = .none
+        setupViews()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -86,8 +84,10 @@ class ReviewSelectionTableViewController: UITableViewController {
         delegate?.tableView(tableView, didSelectRowAt: indexPath, difficulty: difficulty, category: category)
     }
     
-    func animateTableViewOut() {
+    private func setupViews() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SelectionCell")
         
+        tableView.separatorStyle = .none
     }
     
 }
