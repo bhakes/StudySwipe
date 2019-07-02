@@ -11,7 +11,7 @@ import CoreData
 
 extension InterviewTest {
     
-    convenience init(questions: [UUID],
+    convenience init(questions: [Question],
                      title: String,
                      timestamp: Date? = Date(),
                      testID: UUID? = UUID(),

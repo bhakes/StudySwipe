@@ -14,7 +14,7 @@ class CoreDataFetchController {
         self.context = context
     }
     
-    func getFilteredQuestions(difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All] ) -> [Question]? {
+    func getFilteredQuestions(difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int = 10) -> [Question]? {
         
         var result: [Question]? = nil // create an Question array named 'result' that will store the entries you find in the Persistent Store
         
@@ -107,6 +107,9 @@ class CoreDataFetchController {
             } catch {
                 NSLog("Error fetching list of Question: \(error)") // if the fetch request throws an error, NSLog it
             }
+            
+            
+            result = result?.count ?? count + 1 > count ? Array(result!.shuffled().prefix(count)) : result
             
         }
         return result
