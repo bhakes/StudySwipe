@@ -12,6 +12,7 @@
 		347FDC1822CA5F40004F6656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1722CA5F40004F6656 /* Assets.xcassets */; };
 		347FDC1B22CA5F40004F6656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */; };
 		347FDC2622CA5F40004F6656 /* StudySwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */; };
+		34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */; };
 		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
 		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
 		34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */; };
@@ -80,6 +81,7 @@
 		347FDC2122CA5F40004F6656 /* StudySwipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudySwipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySwipeTests.swift; sourceTree = "<group>"; };
 		347FDC2722CA5F40004F6656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+StandardAlerts.swift"; sourceTree = "<group>"; };
 		34FBA47A22CA7C230047FAEA /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
 		34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
 		34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
@@ -192,6 +194,17 @@
 			path = StudySwipeTests;
 			sourceTree = "<group>";
 		};
+		34DA7B8722CBFACC00AD2A63 /* UI Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				34FBA49722CB10540047FAEA /* UIViewController+Container.swift */,
+				34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */,
+				34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */,
+				34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */,
+			);
+			path = "UI Helpers";
+			sourceTree = "<group>";
+		};
 		34FBA48A22CA7D600047FAEA /* Card Swiping */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,9 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				D194E97322CA9F38001EED6C /* Networking Helpers */,
-				34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */,
-				34FBA49722CB10540047FAEA /* UIViewController+Container.swift */,
-				34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */,
+				34DA7B8722CBFACC00AD2A63 /* UI Helpers */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -498,6 +509,7 @@
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
+				34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */,
 				D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */,
 				D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */,
 				D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */,
