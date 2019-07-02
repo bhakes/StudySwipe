@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Category: String, Codable {
+public enum Category: String, Codable, CaseIterable {
     case coreData = "CoreData"
     case swift = "Swift"
     case concurrency = "Concurrency"

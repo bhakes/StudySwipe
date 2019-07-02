@@ -27,7 +27,7 @@ extension UIView {
     }
     
     /// Adds the view it is called on to the given view and optionally constrains it to each anchor that is given a value, with an option to use the view's safe area. **It is possible to define conflicting constraints, beware.**
-    func constrainToSuperView(_ view: UIView, safeArea: Bool = true, top: CGFloat? = nil, bottom: CGFloat? = nil, leading: CGFloat? = nil, trailing: CGFloat? = nil, centerX: CGFloat? = nil, centerY: CGFloat? = nil, height: CGFloat? = nil, width: CGFloat? = nil) {
+    func constrainToSuperView(_ view: UIView, safeArea: Bool = true, top: CGFloat? = nil, bottom: CGFloat? = nil, leading: CGFloat? = nil, trailing: CGFloat? = nil, centerX: CGFloat? = nil, centerY: CGFloat? = nil, equalHeight: CGFloat? = nil, equalWidth: CGFloat? = nil, height: CGFloat? = nil, width: CGFloat? = nil) {
         
         addAsSubviewWithConstraintsOf(view)
         
@@ -57,6 +57,14 @@ extension UIView {
         
         if let centerY = centerY {
             self.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: centerY).isActive = true
+        }
+        
+        if let equalHeight = equalHeight {
+            self.heightAnchor.constraint(equalTo: view.heightAnchor, constant: equalHeight).isActive = true
+        }
+        
+        if let equalWidth = equalWidth {
+            self.widthAnchor.constraint(equalTo: view.widthAnchor, constant: equalWidth).isActive = true
         }
         
         if let width = width {
@@ -160,7 +168,7 @@ extension UIView {
     /// Adds the view it is called on as a subview of the given view and turns translatesAutoresizingMaskIntoConstraints off
     private func addAsSubviewWithConstraintsOf(_ view: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
-        view.removeFromSuperview()
+        self.removeFromSuperview()
         view.addSubview(self)
     }
 }
