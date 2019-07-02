@@ -10,9 +10,9 @@ import UIKit
 
 class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
     
-    static let horizontalInset: CGFloat = 10.0
+    static let distanceScale: CGFloat = 0.05
     
-    static let verticalInset: CGFloat = 10.0
+    static let verticalInset: CGFloat = 12.0
     
     static var preferredWidth: CGFloat = 300.0
     
@@ -46,7 +46,7 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
     /// calls the dataSource to layout new card views.
     func reloadData() {
         removeAllCardViews()
-        SwipeableCardViewContainer.preferredWidth = bounds.width - 24
+//        SwipeableCardViewContainer.preferredWidth = bounds.width - 24
         guard let dataSource = dataSource else {
             return
         }
@@ -67,7 +67,8 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
     
     private func addCardView(cardView: SwipeableCard, atIndex index: Int) {
         cardView.delegate = self
-        setFrame(forCardView: cardView, atIndex: index)
+        cardView.frame = bounds
+        cardView.transform = transform(forCardView: cardView, atIndex: index)
         cardViews.append(cardView)
         insertSubview(cardView, at: 0)
         remainingCards -= 1
@@ -79,24 +80,12 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
         }
         cardViews = []
     }
-    
-    /// Sets the frame of a card view provided for a given index. Applies a specific
-    /// horizontal and vertical offset relative to the index in order to create an
-    /// overlay stack effect on a series of cards.
-    ///
-    /// - Parameters:
-    ///   - cardView: card view to update frame on
-    ///   - index: index used to apply horizontal and vertical insets
-    private func setFrame(forCardView cardView: SwipeableCard, atIndex index: Int) {
-        var cardViewFrame = bounds
-        let horizontalInset = (CGFloat(index) * SwipeableCardViewContainer.horizontalInset)
-        let verticalInset = CGFloat(index) * SwipeableCardViewContainer.verticalInset
+
+    private func transform(forCardView cardView: SwipeableCard, atIndex index: Int) -> CGAffineTransform {
+        let verticalInset = CGFloat(index) * SwipeableCardViewContainer.verticalInset * 2
+        let scale = 1 - (SwipeableCardViewContainer.distanceScale * CGFloat(index))
         
-        cardViewFrame.size.width -= 2 * horizontalInset
-        cardViewFrame.origin.x += horizontalInset
-        cardViewFrame.origin.y -= verticalInset
-        
-        cardView.frame = cardViewFrame
+        return CGAffineTransform.identity.translatedBy(x: 0, y: -verticalInset).scaledBy(x: scale, y: scale)
     }
     
 }
@@ -129,6 +118,9 @@ extension SwipeableCardViewContainer {
         
         // Remove swiped card
         view.removeFromSuperview()
+        if visibleCardViews.count == 0 {
+            // TODO: Add delegate method for stack being empty
+        }
         
         // Only add a new card if there are cards remaining
         if remainingCards > 0 {
@@ -139,16 +131,15 @@ extension SwipeableCardViewContainer {
             // Add new card as Subview
             addCardView(cardView: dataSource.card(forItemAtIndex: newIndex), atIndex: 2)
             
-            // Update all existing card's frames based on new indexes, animate frame change
-            // to reveal new card from underneath the stack of existing cards.
-            for (cardIndex, cardView) in visibleCardViews.reversed().enumerated() {
-                UIView.animate(withDuration: 0.2, animations: {
-                    cardView.center = self.center
-                    self.setFrame(forCardView: cardView, atIndex: cardIndex)
-                    self.layoutIfNeeded()
-                })
-            }
-            
+        }
+        
+        // Update all existing card's transform based on new indexes, animate transform
+        // to reveal new card from underneath the stack of existing cards.
+        for (cardIndex, cardView) in visibleCardViews.reversed().enumerated() {
+            UIView.animate(withDuration: 0.2, animations: {
+                cardView.transform = self.transform(forCardView: cardView, atIndex: cardIndex)
+                self.layoutIfNeeded()
+            })
         }
     }
     
