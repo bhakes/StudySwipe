@@ -97,7 +97,7 @@ extension SwipeableCardViewContainer {
     func didTap(view: SwipeableView) {
         if let cardView = view as? SwipeableCard,
             let index = cardViews.firstIndex(of: cardView) {
-            delegate?.didSelect(card: cardView, atIndex: index)
+            delegate?.cardViewContainer(self, didSelectCard: cardView, atIndex: index)
             cardView.handleTap()
             
         }
@@ -119,7 +119,7 @@ extension SwipeableCardViewContainer {
         // Remove swiped card
         view.removeFromSuperview()
         if visibleCardViews.count == 0 {
-            // TODO: Add delegate method for stack being empty
+            delegate?.cardViewContainer(self, isEmpty: true)
         }
         
         // Only add a new card if there are cards remaining

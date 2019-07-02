@@ -10,17 +10,23 @@ import Foundation
 
 protocol SwipeableCardViewDelegate: class {
     
-    func didSelect(card: SwipeableCard, atIndex index: Int)
+    func cardViewContainer(_ cardViewContainer: SwipeableCardViewContainer, didSelectCard card: SwipeableCard, atIndex index: Int)
     
     func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection)
+    
+    func cardViewContainer(_ cardViewContainer: SwipeableCardViewContainer, isEmpty: Bool)
 }
 
 extension SwipeableCardViewDelegate {
-    func didSelect(card: SwipeableCard, atIndex index: Int) {
+    func cardViewContainer(_ cardView: SwipeableCardViewContainer, didSelectCard card: SwipeableCard, atIndex index: Int) {
         return
     }
     
     func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection) {
+        return
+    }
+    
+    func cardViewContainer(_ cardViewContainer: SwipeableCardViewContainer, isEmpty: Bool) {
         return
     }
 }
