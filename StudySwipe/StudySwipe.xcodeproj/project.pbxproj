@@ -58,6 +58,9 @@
 		D194E98022CAC86A001EED6C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97F22CAC86A001EED6C /* Reachability.swift */; };
 		D194E98422CADD94001EED6C /* CoreDataFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E98322CADD94001EED6C /* CoreDataFetchController.swift */; };
 		D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E98622CB9476001EED6C /* SettingsTableViewController.swift */; };
+		D1BA3E7622CBE191001B1BD7 /* Performance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BA3E7522CBE191001B1BD7 /* Performance.storyboard */; };
+		D1BA3E7822CBE627001B1BD7 /* PerformanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */; };
+		D1BA3E7C22CBE949001B1BD7 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,9 @@
 		D194E97F22CAC86A001EED6C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D194E98322CADD94001EED6C /* CoreDataFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFetchController.swift; sourceTree = "<group>"; };
 		D194E98622CB9476001EED6C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		D1BA3E7522CBE191001B1BD7 /* Performance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Performance.storyboard; sourceTree = "<group>"; };
+		D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewController.swift; sourceTree = "<group>"; };
+		D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,7 @@
 				347FDC1022CA5F3E004F6656 /* AppDelegate.swift */,
 				34FBA48A22CA7D600047FAEA /* Card Swiping */,
 				347FDC1422CA5F3E004F6656 /* Main.storyboard */,
+				D1BA3E7522CBE191001B1BD7 /* Performance.storyboard */,
 				347FDC1722CA5F40004F6656 /* Assets.xcassets */,
 				347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */,
 				347FDC1C22CA5F40004F6656 /* Info.plist */,
@@ -380,6 +387,8 @@
 			isa = PBXGroup;
 			children = (
 				D194E98622CB9476001EED6C /* SettingsTableViewController.swift */,
+				D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */,
+				D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */,
 			);
 			path = BenViewControllerWork;
 			sourceTree = "<group>";
@@ -468,6 +477,7 @@
 				347FDC1B22CA5F40004F6656 /* LaunchScreen.storyboard in Resources */,
 				347FDC1822CA5F40004F6656 /* Assets.xcassets in Resources */,
 				347FDC1622CA5F3E004F6656 /* Main.storyboard in Resources */,
+				D1BA3E7622CBE191001B1BD7 /* Performance.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +508,7 @@
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
+				D1BA3E7822CBE627001B1BD7 /* PerformanceTableViewController.swift in Sources */,
 				D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */,
 				D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */,
 				D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */,
@@ -531,6 +542,7 @@
 				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,
 				34FBA49422CAC0B20047FAEA /* UIView+Constraints.swift in Sources */,
 				34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */,
+				D1BA3E7C22CBE949001B1BD7 /* PerformanceViewController.swift in Sources */,
 				34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */,
 				D194E98022CAC86A001EED6C /* Reachability.swift in Sources */,
 			);
