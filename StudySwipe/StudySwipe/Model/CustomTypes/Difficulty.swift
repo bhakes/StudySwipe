@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Difficulty: String, Codable, Any {
+public enum Difficulty: String, Codable, Any, CaseIterable {
     public var description: String {
         return "\(rawValue)"
     }

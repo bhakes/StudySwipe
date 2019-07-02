@@ -27,7 +27,7 @@ extension UIView {
     }
     
     /// Adds the view it is called on to the given view and optionally constrains it to each anchor that is given a value, with an option to use the view's safe area. **It is possible to define conflicting constraints, beware.**
-    func constrainToSuperView(_ view: UIView, safeArea: Bool = true, top: CGFloat? = nil, bottom: CGFloat? = nil, leading: CGFloat? = nil, trailing: CGFloat? = nil, centerX: CGFloat? = nil, centerY: CGFloat? = nil, height: CGFloat? = nil, width: CGFloat? = nil) {
+    func constrainToSuperView(_ view: UIView, safeArea: Bool = true, top: CGFloat? = nil, bottom: CGFloat? = nil, leading: CGFloat? = nil, trailing: CGFloat? = nil, centerX: CGFloat? = nil, centerY: CGFloat? = nil, equalHeight: CGFloat? = nil, equalWidth: CGFloat? = nil, height: CGFloat? = nil, width: CGFloat? = nil) {
         
         addAsSubviewWithConstraintsOf(view)
         
@@ -59,6 +59,16 @@ extension UIView {
             self.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: centerY).isActive = true
         }
         
+        if let equalHeight = equalHeight {
+            let heightAnchor = safeArea ? view.safeAreaLayoutGuide.heightAnchor : view.heightAnchor
+            self.heightAnchor.constraint(equalTo: heightAnchor, constant: equalHeight).isActive = true
+        }
+        
+        if let equalWidth = equalWidth {
+            let widthAnchor = safeArea ? view.safeAreaLayoutGuide.widthAnchor : view.widthAnchor
+            self.widthAnchor.constraint(equalTo: widthAnchor, constant: equalWidth).isActive = true
+        }
+        
         if let width = width {
             self.widthAnchor.constraint(equalToConstant: width).isActive = true
         }
@@ -70,7 +80,7 @@ extension UIView {
     }
     
     /// Constrains the view it is called on to the given view by with the non nil anchors and the given offsets. **Must be siblings in the view hierarchy. It is possible to define conflicting constraints, beware.**
-    func constrainToSiblingView(_ view: UIView, top: CGFloat? = nil, bottom: CGFloat? = nil, leading: CGFloat? = nil, trailing: CGFloat? = nil, below: CGFloat? = nil, above: CGFloat? = nil, behind: CGFloat? = nil, before: CGFloat? = nil, centerX: CGFloat? = nil, centerY: CGFloat? = nil, height: CGFloat? = nil, width: CGFloat? = nil) {
+    func constrainToSiblingView(_ view: UIView, top: CGFloat? = nil, bottom: CGFloat? = nil, leading: CGFloat? = nil, trailing: CGFloat? = nil, below: CGFloat? = nil, above: CGFloat? = nil, behind: CGFloat? = nil, before: CGFloat? = nil, centerX: CGFloat? = nil, centerY: CGFloat? = nil, equalHeight: CGFloat? = nil, equalWidth: CGFloat? = nil, height: CGFloat? = nil, width: CGFloat? = nil) {
         
         self.translatesAutoresizingMaskIntoConstraints = false
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -115,6 +125,14 @@ extension UIView {
             self.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: centerY).isActive = true
         }
         
+        if let equalWidth = equalWidth {
+            self.widthAnchor.constraint(equalTo: view.widthAnchor, constant: equalWidth).isActive = true
+        }
+        
+        if let equalHeight = equalHeight {
+            self.heightAnchor.constraint(equalTo: view.heightAnchor, constant: equalHeight).isActive = true
+        }
+        
         if let width = width {
             self.widthAnchor.constraint(equalToConstant: width).isActive = true
         }
@@ -152,7 +170,7 @@ extension UIView {
     /// Adds the view it is called on as a subview of the given view and turns translatesAutoresizingMaskIntoConstraints off
     private func addAsSubviewWithConstraintsOf(_ view: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
-        view.removeFromSuperview()
+        self.removeFromSuperview()
         view.addSubview(self)
     }
 }

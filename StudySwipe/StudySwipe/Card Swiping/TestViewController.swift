@@ -13,14 +13,20 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     var cardContainer: SwipeableCardViewContainer!
     var infoBar: UIView!
+    var closeButtonAction: (() -> Void)?
     
-    var questions: [Question] = []
+    var questions: [Question] = [] {
+        didSet {
+            guard isViewLoaded else { return }
+            cardContainer.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
-        loadQuestions()
+//        loadQuestions()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -30,6 +36,15 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         }
     }
     
+    @objc func closeTest() {
+        if let action = closeButtonAction {
+            action()
+        } else {
+            dismiss(animated: true)
+        }
+    }
+    
+    // MARK: - Swipable Card View Data Source
     func numberOfCards() -> Int {
         return questions.count
     }
@@ -54,7 +69,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     private func setupViews() {
         infoBar = UIView()
-        infoBar.constrainToSuperView(view, top: 8, leading: 0, trailing: 0, height: 60)
+        infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)
         
         cardContainer = SwipeableCardViewContainer()
         cardContainer.constrainToSuperView(view, bottom: 20 + SwipeableCardViewContainer.verticalInset*2, leading: 20, trailing: 20)
@@ -62,6 +77,11 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         cardContainer.alpha = 0
         cardContainer.dataSource = self
+        
+        let dismissButton = UIButton(type: .system)
+        dismissButton.setImage(UIImage(named: "cancel")!, for: .normal)
+        dismissButton.addTarget(self, action: #selector(closeTest), for: .touchUpInside)
+        dismissButton.constrainToSuperView(infoBar, top: 0, trailing: 20, height: 40, width: 40)
         
     }
 

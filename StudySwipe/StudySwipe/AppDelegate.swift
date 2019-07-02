@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             qnc.getQuestions {_,_ in }
             if let easyQuestions = qfc.getFilteredQuestions(difficulties: [.All]) {
                 for q in easyQuestions {
-                    print(q.question)
+                    print(q.question ?? "")
                 }
             }
             
