@@ -65,7 +65,7 @@ class CoreDataFetchController {
     }
     
     func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) {
-        
+        print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {
                 try CoreDataStack.shared.save()
@@ -89,7 +89,7 @@ class CoreDataFetchController {
     }
     
     func recordQuestionObservation(with response: Response, for question: Question, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
-        
+        print("Recording observation with repsonse: \(response), for questionID: \(question.questionID!), with duration: \(duration ?? -1)")
         defer {
             do {
                 try CoreDataStack.shared.save()

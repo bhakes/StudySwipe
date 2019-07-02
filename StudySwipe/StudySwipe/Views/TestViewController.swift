@@ -15,14 +15,18 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     var infoBar: UIView!
     var closeButtonAction: (() -> Void)?
     private var dismissButton: UIButton!
+    private var startTime = Date()
     
     var dismissButtonTitle = "Quit Test" {
         didSet { updateButtonTitle() }
     }
     
+    var coreDataFetchController: CoreDataFetchController?
+    var testObservation: InterviewTestObservation?
     var test: InterviewTest? {
         didSet {
             guard let questions = test?.questions else {
+                // Handle not having any questions
                 // Present an alert?
                 return
             }
@@ -51,6 +55,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     @objc func closeTest() {
+        if testObservation != nil {
+            coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
+        }
         if let action = closeButtonAction {
             action()
         } else {
@@ -73,7 +80,16 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection) {
-//        print("The user swiped: \(direction.horizontalPosition.description())")
+        guard let observation = testObservation else { return }
+        guard let question = card.question else { return }
+        
+        let duration = DateInterval(start: startTime, end: Date()).duration
+        let response: Response = direction.horizontalPosition == .right ? .correct : .incorrect
+        
+        _ = coreDataFetchController?.recordQuestionObservation(with: response, for: question, with: Int(duration), in: observation)
+        
+        // Reset timer for the next question
+        startTime = Date()
     }
     
     // MARK: Private Methods
@@ -97,6 +113,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         dismissButton.addTarget(self, action: #selector(closeTest), for: .touchUpInside)
         dismissButton.constrainToSuperView(infoBar, top: 0, trailing: 20)
         
+        startTime = Date()
     }
 
     private func loadQuestions() {

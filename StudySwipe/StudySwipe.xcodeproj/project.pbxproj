@@ -327,8 +327,8 @@
 		D194E96022CA9515001EED6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				34FBA4A022CBCF0C0047FAEA /* Test */,
 				34FBA48D22CA89BC0047FAEA /* TestViewController.swift */,
+				34FBA4A022CBCF0C0047FAEA /* Test */,
 				34FBA49D22CBADEC0047FAEA /* Review */,
 				D194E96122CA951D001EED6C /* Onboarding */,
 			);

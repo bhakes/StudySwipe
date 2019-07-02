@@ -47,8 +47,10 @@ class TestSetupViewController: UIViewController {
     }
     
     private func startTest(numberOfQuestions number: Int) {
-        guard let test = coreDataFetchController.makeTest(with: "New \(number) Question Test", count: number, random: true) else { return }
+        let (test, observation) = coreDataFetchController.makeTestAndObservation(with: "New \(number) Question Test", count: number, random: true)
         let testViewController = TestViewController()
+        testViewController.coreDataFetchController = coreDataFetchController
+        testViewController.testObservation = observation
         testViewController.test = test
         
         present(testViewController, animated: true)
