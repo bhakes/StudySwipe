@@ -52,7 +52,7 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
         label.text = "Pick a topic to study"
         label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         
-        label.constrainToSuperView(headerView, safeArea: false, leading: 12, trailing: 12, centerY: 0)
+        label.constrainToSuperView(headerView, safeArea: false, leading: 20, trailing: 20, centerY: 0)
         
         tableViewContainer = UIView()
         tableViewContainer.backgroundColor = .gray
