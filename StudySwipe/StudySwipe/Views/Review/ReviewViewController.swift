@@ -58,9 +58,6 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
         testViewContainer.constrainToSuperView(view, leading: 0, trailing: 0, equalHeight: 0)
         testViewContainerConstraint = testViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ReviewViewController.animationDistance)
         testViewContainerConstraint.isActive = true
-        
-//        testViewController = TestViewController()
-//        add(testViewController, toView: testViewContainer)
     }
     
     private func animateTableViewOut() {

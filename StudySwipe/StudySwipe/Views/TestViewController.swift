@@ -26,7 +26,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         super.viewDidLoad()
         
         setupViews()
-//        loadQuestions()
+        loadQuestions()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,15 +58,11 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         return card
     }
     
-    func viewForEmptyCards() -> UIView? {
-        return nil
+    func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection) {
+        print("The user swiped: \(direction.horizontalPosition.description())")
     }
     
-    func didSelect(card: SwipeableCard, atIndex index: Int) {
-        return
-    }
-    
-    
+    // MARK: Private Methods
     private func setupViews() {
         infoBar = UIView()
         infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)
@@ -77,6 +73,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         cardContainer.alpha = 0
         cardContainer.dataSource = self
+        cardContainer.delegate = self
         
         let dismissButton = UIButton(type: .system)
         dismissButton.setImage(UIImage(named: "cancel")!, for: .normal)

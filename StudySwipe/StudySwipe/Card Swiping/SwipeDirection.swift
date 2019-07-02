@@ -73,6 +73,17 @@ enum SwipeDirection {
         case left = -1
         case middle = 0
         case right = 1
+        
+        func description() -> String {
+            switch(self) {
+            case .left:
+                return "Left"
+            case .right:
+                return "Right"
+            case .middle:
+                return "Middle"
+            }
+        }
     }
     
     enum VerticalPosition: CGFloat {

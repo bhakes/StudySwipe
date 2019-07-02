@@ -152,7 +152,7 @@ class SwipeableView: UIView {
             layer.transform = endTransform
             
             CATransaction.setCompletionBlock {
-                self.delegate?.didEndSwipe(onView: self)
+                self.delegate?.didEndSwipe(onView: self, in: dragDirection)
             }
             layer.add(translationAnimation, forKey: "transform")
             CATransaction.commit()
