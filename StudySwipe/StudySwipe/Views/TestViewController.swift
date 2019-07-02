@@ -83,8 +83,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         let duration = DateInterval(start: startTime, end: Date()).duration
         let response: Response = direction.horizontalPosition == .right ? .correct : .incorrect
+        guard let questionID = question.questionID else { fatalError("The Question does not have a questionID")}
         
-        _ = coreDataFetchController?.recordQuestionObservation(with: response, for: question, with: Int(duration), in: observation)
+        _ = coreDataFetchController?.recordQuestionObservation(with: response, for: questionID, with: Int(duration), in: observation)
         
         // Reset timer for the next question
         startTime = Date()

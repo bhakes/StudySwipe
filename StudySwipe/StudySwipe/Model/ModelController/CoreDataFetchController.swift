@@ -81,15 +81,15 @@ class CoreDataFetchController {
     
     // MARK: QuestionObservation Manipulation Methods
     
-    private func makeQuestionObservation(with response: Response, for question: Question, in duration: TimeInterval? = nil) -> QuestionObservation? {
+    private func makeQuestionObservation(with response: Response, for questionID: UUID, in duration: TimeInterval? = nil) -> QuestionObservation? {
         
-        guard let questionID = question.questionID else { return nil }
-        let newQuestionObservation = QuestionObservation(response: response, question: question, questionID: questionID, timeInterval: duration ?? 0)
+        let newQuestionObservation = QuestionObservation(response: response, questionID: questionID, timeInterval: duration ?? 0)
         return newQuestionObservation
     }
     
-    func recordQuestionObservation(with response: Response, for question: Question, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
-        print("Recording observation with repsonse: \(response), for questionID: \(question.questionID!), with duration: \(duration ?? -1)")
+    func recordQuestionObservation(with response: Response, for questionID: UUID, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
+        
+        print("Recording observation with repsonse: \(response), for questionID: \(questionID.uuidString), with duration: \(duration ?? -1)")
         defer {
             do {
                 try CoreDataStack.shared.save()
@@ -98,7 +98,7 @@ class CoreDataFetchController {
             }
         }
         
-        guard let newQuestionObs = makeQuestionObservation(with: response, for: question) else { return false }
+        guard let newQuestionObs = makeQuestionObservation(with: response, for: questionID ) else { return false }
         addQuestionObservation(to: testObs, for: newQuestionObs)
         
         return true
