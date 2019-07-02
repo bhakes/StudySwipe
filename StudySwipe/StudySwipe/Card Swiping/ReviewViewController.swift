@@ -30,10 +30,14 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?) {
         let difficulty = difficulty ?? .All
         let category = category ?? .All
+        tableView.deselectRow(at: indexPath, animated: true)
         guard let questions = coreDataFetchController.getFilteredQuestions(difficulties: [difficulty], categories: [category]) else { return }
         
         testViewController = TestViewController()
         testViewController.questions = questions
+        testViewController.closeButtonAction = { [weak self] in
+            self?.animateTableViewIn()
+        }
         add(testViewController, toView: testViewContainer)
         animateTableViewOut()
     }
@@ -66,5 +70,17 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
             self.testViewContainerConstraint.constant -= ReviewViewController.animationDistance
             self.view.layoutIfNeeded()
         })
+    }
+    
+    private func animateTableViewIn() {
+        view.layoutIfNeeded()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.tableViewContainerConstraint.constant += ReviewViewController.animationDistance
+            self.testViewContainerConstraint.constant += ReviewViewController.animationDistance
+            self.view.layoutIfNeeded()
+        }) { _ in
+            self.testViewController.remove()
+            self.testViewController = nil
+        }
     }
 }
