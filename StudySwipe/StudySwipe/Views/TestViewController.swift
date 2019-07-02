@@ -100,7 +100,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         cardContainer = SwipeableCardViewContainer()
         cardContainer.constrainToSuperView(view, bottom: 20 + SwipeableCardViewContainer.verticalInset*2, leading: 20, trailing: 20)
-        cardContainer.constrainToSiblingView(infoBar, below: 8)
+        cardContainer.constrainToSiblingView(infoBar, below: 24)
         
         cardContainer.alpha = 0
         cardContainer.dataSource = self
