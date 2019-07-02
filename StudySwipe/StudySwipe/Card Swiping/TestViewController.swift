@@ -10,7 +10,7 @@ import UIKit
 
 class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource {
     
-    let testQuestion = Question(answer: "Just checking", category: .designPatterns, difficulty: .easy, question: "Is this a test?", track: .iOSDeveloper)
+    let testQuestion = Question(answer: "Just checking", category: .DesignPatterns, difficulty: .Easy, question: "Is this a test?", track: .iOSDeveloper)
     var cardContainer: SwipeableCardViewContainer!
     
     override func viewDidLoad() {

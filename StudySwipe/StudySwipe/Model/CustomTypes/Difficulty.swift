@@ -8,8 +8,13 @@
 
 import Foundation
 
-public enum Difficulty: String, Codable {
-    case hard = "Hard"
-    case medium = "Medium"
-    case easy = "Easy"
+public enum Difficulty: String, Codable, Any {
+    public var description: String {
+        return "\(rawValue)"
+    }
+    
+    case Hard = "Hard"
+    case Medium = "Medium"
+    case Easy = "Easy"
+    case All = "All"
 }
