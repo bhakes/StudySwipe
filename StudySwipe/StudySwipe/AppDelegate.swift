@@ -16,7 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let qnc = QuestionNetworkController.shared
+        let qfc = CoreDataFetchController()
+        
+        if Reachability.isConnectedToNetwork(){
+            print("Internet Connection Available!")
+            qnc.getQuestions {_,_ in }
+            if let easyQuestions = qfc.getFilteredQuestions(difficulties: [.All]) {
+                for q in easyQuestions {
+                    print(q.question ?? "")
+                }
+            }
+            
+        }else{
+            print("Internet Connection not Available!")
+        }
+        
         return true
+
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
