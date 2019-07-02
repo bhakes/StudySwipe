@@ -54,12 +54,16 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         }
     }
     
-    @objc func closeTest() {
+    @objc func closeTest(isCompleted: Bool = false) {
         if let action = closeButtonAction {
             action()
         } else {
-            let alertVC = UIAlertController.informationalAlertController(title: .quitTestAlertTitle, message: .quitTestAlertMessage, dismissTitle: "Dismiss", dismissActionCompletion: dismissTest, withCancel: true)
-            present(alertVC, animated: true)
+            if isCompleted {
+                dismissTest()
+            } else {
+                let alertVC = UIAlertController.informationalAlertController(title: .quitTestAlertTitle, message: .quitTestAlertMessage, dismissTitle: "Dismiss", dismissActionCompletion: dismissTest, withCancel: true)
+                present(alertVC, animated: true)
+            }
         }
     }
     
@@ -77,6 +81,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         return card
     }
     
+    // MARK: - Swipeable Card View Delegate
     func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection) {
         guard let observation = testObservation else { return }
         guard let question = card.question else { return }
@@ -89,6 +94,10 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         // Reset timer for the next question
         startTime = Date()
+    }
+    
+    func cardViewContainer(_ cardViewContainer: SwipeableCardViewContainer, isEmpty: Bool) {
+        closeTest(isCompleted: true)
     }
     
     // MARK: Private Methods
