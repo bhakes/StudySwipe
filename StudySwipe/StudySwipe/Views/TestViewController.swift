@@ -20,6 +20,16 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         didSet { updateButtonTitle() }
     }
     
+    var test: InterviewTest? {
+        didSet {
+            guard let questions = test?.questions else {
+                // Present an alert?
+                return
+            }
+            self.questions = questions
+        }
+    }
+    
     var questions: [Question] = [] {
         didSet {
             guard isViewLoaded else { return }
@@ -31,7 +41,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         super.viewDidLoad()
         
         setupViews()
-        loadQuestions()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -69,6 +78,8 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     // MARK: Private Methods
     private func setupViews() {
+        view.backgroundColor = .white
+        
         infoBar = UIView()
         infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)
         

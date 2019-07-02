@@ -13,7 +13,7 @@
         <!--Test-->
         <scene sceneID="xvC-dA-ITa">
             <objects>
-                <viewController id="Ear-cg-hhc" customClass="TestViewController" customModule="StudySwipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ear-cg-hhc" customClass="TestSetupViewController" customModule="StudySwipe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v8P-Ac-bgL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
