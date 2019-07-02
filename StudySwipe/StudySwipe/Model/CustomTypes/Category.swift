@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Category: String, Codable {
+public enum Category: String, Codable, CaseIterable {
     
     public var description: String {
         return "\(rawValue)"

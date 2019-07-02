@@ -110,6 +110,8 @@ extension SwipeableCardViewContainer {
         if let cardView = view as? SwipeableCard,
             let index = cardViews.firstIndex(of: cardView) {
             delegate?.didSelect(card: cardView, atIndex: index)
+            cardView.handleTap()
+            
         }
     }
     
