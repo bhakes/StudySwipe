@@ -14,13 +14,18 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     var cardContainer: SwipeableCardViewContainer!
     var infoBar: UIView!
     
-    var questions: [Question] = []
+    var questions: [Question] = [] {
+        didSet {
+            guard isViewLoaded else { return }
+            cardContainer.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
-        loadQuestions()
+//        loadQuestions()
     }
     
     override func viewDidAppear(_ animated: Bool) {

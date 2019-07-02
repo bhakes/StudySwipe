@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ReviewSelectionTableViewDelegate: class {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?)
 }
 
 class ReviewSelectionTableViewController: UITableViewController {
@@ -72,7 +72,18 @@ class ReviewSelectionTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.tableView(tableView, didSelectRowAt: indexPath)
+        var category: Category?
+        var difficulty: Difficulty?
+        
+        switch indexPath.section {
+        case 0:
+            category = Category.allCases[indexPath.row]
+        case 1:
+            difficulty = Difficulty.allCases[indexPath.row]
+        default:
+            fatalError("There should only be \(ReviewSelectionTableViewController.sectionNumber) sections")
+        }
+        delegate?.tableView(tableView, didSelectRowAt: indexPath, difficulty: difficulty, category: category)
     }
     
     func animateTableViewOut() {

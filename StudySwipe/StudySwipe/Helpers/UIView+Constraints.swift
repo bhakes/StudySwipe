@@ -60,11 +60,13 @@ extension UIView {
         }
         
         if let equalHeight = equalHeight {
-            self.heightAnchor.constraint(equalTo: view.heightAnchor, constant: equalHeight).isActive = true
+            let heightAnchor = safeArea ? view.safeAreaLayoutGuide.heightAnchor : view.heightAnchor
+            self.heightAnchor.constraint(equalTo: heightAnchor, constant: equalHeight).isActive = true
         }
         
         if let equalWidth = equalWidth {
-            self.widthAnchor.constraint(equalTo: view.widthAnchor, constant: equalWidth).isActive = true
+            let widthAnchor = safeArea ? view.safeAreaLayoutGuide.widthAnchor : view.widthAnchor
+            self.widthAnchor.constraint(equalTo: widthAnchor, constant: equalWidth).isActive = true
         }
         
         if let width = width {
