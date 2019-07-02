@@ -55,13 +55,11 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     @objc func closeTest() {
-        if testObservation != nil {
-            coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
-        }
         if let action = closeButtonAction {
             action()
         } else {
-            dismiss(animated: true)
+            let alertVC = UIAlertController.informationalAlertController(title: .quitTestAlertTitle, message: .quitTestAlertMessage, dismissTitle: "Dismiss", dismissActionCompletion: dismissTest, withCancel: true)
+            present(alertVC, animated: true)
         }
     }
     
@@ -134,4 +132,16 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         dismissButton.setTitle(dismissButtonTitle, for: .normal)
     }
     
+    private func dismissTest(action: UIAlertAction! = nil) {
+        if testObservation != nil {
+            coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
+        }
+        dismiss(animated: true)
+    }
+    
+}
+
+extension String {
+    fileprivate static let quitTestAlertTitle = "Are you sure you want to quit?"
+    fileprivate static let quitTestAlertMessage = "Your data thus far will be saved, you will lose out on the remaining questions."
 }

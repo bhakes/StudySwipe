@@ -12,38 +12,60 @@ class TestSetupViewController: UIViewController {
     
     let coreDataFetchController = CoreDataFetchController()
     
+    var questionNumberLabel: UILabel!
+    var questionSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
     }
     
+    // MARK: - UI Actions
     @objc func tenQuestionTest() {
-        startTest(numberOfQuestions: 10)
+        let number = Int(questionSlider.value)
+        startTest(numberOfQuestions: number)
     }
     
-    @objc func twentyQuestionTest() {
-        startTest(numberOfQuestions: 20)
+    @objc func updateQuestionNumberLabel() {
+        let number = Int(questionSlider.value)
+        questionNumberLabel.text = "\(number) Questions"
     }
     
+    // MARK: - Private Methods
     private func setupViews() {
+        let titleLabel = UILabel()
+        titleLabel.text = "Take a Test"
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        
+        titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
+        
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 8
         
         stackView.constrainToSuperView(view, centerX: 0, centerY: 0, width: 200)
         
-        let tenTestButton = UIButton(type: .system)
-        tenTestButton.setTitle("Ten Question Test", for: .normal)
-        tenTestButton.addTarget(self, action: #selector(tenQuestionTest), for: .touchUpInside)
+        questionNumberLabel = UILabel()
+        questionNumberLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+        questionNumberLabel.textAlignment = .center
+        stackView.addArrangedSubview(questionNumberLabel)
         
-        stackView.addArrangedSubview(tenTestButton)
+        questionSlider = UISlider()
+        questionSlider.minimumValue = 5
+        questionSlider.maximumValue = 30
+        questionSlider.setValue(10, animated: false)
+        questionSlider.addTarget(self, action: #selector(updateQuestionNumberLabel), for: .primaryActionTriggered)
         
-        let twentyTestButton = UIButton(type: .system)
-        twentyTestButton.setTitle("Twenty Question Test", for: .normal)
-        twentyTestButton.addTarget(self, action: #selector(twentyQuestionTest), for: .touchUpInside)
+        updateQuestionNumberLabel()
         
-        stackView.addArrangedSubview(twentyTestButton)
+        stackView.addArrangedSubview(questionSlider)
+        
+        let startTestButton = UIButton(type: .system)
+        startTestButton.setTitle("Start Test", for: .normal)
+        startTestButton.addTarget(self, action: #selector(tenQuestionTest), for: .touchUpInside)
+        
+        startTestButton.constrainToSuperView(view, bottom: 48, leading: 20, trailing: 20)
     }
     
     private func startTest(numberOfQuestions number: Int) {
