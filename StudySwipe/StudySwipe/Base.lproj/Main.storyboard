@@ -20,7 +20,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Lap-ja-xBE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Test" id="Q6g-Id-gKF"/>
+                    <tabBarItem key="tabBarItem" title="Test" image="play" id="Q6g-Id-gKF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5H-2e-N85" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,11 +36,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NdD-4S-YZV"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Review" id="M9n-BG-PCW"/>
+                    <tabBarItem key="tabBarItem" title="Review" image="literature" id="M9n-BG-PCW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5GO-df-Gb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1360" y="-1039"/>
+            <point key="canvasLocation" x="1359" y="-1110"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="HXl-mU-FlI">
@@ -61,4 +61,8 @@
             <point key="canvasLocation" x="442" y="-716"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="literature" width="30" height="30"/>
+        <image name="play" width="30" height="30"/>
+    </resources>
 </document>

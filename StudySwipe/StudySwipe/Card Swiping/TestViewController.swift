@@ -11,10 +11,6 @@ import CoreData
 
 class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource {
     
-    
-    
-    
-    
     var cardContainer: SwipeableCardViewContainer!
     var infoBar: UIView!
     
