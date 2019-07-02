@@ -35,6 +35,7 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
         
         testViewController = TestViewController()
         testViewController.questions = questions
+        testViewController.dismissButtonTitle = "Dismiss"
         testViewController.closeButtonAction = { [weak self] in
             self?.animateTableViewIn()
         }

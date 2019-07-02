@@ -53,6 +53,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="2xS-eD-lwK" kind="relationship" relationship="viewControllers" id="Kkd-XH-5F0"/>
+                        <segue destination="Ear-cg-hhc" kind="relationship" relationship="viewControllers" id="V9f-Qv-M62"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5VS-Mf-PfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
