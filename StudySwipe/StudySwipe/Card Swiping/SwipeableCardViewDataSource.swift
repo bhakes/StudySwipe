@@ -35,3 +35,9 @@ protocol SwipeableCardViewDataSource: class {
     func viewForEmptyCards() -> UIView?
     
 }
+
+extension SwipeableCardViewDataSource {
+    func viewForEmptyCards() -> UIView? {
+        return nil
+    }
+}

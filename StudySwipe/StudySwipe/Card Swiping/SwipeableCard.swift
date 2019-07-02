@@ -10,6 +10,11 @@ import UIKit
 
 class SwipeableCard: SwipeableView {
     
+    var question: Question? {
+        didSet {
+            updateViews()
+        }
+    }
     var answerTextView: UITextView!
     var instructionLabel: UILabel!
     private var isAnswerHidden = true
@@ -28,7 +33,9 @@ class SwipeableCard: SwipeableView {
         layer.shadowOffset = CGSize(width: 4, height: 10)
     }
     
-    func fillWithQuestion(_ question: Question) {
+    func updateViews() {
+        guard let question = question else { return }
+        
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 20

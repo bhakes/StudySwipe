@@ -14,6 +14,6 @@ protocol SwipeableViewDelegate: class {
     
     func didBeginSwipe(onView view: SwipeableView)
     
-    func didEndSwipe(onView view: SwipeableView)
+    func didEndSwipe(onView view: SwipeableView, in direction: SwipeDirection)
     
 }

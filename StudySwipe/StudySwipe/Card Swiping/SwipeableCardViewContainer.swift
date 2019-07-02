@@ -59,8 +59,7 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
         }
         
         if let emptyView = dataSource.viewForEmptyCards() {
-            // TODO: Constrain the empty view to fill the space behind the cards
-            //addEdgeConstrainedSubView(view: emptyView)
+            emptyView.constrainToFill(self)
         }
         
         setNeedsLayout()
@@ -119,9 +118,13 @@ extension SwipeableCardViewContainer {
         // React to Swipe Began?
     }
     
-    func didEndSwipe(onView view: SwipeableView) {
+    func didEndSwipe(onView view: SwipeableView, in direction: SwipeDirection) {
         guard let dataSource = dataSource else {
             return
+        }
+        
+        if let card = view as? SwipeableCard {
+            delegate?.card(card, didCommitSwipeInDirection: direction)
         }
         
         // Remove swiped card

@@ -13,7 +13,7 @@
         <!--Test-->
         <scene sceneID="xvC-dA-ITa">
             <objects>
-                <viewController id="Ear-cg-hhc" customClass="TestViewController" customModule="StudySwipe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ear-cg-hhc" customClass="TestSetupViewController" customModule="StudySwipe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v8P-Ac-bgL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,8 +53,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Ear-cg-hhc" kind="relationship" relationship="viewControllers" id="Ajg-DC-dll"/>
-                        <segue destination="0ou-LE-T3I" kind="relationship" relationship="viewControllers" id="xtM-7e-frc"/>
+                        <segue destination="0ou-LE-T3I" kind="relationship" relationship="viewControllers" id="aPy-zO-aiZ"/>
+                        <segue destination="Ear-cg-hhc" kind="relationship" relationship="viewControllers" id="GFp-4j-b4Q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5VS-Mf-PfT" userLabel="First Responder" sceneMemberID="firstResponder"/>

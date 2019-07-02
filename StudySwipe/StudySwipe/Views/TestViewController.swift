@@ -14,6 +14,21 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     var cardContainer: SwipeableCardViewContainer!
     var infoBar: UIView!
     var closeButtonAction: (() -> Void)?
+    private var dismissButton: UIButton!
+    
+    var dismissButtonTitle = "Quit Test" {
+        didSet { updateButtonTitle() }
+    }
+    
+    var test: InterviewTest? {
+        didSet {
+            guard let questions = test?.questions else {
+                // Present an alert?
+                return
+            }
+            self.questions = questions
+        }
+    }
     
     var questions: [Question] = [] {
         didSet {
@@ -26,7 +41,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         super.viewDidLoad()
         
         setupViews()
-//        loadQuestions()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,20 +68,18 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         card.backgroundColor = .white
         
         let question = questions[index]
-        card.fillWithQuestion(question)
+        card.question = question
         return card
     }
     
-    func viewForEmptyCards() -> UIView? {
-        return nil
+    func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection) {
+//        print("The user swiped: \(direction.horizontalPosition.description())")
     }
     
-    func didSelect(card: SwipeableCard, atIndex index: Int) {
-        return
-    }
-    
-    
+    // MARK: Private Methods
     private func setupViews() {
+        view.backgroundColor = .white
+        
         infoBar = UIView()
         infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)
         
@@ -77,11 +89,13 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         cardContainer.alpha = 0
         cardContainer.dataSource = self
+        cardContainer.delegate = self
         
-        let dismissButton = UIButton(type: .system)
-        dismissButton.setImage(UIImage(named: "cancel")!, for: .normal)
+        dismissButton = UIButton(type: .system)
+        updateButtonTitle()
+        dismissButton.setTitleColor(.warningColor, for: .normal)
         dismissButton.addTarget(self, action: #selector(closeTest), for: .touchUpInside)
-        dismissButton.constrainToSuperView(infoBar, top: 0, trailing: 20, height: 40, width: 40)
+        dismissButton.constrainToSuperView(infoBar, top: 0, trailing: 20)
         
     }
 
@@ -96,6 +110,11 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
                 print("Error loading questions: \(error)")
             }
         }
+    }
+    
+    private func updateButtonTitle() {
+        guard isViewLoaded else { return }
+        dismissButton.setTitle(dismissButtonTitle, for: .normal)
     }
     
 }

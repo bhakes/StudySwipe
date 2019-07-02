@@ -28,6 +28,8 @@
 		34FBA49822CB10540047FAEA /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49722CB10540047FAEA /* UIViewController+Container.swift */; };
 		34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */; };
 		34FBA49C22CB17010047FAEA /* SelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49B22CB17010047FAEA /* SelectionTableViewCell.swift */; };
+		34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */; };
+		34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */; };
 		D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */; };
 		D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93122CA70BF001EED6C /* CoreDataStack.swift */; };
 		D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93322CA715E001EED6C /* HTTPMethod.swift */; };
@@ -94,6 +96,8 @@
 		34FBA49722CB10540047FAEA /* UIViewController+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
 		34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionTableViewController.swift; sourceTree = "<group>"; };
 		34FBA49B22CB17010047FAEA /* SelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTableViewCell.swift; sourceTree = "<group>"; };
+		34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
+		34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
 		D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
 		D194E93122CA70BF001EED6C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D194E93322CA715E001EED6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -200,12 +204,26 @@
 				34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */,
 				34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */,
 				34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */,
-				34FBA48D22CA89BC0047FAEA /* TestViewController.swift */,
+			);
+			path = "Card Swiping";
+			sourceTree = "<group>";
+		};
+		34FBA49D22CBADEC0047FAEA /* Review */ = {
+			isa = PBXGroup;
+			children = (
 				34FBA49522CB0D210047FAEA /* ReviewViewController.swift */,
 				34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */,
 				34FBA49B22CB17010047FAEA /* SelectionTableViewCell.swift */,
 			);
-			path = "Card Swiping";
+			path = Review;
+			sourceTree = "<group>";
+		};
+		34FBA4A022CBCF0C0047FAEA /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		D194E92622CA6D80001EED6C /* Model */ = {
@@ -232,6 +250,7 @@
 				D194E97322CA9F38001EED6C /* Networking Helpers */,
 				34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */,
 				34FBA49722CB10540047FAEA /* UIViewController+Container.swift */,
+				34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -308,6 +327,9 @@
 		D194E96022CA9515001EED6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				34FBA4A022CBCF0C0047FAEA /* Test */,
+				34FBA48D22CA89BC0047FAEA /* TestViewController.swift */,
+				34FBA49D22CBADEC0047FAEA /* Review */,
 				D194E96122CA951D001EED6C /* Onboarding */,
 			);
 			path = Views;
@@ -464,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */,
+				34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */,
 				D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */,
 				D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */,
 				D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */,
@@ -486,6 +509,7 @@
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
 				34FBA49622CB0D210047FAEA /* ReviewViewController.swift in Sources */,
+				34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
 				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
 				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
@@ -671,7 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S5U94G8XN2;
+				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -689,7 +713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S5U94G8XN2;
+				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
