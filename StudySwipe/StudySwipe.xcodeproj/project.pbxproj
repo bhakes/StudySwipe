@@ -41,7 +41,7 @@
 		D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95322CA86F0001EED6C /* TestAnalytics.swift */; };
 		D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */; };
 		D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95822CA8865001EED6C /* Question+Convenience.swift */; };
-		D194E95C22CA8BE0001EED6C /* TestObservation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95B22CA8BE0001EED6C /* TestObservation+Convenience.swift */; };
+		D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95B22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift */; };
 		D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */; };
 		D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96222CA9532001EED6C /* AlertOnboarding.swift */; };
 		D194E96522CA955A001EED6C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96422CA955A001EED6C /* Alert.swift */; };
@@ -55,6 +55,7 @@
 		D194E97C22CABB4C001EED6C /* CoreDataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97B22CABB4C001EED6C /* CoreDataImporter.swift */; };
 		D194E98022CAC86A001EED6C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97F22CAC86A001EED6C /* Reachability.swift */; };
 		D194E98422CADD94001EED6C /* CoreDataFetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E98322CADD94001EED6C /* CoreDataFetchController.swift */; };
+		D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E98622CB9476001EED6C /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +107,7 @@
 		D194E95322CA86F0001EED6C /* TestAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnalytics.swift; sourceTree = "<group>"; };
 		D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepresentation.swift; sourceTree = "<group>"; };
 		D194E95822CA8865001EED6C /* Question+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Question+Convenience.swift"; sourceTree = "<group>"; };
-		D194E95B22CA8BE0001EED6C /* TestObservation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestObservation+Convenience.swift"; sourceTree = "<group>"; };
+		D194E95B22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewTestObservation+Convenience.swift"; sourceTree = "<group>"; };
 		D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOnboardingDelegate.swift; sourceTree = "<group>"; };
 		D194E96222CA9532001EED6C /* AlertOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOnboarding.swift; sourceTree = "<group>"; };
 		D194E96422CA955A001EED6C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		D194E97B22CABB4C001EED6C /* CoreDataImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataImporter.swift; sourceTree = "<group>"; };
 		D194E97F22CAC86A001EED6C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		D194E98322CADD94001EED6C /* CoreDataFetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFetchController.swift; sourceTree = "<group>"; };
+		D194E98622CB9476001EED6C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		347FDC0F22CA5F3E004F6656 /* StudySwipe */ = {
 			isa = PBXGroup;
 			children = (
+				D194E98522CB9449001EED6C /* BenViewControllerWork */,
 				D194E95D22CA94D4001EED6C /* Protocols */,
 				D194E96022CA9515001EED6C /* Views */,
 				D194E92D22CA7023001EED6C /* Helpers */,
@@ -215,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				D194E97622CAA5F0001EED6C /* NetworkingStructs */,
-				D194E95A22CA8BC2001EED6C /* TestObservation */,
+				D194E95A22CA8BC2001EED6C /* InterviewTestObservation */,
 				D194E95522CA877E001EED6C /* TestAnalytics */,
 				D194E94822CA78D1001EED6C /* Question */,
 				D194E94522CA7852001EED6C /* InterviewTest */,
@@ -291,12 +294,12 @@
 			path = TestAnalytics;
 			sourceTree = "<group>";
 		};
-		D194E95A22CA8BC2001EED6C /* TestObservation */ = {
+		D194E95A22CA8BC2001EED6C /* InterviewTestObservation */ = {
 			isa = PBXGroup;
 			children = (
-				D194E95B22CA8BE0001EED6C /* TestObservation+Convenience.swift */,
+				D194E95B22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift */,
 			);
-			path = TestObservation;
+			path = InterviewTestObservation;
 			sourceTree = "<group>";
 		};
 		D194E95D22CA94D4001EED6C /* Protocols */ = {
@@ -357,6 +360,14 @@
 				D194E97722CAA623001EED6C /* NetworkingStructs.swift */,
 			);
 			path = NetworkingStructs;
+			sourceTree = "<group>";
+		};
+		D194E98522CB9449001EED6C /* BenViewControllerWork */ = {
+			isa = PBXGroup;
+			children = (
+				D194E98622CB9476001EED6C /* SettingsTableViewController.swift */,
+			);
+			path = BenViewControllerWork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,7 +479,7 @@
 				D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */,
 				D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */,
 				D194E95222CA85A3001EED6C /* QuestionAnalytics.swift in Sources */,
-				D194E95C22CA8BE0001EED6C /* TestObservation+Convenience.swift in Sources */,
+				D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */,
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
@@ -481,6 +492,7 @@
 				D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */,
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
+				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
 				34FBA49622CB0D210047FAEA /* ReviewViewController.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
 				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
@@ -667,7 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
+				DEVELOPMENT_TEAM = S5U94G8XN2;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -685,7 +697,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
+				DEVELOPMENT_TEAM = S5U94G8XN2;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

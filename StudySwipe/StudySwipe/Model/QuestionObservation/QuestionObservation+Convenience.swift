@@ -14,7 +14,7 @@ extension QuestionObservation {
     convenience init(response: Response,
                      question: Question,
                      questionID: UUID,
-                     timeInterval: Int,
+                     timeInterval: TimeInterval,
                      timestamp: Date = Date(),
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
@@ -24,7 +24,7 @@ extension QuestionObservation {
         self.question = question
         self.response = response.rawValue
         self.questionID = questionID
-        self.timeInterval = Int64(timeInterval)
+        self.timeInterval = Double(timeInterval)
         self.timestamp = timestamp
         
     }
