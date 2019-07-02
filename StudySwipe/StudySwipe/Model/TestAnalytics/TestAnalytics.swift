@@ -9,5 +9,5 @@
 import Foundation
 
 struct TestAnalytics {
-    var observations: [TestObservation]
+    var observations: [InterviewTestObservation]
 }
