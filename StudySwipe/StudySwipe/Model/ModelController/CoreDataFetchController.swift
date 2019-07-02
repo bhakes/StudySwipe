@@ -1,5 +1,5 @@
 //
-//  CardsFetchController.swift
+//  CoreDataFetchController.swift
 //  StudySwipe
 //
 //  Created by Benjamin Hakes on 7/1/19.
@@ -14,16 +14,41 @@ class CoreDataFetchController {
         self.context = context
     }
     
-    
     // MARK: InterviewTest Manipulation Methods
     
     func makeTest(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false) -> InterviewTest? {
+        
+        defer {
+            do {
+                try CoreDataStack.shared.save()
+            } catch {
+                print("Failed to save to core data with error: \(error)")
+            }
+        }
         
         guard let questions = getFilteredQuestions(difficulties: difficulties, categories: categories, tracks: tracks, count: count, random: random) else { return nil }
         
         let newTest = InterviewTest(questions: questions, title: title)
         
         return newTest
+    }
+    
+    func makeTestAndObservation(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false) -> (InterviewTest?, InterviewTestObservation?) {
+        
+        defer {
+            do {
+                try CoreDataStack.shared.save()
+            } catch {
+                print("Failed to save to core data with error: \(error)")
+            }
+        }
+        
+        guard let questions = getFilteredQuestions(difficulties: difficulties, categories: categories, tracks: tracks, count: count, random: random) else { return (nil, nil) }
+        
+        let newTest = InterviewTest(questions: questions, title: title)
+        guard let newTestObservation = makeTestObservation(with: newTest) else { return (newTest, nil)}
+        
+        return (newTest, newTestObservation)
     }
     
     // MARK: InterviewTestObservation Manipulation Methods
@@ -36,21 +61,27 @@ class CoreDataFetchController {
     private func addQuestionObservation(to testObservation: InterviewTestObservation, for questionObs: QuestionObservation){
         
         testObservation.questionObservations?.append(questionObs)
+        testObservation.finishTimestamp = Date()
     }
     
-    func finishTestAndFinalizeObservation(_ test: InterviewTest) -> InterviewTestObservation? {
+    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) {
         
-        guard let newTestObservation = makeTestObservation(with: test) else { return nil }
+        defer {
+            do {
+                try CoreDataStack.shared.save()
+            } catch {
+                print("Failed to save to core data with error: \(error)")
+            }
+        }
         
-        newTestObservation.finishTimestamp = Date()
-        
-        return newTestObservation
+        testObs.isCompleted = true
+        testObs.finishTimestamp = Date()
         
     }
     
     // MARK: QuestionObservation Manipulation Methods
     
-    private func makeQuestionObservation(with response: Response, for question: Question, in duration: Int? = nil) -> QuestionObservation? {
+    private func makeQuestionObservation(with response: Response, for question: Question, in duration: TimeInterval? = nil) -> QuestionObservation? {
         
         guard let questionID = question.questionID else { return nil }
         let newQuestionObservation = QuestionObservation(response: response, question: question, questionID: questionID, timeInterval: duration ?? 0)
@@ -58,6 +89,14 @@ class CoreDataFetchController {
     }
     
     func recordQuestionObservation(with response: Response, for question: Question, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
+        
+        defer {
+            do {
+                try CoreDataStack.shared.save()
+            } catch {
+                print("Failed to save to core data with error: \(error)")
+            }
+        }
         
         guard let newQuestionObs = makeQuestionObservation(with: response, for: question) else { return false }
         addQuestionObservation(to: testObs, for: newQuestionObs)
@@ -90,7 +129,7 @@ class CoreDataFetchController {
     
     /**
      
- 
+     
      */
     func getFilteredQuestions(difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false) -> [Question]? {
         
@@ -105,7 +144,7 @@ class CoreDataFetchController {
             
             switch difficulties {
             case [.All]:
-                    break
+                break
             default:
                 switch difficulties.count {
                 case 0:
@@ -118,8 +157,8 @@ class CoreDataFetchController {
                     break
                 }
             }
-
-
+            
+            
             // add the categories predicates
             var categoryPredicate: NSPredicate?
             var categoryFormat: String = ""
@@ -140,7 +179,7 @@ class CoreDataFetchController {
                     categoryPredicate = NSPredicate(format: categoryFormat, argumentArray: categories.map { $0.description })
                 }
             }
-
+            
             // add the track predicates
             var trackPredicate: NSPredicate?
             var trackFormat: String = ""
@@ -161,7 +200,7 @@ class CoreDataFetchController {
                     trackPredicate = NSPredicate(format: trackFormat, argumentArray: tracks.map { $0.description })
                 }
             }
-
+            
             // Create a subPredicate array and append each of the component predicates if available
             var subPredicates: [NSPredicate] = []
             if let difficultyPredicate = difficultyPredicate {
@@ -173,7 +212,7 @@ class CoreDataFetchController {
             if let trackPredicate = trackPredicate {
                 subPredicates.append(trackPredicate)
             }
-
+            
             // if the subPredicates array is greater than zero, create and AND compound predicate and add that compound predicate to the fetchRequest.predicate property
             if subPredicates.count > 0 {
                 let andPredicate = NSCompoundPredicate(type: .and, subpredicates: subPredicates)
@@ -404,7 +443,6 @@ class CoreDataFetchController {
         }
         return result
     }
-    
     
     
     let context: NSManagedObjectContext
