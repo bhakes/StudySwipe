@@ -12,6 +12,7 @@ import CoreData
 extension QuestionObservation {
     
     convenience init(response: Response,
+                     question: Question,
                      questionID: UUID,
                      timeInterval: Int,
                      timestamp: Date = Date(),
@@ -20,6 +21,7 @@ extension QuestionObservation {
         
         self.init(context:context)
         
+        self.question = question
         self.response = response.rawValue
         self.questionID = questionID
         self.timeInterval = Int64(timeInterval)
