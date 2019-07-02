@@ -1,5 +1,5 @@
 //
-//  TestObservation+Convenience.swift
+//  InterviewTestObservation+Convenience.swift
 //  StudySwipe
 //
 //  Created by Benjamin Hakes on 7/1/19.
@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension TestObservation {
+extension InterviewTestObservation {
     
     convenience init(finishTimestamp: Date,
                      startTimestamp: Date,
@@ -21,6 +21,17 @@ extension TestObservation {
         self.finishTimestamp = finishTimestamp
         self.startTimestamp = startTimestamp
         self.testID = testID
+    }
+    
+    
+    convenience init(interviewTest: InterviewTest,
+                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+        
+        self.init(context:context)
+    
+        self.testID = interviewTest.testID
+        self.title = interviewTest.title
+        self.startTimestamp = interviewTest.timestamp
     }
     
 }
