@@ -21,6 +21,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     var closeButtonAction: (() -> Void)?
     private var dismissButton: UIButton!
     private var startTime = Date()
+    private var needsWorkImageView: UIImageView!
+    private var gotItImageView: UIImageView!
+    private var questionCount = 0
     
     var dismissButtonTitle = "Quit Test" {
         didSet { updateButtonTitle() }
@@ -90,6 +93,8 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     // MARK: - Swipeable Card View Delegate
     func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection) {
+        questionCount += 1
+        if questionCount > 2 { hideArrows() }
         guard let observation = testObservation else { return }
         guard let question = card.question else { return }
         
@@ -119,6 +124,18 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         infoBar = UIView()
         infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)
         
+        needsWorkImageView = UIImageView(image: UIImage(named: "needs-work"))
+        needsWorkImageView.tintColor = .fadedTextColor
+        needsWorkImageView.contentMode = .scaleAspectFit
+        
+        needsWorkImageView.constrainToSuperView(view, bottom: 4, leading: 4, height: 60, width: 200)
+        
+        gotItImageView = UIImageView(image: UIImage(named: "got-it"))
+        gotItImageView.tintColor = .fadedTextColor
+        gotItImageView.contentMode = .scaleAspectFit
+        
+        gotItImageView.constrainToSuperView(view, bottom: 4, trailing: 4, height: 60, width: 200)
+        
         cardContainer = SwipeableCardViewContainer()
         cardContainer.constrainToSuperView(view, bottom: 20 + SwipeableCardViewContainer.verticalInset*2, leading: 20, trailing: 20)
         cardContainer.constrainToSiblingView(infoBar, below: 24)
@@ -132,6 +149,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         dismissButton.setTitleColor(.warningColor, for: .normal)
         dismissButton.addTarget(self, action: #selector(closeTest), for: .touchUpInside)
         dismissButton.constrainToSuperView(infoBar, top: 0, trailing: 20)
+        
+
+        
         
         startTime = Date()
     }
@@ -159,6 +179,15 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
         }
         dismiss(animated: true)
+    }
+    
+    private func hideArrows() {
+        if gotItImageView.alpha != 0 {
+            UIView.animate(withDuration: 0.5) {
+                self.needsWorkImageView.alpha = 0
+                self.gotItImageView.alpha = 0
+            }
+        }
     }
     
 }
