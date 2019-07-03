@@ -35,6 +35,7 @@ class PerformanceTableViewController: UITableViewController {
     private func setupViews() {
         tableView.register(PerformanceTableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,7 +54,18 @@ class PerformanceTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(48)
+        return CGFloat(50)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view = UIView()
+        let label = UILabel()
+        label.text = "Progress towards mastery"
+        label.textColor = .gray
+        label.constrainToFill(view, top: 0, bottom: 0, leading: 20, trailing: 20)
+        return view
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
