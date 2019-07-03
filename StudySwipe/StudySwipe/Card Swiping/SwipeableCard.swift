@@ -47,7 +47,7 @@ class SwipeableCard: SwipeableView {
         let questionLabel = UILabel()
         questionLabel.text = question.question ?? sampleText
         questionLabel.numberOfLines = 0
-        questionLabel.font = UIFont.systemFont(ofSize: 24)
+        questionLabel.font = UIFont.systemFont(ofSize: 36)
         questionLabel.lineBreakMode = .byWordWrapping
         questionLabel.textAlignment = .center
         questionLabel.textColor = .white
@@ -64,7 +64,7 @@ class SwipeableCard: SwipeableView {
         
         answerTextView = UITextView()
         answerTextView.text = question.answer ?? ""
-        answerTextView.font = UIFont.systemFont(ofSize: 16)
+        answerTextView.font = UIFont.systemFont(ofSize: 20)
         answerTextView.textAlignment = .center
         answerTextView.isEditable = false
         answerTextView.alpha = 0.0
