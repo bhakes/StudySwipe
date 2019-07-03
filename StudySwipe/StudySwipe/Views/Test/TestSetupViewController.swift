@@ -12,6 +12,9 @@ class TestSetupViewController: UIViewController {
     
     let coreDataFetchController = CoreDataFetchController()
     
+    var quoteLabel: UILabel!
+    var authorLabel: UILabel!
+    
     var questionNumberLabel: UILabel!
     var questionSlider: UISlider!
     
@@ -19,6 +22,12 @@ class TestSetupViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateQuote()
     }
     
     // MARK: - UI Actions
@@ -34,11 +43,35 @@ class TestSetupViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupViews() {
+        // Setup Title Label
         let titleLabel = UILabel()
         titleLabel.text = "Take a Test"
         titleLabel.font = UIFont.boldSystemFont(ofSize: 48)
         
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
+        
+        // Setup Quote Stack
+        let quoteStack = UIStackView()
+        quoteStack.axis = .vertical
+        quoteStack.spacing = 8
+        
+        quoteStack.constrainToSuperView(view, leading: 32, trailing: 32)
+        quoteStack.constrainToSiblingView(titleLabel, below: 48)
+        
+        quoteLabel = UILabel()
+        quoteLabel.textColor = .fadedTextColor
+        quoteLabel.textAlignment = .center
+        quoteLabel.numberOfLines = 0
+        quoteLabel.font = UIFont.italicSystemFont(ofSize: 18)
+        
+        quoteStack.addArrangedSubview(quoteLabel)
+        
+        authorLabel = UILabel()
+        authorLabel.textColor = .fadedTextColor
+        authorLabel.textAlignment = .right
+        authorLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+        
+        quoteStack.addArrangedSubview(authorLabel)
         
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -46,6 +79,9 @@ class TestSetupViewController: UIViewController {
         
         stackView.constrainToSuperView(view, centerX: 0, centerY: 0, width: 240)
         
+        // Setup Difficulty Segmented Control
+        
+        // Setup Question Count Slider
         questionNumberLabel = UILabel()
         questionNumberLabel.font = UIFont.preferredFont(forTextStyle: .title2)
         questionNumberLabel.textAlignment = .center
@@ -69,6 +105,7 @@ class TestSetupViewController: UIViewController {
         
         questionSlider.constrainToSuperView(sliderContainer, top: 8, bottom: 8, leading: 20, trailing: 20)
         
+        // Setup Start Test Button
         let startTestButton = UIButton(type: .system)
         startTestButton.setTitle("Start Test", for: .normal)
         startTestButton.setTitleColor(.white, for: .normal)
@@ -77,6 +114,12 @@ class TestSetupViewController: UIViewController {
         startTestButton.layer.cornerRadius = 8
         
         startTestButton.constrainToSuperView(view, bottom: 48, centerX: 0, height: 40, width: 120)
+    }
+    
+    private func updateQuote() {
+        let (author, quote) = Quotes.getNewQuote()
+        quoteLabel.text = "\"\(quote)\""
+        authorLabel.text = "– \(author)"
     }
     
     private func startTest(numberOfQuestions number: Int) {
