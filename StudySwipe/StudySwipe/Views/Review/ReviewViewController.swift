@@ -10,7 +10,7 @@ import UIKit
 
 class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDelegate {
     
-    static let animationDistance: CGFloat = 800
+    static let animationDistance: CGFloat = 900
     
     var collectionViewContainer: UIView!
     var collectionViewContainerConstraint: NSLayoutConstraint!

@@ -33,7 +33,18 @@ public enum Difficulty: String, Codable, Any, CaseIterable, ColorIconTitleProvid
         }
     }
     func icon() -> UIImage {
-        return UIImage(named: "literature")!
+        let name: String
+        switch self {
+        case .Easy:
+            name = "easy"
+        case .Medium:
+            name = "medium"
+        case .Hard:
+            name = "hard"
+        case .All:
+            name = "all-difficulty"
+        }
+        return UIImage(named: name) ?? UIImage(named: "cancel")!
     }
     
     func title() -> String {

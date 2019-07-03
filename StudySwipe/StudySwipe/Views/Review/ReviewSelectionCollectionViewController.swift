@@ -11,10 +11,6 @@ import UIKit
 private let reuseIdentifier = "Cell"
 private let headerIdentifier = "HeaderCell"
 
-protocol ReviewSelectionCollectionViewDelegate: class {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?)
-}
-
 class ReviewSelectionCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     static let sectionNumber = 2
