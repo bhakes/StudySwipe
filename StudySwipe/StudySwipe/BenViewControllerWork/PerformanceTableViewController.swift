@@ -28,6 +28,9 @@ class PerformanceTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        allQuestions = coreDataFetchController.getAllQuestion() ?? []
+        correctlyAnsweredQuestions = coreDataFetchController.getQuestionAnsweredCorrectly() ?? []
+        questionObservations = coreDataFetchController.getAllQuestionObservations() ?? []
         tableView.reloadData()
     }
     
