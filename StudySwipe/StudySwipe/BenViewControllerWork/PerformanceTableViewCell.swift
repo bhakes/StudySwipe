@@ -70,7 +70,6 @@ class PerformanceTableViewCell: UITableViewCell {
         var sv = UIStackView(arrangedSubviews: [subStackView, progressView])
         sv.alignment = .fill
         sv.axis = .vertical
-        sv.spacing = 4
         sv.constrainToFill(self, safeArea: true, top: 4, bottom: 4, leading: 20, trailing: 20)
         return sv
     }()
@@ -107,7 +106,8 @@ class PerformanceTableViewCell: UITableViewCell {
                 if totalCategoryCount != 0 {
                     progressPercentage = Double(correctCategoryCount) / Double(totalCategoryCount)
                 }
-                masteredLabel.text = "\(correctCategoryCount) of \(totalCategoryCount)"
+                let heading = category == .All ? " Concepts": ""
+                masteredLabel.text = "\(correctCategoryCount) of \(totalCategoryCount)\(heading)"
                 
             }
             
