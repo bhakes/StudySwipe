@@ -12,7 +12,7 @@ extension UIColor {
     
     static let accentColor: UIColor = .categoryDefault2
     static let warningColor: UIColor = .categoryDefault1
-    static let testBackground = UIColor(hex: "#33333B")
+    static let testBackground = UIColor(hex: "#33333B")!
     
     // MARK: - Category Colors
     static let swift = UIColor(hex: "#ED523F")!
