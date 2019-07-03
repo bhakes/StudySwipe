@@ -44,28 +44,39 @@ class TestSetupViewController: UIViewController {
         stackView.axis = .vertical
         stackView.spacing = 8
         
-        stackView.constrainToSuperView(view, centerX: 0, centerY: 0, width: 200)
+        stackView.constrainToSuperView(view, centerX: 0, centerY: 0, width: 240)
         
         questionNumberLabel = UILabel()
         questionNumberLabel.font = UIFont.preferredFont(forTextStyle: .title2)
         questionNumberLabel.textAlignment = .center
         stackView.addArrangedSubview(questionNumberLabel)
         
+        let sliderContainer = UIView()
+        sliderContainer.backgroundColor = .accentColor
+        sliderContainer.layer.cornerRadius = 8
+        stackView.addArrangedSubview(sliderContainer)
+        
         questionSlider = UISlider()
         questionSlider.minimumValue = 5
         questionSlider.maximumValue = 30
         questionSlider.setValue(10, animated: false)
+        questionSlider.tintColor = .white
+        questionSlider.maximumTrackTintColor = .white
+        
         questionSlider.addTarget(self, action: #selector(updateQuestionNumberLabel), for: .primaryActionTriggered)
         
         updateQuestionNumberLabel()
         
-        stackView.addArrangedSubview(questionSlider)
+        questionSlider.constrainToSuperView(sliderContainer, top: 8, bottom: 8, leading: 20, trailing: 20)
         
         let startTestButton = UIButton(type: .system)
         startTestButton.setTitle("Start Test", for: .normal)
+        startTestButton.setTitleColor(.white, for: .normal)
+        startTestButton.backgroundColor = .accentColor
         startTestButton.addTarget(self, action: #selector(tenQuestionTest), for: .touchUpInside)
+        startTestButton.layer.cornerRadius = 8
         
-        startTestButton.constrainToSuperView(view, bottom: 48, leading: 20, trailing: 20)
+        startTestButton.constrainToSuperView(view, bottom: 48, centerX: 0, height: 40, width: 120)
     }
     
     private func startTest(numberOfQuestions number: Int) {
