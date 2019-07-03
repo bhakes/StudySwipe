@@ -23,6 +23,12 @@ class PerformanceTableViewCell: UITableViewCell {
     
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0))
+    }
+    
     private func setupViews() {
         addSubview(stackView)
         titleLabel.textColor = .gray
@@ -42,7 +48,7 @@ class PerformanceTableViewCell: UITableViewCell {
     let progressView: UIProgressView = {
         let progressView = UIProgressView(progressViewStyle: .default)
         progressView.progressTintColor = UIColor.blue
-        progressView.trackTintColor = UIColor.lightGray
+        progressView.trackTintColor = UIColor.init(white: 0.92, alpha: 1)
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
         progressView.layer.cornerRadius = 5
         progressView.clipsToBounds = true
@@ -64,8 +70,8 @@ class PerformanceTableViewCell: UITableViewCell {
         var sv = UIStackView(arrangedSubviews: [subStackView, progressView])
         sv.alignment = .fill
         sv.axis = .vertical
-        sv.spacing = 8
-        sv.constrainToFill(self, safeArea: true, top: 4, bottom: 4, leading: 36, trailing: 36)
+        sv.spacing = 4
+        sv.constrainToFill(self, safeArea: true, top: 4, bottom: 4, leading: 20, trailing: 20)
         return sv
     }()
     
@@ -81,6 +87,7 @@ class PerformanceTableViewCell: UITableViewCell {
     var category: Category? {
         didSet {
             titleLabel.text = self.category?.rawValue
+            progressView.progressTintColor = self.category?.color() ?? .blue
         }
     }
     var categoryQuestions: [Question]? {
@@ -100,7 +107,7 @@ class PerformanceTableViewCell: UITableViewCell {
                 if totalCategoryCount != 0 {
                     progressPercentage = Double(correctCategoryCount) / Double(totalCategoryCount)
                 }
-                masteredLabel.text = "\(correctCategoryCount)/ \(totalCategoryCount)"
+                masteredLabel.text = "\(correctCategoryCount) of \(totalCategoryCount)"
                 
             }
             
