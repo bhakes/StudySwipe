@@ -58,8 +58,14 @@ public enum Category: String, Codable, CaseIterable, ColorIconTitleProviding {
             name = "objective-c"
         case .Debugging:
             name = "debugging"
-        default:
-            name = "literature"
+        case .UIKit:
+            name = "uikit"
+        case .Foundation:
+            name = "foundation"
+        case .All:
+            name = "all-category"
+//        default:
+//            name = "literature"
         }
         return UIImage(named: name) ?? UIImage(named: "cancel")!
     }
