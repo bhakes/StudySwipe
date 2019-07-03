@@ -36,7 +36,7 @@ class TestSetupViewController: UIViewController {
     private func setupViews() {
         let titleLabel = UILabel()
         titleLabel.text = "Take a Test"
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 48)
         
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
         
