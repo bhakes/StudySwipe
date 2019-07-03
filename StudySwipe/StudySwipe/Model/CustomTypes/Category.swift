@@ -38,18 +38,30 @@ public enum Category: String, Codable, CaseIterable, ColorIconTitleProviding {
         }
     }
     func icon() -> UIImage {
+        let name: String
         switch self {
         case .Concurrency:
-            return UIImage(named: "concurrency")!
+            name = "concurrency"
         case .CoreData:
-            return UIImage(named: "core-data")!
+            name = "core-data"
         case .Notifications:
-            return UIImage(named: "notifications")!
+            name = "notifications"
         case .Swift:
-            return UIImage(named: "swift")!
+            name = "swift"
+        case .DesignPatterns:
+            name = "design-patterns"
+        case .MemoryManagement:
+            name = "memory-management"
+        case .Oop:
+            name = "oop"
+        case .Objectivec:
+            name = "objective-c"
+        case .Debugging:
+            name = "debugging"
         default:
-            return UIImage(named: "literature")!
+            name = "literature"
         }
+        return UIImage(named: name) ?? UIImage(named: "cancel")!
     }
     
     func title() -> String {

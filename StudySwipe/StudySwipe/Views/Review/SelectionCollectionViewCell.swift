@@ -61,10 +61,9 @@ class SelectionCollectionViewCell: UICollectionViewCell {
         
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 12
+        stackView.spacing = 8
         stackView.constrainToSuperView(colorView, top: 12, bottom: 12, leading: 12, trailing: 12)
         
-//        titleLabel.textAlignment = .center
         titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         titleLabel.numberOfLines = 2
         titleLabel.textColor = .white
