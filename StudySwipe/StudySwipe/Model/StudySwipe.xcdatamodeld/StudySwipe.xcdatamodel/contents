@@ -23,19 +23,19 @@
         <attribute name="question" attributeType="String" syncable="YES"/>
         <attribute name="questionID" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="track" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QuestionObservation" inverseName="relationship1" inverseEntity="QuestionObservation" syncable="YES"/>
+        <relationship name="q2qob" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QuestionObservation" inverseName="qob2q" inverseEntity="QuestionObservation" syncable="YES"/>
     </entity>
     <entity name="QuestionObservation" representedClassName="QuestionObservation" syncable="YES" codeGenerationType="class">
         <attribute name="questionID" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="response" optional="YES" attributeType="String" customClassName="Response" syncable="YES"/>
         <attribute name="timeInterval" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="relationship1" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="relationship" inverseEntity="Question" syncable="YES"/>
+        <relationship name="qob2q" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="q2qob" inverseEntity="Question" syncable="YES"/>
     </entity>
     <elements>
         <element name="InterviewTest" positionX="60.98828125" positionY="18.30859375" width="128" height="120"/>
         <element name="InterviewTestObservation" positionX="-81" positionY="27" width="128" height="150"/>
-        <element name="Question" positionX="-90" positionY="18" width="128" height="30"/>
+        <element name="Question" positionX="-90" positionY="18" width="128" height="150"/>
         <element name="QuestionObservation" positionX="-311.140625" positionY="50" width="128" height="120"/>
     </elements>
 </model>

@@ -400,6 +400,8 @@ class CoreDataFetchController {
     }
     
     
+    
+    
     // MARK: InterviewTestObservation Fetch Methods
     
     func getAllInterviewTestObservations() -> [InterviewTestObservation]? {
@@ -440,6 +442,67 @@ class CoreDataFetchController {
         }
         return result
     }
+    
+    
+    //
+    func getQuestionAnsweredCorrectly(categories: [Category] = [.All]) -> [Question]? {
+        
+        
+        var result: [Question]? = nil
+        
+        guard let questionObservations = getAllQuestionObservations() else { return [] }
+        
+        var filteredQuestionObs: [QuestionObservation] = Array(Set(questionObservations)) // create an QuestionObservation array named 'result' that will store the entries you find in the Persistent Store
+        filteredQuestionObs = filteredQuestionObs.filter({ $0.response == Response.correct.rawValue })
+        let uuidArray = filteredQuestionObs.map { $0.questionID?.uuidString }
+        
+        self.context.performAndWait {
+            
+            let fetchRequest: NSFetchRequest<Question> = Question.fetchRequest() // create an QuestionObservation NSFetchRequest
+            
+            // add the categories predicates
+            var categoryPredicate: NSPredicate?
+            var categoryFormat: String = ""
+            switch categories {
+            case [.All]:
+                break
+            default:
+                switch categories.count {
+                case 0:
+                    break
+                case 1:
+                    categoryPredicate = NSPredicate(format: "category == %@", argumentArray: categories.map { $0.description })
+                default:
+                    for _ in 0..<(categories.count - 1) {
+                        categoryFormat += "(category == %@) OR "
+                    }
+                    categoryFormat += "(category == %@)"
+                    categoryPredicate = NSPredicate(format: categoryFormat, argumentArray: categories.map { $0.description })
+                }
+            }
+            
+            let predicate = NSPredicate(format: "%K IN %@", "questionID", uuidArray)
+            
+            if let categoryPredicate = categoryPredicate {
+                fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, predicate])
+            } else {
+                fetchRequest.predicate = predicate
+            }
+            
+            
+            do { // in the current (background) context, perform the fetch request from the persistent store
+                result = try self.context.fetch(fetchRequest) // assign the (error-throwing) fetch request, done on the background context, to result
+            } catch {
+                NSLog("Error fetching list of Questions: \(error)") // if the fetch request throws an error, NSLog it
+            }
+            
+        }
+        return result
+    }
+    
+    
+    
+    
     
     
     let context: NSManagedObjectContext
