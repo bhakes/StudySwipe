@@ -62,6 +62,8 @@
 		D1BA3E7622CBE191001B1BD7 /* Performance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1BA3E7522CBE191001B1BD7 /* Performance.storyboard */; };
 		D1BA3E7822CBE627001B1BD7 /* PerformanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */; };
 		D1BA3E7C22CBE949001B1BD7 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */; };
+		D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */; };
+		D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,8 @@
 		D1BA3E7522CBE191001B1BD7 /* Performance.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Performance.storyboard; sourceTree = "<group>"; };
 		D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewController.swift; sourceTree = "<group>"; };
 		D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
+		D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewCell.swift; sourceTree = "<group>"; };
+		D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -371,6 +375,7 @@
 				D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */,
 				D194E97B22CABB4C001EED6C /* CoreDataImporter.swift */,
 				D194E98322CADD94001EED6C /* CoreDataFetchController.swift */,
+				D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */,
 			);
 			name = ModelController;
 			path = Model/ModelController;
@@ -400,6 +405,7 @@
 				D194E98622CB9476001EED6C /* SettingsTableViewController.swift */,
 				D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */,
 				D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */,
+				D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */,
 			);
 			path = BenViewControllerWork;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */,
 				D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */,
 				D194E95222CA85A3001EED6C /* QuestionAnalytics.swift in Sources */,
+				D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */,
 				D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */,
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
@@ -540,6 +547,7 @@
 				D194E98422CADD94001EED6C /* CoreDataFetchController.swift in Sources */,
 				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
+				D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
 				D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */,
 				34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */,
