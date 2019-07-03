@@ -8,7 +8,8 @@
 
 import UIKit
 
-public enum Category: String, Codable, CaseIterable {
+public enum Category: String, Codable, CaseIterable, ColorIconTitleProviding {
+    
     
     public var description: String {
         return "\(rawValue)"
@@ -27,6 +28,7 @@ public enum Category: String, Codable, CaseIterable {
     case Objectivec = "Objective-C"
     case All = "All"
     
+    // MARK: Color Icon Title Providing
     func color() -> UIColor {
         switch self {
         case .Swift:
@@ -35,6 +37,19 @@ public enum Category: String, Codable, CaseIterable {
             return Category.getDefaultColor(for: self)
         }
     }
+    func icon() -> UIImage {
+        switch self {
+        case .Swift:
+            return UIImage(named: "swift")!
+        default:
+            return UIImage(named: "literature")!
+        }
+    }
+    
+    func title() -> String {
+        return self.description
+    }
+    
     
     // Some helpers for cycling through the default colors.
     static let defaultColors: [UIColor] = [.categoryDefault1,

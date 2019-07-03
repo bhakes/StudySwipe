@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
+class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDelegate {
     
     static let animationDistance: CGFloat = 800
     
-    var tableViewContainer: UIView!
-    var tableViewContainerConstraint: NSLayoutConstraint!
-    var tableViewController: ReviewSelectionTableViewController!
+    var collectionViewContainer: UIView!
+    var collectionViewContainerConstraint: NSLayoutConstraint!
+    var collectionViewController: ReviewSelectionCollectionViewController!
     var testViewContainer: UIView!
     var testViewContainerConstraint: NSLayoutConstraint!
     var testViewController: TestViewController!
@@ -27,10 +27,10 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
         setupViews()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?) {
         let difficulty = difficulty ?? .All
         let category = category ?? .All
-        tableView.deselectRow(at: indexPath, animated: true)
+        collectionView.deselectItem(at: indexPath, animated: true)
         let test = coreDataFetchController.makeTest(with: "New Review", difficulties: [difficulty], categories: [category])
         
         testViewController = TestViewController()
@@ -44,6 +44,7 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
     }
     
     private func setupViews() {
+        // Set up header view and title label
         let headerHeight: CGFloat = 80
         let headerView = UIView()
         headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
@@ -54,17 +55,19 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
         
         label.constrainToSuperView(headerView, safeArea: false, leading: 20, trailing: 20, centerY: 0)
         
-        tableViewContainer = UIView()
-        tableViewContainer.backgroundColor = .gray
-        tableViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
-        tableViewContainerConstraint = tableViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        tableViewContainerConstraint.isActive = true
-        headerView.constrainToSiblingView(tableViewContainer, above: 0)
+        // Set up collection view and container
+        collectionViewContainer = UIView()
+        collectionViewContainer.backgroundColor = .gray
+        collectionViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
+        collectionViewContainerConstraint = collectionViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        collectionViewContainerConstraint.isActive = true
+        headerView.constrainToSiblingView(collectionViewContainer, above: 0)
+
+        collectionViewController = ReviewSelectionCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        collectionViewController.delegate = self
+        add(collectionViewController, toView: collectionViewContainer)
         
-        tableViewController = ReviewSelectionTableViewController()
-        tableViewController.delegate = self
-        add(tableViewController, toView: tableViewContainer)
-        
+        // Set up test view container
         testViewContainer = UIView()
         testViewContainer.constrainToSuperView(view, leading: 0, trailing: 0, equalHeight: 0)
         testViewContainerConstraint = testViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ReviewViewController.animationDistance)
@@ -74,7 +77,7 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
     private func animateTableViewOut() {
         view.layoutIfNeeded()
         UIView.animate(withDuration: 0.5, animations: {
-            self.tableViewContainerConstraint.constant -= ReviewViewController.animationDistance
+            self.collectionViewContainerConstraint.constant -= ReviewViewController.animationDistance
             self.testViewContainerConstraint.constant -= ReviewViewController.animationDistance
             self.view.layoutIfNeeded()
         })
@@ -83,7 +86,7 @@ class ReviewViewController: UIViewController, ReviewSelectionTableViewDelegate {
     private func animateTableViewIn() {
         view.layoutIfNeeded()
         UIView.animate(withDuration: 0.5, animations: {
-            self.tableViewContainerConstraint.constant += ReviewViewController.animationDistance
+            self.collectionViewContainerConstraint.constant += ReviewViewController.animationDistance
             self.testViewContainerConstraint.constant += ReviewViewController.animationDistance
             self.view.layoutIfNeeded()
         }) { _ in
