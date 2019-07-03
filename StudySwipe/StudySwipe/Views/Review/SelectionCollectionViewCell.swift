@@ -8,20 +8,6 @@
 
 import UIKit
 
-protocol ColorProviding {
-    func color() -> UIColor
-}
-
-protocol IconProviding {
-    func icon() -> UIImage
-}
-
-protocol TitleProviding {
-    func title() -> String
-}
-
-typealias ColorIconTitleProviding = ColorProviding & IconProviding & TitleProviding
-
 class SelectionCollectionViewCell: UICollectionViewCell {
     
     var item: ColorIconTitleProviding? {

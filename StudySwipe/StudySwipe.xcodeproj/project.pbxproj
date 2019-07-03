@@ -16,6 +16,8 @@
 		34DA7B8B22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */; };
 		34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */; };
 		34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */; };
+		34DA7B9122CD4A8200AD2A63 /* ColorIconTitleProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */; };
+		34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */; };
 		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
 		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
 		34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */; };
@@ -93,6 +95,8 @@
 		34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewController.swift; sourceTree = "<group>"; };
 		34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
+		34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIconTitleProviding.swift; sourceTree = "<group>"; };
+		34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		34FBA47A22CA7C230047FAEA /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
 		34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
 		34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
@@ -244,6 +248,7 @@
 				34FBA49522CB0D210047FAEA /* ReviewViewController.swift */,
 				34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */,
 				34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */,
+				34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */,
 				34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */,
 				34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */,
 			);
@@ -351,6 +356,7 @@
 			children = (
 				D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */,
 				D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */,
+				34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
+				34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */,
 				34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */,
 				D1BA3E7822CBE627001B1BD7 /* PerformanceTableViewController.swift in Sources */,
 				D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */,
@@ -571,6 +578,7 @@
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */,
 				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,
+				34DA7B9122CD4A8200AD2A63 /* ColorIconTitleProviding.swift in Sources */,
 				34FBA49422CAC0B20047FAEA /* UIView+Constraints.swift in Sources */,
 				34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */,
 				D1BA3E7C22CBE949001B1BD7 /* PerformanceViewController.swift in Sources */,
