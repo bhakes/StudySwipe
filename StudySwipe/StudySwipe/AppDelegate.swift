@@ -21,17 +21,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let qfc = CoreDataFetchController()
         
         if Reachability.isConnectedToNetwork(){
-            print("Internet Connection Available!")
+//            print("Internet Connection Available!")
             qnc.getQuestions {_,_ in }
-            if let easyQuestions = qfc.getFilteredQuestions(difficulties: [.All]) {
-                for q in easyQuestions {
-                    print(q.question ?? "")
+            if let newQuestions = qfc.makeTest(with: "TempTest", count: 10)?.questions {
+                for _ in newQuestions {
+//                    print(q.question ?? "")
                 }
             }
+            
+//            if let correctlyAnsweredQuestions = qfc.getQuestionAnsweredCorrectly() {
+//                for c in correctlyAnsweredQuestions {
+//                    print(c.answer)
+//                }
+//            }
             
         }else{
             print("Internet Connection not Available!")
         }
+        
+        // TODO: Move this somewhere else
+        UITabBar.appearance().tintColor = .accentColor
         
         return true
 

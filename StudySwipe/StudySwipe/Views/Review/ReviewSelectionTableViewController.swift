@@ -22,9 +22,7 @@ class ReviewSelectionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SelectionCell")
-        
-        tableView.separatorStyle = .none
+        setupViews()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,6 +58,7 @@ class ReviewSelectionTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             title = Category.allCases[indexPath.row].rawValue
+            cell.backgroundColor = Category.allCases[indexPath.row].color()
         case 1:
             title = Difficulty.allCases[indexPath.row].rawValue
         default:
@@ -86,8 +85,10 @@ class ReviewSelectionTableViewController: UITableViewController {
         delegate?.tableView(tableView, didSelectRowAt: indexPath, difficulty: difficulty, category: category)
     }
     
-    func animateTableViewOut() {
+    private func setupViews() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SelectionCell")
         
+        tableView.separatorStyle = .none
     }
     
 }

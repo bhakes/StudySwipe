@@ -10,6 +10,11 @@ import UIKit
 
 class SwipeableCard: SwipeableView {
     
+    var question: Question? {
+        didSet {
+            updateViews()
+        }
+    }
     var answerTextView: UITextView!
     var instructionLabel: UILabel!
     private var isAnswerHidden = true
@@ -21,14 +26,17 @@ class SwipeableCard: SwipeableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        layer.cornerRadius = 8
+        layer.cornerRadius = 24
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.3
         layer.shadowRadius = 20
         layer.shadowOffset = CGSize(width: 4, height: 10)
     }
     
-    func fillWithQuestion(_ question: Question) {
+    func updateViews() {
+        guard let question = question, let categoryString = question.category else { return }
+        backgroundColor = Category(rawValue: categoryString)?.color()
+        
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 20
@@ -42,12 +50,13 @@ class SwipeableCard: SwipeableView {
         questionLabel.font = UIFont.systemFont(ofSize: 24)
         questionLabel.lineBreakMode = .byWordWrapping
         questionLabel.textAlignment = .center
+        questionLabel.textColor = .white
         
         stackView.addArrangedSubview(questionLabel)
         
         
         let divider = UIView()
-        divider.backgroundColor = .black
+        divider.backgroundColor = .white
         divider.layer.cornerRadius = 3
         divider.constrain(height: 5)
         
@@ -59,6 +68,8 @@ class SwipeableCard: SwipeableView {
         answerTextView.textAlignment = .center
         answerTextView.isEditable = false
         answerTextView.alpha = 0.0
+        answerTextView.textColor = .white
+        answerTextView.backgroundColor = .clear
         
         stackView.addArrangedSubview(answerTextView)
         answerTextView.constrainToSiblingView(questionLabel, equalHeight: 0)
@@ -66,6 +77,7 @@ class SwipeableCard: SwipeableView {
         instructionLabel = UILabel()
         instructionLabel.textAlignment = .center
         instructionLabel.text = "Tap to show answer"
+        instructionLabel.textColor = .white
         
         instructionLabel.constrainToSuperView(self, height: 24, width: 200)
         instructionLabel.constrainToSiblingView(answerTextView, centerX: 0, centerY: 0)

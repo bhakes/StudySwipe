@@ -65,7 +65,7 @@ class CoreDataFetchController {
     }
     
     func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) {
-        
+        print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {
                 try CoreDataStack.shared.save()
@@ -81,15 +81,15 @@ class CoreDataFetchController {
     
     // MARK: QuestionObservation Manipulation Methods
     
-    private func makeQuestionObservation(with response: Response, for question: Question, in duration: TimeInterval? = nil) -> QuestionObservation? {
+    private func makeQuestionObservation(with response: Response, for questionID: UUID, in duration: TimeInterval? = nil) -> QuestionObservation? {
         
-        guard let questionID = question.questionID else { return nil }
-        let newQuestionObservation = QuestionObservation(response: response, question: question, questionID: questionID, timeInterval: duration ?? 0)
+        let newQuestionObservation = QuestionObservation(response: response, questionID: questionID, timeInterval: duration ?? 0)
         return newQuestionObservation
     }
     
-    func recordQuestionObservation(with response: Response, for question: Question, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
+    func recordQuestionObservation(with response: Response, for questionID: UUID, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
         
+        print("Recording observation with repsonse: \(response), for questionID: \(questionID.uuidString), with duration: \(duration ?? -1)")
         defer {
             do {
                 try CoreDataStack.shared.save()
@@ -98,7 +98,7 @@ class CoreDataFetchController {
             }
         }
         
-        guard let newQuestionObs = makeQuestionObservation(with: response, for: question) else { return false }
+        guard let newQuestionObs = makeQuestionObservation(with: response, for: questionID ) else { return false }
         addQuestionObservation(to: testObs, for: newQuestionObs)
         
         return true
@@ -225,19 +225,16 @@ class CoreDataFetchController {
                 NSLog("Error fetching list of Question: \(error)") // if the fetch request throws an error, NSLog it
             }
             
-            // if there are no results, early return
-            guard var result = result else { return }
-            
             // randomize and truncate the results accordingly
             if let count = count {
                 if random {
-                    result = result.count > count ? Array(result.shuffled().prefix(count)) : result
+                    result = result?.count ?? count + 1 > count ? Array((result?.shuffled().prefix(count))!) : result
                 } else {
-                    result = result.count > count ? Array(result.prefix(count)) : result
+                    result = result?.count ?? count + 1 > count ? Array((result?.prefix(count))!) : result
                 }
             } else {
                 if random {
-                    result = Array(result.shuffled())
+                    result = Array((result?.shuffled())!)
                 }
             }
             
@@ -403,6 +400,8 @@ class CoreDataFetchController {
     }
     
     
+    
+    
     // MARK: InterviewTestObservation Fetch Methods
     
     func getAllInterviewTestObservations() -> [InterviewTestObservation]? {
@@ -443,6 +442,67 @@ class CoreDataFetchController {
         }
         return result
     }
+    
+    
+    //
+    func getQuestionAnsweredCorrectly(categories: [Category] = [.All]) -> [Question]? {
+        
+        
+        var result: [Question]? = nil
+        
+        guard let questionObservations = getAllQuestionObservations() else { return [] }
+        
+        var filteredQuestionObs: [QuestionObservation] = Array(Set(questionObservations)) // create an QuestionObservation array named 'result' that will store the entries you find in the Persistent Store
+        filteredQuestionObs = filteredQuestionObs.filter({ $0.response == Response.correct.rawValue })
+        let uuidArray = filteredQuestionObs.map { $0.questionID?.uuidString }
+        
+        self.context.performAndWait {
+            
+            let fetchRequest: NSFetchRequest<Question> = Question.fetchRequest() // create an QuestionObservation NSFetchRequest
+            
+            // add the categories predicates
+            var categoryPredicate: NSPredicate?
+            var categoryFormat: String = ""
+            switch categories {
+            case [.All]:
+                break
+            default:
+                switch categories.count {
+                case 0:
+                    break
+                case 1:
+                    categoryPredicate = NSPredicate(format: "category == %@", argumentArray: categories.map { $0.description })
+                default:
+                    for _ in 0..<(categories.count - 1) {
+                        categoryFormat += "(category == %@) OR "
+                    }
+                    categoryFormat += "(category == %@)"
+                    categoryPredicate = NSPredicate(format: categoryFormat, argumentArray: categories.map { $0.description })
+                }
+            }
+            
+            let predicate = NSPredicate(format: "%K IN %@", "questionID", uuidArray)
+            
+            if let categoryPredicate = categoryPredicate {
+                fetchRequest.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, predicate])
+            } else {
+                fetchRequest.predicate = predicate
+            }
+            
+            
+            do { // in the current (background) context, perform the fetch request from the persistent store
+                result = try self.context.fetch(fetchRequest) // assign the (error-throwing) fetch request, done on the background context, to result
+            } catch {
+                NSLog("Error fetching list of Questions: \(error)") // if the fetch request throws an error, NSLog it
+            }
+            
+        }
+        return result
+    }
+    
+    
+    
+    
     
     
     let context: NSManagedObjectContext

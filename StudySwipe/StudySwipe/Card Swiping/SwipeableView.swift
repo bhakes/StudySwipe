@@ -28,7 +28,7 @@ class SwipeableView: UIView {
     
     static var animationDirectionY: CGFloat = 1.0
     
-    static var swipePercentageMargin: CGFloat = 0.9
+    static var swipePercentageMargin: CGFloat = 0.7
     
     // MARK: Card Finalize Swipe Animation
     
@@ -36,11 +36,11 @@ class SwipeableView: UIView {
     
     // MARK: Card Reset Animation
     
-    static var cardViewResetAnimationSpringBounciness: CGFloat = 10.0
+    static var cardViewResetAnimationDamping: CGFloat = 18.0
     
-    static var cardViewResetAnimationSpringSpeed: CGFloat = 12.0
+    static var cardViewResetAnimationInitialVelocity: CGFloat = 10.0
     
-    static var cardViewResetAnimationDuration: TimeInterval = 0.2
+    static var cardViewResetAnimationStiffness: CGFloat = 160
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -152,7 +152,7 @@ class SwipeableView: UIView {
             layer.transform = endTransform
             
             CATransaction.setCompletionBlock {
-                self.delegate?.didEndSwipe(onView: self)
+                self.delegate?.didEndSwipe(onView: self, in: dragDirection)
             }
             layer.add(translationAnimation, forKey: "transform")
             CATransaction.commit()
@@ -175,8 +175,9 @@ class SwipeableView: UIView {
         let resetPositionAnimation = CASpringAnimation(keyPath: "transform")
         resetPositionAnimation.fromValue = layer.transform
         resetPositionAnimation.toValue = CATransform3DIdentity
-        resetPositionAnimation.initialVelocity = SwipeableView.cardViewResetAnimationSpringSpeed
-        resetPositionAnimation.damping = 10
+        resetPositionAnimation.initialVelocity = SwipeableView.cardViewResetAnimationInitialVelocity
+        resetPositionAnimation.damping = SwipeableView.cardViewResetAnimationDamping
+        resetPositionAnimation.stiffness = SwipeableView.cardViewResetAnimationStiffness
         resetPositionAnimation.duration = resetPositionAnimation.settlingDuration
         layer.transform = CATransform3DIdentity
         layer.add(resetPositionAnimation, forKey: "transform")
