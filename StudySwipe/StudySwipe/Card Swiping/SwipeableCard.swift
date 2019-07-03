@@ -26,7 +26,7 @@ class SwipeableCard: SwipeableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        layer.cornerRadius = 8
+        layer.cornerRadius = 12
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.3
         layer.shadowRadius = 20

@@ -56,7 +56,7 @@ class SelectionCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         colorView.constrainToFill(contentView)
-        colorView.layer.cornerRadius = 6
+        colorView.layer.cornerRadius = 8
         colorView.layer.masksToBounds = true
         
         let stackView = UIStackView()
