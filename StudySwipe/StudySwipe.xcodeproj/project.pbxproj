@@ -66,6 +66,7 @@
 		D1BA3E7C22CBE949001B1BD7 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */; };
 		D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */; };
 		D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */; };
+		D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 		D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewCell.swift; sourceTree = "<group>"; };
 		D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsController.swift; sourceTree = "<group>"; };
+		D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 			children = (
 				D194E97322CA9F38001EED6C /* Networking Helpers */,
 				34DA7B8722CBFACC00AD2A63 /* UI Helpers */,
+				D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
+				D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */,
 				34FBA49622CB0D210047FAEA /* ReviewViewController.swift in Sources */,
 				34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */,
 				34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */,
