@@ -70,6 +70,7 @@ class TestSetupViewController: UIViewController {
         quoteStack.spacing = 12
         
         mainStack.addArrangedSubview(quoteStack)
+        quoteStack.constrain(width: 300)
         
         quoteLabel = UILabel()
         quoteLabel.textColor = .fadedTextColor
