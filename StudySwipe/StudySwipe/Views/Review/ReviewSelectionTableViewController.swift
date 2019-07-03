@@ -58,6 +58,7 @@ class ReviewSelectionTableViewController: UITableViewController {
         switch indexPath.section {
         case 0:
             title = Category.allCases[indexPath.row].rawValue
+            cell.backgroundColor = Category.allCases[indexPath.row].color()
         case 1:
             title = Difficulty.allCases[indexPath.row].rawValue
         default:

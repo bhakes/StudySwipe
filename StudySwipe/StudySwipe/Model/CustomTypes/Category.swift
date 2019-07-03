@@ -6,7 +6,7 @@
 //  Copyright © 2019 Dillon McElhinney. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public enum Category: String, Codable, CaseIterable {
     
@@ -26,4 +26,27 @@ public enum Category: String, Codable, CaseIterable {
     case Oop = "OOP"
     case Objectivec = "Objective-C"
     case All = "All"
+    
+    func color() -> UIColor {
+        switch self {
+        case .Swift:
+            return .swift
+        default:
+            return Category.getDefaultColor(for: self)
+        }
+    }
+    
+    // Some helpers for cycling through the default colors.
+    static let defaultColors: [UIColor] = [.categoryDefault1,
+                                        .categoryDefault2,
+                                        .categoryDefault3,
+                                        .categoryDefault4,
+                                        .categoryDefault5]
+    
+    private static func getDefaultColor(for category: Category) -> UIColor {
+        let index = Category.allCases.firstIndex(of: category)!
+        let color = defaultColors[index % defaultColors.count]
+        
+        return color
+    }
 }

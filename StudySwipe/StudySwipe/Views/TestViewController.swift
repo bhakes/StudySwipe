@@ -11,6 +11,7 @@ import CoreData
 
 class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource {
     
+    // MARK: - Properties
     var cardContainer: SwipeableCardViewContainer!
     var infoBar: UIView!
     var closeButtonAction: (() -> Void)?
@@ -41,6 +42,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         }
     }
     
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +56,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         }
     }
     
+    // MARK: - UI Actions
     @objc func closeTest(isCompleted: Bool = false) {
         if let action = closeButtonAction {
             action()
