@@ -10,8 +10,9 @@ import UIKit
 
 extension UIColor {
     
-    static let accentColor = UIColor.blue
-    static let warningColor = UIColor(hex: "#C22010")!
+    static let accentColor: UIColor = .categoryDefault2
+    static let warningColor: UIColor = .categoryDefault1
+    static let testBackground = UIColor(hex: "#33333B")!
     
     // MARK: - Category Colors
     static let swift = UIColor(hex: "#ED523F")!

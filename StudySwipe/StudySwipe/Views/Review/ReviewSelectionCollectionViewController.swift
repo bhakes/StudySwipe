@@ -9,6 +9,7 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
+private let headerIdentifier = "HeaderCell"
 
 protocol ReviewSelectionCollectionViewDelegate: class {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?)
@@ -26,6 +27,9 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         // Register cell classes
         collectionView.register(SelectionCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
+        collectionView.register(SelectionCollectionReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
+        
+        
         collectionView.backgroundColor = .white
     }
 
@@ -34,7 +38,23 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return ReviewSelectionCollectionViewController.sectionNumber
     }
-
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier, for: indexPath) as? SelectionCollectionReusableHeaderView else {
+            fatalError("Check for typos")
+        }
+        
+        switch indexPath.section {
+        case 0:
+            headerView.titleLabel.text = "Categories"
+        case 1:
+            headerView.titleLabel.text = "Difficulty"
+        default:
+            fatalError("There should only be \(ReviewSelectionTableViewController.sectionNumber) sections")
+        }
+        
+        return headerView
+    }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
@@ -100,5 +120,9 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         let itemWidth = (collectionView.frame.width / 2) - 25
         let itemHeight = itemWidth
         return CGSize(width: itemWidth, height: itemHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: 200, height: 60)
     }
 }

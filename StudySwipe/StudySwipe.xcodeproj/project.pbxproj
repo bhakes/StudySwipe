@@ -15,6 +15,7 @@
 		34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */; };
 		34DA7B8B22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */; };
 		34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */; };
+		34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */; };
 		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
 		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
 		34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */; };
@@ -91,6 +92,7 @@
 		34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+StandardAlerts.swift"; sourceTree = "<group>"; };
 		34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewController.swift; sourceTree = "<group>"; };
 		34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionViewCell.swift; sourceTree = "<group>"; };
+		34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		34FBA47A22CA7C230047FAEA /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
 		34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
 		34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */,
 				34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */,
 				34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */,
+				34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */,
 			);
 			path = Review;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
 				D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */,
 				34FBA49622CB0D210047FAEA /* ReviewViewController.swift in Sources */,
+				34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */,
 				34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
 				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,

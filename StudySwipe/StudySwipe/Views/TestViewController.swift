@@ -11,6 +11,10 @@ import CoreData
 
 class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - Properties
     var cardContainer: SwipeableCardViewContainer!
     var infoBar: UIView!
@@ -105,7 +109,12 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     // MARK: Private Methods
     private func setupViews() {
-        view.backgroundColor = .white
+        
+        if testObservation != nil {
+            view.backgroundColor = .testBackground
+        } else {
+            view.backgroundColor = .white
+        }
         
         infoBar = UIView()
         infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)

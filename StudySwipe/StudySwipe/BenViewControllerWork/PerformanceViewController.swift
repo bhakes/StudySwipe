@@ -32,9 +32,9 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         
         let label = UILabel()
         label.text = "Performance"
-        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        label.font = UIFont.boldSystemFont(ofSize: 48)
         
-        label.constrainToSuperView(headerView, safeArea: false, leading: 20, trailing: 20, centerY: 0)
+        label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
         
         tableViewContainer = UIView()
         tableViewContainer.backgroundColor = .gray
