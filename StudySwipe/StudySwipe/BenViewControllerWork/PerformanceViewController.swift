@@ -8,23 +8,45 @@
 
 import UIKit
 
-class PerformanceViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+class PerformanceViewController: UIViewController, PerformanceTableViewDelegate {
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    static let animationDistance: CGFloat = 800
+    
+    var tableViewContainer: UIView!
+    var tableViewContainerConstraint: NSLayoutConstraint!
+    var tableViewController: PerformanceTableViewController!
+    
+    let coreDataFetchController = CoreDataFetchController()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupViews()
     }
-    */
+    
+    private func setupViews() {
+        let headerHeight: CGFloat = 80
+        let headerView = UIView()
+        headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
+        
+        let label = UILabel()
+        label.text = "Performance"
+        label.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        
+        label.constrainToSuperView(headerView, safeArea: false, leading: 20, trailing: 20, centerY: 0)
+        
+        tableViewContainer = UIView()
+        tableViewContainer.backgroundColor = .gray
+        tableViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
+        tableViewContainerConstraint = tableViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        tableViewContainerConstraint.isActive = true
+        headerView.constrainToSiblingView(tableViewContainer, above: 0)
+        
+        tableViewController = PerformanceTableViewController()
+        tableViewController.delegate = self
+        add(tableViewController, toView: tableViewContainer)
+        
+    }
 
 }

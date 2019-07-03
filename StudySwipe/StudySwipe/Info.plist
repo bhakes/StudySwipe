@@ -42,6 +42,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>CFBundleDisplayName</key>
-	<string>com.dillonmcelhinney.StudySwipe</string>
+	<string>StudySwipe for iOS</string>
 </dict>
 </plist>

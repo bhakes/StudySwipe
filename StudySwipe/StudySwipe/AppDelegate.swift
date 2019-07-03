@@ -29,11 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
             
-            if let newQObservations = qfc.getAllQuestionObservations() {
-                for ob in newQObservations {
-                    print(ob.questionID?.uuidString)
-                }
-            }
+//            if let correctlyAnsweredQuestions = qfc.getQuestionAnsweredCorrectly() {
+//                for c in correctlyAnsweredQuestions {
+//                    print(c.answer)
+//                }
+//            }
             
         }else{
             print("Internet Connection not Available!")

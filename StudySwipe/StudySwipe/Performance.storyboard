@@ -19,25 +19,32 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
+                    <connections>
+                        <segue destination="Bh0-yy-iyJ" kind="relationship" relationship="viewControllers" id="3CW-XN-LrP"/>
+                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLp-sA-bCb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1483" y="-117"/>
         </scene>
-        <!--View Controller-->
+        <!--Performance-->
         <scene sceneID="xrq-Va-ArS">
             <objects>
-                <viewController id="Bh0-yy-iyJ" sceneMemberID="viewController">
+                <viewController id="Bh0-yy-iyJ" customClass="PerformanceViewController" customModule="StudySwipe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sy4-Vt-0Pa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UJA-41-M16"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Performance" image="bar_chart" id="lYs-eb-gYC"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wCg-gi-3bz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-271" y="-356"/>
+            <point key="canvasLocation" x="-325" y="-257"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bar_chart" width="30" height="30"/>
+    </resources>
 </document>

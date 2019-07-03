@@ -26,6 +26,22 @@
             </objects>
             <point key="canvasLocation" x="1360" y="-391"/>
         </scene>
+        <!--Performance-->
+        <scene sceneID="Sv3-UT-uXt">
+            <objects>
+                <viewController id="FSv-o9-7Na" customClass="PerformanceViewController" customModule="StudySwipe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gdm-G2-xk1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="h1w-wH-qoI"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Performance" image="bar_chart" id="jlu-LJ-WbU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JRF-aU-bcb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1328" y="445"/>
+        </scene>
         <!--StudySwipe-->
         <scene sceneID="hAh-P6-TsW">
             <objects>
@@ -55,6 +71,7 @@
                     <connections>
                         <segue destination="0ou-LE-T3I" kind="relationship" relationship="viewControllers" id="aPy-zO-aiZ"/>
                         <segue destination="Ear-cg-hhc" kind="relationship" relationship="viewControllers" id="GFp-4j-b4Q"/>
+                        <segue destination="FSv-o9-7Na" kind="relationship" relationship="viewControllers" id="7qj-QZ-W1P"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5VS-Mf-PfT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -63,6 +80,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bar_chart" width="30" height="30"/>
         <image name="literature" width="30" height="30"/>
         <image name="play" width="30" height="30"/>
     </resources>
