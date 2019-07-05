@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC1022CA5F3E004F6656 /* AppDelegate.swift */; };
-		347FDC1622CA5F3E004F6656 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1422CA5F3E004F6656 /* Main.storyboard */; };
 		347FDC1822CA5F40004F6656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1722CA5F40004F6656 /* Assets.xcassets */; };
 		347FDC1B22CA5F40004F6656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */; };
 		347FDC2622CA5F40004F6656 /* StudySwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */; };
@@ -84,7 +83,6 @@
 /* Begin PBXFileReference section */
 		347FDC0D22CA5F3E004F6656 /* StudySwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudySwipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347FDC1022CA5F3E004F6656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		347FDC1522CA5F3E004F6656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		347FDC1722CA5F40004F6656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		347FDC1A22CA5F40004F6656 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		347FDC1C22CA5F40004F6656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 				D194E92622CA6D80001EED6C /* Model */,
 				347FDC1022CA5F3E004F6656 /* AppDelegate.swift */,
 				34FBA48A22CA7D600047FAEA /* Card Swiping */,
-				347FDC1422CA5F3E004F6656 /* Main.storyboard */,
 				D1BA3E7522CBE191001B1BD7 /* Performance.storyboard */,
 				347FDC1722CA5F40004F6656 /* Assets.xcassets */,
 				347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */,
@@ -508,7 +505,6 @@
 			files = (
 				347FDC1B22CA5F40004F6656 /* LaunchScreen.storyboard in Resources */,
 				347FDC1822CA5F40004F6656 /* Assets.xcassets in Resources */,
-				347FDC1622CA5F3E004F6656 /* Main.storyboard in Resources */,
 				D1BA3E7622CBE191001B1BD7 /* Performance.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,14 +603,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		347FDC1422CA5F3E004F6656 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				347FDC1522CA5F3E004F6656 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
