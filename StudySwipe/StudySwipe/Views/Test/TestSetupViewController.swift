@@ -45,6 +45,9 @@ class TestSetupViewController: UIViewController {
     
     // MARK: - Private Methods
     private func setupViews() {
+        // Set up Tab Bar
+        
+        
         // Set up Title Label
         let titleLabel = UILabel()
         titleLabel.text = "Take a Test"
