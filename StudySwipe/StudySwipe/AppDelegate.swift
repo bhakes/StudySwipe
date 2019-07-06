@@ -42,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // TODO: Move this somewhere else
         UITabBar.appearance().tintColor = .accentColor
         
+        setupTabBarController()
+        
+        
         return true
 
     }
@@ -69,5 +72,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+    func setupTabBarController() {
+        
+        // Make the View Controllers
+        let reviewVC = ReviewViewController()
+        let testSetupVC = TestSetupViewController()
+        let performanceVC = PerformanceViewController()
+        
+        let tabBarController = UITabBarController()
+        tabBarController.view.backgroundColor = .white
+        tabBarController.tabBar.tintColor = .accentColor
+        
+        // Add them to the tab bar controller
+        tabBarController.viewControllers = [reviewVC, testSetupVC, performanceVC]
+        
+        // Set up the tab bar items
+        reviewVC.tabBarItem.title = "Review"
+        reviewVC.tabBarItem.image = UIImage(named: "literature")
+        
+        testSetupVC.tabBarItem.title = "Test"
+        testSetupVC.tabBarItem.image = UIImage(named: "play")
+        
+        performanceVC.tabBarItem.title = "Performance"
+        performanceVC.tabBarItem.image = UIImage(named: "bar_chart")
+        
+        // Set up the window
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+    }
 }
 
