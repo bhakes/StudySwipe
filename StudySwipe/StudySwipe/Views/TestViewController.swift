@@ -16,21 +16,28 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     // MARK: - Properties
-    var cardContainer: SwipeableCardViewContainer!
-    var infoBar: UIView!
-    var closeButtonAction: (() -> Void)?
     private var dismissButton: UIButton!
+    private var titleLabel: UILabel!
     private var startTime = Date()
     private var needsWorkImageView: UIImageView!
     private var gotItImageView: UIImageView!
     private var questionCount = 0
     
+    var cardContainer: SwipeableCardViewContainer!
+    var infoBar: UIView!
+    var closeButtonAction: (() -> Void)?
+    
     var dismissButtonTitle = "Quit Test" {
-        didSet { updateButtonTitle() }
+        didSet { updateViews() }
+    }
+    
+    var testTitle: String? {
+        didSet { updateViews() }
     }
     
     var coreDataFetchController: CoreDataFetchController?
     var testObservation: InterviewTestObservation?
+    
     var test: InterviewTest? {
         didSet {
             guard let questions = test?.questions else {
@@ -115,15 +122,36 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     // MARK: Private Methods
     private func setupViews() {
         
+        // Set background color based on whether or not this is a test
         if testObservation != nil {
             view.backgroundColor = .testBackground
         } else {
             view.backgroundColor = .white
         }
         
+        // Set up info bar, a place to put the title, buttons, timer, etc
         infoBar = UIView()
         infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)
         
+        let infoStackView = UIStackView()
+        infoStackView.axis = .horizontal
+        infoStackView.spacing = 8
+        infoStackView.constrainToSuperView(infoBar, top: 0, bottom: 0, leading: 20, trailing: 20)
+        
+        titleLabel = UILabel()
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        titleLabel.textColor = .fadedTextColor
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.5
+        infoStackView.addArrangedSubview(titleLabel)
+        
+        dismissButton = UIButton(type: .system)
+        dismissButton.setTitleColor(.warningColor, for: .normal)
+        dismissButton.addTarget(self, action: #selector(closeTest), for: .touchUpInside)
+        dismissButton.setContentHuggingPriority(.required, for: .horizontal)
+        infoStackView.addArrangedSubview(dismissButton)
+        
+        // Set up arrow images
         needsWorkImageView = UIImageView(image: UIImage(named: "needs-work"))
         needsWorkImageView.tintColor = .fadedTextColor
         needsWorkImageView.contentMode = .scaleAspectFit
@@ -136,24 +164,18 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         gotItImageView.constrainToSuperView(view, bottom: 4, trailing: 4, height: 60, width: 200)
         
+        // Set up card container
+        // This is done last so that it sits over the other elements
         cardContainer = SwipeableCardViewContainer()
-        cardContainer.constrainToSuperView(view, bottom: 20 + SwipeableCardViewContainer.verticalInset*2, leading: 20, trailing: 20)
-        cardContainer.constrainToSiblingView(infoBar, below: 24)
-        
+        cardContainer.constrainToSuperView(view, bottom: 60, leading: 20, trailing: 20)
+        cardContainer.constrainToSiblingView(infoBar, below: 0)
         cardContainer.alpha = 0
         cardContainer.dataSource = self
         cardContainer.delegate = self
         
-        dismissButton = UIButton(type: .system)
-        updateButtonTitle()
-        dismissButton.setTitleColor(.warningColor, for: .normal)
-        dismissButton.addTarget(self, action: #selector(closeTest), for: .touchUpInside)
-        dismissButton.constrainToSuperView(infoBar, top: 0, trailing: 20)
-        
-
-        
-        
+        // Record start time
         startTime = Date()
+        updateViews()
     }
 
     private func loadQuestions() {
@@ -169,9 +191,10 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         }
     }
     
-    private func updateButtonTitle() {
+    private func updateViews() {
         guard isViewLoaded else { return }
         dismissButton.setTitle(dismissButtonTitle, for: .normal)
+        titleLabel.text = testTitle
     }
     
     private func dismissTest(action: UIAlertAction! = nil) {

@@ -67,7 +67,7 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
     
     private func addCardView(cardView: SwipeableCard, atIndex index: Int) {
         cardView.delegate = self
-        cardView.frame = bounds
+        cardView.frame = calculateFrame()
         cardView.transform = transform(forCardView: cardView, atIndex: index)
         cardViews.append(cardView)
         insertSubview(cardView, at: 0)
@@ -80,7 +80,15 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
         }
         cardViews = []
     }
-
+    
+    private func calculateFrame() -> CGRect {
+        let x = bounds.origin.x
+        let y = bounds.origin.y + 2 * SwipeableCardViewContainer.verticalInset
+        let width = bounds.size.width
+        let height = bounds.size.height - 2 * SwipeableCardViewContainer.verticalInset
+        return CGRect(x: x, y: y, width: width, height: height)
+    }
+    
     private func transform(forCardView cardView: SwipeableCard, atIndex index: Int) -> CGAffineTransform {
         let verticalInset = CGFloat(index) * SwipeableCardViewContainer.verticalInset * 2
         let scale = 1 - (SwipeableCardViewContainer.distanceScale * CGFloat(index))

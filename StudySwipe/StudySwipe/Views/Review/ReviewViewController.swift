@@ -28,14 +28,17 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?) {
+        let testTitle = category?.title() ?? difficulty?.title()
         let difficulty = difficulty ?? .All
         let category = category ?? .All
         collectionView.deselectItem(at: indexPath, animated: true)
         let test = coreDataFetchController.makeTest(with: "New Review", difficulties: [difficulty], categories: [category])
         
+        
         testViewController = TestViewController()
         testViewController.test = test
         testViewController.dismissButtonTitle = "Dismiss"
+        testViewController.testTitle = testTitle
         testViewController.closeButtonAction = { [weak self] in
             self?.animateTableViewIn()
         }

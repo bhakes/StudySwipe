@@ -13,11 +13,11 @@ public enum Difficulty: String, Codable, Any, CaseIterable, ColorIconTitleProvid
     public var description: String {
         return "\(rawValue)"
     }
-    
+    case All = "All"
     case Easy = "Easy"
     case Medium = "Medium"
     case Hard = "Hard"
-    case All = "All"
+    
     
     // MARK: Color Icon Title Providing
     func color() -> UIColor {
