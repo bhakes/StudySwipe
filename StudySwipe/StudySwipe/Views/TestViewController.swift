@@ -151,15 +151,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         dismissButton.setContentHuggingPriority(.required, for: .horizontal)
         infoStackView.addArrangedSubview(dismissButton)
         
-        // Set up card container
-        cardContainer = SwipeableCardViewContainer()
-        cardContainer.constrainToSuperView(view, bottom: 60, leading: 20, trailing: 20)
-        cardContainer.constrainToSiblingView(infoBar, below: 24)
-        
-        cardContainer.alpha = 0
-        cardContainer.dataSource = self
-        cardContainer.delegate = self
-        
         // Set up arrow images
         needsWorkImageView = UIImageView(image: UIImage(named: "needs-work"))
         needsWorkImageView.tintColor = .fadedTextColor
@@ -172,6 +163,15 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         gotItImageView.contentMode = .scaleAspectFit
         
         gotItImageView.constrainToSuperView(view, bottom: 4, trailing: 4, height: 60, width: 200)
+        
+        // Set up card container
+        // This is done last so that it sits over the other elements
+        cardContainer = SwipeableCardViewContainer()
+        cardContainer.constrainToSuperView(view, bottom: 60, leading: 20, trailing: 20)
+        cardContainer.constrainToSiblingView(infoBar, below: 0)
+        cardContainer.alpha = 0
+        cardContainer.dataSource = self
+        cardContainer.delegate = self
         
         // Record start time
         startTime = Date()
