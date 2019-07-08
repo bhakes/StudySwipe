@@ -103,10 +103,19 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
 extension SwipeableCardViewContainer {
     
     func didTap(view: SwipeableView) {
-        if let cardView = view as? SwipeableCard,
+        let flipDuration = 0.5
+        if let cardView = view as? QuestionCard,
             let index = cardViews.firstIndex(of: cardView) {
             delegate?.cardViewContainer(self, didSelectCard: cardView, atIndex: index)
-            cardView.handleTap()
+            
+            UIView.animate(withDuration: flipDuration/2, delay: 0, options: [.curveEaseIn], animations: {
+                cardView.transform = cardView.transform.scaledBy(x: 0.001, y: 0.96)
+            }) { _ in
+                cardView.handleTap()
+                UIView.animate(withDuration: flipDuration/2, delay: 0, options: [.curveEaseOut], animations: {
+                    cardView.transform = self.transform(forCardView: cardView, atIndex: 0)
+                })
+            }
             
         }
     }

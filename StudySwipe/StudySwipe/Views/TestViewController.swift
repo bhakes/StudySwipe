@@ -90,7 +90,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     func card(forItemAtIndex index: Int) -> SwipeableCard {
-        let card = SwipeableCard()
+        let card = QuestionCard()
         card.backgroundColor = .white
         
         let question = questions[index]
@@ -100,6 +100,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     // MARK: - Swipeable Card View Delegate
     func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection) {
+        guard let card = card as? QuestionCard else {
+            fatalError("The card is a different type that expected")
+        }
         questionCount += 1
         if questionCount > 2 { hideArrows() }
         guard let observation = testObservation else { return }
