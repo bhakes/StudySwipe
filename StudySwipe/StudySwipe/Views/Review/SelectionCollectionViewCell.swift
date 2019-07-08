@@ -16,8 +16,8 @@ class SelectionCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    lazy var colorView: UIView = {
-        let colorView = UIView()
+    lazy var colorView: GradientView = {
+        let colorView = GradientView()
         return colorView
     }()
     
@@ -65,7 +65,8 @@ class SelectionCollectionViewCell: UICollectionViewCell {
     private func updateViews() {
         guard let item = item else { return }
         
-        colorView.backgroundColor = item.color()
+//        colorView.backgroundColor = item.color()
+        colorView.setupGradient(startColor: item.color().lightened(), endColor: item.color().darkened(), startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1))
         
         titleLabel.text = item.title()
         

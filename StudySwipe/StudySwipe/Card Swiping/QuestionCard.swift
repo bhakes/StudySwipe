@@ -23,11 +23,12 @@ class QuestionCard: SwipeableCard {
     private var isAnswerHidden = true
     
     func updateViews() {
-        guard let question = question, let categoryString = question.category else { return }
-        backgroundColor = Category(rawValue: categoryString)?.color()
+        guard let question = question,
+            let categoryString = question.category,
+            let cardColor = Category(rawValue: categoryString)?.color() else { return }
         
+        backgroundColor = cardColor
         let borderView = UIView()
-//        borderView.alpha = 0.8
         borderView.layer.borderColor = UIColor.white.cgColor
         borderView.layer.borderWidth = 2
         borderView.layer.cornerRadius = layer.cornerRadius - 4
