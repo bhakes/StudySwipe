@@ -43,7 +43,7 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         tableViewContainerConstraint.isActive = true
         headerView.constrainToSiblingView(tableViewContainer, above: 0)
         
-        tableViewController = PerformanceTableViewController()
+        tableViewController = PerformanceTableViewController(style: .grouped)
         tableViewController.delegate = self
         add(tableViewController, toView: tableViewContainer)
         

@@ -26,6 +26,7 @@ public enum Category: String, Codable, CaseIterable, ColorIconTitleProviding {
     case Foundation = "Foundation"
     case Oop = "OOP"
     case Objectivec = "Objective-C"
+    case Other = "Other"
     case All = "All"
     
     // MARK: Color Icon Title Providing
@@ -64,6 +65,8 @@ public enum Category: String, Codable, CaseIterable, ColorIconTitleProviding {
             name = "foundation"
         case .All:
             name = "all-category"
+        case .Other:
+            name = "literature"
 //        default:
 //            name = "literature"
         }

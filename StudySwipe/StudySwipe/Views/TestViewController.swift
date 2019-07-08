@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource {
+class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource, StopwatchDelegate {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -22,6 +22,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     private var needsWorkImageView: UIImageView!
     private var gotItImageView: UIImageView!
     private var questionCount = 0
+    private var stopwatch: Stopwatch!
     
     var cardContainer: SwipeableCardViewContainer!
     var infoBar: UIView!
@@ -119,15 +120,13 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         closeTest(isCompleted: true)
     }
     
+    // MARK: - Stopwatch Delegate
+    func stopwatch(_ stopwatch: Stopwatch, didChangeTimeTo: TimeInterval) {
+        testTitle = stopwatch.formattedTime
+    }
+    
     // MARK: Private Methods
     private func setupViews() {
-        
-        // Set background color based on whether or not this is a test
-        if testObservation != nil {
-            view.backgroundColor = .testBackground
-        } else {
-            view.backgroundColor = .white
-        }
         
         // Set up info bar, a place to put the title, buttons, timer, etc
         infoBar = UIView()
@@ -175,6 +174,17 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         // Record start time
         startTime = Date()
+        
+        // Set things that depend on whether or not this is a test
+        if testObservation != nil {
+            view.backgroundColor = .testBackground
+            stopwatch = Stopwatch()
+            stopwatch.delegate = self
+            stopwatch.start()
+        } else {
+            view.backgroundColor = .white
+        }
+        
         updateViews()
     }
 

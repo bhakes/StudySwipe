@@ -44,6 +44,25 @@ struct GSXCategory: Codable {
     }
 }
 
+
+extension GSXCategory {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        var category: Category = Category(rawValue: "Other")!
+        // Try to decode into a non- "Other" category
+        do {
+            category = try container.decode(Category.self, forKey: .category)
+        } catch {
+            // If the category is not in the category enum
+            // don't do anything as the category is already set
+        }
+        
+        self.category = category
+    }
+}
+
+
 struct GSXDifficulty: Codable {
     let difficulty: Difficulty
     

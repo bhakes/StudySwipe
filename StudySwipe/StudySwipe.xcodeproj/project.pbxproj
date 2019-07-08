@@ -17,6 +17,7 @@
 		34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */; };
 		34DA7B9122CD4A8200AD2A63 /* ColorIconTitleProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */; };
 		34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */; };
+		34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */; };
 		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
 		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
 		34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */; };
@@ -95,6 +96,7 @@
 		34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIconTitleProviding.swift; sourceTree = "<group>"; };
 		34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		34FBA47A22CA7C230047FAEA /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
 		34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
 		34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
@@ -187,7 +189,6 @@
 		347FDC0F22CA5F3E004F6656 /* StudySwipe */ = {
 			isa = PBXGroup;
 			children = (
-				D194E98522CB9449001EED6C /* BenViewControllerWork */,
 				D194E95D22CA94D4001EED6C /* Protocols */,
 				D194E96022CA9515001EED6C /* Views */,
 				D194E92D22CA7023001EED6C /* Helpers */,
@@ -260,6 +261,24 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		D17188A022D3C95A006D4CBA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D194E98622CB9476001EED6C /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D17188A122D3C988006D4CBA /* Performance */ = {
+			isa = PBXGroup;
+			children = (
+				D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */,
+				D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */,
+				D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */,
+			);
+			path = Performance;
+			sourceTree = "<group>";
+		};
 		D194E92622CA6D80001EED6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +303,7 @@
 				D194E97322CA9F38001EED6C /* Networking Helpers */,
 				34DA7B8722CBFACC00AD2A63 /* UI Helpers */,
 				D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */,
+				34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -361,6 +381,8 @@
 		D194E96022CA9515001EED6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D17188A122D3C988006D4CBA /* Performance */,
+				D17188A022D3C95A006D4CBA /* Settings */,
 				34FBA48D22CA89BC0047FAEA /* TestViewController.swift */,
 				34FBA4A022CBCF0C0047FAEA /* Test */,
 				34FBA49D22CBADEC0047FAEA /* Review */,
@@ -409,17 +431,6 @@
 				D194E97722CAA623001EED6C /* NetworkingStructs.swift */,
 			);
 			path = NetworkingStructs;
-			sourceTree = "<group>";
-		};
-		D194E98522CB9449001EED6C /* BenViewControllerWork */ = {
-			isa = PBXGroup;
-			children = (
-				D194E98622CB9476001EED6C /* SettingsTableViewController.swift */,
-				D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */,
-				D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */,
-				D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */,
-			);
-			path = BenViewControllerWork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,6 +564,7 @@
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
 				D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */,
 				34FBA49622CB0D210047FAEA /* ReviewViewController.swift in Sources */,
+				34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */,
 				34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */,
 				34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,

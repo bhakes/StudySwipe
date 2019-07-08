@@ -39,6 +39,7 @@ class PerformanceTableViewController: UITableViewController {
         tableView.register(PerformanceTableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        tableView.backgroundColor = .white
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,8 +50,6 @@ class PerformanceTableViewController: UITableViewController {
         switch section {
         case 0:
             return Category.allCases.count
-        case 1:
-            return Difficulty.allCases.count
         default:
             fatalError("There should only be \(PerformanceTableViewController.sectionNumber) sections")
         }
@@ -63,10 +62,12 @@ class PerformanceTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = UIView()
+        view.constrain(height: 60)
         let label = UILabel()
         label.text = "Progress towards mastery"
-        label.textColor = .gray
-        label.constrainToFill(view, top: 0, bottom: 0, leading: 20, trailing: 20)
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.textColor = .fadedTextColor
+        label.constrainToFill(view, bottom: 0, leading: 20, trailing: 20)
         return view
         
     }
