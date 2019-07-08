@@ -66,7 +66,7 @@ class SelectionCollectionViewCell: UICollectionViewCell {
         guard let item = item else { return }
         
 //        colorView.backgroundColor = item.color()
-        colorView.setupGradient(startColor: item.color().lightened(), endColor: item.color().darkened(), startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1))
+        colorView.setupGradient(startColor: item.color().lightened(by: 0.25), endColor: item.color().darkened(by: 0.1), startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1))
         
         titleLabel.text = item.title()
         
