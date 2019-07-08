@@ -26,6 +26,13 @@ class QuestionCard: SwipeableCard {
         guard let question = question, let categoryString = question.category else { return }
         backgroundColor = Category(rawValue: categoryString)?.color()
         
+        let borderView = UIView()
+//        borderView.alpha = 0.8
+        borderView.layer.borderColor = UIColor.white.cgColor
+        borderView.layer.borderWidth = 2
+        borderView.layer.cornerRadius = layer.cornerRadius - 4
+        borderView.constrainToSuperView(self, top: 6, bottom: 6, leading: 6, trailing: 6)
+        
         questionContainer = UIView()
         questionContainer.constrainToSuperView(self, top: 20, bottom: 20, leading: 20, trailing: 20)
         
@@ -59,7 +66,7 @@ class QuestionCard: SwipeableCard {
         instructionLabel.text = "Tap to show answer"
         instructionLabel.textColor = .white
         
-        instructionLabel.constrainToSuperView(self, bottom: 12, leading: 20, trailing: 20)
+        instructionLabel.constrainToSuperView(self, bottom: 20, leading: 20, trailing: 20)
         
         self.layoutSubviews()
         
