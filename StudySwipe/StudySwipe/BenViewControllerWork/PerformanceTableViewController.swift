@@ -69,7 +69,7 @@ class PerformanceTableViewController: UITableViewController {
         label.text = "Progress towards mastery"
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.textColor = .fadedTextColor
-        label.constrainToFill(view, bottom: 0, leading: 20, trailing: 20)
+        label.constrainToSuperView(view, bottom: 0, leading: 20, trailing: 20)
         return view
         
     }
