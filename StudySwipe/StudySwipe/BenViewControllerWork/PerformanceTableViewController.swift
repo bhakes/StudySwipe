@@ -50,8 +50,6 @@ class PerformanceTableViewController: UITableViewController {
         switch section {
         case 0:
             return Category.allCases.count
-        case 1:
-            return Difficulty.allCases.count
         default:
             fatalError("There should only be \(PerformanceTableViewController.sectionNumber) sections")
         }

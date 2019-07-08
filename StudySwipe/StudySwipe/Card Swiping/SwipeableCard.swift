@@ -35,6 +35,7 @@ class SwipeableCard: SwipeableView {
     
     func updateViews() {
         guard let question = question, let categoryString = question.category else { return }
+        
         backgroundColor = Category(rawValue: categoryString)?.color()
         
         let stackView = UIStackView()
