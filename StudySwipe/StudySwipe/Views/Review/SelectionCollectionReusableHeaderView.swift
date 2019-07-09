@@ -10,11 +10,6 @@ import UIKit
 
 class SelectionCollectionReusableHeaderView: UICollectionReusableView {
     
-    lazy var contentView: UIView = {
-        let contentView = UIView()
-        return contentView
-    }()
-    
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         return titleLabel
