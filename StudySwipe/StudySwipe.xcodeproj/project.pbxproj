@@ -189,7 +189,6 @@
 		347FDC0F22CA5F3E004F6656 /* StudySwipe */ = {
 			isa = PBXGroup;
 			children = (
-				D194E98522CB9449001EED6C /* BenViewControllerWork */,
 				D194E95D22CA94D4001EED6C /* Protocols */,
 				D194E96022CA9515001EED6C /* Views */,
 				D194E92D22CA7023001EED6C /* Helpers */,
@@ -260,6 +259,24 @@
 				34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		D17188A022D3C95A006D4CBA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D194E98622CB9476001EED6C /* SettingsTableViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D17188A122D3C988006D4CBA /* Performance */ = {
+			isa = PBXGroup;
+			children = (
+				D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */,
+				D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */,
+				D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */,
+			);
+			path = Performance;
 			sourceTree = "<group>";
 		};
 		D194E92622CA6D80001EED6C /* Model */ = {
@@ -364,6 +381,8 @@
 		D194E96022CA9515001EED6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D17188A122D3C988006D4CBA /* Performance */,
+				D17188A022D3C95A006D4CBA /* Settings */,
 				34FBA48D22CA89BC0047FAEA /* TestViewController.swift */,
 				34FBA4A022CBCF0C0047FAEA /* Test */,
 				34FBA49D22CBADEC0047FAEA /* Review */,
@@ -412,17 +431,6 @@
 				D194E97722CAA623001EED6C /* NetworkingStructs.swift */,
 			);
 			path = NetworkingStructs;
-			sourceTree = "<group>";
-		};
-		D194E98522CB9449001EED6C /* BenViewControllerWork */ = {
-			isa = PBXGroup;
-			children = (
-				D194E98622CB9476001EED6C /* SettingsTableViewController.swift */,
-				D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */,
-				D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */,
-				D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */,
-			);
-			path = BenViewControllerWork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -739,7 +747,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
+				DEVELOPMENT_TEAM = S5U94G8XN2;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -758,7 +766,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
+				DEVELOPMENT_TEAM = S5U94G8XN2;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
