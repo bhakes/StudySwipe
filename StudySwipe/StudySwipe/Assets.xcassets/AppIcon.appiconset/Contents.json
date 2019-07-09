@@ -3,109 +3,109 @@
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "StudySwipeIcon2-20@2x.png",
+      "filename" : "StudySwipeIcon_thin_lines-20@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "20x20",
       "idiom" : "iphone",
-      "filename" : "StudySwipeIcon2-20@3x.png",
+      "filename" : "StudySwipeIcon_thin_lines-20@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "StudySwipeIcon2-29@2x.png",
+      "filename" : "StudySwipeIcon_thin_lines-29@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "StudySwipeIcon2-29@3x.png",
+      "filename" : "StudySwipeIcon_thin_lines-29@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "StudySwipeIcon2-40@2x.png",
+      "filename" : "StudySwipeIcon_thin_lines-40@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "StudySwipeIcon2-40@3x.png",
+      "filename" : "StudySwipeIcon_thin_lines-40@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "StudySwipeIcon2-60@2x.png",
+      "filename" : "StudySwipeIcon_thin_lines-60@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "StudySwipeIcon2-60@3x.png",
+      "filename" : "StudySwipeIcon_thin_lines-60@3x.png",
       "scale" : "3x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "StudySwipeIcon2-20.png",
+      "filename" : "StudySwipeIcon_thin_lines-20.png",
       "scale" : "1x"
     },
     {
       "size" : "20x20",
       "idiom" : "ipad",
-      "filename" : "StudySwipeIcon2-20@2x.png",
+      "filename" : "StudySwipeIcon_thin_lines-20@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "StudySwipeIcon2-29.png",
+      "filename" : "StudySwipeIcon_thin_lines-29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "StudySwipeIcon2-29@2x.png",
+      "filename" : "StudySwipeIcon_thin_lines-29@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "StudySwipeIcon2-40.png",
+      "filename" : "StudySwipeIcon_thin_lines-40.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "StudySwipeIcon2-40@2x.png",
+      "filename" : "StudySwipeIcon_thin_lines-40@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "StudySwipeIcon2-76.png",
+      "filename" : "StudySwipeIcon_thin_lines-76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "StudySwipeIcon2-76@2x.png",
+      "filename" : "StudySwipeIcon_thin_lines-76@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "83.5x83.5",
       "idiom" : "ipad",
-      "filename" : "StudySwipeIcon2-83.5@2x.png",
+      "filename" : "StudySwipeIcon_thin_lines-83.5@2x.png",
       "scale" : "2x"
     },
     {
       "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "StudySwipeIcon2-1024.png",
+      "filename" : "StudySwipeIcon_thin_lines-1024.png",
       "scale" : "1x"
     }
   ],
