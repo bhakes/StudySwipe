@@ -102,7 +102,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 }
-
-extension Notification.Name {
-    static let questionsFinishedUpdating = Notification.Name("QuestionsFinishedUpdating")
-}
