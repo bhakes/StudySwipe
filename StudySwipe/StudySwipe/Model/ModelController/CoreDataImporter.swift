@@ -20,18 +20,22 @@ class CoreDataImporter {
             
             // Delete all the Question data
             CoreDataStack.shared.deleteAllData("Question")
+            Category.resetNonEmptyCategories()
 
             // Load all the questions
             for questionRepresentation in questionRepresentations {
                 _ = Question(questionRepresentation: questionRepresentation, context: self.context)
+                Category.addNonEmptyCategory(questionRepresentation.category.category)
             }
             
+            // Save the context
             do {
                 try self.context.save()
             } catch let saveError {
                 print("Error saving context: \(saveError)")
             }
             
+            NotificationCenter.default.post(name: .questionsFinishedUpdating, object: nil)
             completion(nil)
         }
     }

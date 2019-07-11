@@ -17,6 +17,7 @@
 		34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */; };
 		34DA7B9122CD4A8200AD2A63 /* ColorIconTitleProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */; };
 		34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */; };
+		34DED65322D6CDB60059867A /* NotificationName+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DED65222D6CDB60059867A /* NotificationName+Custom.swift */; };
 		34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */; };
 		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
 		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
@@ -98,6 +99,7 @@
 		34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIconTitleProviding.swift; sourceTree = "<group>"; };
 		34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		34DED65222D6CDB60059867A /* NotificationName+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Custom.swift"; sourceTree = "<group>"; };
 		34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		34FBA47A22CA7C230047FAEA /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
 		34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				34DA7B8722CBFACC00AD2A63 /* UI Helpers */,
 				D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */,
 				34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */,
+				34DED65222D6CDB60059867A /* NotificationName+Custom.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */,
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
 				D127F08322D509E8002C7931 /* Themed.swift in Sources */,
+				34DED65322D6CDB60059867A /* NotificationName+Custom.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
 				D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */,
@@ -755,7 +759,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S5U94G8XN2;
+				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -774,7 +778,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S5U94G8XN2;
+				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

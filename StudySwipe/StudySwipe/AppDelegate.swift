@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Reachability.isConnectedToNetwork(){
 //            print("Internet Connection Available!")
-            qnc.getQuestions {_,_ in }
+            qnc.getQuestions { _,_ in }
             if let newQuestions = qfc.makeTest(with: "TempTest", count: 10)?.questions {
                 for _ in newQuestions {
 //                    print(q.question ?? "")
@@ -102,4 +102,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 }
-

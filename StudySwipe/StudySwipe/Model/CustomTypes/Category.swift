@@ -86,9 +86,43 @@ public enum Category: String, Codable, CaseIterable, ColorIconTitleProviding {
                                         .categoryDefault5]
     
     private static func getDefaultColor(for category: Category) -> UIColor {
-        let index = Category.allCases.firstIndex(of: category)!
+        let index = Category.nonEmptyCategories.firstIndex(of: category)!
         let color = defaultColors[index % defaultColors.count]
         
         return color
+    }
+    
+    static private var nonEmptySet: Set<Category> = {
+        return Set(nonEmptyCategories)
+    }()
+    static private(set) var nonEmptyCategories: [Category] = {
+        if let savedData = UserDefaults.standard.object(forKey: "nonEmptyCategories") as? Data,
+            let categories = try? JSONDecoder().decode([Category].self, from: savedData) {
+            return  categories
+        } else {
+            return [.All]
+        }
+    }()
+    
+    static func resetNonEmptyCategories() {
+        nonEmptyCategories.removeAll()
+        nonEmptySet.removeAll()
+        nonEmptySet.insert(.All)
+        nonEmptyCategories.append(.All)
+        saveNonEmpties()
+    }
+    
+    static func addNonEmptyCategory(_ category: Category) {
+        if !nonEmptySet.contains(category) {
+            nonEmptySet.insert(category)
+            nonEmptyCategories.append(category)
+            saveNonEmpties()
+        }
+    }
+    
+    static private func saveNonEmpties() {
+        if let data = try? JSONEncoder().encode(nonEmptyCategories) {
+            UserDefaults.standard.set(data, forKey: "nonEmptyCategories")
+        }
     }
 }
