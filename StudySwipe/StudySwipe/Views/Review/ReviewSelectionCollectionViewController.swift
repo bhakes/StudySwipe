@@ -29,7 +29,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: .questionsFinishedUpdating, object: nil)
         
         
-        collectionView.backgroundColor = .white
+        darkModeConformingStyle(collectionView)
     }
 
     // MARK: UICollectionViewDataSource

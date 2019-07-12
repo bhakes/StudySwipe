@@ -44,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupTabBarController()
         
-        
         return true
 
     }
@@ -80,8 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let performanceVC = PerformanceViewController()
         
         let tabBarController = UITabBarController()
-        tabBarController.view.backgroundColor = .white
-        tabBarController.tabBar.tintColor = .accentColor
+//        tabBarController.view.backgroundColor = .white
+//        tabBarController.tabBar.tintColor = .accentColor
+        darkModeConformingStyle(tabBarController)
         
         // Add them to the tab bar controller
         tabBarController.viewControllers = [reviewVC, testSetupVC, performanceVC]

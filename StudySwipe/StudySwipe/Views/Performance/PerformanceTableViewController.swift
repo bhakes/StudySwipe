@@ -39,7 +39,7 @@ class PerformanceTableViewController: UITableViewController {
         tableView.register(PerformanceTableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
-        tableView.backgroundColor = .white
+        darkModeConformingStyle(tableView)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -62,6 +62,7 @@ class PerformanceTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let view = UIView()
+        darkModeConformingStyle(view)
         view.constrain(height: 60)
         let label = UILabel()
         label.text = "Progress towards mastery"
@@ -91,7 +92,7 @@ class PerformanceTableViewController: UITableViewController {
             cell.categoryQuestions = self.allQuestions.filter({ $0.category == category.rawValue })
             cell.categoryMasteredQuestions = self.correctlyAnsweredQuestions.filter({ $0.category == category.rawValue })
         }
-        
+        darkModeConformingStyle(cell)
         
         return cell
     }
