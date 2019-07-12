@@ -23,6 +23,4 @@ class SwipeableCard: SwipeableView {
         layer.shadowRadius = 20
         layer.shadowOffset = CGSize(width: 4, height: 10)
     }
-    
-    
 }

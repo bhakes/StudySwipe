@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource {
+class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource, StopwatchDelegate {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -22,8 +22,10 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     private var needsWorkImageView: UIImageView!
     private var gotItImageView: UIImageView!
     private var questionCount = 0
+    private var stopwatch: Stopwatch!
     
     var cardContainer: SwipeableCardViewContainer!
+    
     var infoBar: UIView!
     var closeButtonAction: (() -> Void)?
     
@@ -122,18 +124,18 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         closeTest(isCompleted: true)
     }
     
+    // MARK: - Stopwatch Delegate
+    func stopwatch(_ stopwatch: Stopwatch, didChangeTimeTo: TimeInterval) {
+        testTitle = stopwatch.formattedTime
+    }
+    
     // MARK: Private Methods
     private func setupViews() {
         
-        // Set background color based on whether or not this is a test
-        if testObservation != nil {
-            view.backgroundColor = .testBackground
-        } else {
-            view.backgroundColor = .white
-        }
         
         // Set up info bar, a place to put the title, buttons, timer, etc
         infoBar = UIView()
+        testObservation != nil ? alwaysDarkStyle(infoBar) : darkModeConformingStyle(infoBar)
         infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)
         
         let infoStackView = UIStackView()
@@ -144,6 +146,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         titleLabel = UILabel()
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         titleLabel.textColor = .fadedTextColor
+//        grayDarkStyleConformingLabel(titleLabel)
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.minimumScaleFactor = 0.5
         infoStackView.addArrangedSubview(titleLabel)
@@ -155,18 +158,21 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         infoStackView.addArrangedSubview(dismissButton)
         
         // Set up arrow images
-        needsWorkImageView = UIImageView(image: UIImage(named: "needs-work"))
-        needsWorkImageView.tintColor = .fadedTextColor
-        needsWorkImageView.contentMode = .scaleAspectFit
-        
-        needsWorkImageView.constrainToSuperView(view, bottom: 4, leading: 4, height: 60, width: 200)
-        
         gotItImageView = UIImageView(image: UIImage(named: "got-it"))
         gotItImageView.tintColor = .fadedTextColor
+        testObservation != nil ? alwaysDarkStyle(gotItImageView) : grayDarkStyleConformingView(gotItImageView)
         gotItImageView.contentMode = .scaleAspectFit
         
         gotItImageView.constrainToSuperView(view, bottom: 4, trailing: 4, height: 60, width: 200)
         
+        needsWorkImageView = UIImageView(image: UIImage(named: "needs-work"))
+        needsWorkImageView.tintColor = .fadedTextColor
+        testObservation != nil ? alwaysDarkStyle(needsWorkImageView) : grayDarkStyleConformingView(needsWorkImageView)
+        needsWorkImageView.contentMode = .scaleAspectFit
+
+        needsWorkImageView.constrainToSuperView(view, bottom: 4, leading: 4, height: 60, width: 200)
+        
+        needsWorkImageView.superview?.bringSubviewToFront(needsWorkImageView)
         // Set up card container
         // This is done last so that it sits over the other elements
         cardContainer = SwipeableCardViewContainer()
@@ -176,8 +182,22 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         cardContainer.dataSource = self
         cardContainer.delegate = self
         
+        
         // Record start time
         startTime = Date()
+        
+        // Set things that depend on whether or not this is a test
+        if testObservation != nil {
+            view.backgroundColor = .testBackground
+            stopwatch = Stopwatch()
+            stopwatch.delegate = self
+            stopwatch.start()
+        } else {
+            darkModeConformingStyle(view)
+        }
+        
+        
+        
         updateViews()
     }
 

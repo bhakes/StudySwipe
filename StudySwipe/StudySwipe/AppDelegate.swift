@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Reachability.isConnectedToNetwork(){
 //            print("Internet Connection Available!")
-            qnc.getQuestions {_,_ in }
+            qnc.getQuestions { _,_ in }
             if let newQuestions = qfc.makeTest(with: "TempTest", count: 10)?.questions {
                 for _ in newQuestions {
 //                    print(q.question ?? "")
@@ -43,7 +43,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = .accentColor
         
         setupTabBarController()
-        
         
         return true
 
@@ -80,8 +79,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let performanceVC = PerformanceViewController()
         
         let tabBarController = UITabBarController()
-        tabBarController.view.backgroundColor = .white
-        tabBarController.tabBar.tintColor = .accentColor
+//        tabBarController.view.backgroundColor = .white
+//        tabBarController.tabBar.tintColor = .accentColor
+        darkModeConformingStyle(tabBarController)
         
         // Add them to the tab bar controller
         tabBarController.viewControllers = [reviewVC, testSetupVC, performanceVC]
@@ -102,4 +102,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
     }
 }
-

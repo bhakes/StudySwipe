@@ -10,11 +10,6 @@ import UIKit
 
 class SelectionCollectionReusableHeaderView: UICollectionReusableView {
     
-    lazy var contentView: UIView = {
-        let contentView = UIView()
-        return contentView
-    }()
-    
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
         return titleLabel
@@ -34,7 +29,6 @@ class SelectionCollectionReusableHeaderView: UICollectionReusableView {
     private func setupViews() {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         titleLabel.textColor = .fadedTextColor
-        
         titleLabel.constrainToSuperView(self, bottom: 0, leading: 20, trailing: 20)
     }
 }

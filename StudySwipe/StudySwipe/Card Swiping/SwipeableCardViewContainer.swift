@@ -37,7 +37,8 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = .clear
+        darkModeConformingStyle(self)
+        // backgroundColor = .clear
         translatesAutoresizingMaskIntoConstraints = false
     }
     
