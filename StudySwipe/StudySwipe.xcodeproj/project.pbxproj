@@ -35,9 +35,6 @@
 		34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */; };
 		34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */; };
 		34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */; };
-		D127F08122D50601002C7931 /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127F08022D50601002C7931 /* ThemeProvider.swift */; };
-		D127F08322D509E8002C7931 /* Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127F08222D509E8002C7931 /* Themed.swift */; };
-		D127F08522D50AEA002C7931 /* StudySwipeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127F08422D50AEA002C7931 /* StudySwipeTheme.swift */; };
 		D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */; };
 		D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93122CA70BF001EED6C /* CoreDataStack.swift */; };
 		D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93322CA715E001EED6C /* HTTPMethod.swift */; };
@@ -71,6 +68,8 @@
 		D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */; };
 		D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */; };
 		D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */; };
+		D1F408AE22D7E94E00C4AC3C /* FunctionalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */; };
+		D1F408B022D7E9CC00C4AC3C /* FunctionalStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F408AF22D7E9CC00C4AC3C /* FunctionalStyling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,9 +115,6 @@
 		34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionTableViewController.swift; sourceTree = "<group>"; };
 		34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
-		D127F08022D50601002C7931 /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
-		D127F08222D509E8002C7931 /* Themed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themed.swift; sourceTree = "<group>"; };
-		D127F08422D50AEA002C7931 /* StudySwipeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySwipeTheme.swift; sourceTree = "<group>"; };
 		D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
 		D194E93122CA70BF001EED6C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D194E93322CA715E001EED6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -152,6 +148,8 @@
 		D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewCell.swift; sourceTree = "<group>"; };
 		D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsController.swift; sourceTree = "<group>"; };
 		D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
+		D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalHelpers.swift; sourceTree = "<group>"; };
+		D1F408AF22D7E9CC00C4AC3C /* FunctionalStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalStyling.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +301,7 @@
 		D194E92D22CA7023001EED6C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D1F408AC22D7E90900C4AC3C /* Functional Helpers */,
 				D194E97322CA9F38001EED6C /* Networking Helpers */,
 				34DA7B8722CBFACC00AD2A63 /* UI Helpers */,
 				D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */,
@@ -377,8 +376,6 @@
 				D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */,
 				D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */,
 				34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */,
-				D127F08022D50601002C7931 /* ThemeProvider.swift */,
-				D127F08222D509E8002C7931 /* Themed.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -426,7 +423,6 @@
 				D194E93322CA715E001EED6C /* HTTPMethod.swift */,
 				D194E97422CA9F61001EED6C /* APICallType.swift */,
 				D194E97F22CAC86A001EED6C /* Reachability.swift */,
-				D127F08422D50AEA002C7931 /* StudySwipeTheme.swift */,
 			);
 			path = "Networking Helpers";
 			sourceTree = "<group>";
@@ -437,6 +433,15 @@
 				D194E97722CAA623001EED6C /* NetworkingStructs.swift */,
 			);
 			path = NetworkingStructs;
+			sourceTree = "<group>";
+		};
+		D1F408AC22D7E90900C4AC3C /* Functional Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */,
+				D1F408AF22D7E9CC00C4AC3C /* FunctionalStyling.swift */,
+			);
+			path = "Functional Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,9 +568,9 @@
 				34FBA49822CB10540047FAEA /* UIViewController+Container.swift in Sources */,
 				D194E93D22CA7538001EED6C /* Difficulty.swift in Sources */,
 				D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */,
+				D1F408AE22D7E94E00C4AC3C /* FunctionalHelpers.swift in Sources */,
 				34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */,
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
-				D127F08322D509E8002C7931 /* Themed.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
 				D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */,
@@ -580,6 +585,7 @@
 				D194E98422CADD94001EED6C /* CoreDataFetchController.swift in Sources */,
 				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
+				D1F408B022D7E9CC00C4AC3C /* FunctionalStyling.swift in Sources */,
 				D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
 				D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */,
@@ -589,11 +595,9 @@
 				34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */,
 				34FBA49222CABF8A0047FAEA /* APIKeys.swift in Sources */,
 				D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */,
-				D127F08122D50601002C7931 /* ThemeProvider.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */,
 				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,
-				D127F08522D50AEA002C7931 /* StudySwipeTheme.swift in Sources */,
 				34DA7B9122CD4A8200AD2A63 /* ColorIconTitleProviding.swift in Sources */,
 				34FBA49422CAC0B20047FAEA /* UIView+Constraints.swift in Sources */,
 				34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */,

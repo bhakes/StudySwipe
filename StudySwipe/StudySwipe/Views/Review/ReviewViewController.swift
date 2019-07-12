@@ -47,13 +47,18 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
     }
     
     private func setupViews() {
+        
+        
+        darkModeConformingStyle(self.view)
         // Set up header view and title label
         let headerHeight: CGFloat = 80
         let headerView = UIView()
+        darkModeConformingStyle(headerView)
         headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
         
         let label = UILabel()
         label.text = "Pick a topic"
+        darkModeConformingStyle(label)
         label.font = UIFont.boldSystemFont(ofSize: 48)
         
         label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
@@ -61,6 +66,7 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
         // Set up collection view and container
         collectionViewContainer = UIView()
         collectionViewContainer.backgroundColor = .gray
+        darkModeConformingStyle(collectionViewContainer)
         collectionViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
         collectionViewContainerConstraint = collectionViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         collectionViewContainerConstraint.isActive = true
@@ -72,10 +78,14 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
         
         // Set up test view container
         testViewContainer = UIView()
+        
         testViewContainer.constrainToSuperView(view, leading: 0, trailing: 0, equalHeight: 0)
         testViewContainerConstraint = testViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ReviewViewController.animationDistance)
         testViewContainerConstraint.isActive = true
+    
+    
     }
+    
     
     private func animateTableViewOut() {
         view.layoutIfNeeded()

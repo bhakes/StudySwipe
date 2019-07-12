@@ -26,7 +26,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         collectionView.register(SelectionCollectionReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
         
-        collectionView.backgroundColor = .white
+        darkModeConformingStyle(collectionView)
     }
 
     // MARK: UICollectionViewDataSource

@@ -41,16 +41,21 @@ class TestSetupViewController: UIViewController {
     @objc func updateQuestionNumberLabel() {
         let number = Int(questionSlider.value)
         questionNumberLabel.text = "\(number) Questions"
+        
     }
     
     // MARK: - Private Methods
     private func setupViews() {
         // Set up Tab Bar
         
+        //
+        
+        darkModeConformingStyle(self.view)
         
         // Set up Title Label
         let titleLabel = UILabel()
         titleLabel.text = "Take a Test"
+        darkModeConformingStyle(titleLabel)
         titleLabel.font = UIFont.boldSystemFont(ofSize: 48)
         
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
@@ -76,6 +81,7 @@ class TestSetupViewController: UIViewController {
         quoteStack.constrain(width: 300)
         
         quoteLabel = UILabel()
+        
         quoteLabel.textColor = .fadedTextColor
         quoteLabel.textAlignment = .center
         quoteLabel.numberOfLines = 0
@@ -84,6 +90,7 @@ class TestSetupViewController: UIViewController {
         quoteStack.addArrangedSubview(quoteLabel)
         
         authorLabel = UILabel()
+        
         authorLabel.textColor = .fadedTextColor
         authorLabel.textAlignment = .right
         authorLabel.font = UIFont.systemFont(ofSize: 18, weight: .regular)
@@ -108,13 +115,14 @@ class TestSetupViewController: UIViewController {
         segmentedControl = UISegmentedControl(items: difficulties)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.tintColor = .accentColor
-        
+        darkModeConformingStyle(segmentedControl)
         stackView.addArrangedSubview(segmentedControl)
         
         // Set up Question Count Slider
         questionNumberLabel = UILabel()
         questionNumberLabel.font = UIFont.preferredFont(forTextStyle: .title2)
         questionNumberLabel.textAlignment = .center
+        questionNumberLabel.textColor = .fadedTextColor
         stackView.addArrangedSubview(questionNumberLabel)
         
         let sliderContainer = UIView()

@@ -26,17 +26,21 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
     }
     
     private func setupViews() {
+        darkModeConformingStyle(self.view)
+        
         let headerHeight: CGFloat = 80
         let headerView = UIView()
         headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
+        darkModeConformingStyle(headerView)
         
         let label = UILabel()
         label.text = "Performance"
         label.font = UIFont.boldSystemFont(ofSize: 48)
-        
+        darkModeConformingStyle(label)
         label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
         
         tableViewContainer = UIView()
+        darkModeConformingStyle(tableViewContainer)
         tableViewContainer.backgroundColor = .gray
         tableViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
         tableViewContainerConstraint = tableViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
