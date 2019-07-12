@@ -9,16 +9,16 @@
 import UIKit
 import Foundation
 
-enum CurrentTheme {
+enum Themes {
     case light
     case dark
 }
 
-final class Theme {
-    static let shared = Theme()
+final class ThemeController {
+    static let shared = ThemeController()
     private init () {}
     
-    var currentTheme: CurrentTheme = .dark
+    var currentTheme: Themes = .light
 }
 
 func autolayoutStyle<V: UIView>(_ view: V) -> Void {
@@ -27,7 +27,7 @@ func autolayoutStyle<V: UIView>(_ view: V) -> Void {
 
 func darkModeConformingStyle<V: UIView>(_ view: V) -> Void {
     
-    switch Theme.shared.currentTheme {
+    switch ThemeController.shared.currentTheme {
     case .light:
         view.backgroundColor = .white
         view.tintColor = UIColor(hex: "#33333B")!
@@ -40,7 +40,7 @@ func darkModeConformingStyle<V: UIView>(_ view: V) -> Void {
 
 func darkModeConformingStyle<N: UINavigationController>(_ navController: N) -> Void {
     
-    switch Theme.shared.currentTheme {
+    switch ThemeController.shared.currentTheme {
     case .light:
         navController.navigationBar.backgroundColor = .white
         navController.navigationBar.tintColor = UIColor(hex: "#33333B")!
@@ -56,7 +56,7 @@ func darkModeConformingStyle<N: UINavigationController>(_ navController: N) -> V
 
 func darkModeConformingStyle<L: UILabel>(_ label: L) -> Void {
     
-    switch Theme.shared.currentTheme {
+    switch ThemeController.shared.currentTheme {
     case .light:
         label.tintColor = .white
         label.textColor = .black
@@ -69,7 +69,7 @@ func darkModeConformingStyle<L: UILabel>(_ label: L) -> Void {
 
 func darkModeConformingStyle<T: UITabBarController>(_ tabBarController: T) -> Void {
     
-    switch Theme.shared.currentTheme {
+    switch ThemeController.shared.currentTheme {
     case .light:
         tabBarController.view.backgroundColor = .white
         tabBarController.tabBar.tintColor = .accentColor
@@ -84,7 +84,7 @@ func darkModeConformingStyle<T: UITabBarController>(_ tabBarController: T) -> Vo
 
 func darkModeConformingStyle<S: UISegmentedControl>(_ sc: S) -> Void {
     
-    switch Theme.shared.currentTheme {
+    switch ThemeController.shared.currentTheme {
     case .light:
         sc.tintColor = .accentColor
     case .dark:
@@ -95,7 +95,7 @@ func darkModeConformingStyle<S: UISegmentedControl>(_ sc: S) -> Void {
 
 let grayDarkStyleConformingLabel: (UILabel) -> Void = darkModeConformingStyle <> {
     
-    switch Theme.shared.currentTheme {
+    switch ThemeController.shared.currentTheme {
     case .light:
         $0.textColor = .fadedTextColor
     case .dark:
@@ -105,7 +105,7 @@ let grayDarkStyleConformingLabel: (UILabel) -> Void = darkModeConformingStyle <>
 
 let grayDarkStyleConformingView: (UIView) -> Void = darkModeConformingStyle <> {
     
-    switch Theme.shared.currentTheme {
+    switch ThemeController.shared.currentTheme {
     case .light:
         $0.tintColor = .fadedTextColor
     case .dark:
@@ -115,7 +115,7 @@ let grayDarkStyleConformingView: (UIView) -> Void = darkModeConformingStyle <> {
 
 func whiteDarkStyleConformingProgressView <P: UIProgressView>(_ progressView: P) -> Void  {
     
-    switch Theme.shared.currentTheme {
+    switch ThemeController.shared.currentTheme {
     case .light:
         progressView.trackTintColor = UIColor.init(white: 0.92, alpha: 1)
     case .dark:
