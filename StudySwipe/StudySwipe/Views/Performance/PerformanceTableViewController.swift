@@ -49,7 +49,7 @@ class PerformanceTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return Category.allCases.count
+            return Category.nonEmptyCategories.count
         default:
             fatalError("There should only be \(PerformanceTableViewController.sectionNumber) sections")
         }
@@ -79,7 +79,7 @@ class PerformanceTableViewController: UITableViewController {
         let category: Category
         switch indexPath.section {
         case 0:
-            category = Category.allCases.reversed()[indexPath.row]
+            category = Category.nonEmptyCategories[indexPath.row]
         default:
             fatalError("There should only be \(PerformanceTableViewController.sectionNumber) sections")
         }
