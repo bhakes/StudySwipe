@@ -104,7 +104,7 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
 extension SwipeableCardViewContainer {
     
     func didTap(view: SwipeableView) {
-        let flipDuration = 0.5
+        let flipDuration = 0.35
         if let cardView = view as? QuestionCard,
             let index = cardViews.firstIndex(of: cardView) {
             delegate?.cardViewContainer(self, didSelectCard: cardView, atIndex: index)

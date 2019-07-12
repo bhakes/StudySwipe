@@ -28,11 +28,12 @@ class QuestionCard: SwipeableCard {
             let cardColor = Category(rawValue: categoryString)?.color() else { return }
         
         backgroundColor = cardColor
+        let borderSpacing: CGFloat = 6
         let borderView = UIView()
         borderView.layer.borderColor = UIColor.white.cgColor
-        borderView.layer.borderWidth = 2
+        borderView.layer.borderWidth = 1
         borderView.layer.cornerRadius = layer.cornerRadius - 4
-        borderView.constrainToSuperView(self, top: 6, bottom: 6, leading: 6, trailing: 6)
+        borderView.constrainToSuperView(self, top: borderSpacing, bottom: borderSpacing, leading: borderSpacing, trailing: borderSpacing)
         
         questionContainer = UIView()
         questionContainer.constrainToSuperView(self, top: 20, bottom: 20, leading: 20, trailing: 20)
@@ -40,7 +41,7 @@ class QuestionCard: SwipeableCard {
         let questionLabel = UILabel()
         questionLabel.text = question.question ?? sampleText
         questionLabel.numberOfLines = 0
-        questionLabel.font = UIFont.systemFont(ofSize: 36)
+        questionLabel.font = UIFont.systemFont(ofSize: 32)
         questionLabel.lineBreakMode = .byWordWrapping
         questionLabel.textAlignment = .center
         questionLabel.textColor = .white
@@ -64,7 +65,7 @@ class QuestionCard: SwipeableCard {
         
         instructionLabel = UILabel()
         instructionLabel.textAlignment = .center
-        instructionLabel.text = "Tap to show answer"
+        instructionLabel.text = "Tap to flip"
         instructionLabel.textColor = .white
         
         instructionLabel.constrainToSuperView(self, bottom: 20, leading: 20, trailing: 20)
