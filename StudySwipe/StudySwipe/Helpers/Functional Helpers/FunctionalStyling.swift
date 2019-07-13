@@ -28,7 +28,7 @@ final class ThemeController {
     static let shared = ThemeController()
     private init () {}
     
-    var currentTheme: Theme = .light
+    var currentTheme: Theme = .dark
     
 }
 
@@ -105,7 +105,7 @@ func darkModeConformingStyle<T: UITabBarController>(_ tabBarController: T) -> Vo
     tabBarController.view.backgroundColor = theme.colorFor(.backgroundColor)
     tabBarController.tabBar.tintColor = theme.colorFor(.tabBarTintColor)
     tabBarController.tabBar.barTintColor = theme.colorFor(.tintColor)
- 
+    
     
 }
 
@@ -117,14 +117,14 @@ let grayDarkStyleConformingLabel: (UILabel) -> Void = darkModeConformingStyle <>
     
     let theme = ThemeController.shared.currentTheme
     $0.textColor = theme.colorFor(.textColor)
-
+    
 }
 
 let grayDarkStyleConformingView: (UIView) -> Void = darkModeConformingStyle <> {
     
     let theme = ThemeController.shared.currentTheme
     $0.tintColor = theme.colorFor(.tintColor)
-
+    
 }
 
 func whiteDarkStyleConformingProgressView <P: UIProgressView>(_ progressView: P) -> Void  {
