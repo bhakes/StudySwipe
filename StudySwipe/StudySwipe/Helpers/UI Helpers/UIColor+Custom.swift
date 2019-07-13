@@ -53,4 +53,21 @@ extension UIColor {
         let blue = CGFloat(rgbValue & 0x0000FF)
         self.init(hexRed: red, green: green, blue: blue, alpha: alpha)
     }
+    
+    func darkened(by percent: CGFloat = 0.2) -> UIColor {
+        var hue: CGFloat = 0
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        self.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+        
+        brightness *= (1 - percent)
+        saturation *= (1 + percent/2)
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
+    }
+    
+    func lightened(by percent: CGFloat = 0.2) -> UIColor {
+        return self.darkened(by: -percent)
+    }
 }
