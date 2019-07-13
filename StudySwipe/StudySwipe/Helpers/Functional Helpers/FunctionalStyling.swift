@@ -9,122 +9,130 @@
 import UIKit
 import Foundation
 
-enum Themes {
+enum Theme {
     case light
     case dark
+}
+
+enum ColorType {
+    case backgroundColor
+    case tintColor
+    case barTintColor
+    case textColor
+    case grayTextColor
+    case tabBarTintColor
+    case trackBarTintColor
 }
 
 final class ThemeController {
     static let shared = ThemeController()
     private init () {}
     
-    var currentTheme: Themes = .light
+    var currentTheme: Theme = .light
+    
 }
 
-func autolayoutStyle<V: UIView>(_ view: V) -> Void {
-    view.translatesAutoresizingMaskIntoConstraints = false
+extension Theme {
+    func colorFor(_ colorType: ColorType) -> UIColor {
+        switch self {
+        case .light:
+            switch colorType {
+            case .backgroundColor:
+                return .white
+            case .tintColor:
+                return .white
+            case .barTintColor:
+                return .fadedTextColor
+            case .textColor:
+                return .black
+            case .grayTextColor:
+                return .fadedTextColor
+            case .tabBarTintColor:
+                return .accentColor
+            case .trackBarTintColor:
+                return .groupTableViewBackground
+            }
+        case .dark:
+            switch colorType {
+            case .backgroundColor:
+                return .testBackground
+            case .tintColor:
+                return .testBackground
+            case .barTintColor:
+                return .testBackground
+            case .textColor:
+                return .white
+            case .grayTextColor:
+                return .fadedTextColor
+            case .tabBarTintColor:
+                return .white
+            case .trackBarTintColor:
+                return .fadedTextColor
+            }
+        }
+    }
 }
 
 func darkModeConformingStyle<V: UIView>(_ view: V) -> Void {
     
-    switch ThemeController.shared.currentTheme {
-    case .light:
-        view.backgroundColor = .white
-        view.tintColor = UIColor(hex: "#33333B")!
-    case .dark:
-        view.backgroundColor = UIColor(hex: "#33333B")!
-        view.tintColor = .white
-    }
+    let theme = ThemeController.shared.currentTheme
+    view.backgroundColor = theme.colorFor(.backgroundColor)
+    view.tintColor = theme.colorFor(.tintColor)
     
 }
 
 func darkModeConformingStyle<N: UINavigationController>(_ navController: N) -> Void {
     
-    switch ThemeController.shared.currentTheme {
-    case .light:
-        navController.navigationBar.backgroundColor = .white
-        navController.navigationBar.tintColor = UIColor(hex: "#33333B")!
-        navController.navigationBar.barTintColor = UIColor(hex: "#33333B")!
-    case .dark:
-        navController.navigationBar.backgroundColor = UIColor(hex: "#33333B")!
-        navController.navigationBar.tintColor = .white
-        navController.navigationBar.barTintColor = .white
-    }
+    let theme = ThemeController.shared.currentTheme
+    navController.navigationBar.backgroundColor = theme.colorFor(.backgroundColor)
+    navController.navigationBar.tintColor = theme.colorFor(.tintColor)
+    navController.navigationBar.barTintColor = theme.colorFor(.barTintColor)
     
 }
 
 
 func darkModeConformingStyle<L: UILabel>(_ label: L) -> Void {
     
-    switch ThemeController.shared.currentTheme {
-    case .light:
-        label.tintColor = .white
-        label.textColor = .black
-    case .dark:
-        label.tintColor = UIColor(hex: "#33333B")!
-        label.textColor = .white
-    }
+    let theme = ThemeController.shared.currentTheme
+    label.tintColor = theme.colorFor(.tintColor)
+    label.textColor = theme.colorFor(.textColor)
     
 }
 
 func darkModeConformingStyle<T: UITabBarController>(_ tabBarController: T) -> Void {
     
-    switch ThemeController.shared.currentTheme {
-    case .light:
-        tabBarController.view.backgroundColor = .white
-        tabBarController.tabBar.tintColor = .accentColor
-        tabBarController.tabBar.barTintColor = .white
-    case .dark:
-        tabBarController.view.backgroundColor = UIColor(hex: "#33333B")!
-        tabBarController.tabBar.barTintColor = UIColor(hex: "#33333B")!
-        tabBarController.tabBar.tintColor = .white
-    }
+    let theme = ThemeController.shared.currentTheme
+    tabBarController.view.backgroundColor = theme.colorFor(.backgroundColor)
+    tabBarController.tabBar.tintColor = theme.colorFor(.tabBarTintColor)
+    tabBarController.tabBar.barTintColor = theme.colorFor(.tintColor)
+ 
     
 }
 
 func darkModeConformingStyle<S: UISegmentedControl>(_ sc: S) -> Void {
-    
-    switch ThemeController.shared.currentTheme {
-    case .light:
-        sc.tintColor = .accentColor
-    case .dark:
-        sc.tintColor = .accentColor
-    }
-    
+    sc.tintColor = .accentColor
 }
 
 let grayDarkStyleConformingLabel: (UILabel) -> Void = darkModeConformingStyle <> {
     
-    switch ThemeController.shared.currentTheme {
-    case .light:
-        $0.textColor = .fadedTextColor
-    case .dark:
-        $0.textColor = .white
-    }
+    let theme = ThemeController.shared.currentTheme
+    $0.textColor = theme.colorFor(.textColor)
+
 }
 
 let grayDarkStyleConformingView: (UIView) -> Void = darkModeConformingStyle <> {
     
-    switch ThemeController.shared.currentTheme {
-    case .light:
-        $0.tintColor = .fadedTextColor
-    case .dark:
-        $0.tintColor = .white
-    }
+    let theme = ThemeController.shared.currentTheme
+    $0.tintColor = theme.colorFor(.tintColor)
+
 }
 
 func whiteDarkStyleConformingProgressView <P: UIProgressView>(_ progressView: P) -> Void  {
-    
-    switch ThemeController.shared.currentTheme {
-    case .light:
-        progressView.trackTintColor = UIColor.init(white: 0.92, alpha: 1)
-    case .dark:
-        progressView.trackTintColor = .fadedTextColor
-    }
+    let theme = ThemeController.shared.currentTheme
+    progressView.trackTintColor = theme.colorFor(.trackBarTintColor)
 }
 
 
 func alwaysDarkStyle<V: UIView>(_ view: V) -> Void {
     view.backgroundColor = .testBackground
 }
-

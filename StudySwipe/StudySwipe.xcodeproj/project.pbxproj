@@ -35,6 +35,12 @@
 		34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */; };
 		34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */; };
 		34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */; };
+		D1292AFB22D8FFC300FAFD1E /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */; };
+		D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */; };
+		D1292AFF22D8FFDA00FAFD1E /* Theming.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFE22D8FFDA00FAFD1E /* Theming.swift */; };
+		D1292B0222D8FFFA00FAFD1E /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0122D8FFFA00FAFD1E /* Array+Extension.swift */; };
+		D1292B0422D9000700FAFD1E /* SubscribableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0322D9000700FAFD1E /* SubscribableValue.swift */; };
+		D1292B0622D9000F00FAFD1E /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0522D9000F00FAFD1E /* Weak.swift */; };
 		D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */; };
 		D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93122CA70BF001EED6C /* CoreDataStack.swift */; };
 		D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93322CA715E001EED6C /* HTTPMethod.swift */; };
@@ -115,6 +121,12 @@
 		34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionTableViewController.swift; sourceTree = "<group>"; };
 		34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
+		D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeProvider.swift; sourceTree = "<group>"; };
+		D1292AFE22D8FFDA00FAFD1E /* Theming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theming.swift; sourceTree = "<group>"; };
+		D1292B0122D8FFFA00FAFD1E /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		D1292B0322D9000700FAFD1E /* SubscribableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribableValue.swift; sourceTree = "<group>"; };
+		D1292B0522D9000F00FAFD1E /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
 		D194E93122CA70BF001EED6C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D194E93322CA715E001EED6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -262,6 +274,27 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		D1292AF922D8FF9D00FAFD1E /* Theming */ = {
+			isa = PBXGroup;
+			children = (
+				D1292B0022D8FFE300FAFD1E /* Theming Helpers */,
+				D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */,
+				D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */,
+				D1292AFE22D8FFDA00FAFD1E /* Theming.swift */,
+			);
+			path = Theming;
+			sourceTree = "<group>";
+		};
+		D1292B0022D8FFE300FAFD1E /* Theming Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D1292B0122D8FFFA00FAFD1E /* Array+Extension.swift */,
+				D1292B0322D9000700FAFD1E /* SubscribableValue.swift */,
+				D1292B0522D9000F00FAFD1E /* Weak.swift */,
+			);
+			path = "Theming Helpers";
+			sourceTree = "<group>";
+		};
 		D17188A022D3C95A006D4CBA /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +334,7 @@
 		D194E92D22CA7023001EED6C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D1292AF922D8FF9D00FAFD1E /* Theming */,
 				D1F408AC22D7E90900C4AC3C /* Functional Helpers */,
 				D194E97322CA9F38001EED6C /* Networking Helpers */,
 				34DA7B8722CBFACC00AD2A63 /* UI Helpers */,
@@ -555,10 +589,12 @@
 				D194E95222CA85A3001EED6C /* QuestionAnalytics.swift in Sources */,
 				D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */,
 				D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */,
+				D1292B0222D8FFFA00FAFD1E /* Array+Extension.swift in Sources */,
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
 				34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */,
+				D1292B0422D9000700FAFD1E /* SubscribableValue.swift in Sources */,
 				34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */,
 				D1BA3E7822CBE627001B1BD7 /* PerformanceTableViewController.swift in Sources */,
 				D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */,
@@ -575,16 +611,19 @@
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
 				D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */,
 				34FBA49622CB0D210047FAEA /* ReviewViewController.swift in Sources */,
+				D1292B0622D9000F00FAFD1E /* Weak.swift in Sources */,
 				34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */,
 				34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */,
 				34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
+				D1292AFB22D8FFC300FAFD1E /* AppTheme.swift in Sources */,
 				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
 				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
 				34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */,
 				D194E98422CADD94001EED6C /* CoreDataFetchController.swift in Sources */,
 				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
+				D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */,
 				D1F408B022D7E9CC00C4AC3C /* FunctionalStyling.swift in Sources */,
 				D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
@@ -594,6 +633,7 @@
 				34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */,
 				34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */,
 				34FBA49222CABF8A0047FAEA /* APIKeys.swift in Sources */,
+				D1292AFF22D8FFDA00FAFD1E /* Theming.swift in Sources */,
 				D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */,
