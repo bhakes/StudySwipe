@@ -19,10 +19,16 @@ class TestSetupViewController: UIViewController {
     var questionNumberLabel: UILabel!
     var questionSlider: UISlider!
     
+    private var themedStatusBarStyle: UIStatusBarStyle?
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return themedStatusBarStyle ?? super.preferredStatusBarStyle
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+        setUpTheming()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,12 +56,9 @@ class TestSetupViewController: UIViewController {
         
         //
         
-        darkModeConformingStyle(self.view)
-        
         // Set up Title Label
-        let titleLabel = UILabel()
+        let titleLabel = DMCLabel()
         titleLabel.text = "Take a Test"
-        darkModeConformingStyle(titleLabel)
         titleLabel.font = UIFont.boldSystemFont(ofSize: 48)
         
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
@@ -115,7 +118,7 @@ class TestSetupViewController: UIViewController {
         segmentedControl = UISegmentedControl(items: difficulties)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.tintColor = .accentColor
-        darkModeConformingStyle(segmentedControl)
+        
         stackView.addArrangedSubview(segmentedControl)
         
         // Set up Question Count Slider
@@ -176,5 +179,18 @@ class TestSetupViewController: UIViewController {
         testViewController.test = test
         
         present(testViewController, animated: true)
+    }
+}
+
+extension TestSetupViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        themedStatusBarStyle = theme.statusBarStyle
+        setNeedsStatusBarAppearanceUpdate()
+        
+        //        navigationBar.barTintColor = theme.barBackgroundColor
+        //        navigationBar.tintColor = theme.barForegroundColor
+        //        navigationBar.titleTextAttributes = [
+        //            NSAttributedStringKey.foregroundColor: theme.barForegroundColor
+        //        ]
     }
 }

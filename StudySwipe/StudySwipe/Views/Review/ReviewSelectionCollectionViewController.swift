@@ -29,7 +29,6 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: .questionsFinishedUpdating, object: nil)
         
         
-        darkModeConformingStyle(collectionView)
     }
 
     // MARK: UICollectionViewDataSource

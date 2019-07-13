@@ -33,3 +33,9 @@ extension AppTheme {
         textColor: .lightText
     )
 }
+
+extension AppTheme: Equatable {
+    static func ==(lhs: AppTheme, rhs: AppTheme) -> Bool {
+        return lhs.statusBarStyle == rhs.statusBarStyle && lhs.barBackgroundColor == rhs.barBackgroundColor && lhs.barForegroundColor == rhs.barForegroundColor && lhs.backgroundColor == rhs.backgroundColor && lhs.textColor == rhs.textColor
+    }
+}

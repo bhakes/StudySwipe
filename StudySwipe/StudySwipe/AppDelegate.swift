@@ -77,14 +77,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let reviewVC = ReviewViewController()
         let testSetupVC = TestSetupViewController()
         let performanceVC = PerformanceViewController()
+        let settingsTVC = SettingsViewController()
         
-        let tabBarController = UITabBarController()
+        let tabBarController = DMCTabBarController()
 //        tabBarController.view.backgroundColor = .white
 //        tabBarController.tabBar.tintColor = .accentColor
-        darkModeConformingStyle(tabBarController)
         
         // Add them to the tab bar controller
-        tabBarController.viewControllers = [reviewVC, testSetupVC, performanceVC]
+        tabBarController.viewControllers = [reviewVC, testSetupVC, performanceVC, settingsTVC]
         
         // Set up the tab bar items
         reviewVC.tabBarItem.title = "Review"
@@ -95,6 +95,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         performanceVC.tabBarItem.title = "Performance"
         performanceVC.tabBarItem.image = UIImage(named: "bar_chart")
+        
+        settingsTVC.tabBarItem.title = "Settings"
+        settingsTVC.tabBarItem.image = UIImage(named: "settings")
         
         // Set up the window
         window = UIWindow(frame: UIScreen.main.bounds)

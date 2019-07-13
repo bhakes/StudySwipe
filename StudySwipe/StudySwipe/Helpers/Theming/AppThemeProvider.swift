@@ -24,6 +24,9 @@ final class AppThemeProvider: ThemeProvider {
     }
     
     init() {
+        // We'll default to the light theme to start with, but
+        // this could read directly from UserDefaults to get
+        // the user's last theme choice.
         theme = SubscribableValue<AppTheme>(value: .light)
     }
     

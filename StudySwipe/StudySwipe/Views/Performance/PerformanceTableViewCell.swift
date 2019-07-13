@@ -48,7 +48,6 @@ class PerformanceTableViewCell: UITableViewCell {
     let progressView: UIProgressView = {
         let progressView = UIProgressView(progressViewStyle: .default)
         progressView.progressTintColor = UIColor.blue
-        whiteDarkStyleConformingProgressView(progressView)
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
         progressView.layer.cornerRadius = 5
         progressView.clipsToBounds = true

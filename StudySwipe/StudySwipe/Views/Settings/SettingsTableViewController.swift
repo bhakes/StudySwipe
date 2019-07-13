@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SettingsTableViewDelegate: class {
+    func darkModeDidChange()
+}
+
 class SettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -19,13 +23,15 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(DarkModeTableViewCell.self, forCellReuseIdentifier: darkCellID)
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,33 +39,58 @@ class SettingsTableViewController: UITableViewController {
         switch section {
         case 0:
             return 1
-        case 1:
-            return 1
-        case 2:
-            return 4
         default:
             return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = DMCView()
+        view.translatesAutoresizingMaskIntoConstraints = true
+       
+        let label = DMCLabel()
+        label.translatesAutoresizingMaskIntoConstraints = true
+        label.font = .boldSystemFont(ofSize: 20)
+        view.addSubview(label)
+        
+        switch section {
+        case 0:
+            label.text = "Display"
+        default:
+            label.text = "This should not be a section yet."
+        }
+        
+        label.constrainToSuperView(view, bottom: 8, leading: 20)
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        switch section {
+        default:
+            return 40
         }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        
+        
         
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = "Settings One"
-        case 1:
-            cell.textLabel?.text = "Settings Two"
-        case 2:
-            cell.textLabel?.text = "Settings Three"
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: darkCellID, for: indexPath) as? DarkModeTableViewCell else { fatalError("Could not dequeue cell as DarkModeCellDelegate")}
+            cell.delegate = self
+
+            return cell
+            
         default:
-            cell.textLabel?.text = "Huh?"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+            cell.textLabel?.text = "This should not be a section yet."
+            
+            return cell
         }
 
         // Configure the cell...
-
-        return cell
     }
     
 
@@ -77,5 +108,17 @@ class SettingsTableViewController: UITableViewController {
     
     // MARK: - Properties
     let cellID = "cellID"
+    let darkCellID = "darkCellID"
+    weak var delegate: SettingsTableViewDelegate?
 
+}
+
+extension SettingsTableViewController: DarkModeCellDelegate {
+    func darkModeDidChange() {
+        self.reloadInputViews()
+        self.tableView.reloadData()
+        delegate?.darkModeDidChange()
+    }
+    
+    
 }

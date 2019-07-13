@@ -21,10 +21,17 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
     
     let coreDataFetchController = CoreDataFetchController()
     
+    private var themedStatusBarStyle: UIStatusBarStyle?
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return themedStatusBarStyle ?? super.preferredStatusBarStyle
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+        setUpTheming()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?) {
@@ -49,24 +56,20 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
     private func setupViews() {
         
         
-        darkModeConformingStyle(self.view)
         // Set up header view and title label
         let headerHeight: CGFloat = 80
-        let headerView = UIView()
-        darkModeConformingStyle(headerView)
+        let headerView = DMCView()
         headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
         
-        let label = UILabel()
+        let label = DMCLabel()
         label.text = "Pick a topic"
-        darkModeConformingStyle(label)
         label.font = UIFont.boldSystemFont(ofSize: 48)
         
         label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
         
         // Set up collection view and container
-        collectionViewContainer = UIView()
+        collectionViewContainer = DMCView()
         collectionViewContainer.backgroundColor = .gray
-        darkModeConformingStyle(collectionViewContainer)
         collectionViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
         collectionViewContainerConstraint = collectionViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         collectionViewContainerConstraint.isActive = true
@@ -106,5 +109,18 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
             self.testViewController.remove()
             self.testViewController = nil
         }
+    }
+}
+
+extension ReviewViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        themedStatusBarStyle = theme.statusBarStyle
+        setNeedsStatusBarAppearanceUpdate()
+        
+//        navigationBar.barTintColor = theme.barBackgroundColor
+//        navigationBar.tintColor = theme.barForegroundColor
+//        navigationBar.titleTextAttributes = [
+//            NSAttributedStringKey.foregroundColor: theme.barForegroundColor
+//        ]
     }
 }

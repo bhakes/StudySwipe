@@ -28,7 +28,7 @@ final class ThemeController {
     static let shared = ThemeController()
     private init () {}
     
-    var currentTheme: Theme = .dark
+    var currentTheme: Theme = .light
     
 }
 
@@ -73,66 +73,66 @@ extension Theme {
     }
 }
 
-func darkModeConformingStyle<V: UIView>(_ view: V) -> Void {
-    
-    let theme = ThemeController.shared.currentTheme
-    view.backgroundColor = theme.colorFor(.backgroundColor)
-    view.tintColor = theme.colorFor(.tintColor)
-    
-}
-
-func darkModeConformingStyle<N: UINavigationController>(_ navController: N) -> Void {
-    
-    let theme = ThemeController.shared.currentTheme
-    navController.navigationBar.backgroundColor = theme.colorFor(.backgroundColor)
-    navController.navigationBar.tintColor = theme.colorFor(.tintColor)
-    navController.navigationBar.barTintColor = theme.colorFor(.barTintColor)
-    
-}
-
-
-func darkModeConformingStyle<L: UILabel>(_ label: L) -> Void {
-    
-    let theme = ThemeController.shared.currentTheme
-    label.tintColor = theme.colorFor(.tintColor)
-    label.textColor = theme.colorFor(.textColor)
-    
-}
-
-func darkModeConformingStyle<T: UITabBarController>(_ tabBarController: T) -> Void {
-    
-    let theme = ThemeController.shared.currentTheme
-    tabBarController.view.backgroundColor = theme.colorFor(.backgroundColor)
-    tabBarController.tabBar.tintColor = theme.colorFor(.tabBarTintColor)
-    tabBarController.tabBar.barTintColor = theme.colorFor(.tintColor)
-    
-    
-}
-
-func darkModeConformingStyle<S: UISegmentedControl>(_ sc: S) -> Void {
-    sc.tintColor = .accentColor
-}
-
-let grayDarkStyleConformingLabel: (UILabel) -> Void = darkModeConformingStyle <> {
-    
-    let theme = ThemeController.shared.currentTheme
-    $0.textColor = theme.colorFor(.textColor)
-    
-}
-
-let grayDarkStyleConformingView: (UIView) -> Void = darkModeConformingStyle <> {
-    
-    let theme = ThemeController.shared.currentTheme
-    $0.tintColor = theme.colorFor(.tintColor)
-    
-}
-
-func whiteDarkStyleConformingProgressView <P: UIProgressView>(_ progressView: P) -> Void  {
-    let theme = ThemeController.shared.currentTheme
-    progressView.trackTintColor = theme.colorFor(.trackBarTintColor)
-}
-
-
-func alwaysDarkStyle<V: UIView>(_ view: V) -> Void {
-    view.backgroundColor = .testBackground
-}
+//func darkModeConformingStyle<V: UIView>(_ view: V) -> Void {
+//    
+//    let theme = ThemeController.shared.currentTheme
+//    view.backgroundColor = theme.colorFor(.backgroundColor)
+//    view.tintColor = theme.colorFor(.tintColor)
+//    
+//}
+//
+//func darkModeConformingStyle<N: UINavigationController>(_ navController: N) -> Void {
+//    
+//    let theme = ThemeController.shared.currentTheme
+//    navController.navigationBar.backgroundColor = theme.colorFor(.backgroundColor)
+//    navController.navigationBar.tintColor = theme.colorFor(.tintColor)
+//    navController.navigationBar.barTintColor = theme.colorFor(.barTintColor)
+//    
+//}
+//
+//
+//func darkModeConformingStyle<L: UILabel>(_ label: L) -> Void {
+//    
+//    let theme = ThemeController.shared.currentTheme
+//    label.tintColor = theme.colorFor(.tintColor)
+//    label.textColor = theme.colorFor(.textColor)
+//    
+//}
+//
+//func darkModeConformingStyle<T: UITabBarController>(_ tabBarController: T) -> Void {
+//    
+//    let theme = ThemeController.shared.currentTheme
+//    tabBarController.view.backgroundColor = theme.colorFor(.backgroundColor)
+//    tabBarController.tabBar.tintColor = theme.colorFor(.tabBarTintColor)
+//    tabBarController.tabBar.barTintColor = theme.colorFor(.tintColor)
+//    
+//    
+//}
+//
+//func darkModeConformingStyle<S: UISegmentedControl>(_ sc: S) -> Void {
+//    sc.tintColor = .accentColor
+//}
+//
+//let grayDarkStyleConformingLabel: (UILabel) -> Void = darkModeConformingStyle <> {
+//    
+//    let theme = ThemeController.shared.currentTheme
+//    $0.textColor = theme.colorFor(.textColor)
+//    
+//}
+//
+//let grayDarkStyleConformingView: (UIView) -> Void = darkModeConformingStyle <> {
+//    
+//    let theme = ThemeController.shared.currentTheme
+//    $0.tintColor = theme.colorFor(.tintColor)
+//    
+//}
+//
+//func whiteDarkStyleConformingProgressView <P: UIProgressView>(_ progressView: P) -> Void  {
+//    let theme = ThemeController.shared.currentTheme
+//    progressView.trackTintColor = theme.colorFor(.trackBarTintColor)
+//}
+//
+//
+//func alwaysDarkStyle<V: UIView>(_ view: V) -> Void {
+//    view.backgroundColor = .testBackground
+//}
