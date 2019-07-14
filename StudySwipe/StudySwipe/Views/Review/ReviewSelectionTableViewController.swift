@@ -86,7 +86,7 @@ class ReviewSelectionTableViewController: UITableViewController {
     }
     
     private func setupViews() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SelectionCell")
+        tableView.register(DMCTableViewCell.self, forCellReuseIdentifier: "SelectionCell")
         
         tableView.separatorStyle = .none
     }

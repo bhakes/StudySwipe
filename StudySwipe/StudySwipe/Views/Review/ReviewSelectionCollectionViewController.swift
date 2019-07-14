@@ -28,8 +28,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         // Register to be notified when questions are updated
         NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: .questionsFinishedUpdating, object: nil)
         
-        
-        darkModeConformingStyle(collectionView)
+        setUpTheming()
     }
 
     // MARK: UICollectionViewDataSource
@@ -129,5 +128,15 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+    }
+}
+
+
+extension ReviewSelectionCollectionViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        self.view.backgroundColor = theme.backgroundColor
+        self.collectionView.backgroundColor = theme.backgroundColor
+        
     }
 }

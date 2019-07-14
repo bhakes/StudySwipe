@@ -11,10 +11,6 @@ import CoreData
 
 class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource, StopwatchDelegate {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     // MARK: - Properties
     private var dismissButton: UIButton!
     private var titleLabel: UILabel!
@@ -25,6 +21,11 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     private var stopwatch: Stopwatch!
     
     var cardContainer: SwipeableCardViewContainer!
+    
+    private var themedStatusBarStyle: UIStatusBarStyle?
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return themedStatusBarStyle ?? super.preferredStatusBarStyle
+    }
     
     var infoBar: UIView!
     var closeButtonAction: (() -> Void)?
@@ -63,6 +64,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         super.viewDidLoad()
         
         setupViews()
+        setUpTheming()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,7 +137,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         // Set up info bar, a place to put the title, buttons, timer, etc
         infoBar = UIView()
-        testObservation != nil ? alwaysDarkStyle(infoBar) : darkModeConformingStyle(infoBar)
         infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)
         
         let infoStackView = UIStackView()
@@ -146,7 +147,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         titleLabel = UILabel()
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         titleLabel.textColor = .fadedTextColor
-//        grayDarkStyleConformingLabel(titleLabel)
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.minimumScaleFactor = 0.5
         infoStackView.addArrangedSubview(titleLabel)
@@ -160,14 +160,14 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         // Set up arrow images
         gotItImageView = UIImageView(image: UIImage(named: "got-it"))
         gotItImageView.tintColor = .fadedTextColor
-        testObservation != nil ? alwaysDarkStyle(gotItImageView) : grayDarkStyleConformingView(gotItImageView)
+       
         gotItImageView.contentMode = .scaleAspectFit
         
         gotItImageView.constrainToSuperView(view, bottom: 4, trailing: 4, height: 60, width: 200)
         
         needsWorkImageView = UIImageView(image: UIImage(named: "needs-work"))
         needsWorkImageView.tintColor = .fadedTextColor
-        testObservation != nil ? alwaysDarkStyle(needsWorkImageView) : grayDarkStyleConformingView(needsWorkImageView)
+       
         needsWorkImageView.contentMode = .scaleAspectFit
 
         needsWorkImageView.constrainToSuperView(view, bottom: 4, leading: 4, height: 60, width: 200)
@@ -188,12 +188,12 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         // Set things that depend on whether or not this is a test
         if testObservation != nil {
-            view.backgroundColor = .testBackground
+            view.backgroundColor = AppThemeProvider.shared.currentTheme == AppTheme.dark ? AppThemeProvider.shared.currentTheme.backgroundColor : .testBackground
             stopwatch = Stopwatch()
             stopwatch.delegate = self
             stopwatch.start()
         } else {
-            darkModeConformingStyle(view)
+           view.backgroundColor = AppThemeProvider.shared.currentTheme == AppTheme.dark ? AppThemeProvider.shared.currentTheme.backgroundColor : .white
         }
         
         
@@ -241,4 +241,13 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
 extension String {
     fileprivate static let quitTestAlertTitle = "Are you sure you want to quit?"
     fileprivate static let quitTestAlertMessage = "Your data thus far will be saved, you will lose out on the remaining questions."
+}
+
+
+extension TestViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        themedStatusBarStyle = theme.statusBarStyle
+        setNeedsStatusBarAppearanceUpdate()
+
+    }
 }

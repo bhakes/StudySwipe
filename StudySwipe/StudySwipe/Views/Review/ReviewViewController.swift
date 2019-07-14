@@ -12,19 +12,26 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
     
     static let animationDistance: CGFloat = 900
     
-    var collectionViewContainer: UIView!
+    var collectionViewContainer: DMCView!
     var collectionViewContainerConstraint: NSLayoutConstraint!
     var collectionViewController: ReviewSelectionCollectionViewController!
-    var testViewContainer: UIView!
+    var testViewContainer: DMCView!
     var testViewContainerConstraint: NSLayoutConstraint!
     var testViewController: TestViewController!
     
     let coreDataFetchController = CoreDataFetchController()
     
+    private var themedStatusBarStyle: UIStatusBarStyle?
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return themedStatusBarStyle ?? super.preferredStatusBarStyle
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+        setUpTheming()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?) {
@@ -49,24 +56,19 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
     private func setupViews() {
         
         
-        darkModeConformingStyle(self.view)
         // Set up header view and title label
         let headerHeight: CGFloat = 80
-        let headerView = UIView()
-        darkModeConformingStyle(headerView)
+        let headerView = DMCView()
         headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
         
-        let label = UILabel()
+        let label = DMCLabel()
         label.text = "Pick a topic"
-        darkModeConformingStyle(label)
         label.font = UIFont.boldSystemFont(ofSize: 48)
         
         label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
         
         // Set up collection view and container
-        collectionViewContainer = UIView()
-        collectionViewContainer.backgroundColor = .gray
-        darkModeConformingStyle(collectionViewContainer)
+        collectionViewContainer = DMCView()
         collectionViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
         collectionViewContainerConstraint = collectionViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         collectionViewContainerConstraint.isActive = true
@@ -77,7 +79,7 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
         add(collectionViewController, toView: collectionViewContainer)
         
         // Set up test view container
-        testViewContainer = UIView()
+        testViewContainer = DMCView()
         
         testViewContainer.constrainToSuperView(view, leading: 0, trailing: 0, equalHeight: 0)
         testViewContainerConstraint = testViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ReviewViewController.animationDistance)
@@ -106,5 +108,15 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
             self.testViewController.remove()
             self.testViewController = nil
         }
+    }
+}
+
+extension ReviewViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        themedStatusBarStyle = theme.statusBarStyle
+        setNeedsStatusBarAppearanceUpdate()
+        
+        view.backgroundColor = theme.backgroundColor
+
     }
 }

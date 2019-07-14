@@ -19,10 +19,16 @@ class TestSetupViewController: UIViewController {
     var questionNumberLabel: UILabel!
     var questionSlider: UISlider!
     
+    private var themedStatusBarStyle: UIStatusBarStyle?
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return themedStatusBarStyle ?? super.preferredStatusBarStyle
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupViews()
+        setUpTheming()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,12 +56,9 @@ class TestSetupViewController: UIViewController {
         
         //
         
-        darkModeConformingStyle(self.view)
-        
         // Set up Title Label
-        let titleLabel = UILabel()
+        let titleLabel = DMCLabel()
         titleLabel.text = "Take a Test"
-        darkModeConformingStyle(titleLabel)
         titleLabel.font = UIFont.boldSystemFont(ofSize: 48)
         
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
@@ -69,7 +72,7 @@ class TestSetupViewController: UIViewController {
         mainStack.constrainToSuperView(view, bottom: 20, leading: 20, trailing: 20)
         mainStack.constrainToSiblingView(titleLabel, below: 20)
         
-        let spacer1 = UIView()
+        let spacer1 = DMCView()
         mainStack.addArrangedSubview(spacer1)
         
         // Set up Quote Stack
@@ -97,7 +100,7 @@ class TestSetupViewController: UIViewController {
         
         quoteStack.addArrangedSubview(authorLabel)
         
-        let spacer2 = UIView()
+        let spacer2 = DMCView()
         mainStack.addArrangedSubview(spacer2)
         
         let stackView = UIStackView()
@@ -107,7 +110,7 @@ class TestSetupViewController: UIViewController {
         stackView.constrain(width: 240)
         mainStack.addArrangedSubview(stackView)
         
-        let spacer3 = UIView()
+        let spacer3 = DMCView()
         mainStack.addArrangedSubview(spacer3)
         
         // Set up Difficulty Segmented Control
@@ -115,7 +118,7 @@ class TestSetupViewController: UIViewController {
         segmentedControl = UISegmentedControl(items: difficulties)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.tintColor = .accentColor
-        darkModeConformingStyle(segmentedControl)
+        
         stackView.addArrangedSubview(segmentedControl)
         
         // Set up Question Count Slider
@@ -125,7 +128,7 @@ class TestSetupViewController: UIViewController {
         questionNumberLabel.textColor = .fadedTextColor
         stackView.addArrangedSubview(questionNumberLabel)
         
-        let sliderContainer = UIView()
+        let sliderContainer = DMCView()
         sliderContainer.backgroundColor = .accentColor
         sliderContainer.layer.cornerRadius = 8
         stackView.addArrangedSubview(sliderContainer)
@@ -154,7 +157,7 @@ class TestSetupViewController: UIViewController {
         startTestButton.constrain(width: 120)
         mainStack.addArrangedSubview(startTestButton)
         
-        let spacer4 = UIView()
+        let spacer4 = DMCView()
         mainStack.addArrangedSubview(spacer4)
         
         spacer1.constrainToSiblingView(spacer2, equalHeight: 0)
@@ -176,5 +179,14 @@ class TestSetupViewController: UIViewController {
         testViewController.test = test
         
         present(testViewController, animated: true)
+    }
+}
+
+extension TestSetupViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        themedStatusBarStyle = theme.statusBarStyle
+        setNeedsStatusBarAppearanceUpdate()
+        
+        view.backgroundColor = theme.backgroundColor
     }
 }
