@@ -25,8 +25,10 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         
         collectionView.register(SelectionCollectionReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         
+        // Register to be notified when questions are updated
+        NotificationCenter.default.addObserver(self, selector: #selector(updateCollectionView), name: .questionsFinishedUpdating, object: nil)
         
-        collectionView.backgroundColor = .white
+        setUpTheming()
     }
 
     // MARK: UICollectionViewDataSource
@@ -55,7 +57,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return Category.allCases.count
+            return Category.nonEmptyCategories.count
         case 1:
             return Difficulty.allCases.count
         default:
@@ -71,7 +73,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         let item: ColorIconTitleProviding
         switch indexPath.section {
         case 0:
-            item = Category.allCases[indexPath.row]
+            item = Category.nonEmptyCategories[indexPath.row]
         case 1:
             item = Difficulty.allCases[indexPath.row]
         default:
@@ -89,7 +91,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         
         switch indexPath.section {
         case 0:
-            category = Category.allCases[indexPath.row]
+            category = Category.nonEmptyCategories[indexPath.row]
         case 1:
             difficulty = Difficulty.allCases[indexPath.row]
         default:
@@ -120,5 +122,21 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: 200, height: 60)
+    }
+    
+    @objc private func updateCollectionView() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
+}
+
+
+extension ReviewSelectionCollectionViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        self.view.backgroundColor = theme.backgroundColor
+        self.collectionView.backgroundColor = theme.backgroundColor
+        
     }
 }

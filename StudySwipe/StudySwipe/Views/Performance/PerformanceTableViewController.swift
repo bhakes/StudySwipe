@@ -24,6 +24,7 @@ class PerformanceTableViewController: UITableViewController {
         super.viewDidLoad()
         
         setupViews()
+        setUpTheming()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +40,7 @@ class PerformanceTableViewController: UITableViewController {
         tableView.register(PerformanceTableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
-        tableView.backgroundColor = .white
+
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,7 +50,7 @@ class PerformanceTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return Category.allCases.count
+            return Category.nonEmptyCategories.count
         default:
             fatalError("There should only be \(PerformanceTableViewController.sectionNumber) sections")
         }
@@ -61,12 +62,12 @@ class PerformanceTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let view = UIView()
+        let view = DMCView()
         view.constrain(height: 60)
         let label = UILabel()
         label.text = "Progress towards mastery"
-        label.font = UIFont.boldSystemFont(ofSize: 24)
         label.textColor = .fadedTextColor
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         label.constrainToSuperView(view, bottom: 0, leading: 20, trailing: 20)
         return view
         
@@ -78,12 +79,13 @@ class PerformanceTableViewController: UITableViewController {
         let category: Category
         switch indexPath.section {
         case 0:
-            category = Category.allCases.reversed()[indexPath.row]
+            category = Category.nonEmptyCategories[indexPath.row]
         default:
             fatalError("There should only be \(PerformanceTableViewController.sectionNumber) sections")
         }
         
         cell.category = category
+        cell.selectionStyle = .none
         if category == .All {
             cell.categoryQuestions = self.allQuestions
             cell.categoryMasteredQuestions = self.correctlyAnsweredQuestions
@@ -91,7 +93,6 @@ class PerformanceTableViewController: UITableViewController {
             cell.categoryQuestions = self.allQuestions.filter({ $0.category == category.rawValue })
             cell.categoryMasteredQuestions = self.correctlyAnsweredQuestions.filter({ $0.category == category.rawValue })
         }
-        
         
         return cell
     }
@@ -111,4 +112,13 @@ class PerformanceTableViewController: UITableViewController {
     
     
 
+}
+
+
+extension PerformanceTableViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        self.view.backgroundColor = theme.backgroundColor
+        
+    }
 }

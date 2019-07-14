@@ -17,6 +17,9 @@
 		34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */; };
 		34DA7B9122CD4A8200AD2A63 /* ColorIconTitleProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */; };
 		34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */; };
+		34DED65322D6CDB60059867A /* NotificationName+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DED65222D6CDB60059867A /* NotificationName+Custom.swift */; };
+		34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */; };
+		34E7F65922D2EE63000D9E4A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F65822D2EE63000D9E4A /* GradientView.swift */; };
 		34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */; };
 		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
 		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
@@ -35,9 +38,13 @@
 		34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */; };
 		34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */; };
 		34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */; };
-		D127F08122D50601002C7931 /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127F08022D50601002C7931 /* ThemeProvider.swift */; };
-		D127F08322D509E8002C7931 /* Themed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127F08222D509E8002C7931 /* Themed.swift */; };
-		D127F08522D50AEA002C7931 /* StudySwipeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D127F08422D50AEA002C7931 /* StudySwipeTheme.swift */; };
+		D1292AFB22D8FFC300FAFD1E /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */; };
+		D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */; };
+		D1292AFF22D8FFDA00FAFD1E /* Theming.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFE22D8FFDA00FAFD1E /* Theming.swift */; };
+		D1292B0222D8FFFA00FAFD1E /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0122D8FFFA00FAFD1E /* Array+Extension.swift */; };
+		D1292B0422D9000700FAFD1E /* SubscribableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0322D9000700FAFD1E /* SubscribableValue.swift */; };
+		D1292B0622D9000F00FAFD1E /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0522D9000F00FAFD1E /* Weak.swift */; };
+		D129537422DA4DAA00AD5C1E /* DarkModeConformingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D129537322DA4DAA00AD5C1E /* DarkModeConformingViews.swift */; };
 		D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */; };
 		D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93122CA70BF001EED6C /* CoreDataStack.swift */; };
 		D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93322CA715E001EED6C /* HTTPMethod.swift */; };
@@ -71,6 +78,9 @@
 		D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */; };
 		D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */; };
 		D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */; };
+		D1EF436222D99C4D0044D960 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436122D99C4D0044D960 /* SettingsViewController.swift */; };
+		D1EF436422D9A8B80044D960 /* DarkModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */; };
+		D1F408AE22D7E94E00C4AC3C /* FunctionalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +108,9 @@
 		34DA7B8E22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIconTitleProviding.swift; sourceTree = "<group>"; };
 		34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewDelegate.swift; sourceTree = "<group>"; };
+		34DED65222D6CDB60059867A /* NotificationName+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Custom.swift"; sourceTree = "<group>"; };
+		34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
+		34E7F65822D2EE63000D9E4A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		34FBA47A22CA7C230047FAEA /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
 		34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableViewDelegate.swift; sourceTree = "<group>"; };
@@ -116,9 +129,13 @@
 		34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionTableViewController.swift; sourceTree = "<group>"; };
 		34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
-		D127F08022D50601002C7931 /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
-		D127F08222D509E8002C7931 /* Themed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themed.swift; sourceTree = "<group>"; };
-		D127F08422D50AEA002C7931 /* StudySwipeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySwipeTheme.swift; sourceTree = "<group>"; };
+		D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeProvider.swift; sourceTree = "<group>"; };
+		D1292AFE22D8FFDA00FAFD1E /* Theming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theming.swift; sourceTree = "<group>"; };
+		D1292B0122D8FFFA00FAFD1E /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		D1292B0322D9000700FAFD1E /* SubscribableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribableValue.swift; sourceTree = "<group>"; };
+		D1292B0522D9000F00FAFD1E /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
+		D129537322DA4DAA00AD5C1E /* DarkModeConformingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConformingViews.swift; sourceTree = "<group>"; };
 		D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
 		D194E93122CA70BF001EED6C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D194E93322CA715E001EED6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -152,6 +169,9 @@
 		D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewCell.swift; sourceTree = "<group>"; };
 		D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsController.swift; sourceTree = "<group>"; };
 		D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
+		D1EF436122D99C4D0044D960 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeTableViewCell.swift; sourceTree = "<group>"; };
+		D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +243,7 @@
 				34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */,
 				34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */,
 				34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */,
+				34E7F65822D2EE63000D9E4A /* GradientView.swift */,
 			);
 			path = "UI Helpers";
 			sourceTree = "<group>";
@@ -230,6 +251,7 @@
 		34FBA48A22CA7D600047FAEA /* Card Swiping */ = {
 			isa = PBXGroup;
 			children = (
+				34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */,
 				34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */,
 				34FBA47A22CA7C230047FAEA /* SwipeableView.swift */,
 				34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */,
@@ -264,10 +286,34 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		D1292AF922D8FF9D00FAFD1E /* Theming */ = {
+			isa = PBXGroup;
+			children = (
+				D1292B0022D8FFE300FAFD1E /* Theming Helpers */,
+				D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */,
+				D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */,
+				D1292AFE22D8FFDA00FAFD1E /* Theming.swift */,
+				D129537322DA4DAA00AD5C1E /* DarkModeConformingViews.swift */,
+			);
+			path = Theming;
+			sourceTree = "<group>";
+		};
+		D1292B0022D8FFE300FAFD1E /* Theming Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D1292B0122D8FFFA00FAFD1E /* Array+Extension.swift */,
+				D1292B0322D9000700FAFD1E /* SubscribableValue.swift */,
+				D1292B0522D9000F00FAFD1E /* Weak.swift */,
+			);
+			path = "Theming Helpers";
+			sourceTree = "<group>";
+		};
 		D17188A022D3C95A006D4CBA /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				D194E98622CB9476001EED6C /* SettingsTableViewController.swift */,
+				D1EF436122D99C4D0044D960 /* SettingsViewController.swift */,
+				D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -303,10 +349,13 @@
 		D194E92D22CA7023001EED6C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D1292AF922D8FF9D00FAFD1E /* Theming */,
+				D1F408AC22D7E90900C4AC3C /* Functional Helpers */,
 				D194E97322CA9F38001EED6C /* Networking Helpers */,
 				34DA7B8722CBFACC00AD2A63 /* UI Helpers */,
 				D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */,
 				34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */,
+				34DED65222D6CDB60059867A /* NotificationName+Custom.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -377,8 +426,6 @@
 				D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */,
 				D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */,
 				34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */,
-				D127F08022D50601002C7931 /* ThemeProvider.swift */,
-				D127F08222D509E8002C7931 /* Themed.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -426,7 +473,6 @@
 				D194E93322CA715E001EED6C /* HTTPMethod.swift */,
 				D194E97422CA9F61001EED6C /* APICallType.swift */,
 				D194E97F22CAC86A001EED6C /* Reachability.swift */,
-				D127F08422D50AEA002C7931 /* StudySwipeTheme.swift */,
 			);
 			path = "Networking Helpers";
 			sourceTree = "<group>";
@@ -437,6 +483,14 @@
 				D194E97722CAA623001EED6C /* NetworkingStructs.swift */,
 			);
 			path = NetworkingStructs;
+			sourceTree = "<group>";
+		};
+		D1F408AC22D7E90900C4AC3C /* Functional Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */,
+			);
+			path = "Functional Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,6 +595,7 @@
 			files = (
 				D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */,
 				34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */,
+				34E7F65922D2EE63000D9E4A /* GradientView.swift in Sources */,
 				D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */,
 				D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */,
 				D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */,
@@ -550,11 +605,14 @@
 				D194E95222CA85A3001EED6C /* QuestionAnalytics.swift in Sources */,
 				D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */,
 				D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */,
+				D1292B0222D8FFFA00FAFD1E /* Array+Extension.swift in Sources */,
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
 				34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */,
+				D1292B0422D9000700FAFD1E /* SubscribableValue.swift in Sources */,
 				34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */,
+				D1EF436222D99C4D0044D960 /* SettingsViewController.swift in Sources */,
 				D1BA3E7822CBE627001B1BD7 /* PerformanceTableViewController.swift in Sources */,
 				D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */,
 				D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */,
@@ -563,23 +621,29 @@
 				34FBA49822CB10540047FAEA /* UIViewController+Container.swift in Sources */,
 				D194E93D22CA7538001EED6C /* Difficulty.swift in Sources */,
 				D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */,
+				D1F408AE22D7E94E00C4AC3C /* FunctionalHelpers.swift in Sources */,
 				34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */,
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
-				D127F08322D509E8002C7931 /* Themed.swift in Sources */,
+				34DED65322D6CDB60059867A /* NotificationName+Custom.swift in Sources */,
+				D1EF436422D9A8B80044D960 /* DarkModeTableViewCell.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
 				D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */,
 				34FBA49622CB0D210047FAEA /* ReviewViewController.swift in Sources */,
+				D1292B0622D9000F00FAFD1E /* Weak.swift in Sources */,
 				34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */,
 				34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */,
 				34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
+				D1292AFB22D8FFC300FAFD1E /* AppTheme.swift in Sources */,
 				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
 				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
+				34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */,
 				34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */,
 				D194E98422CADD94001EED6C /* CoreDataFetchController.swift in Sources */,
 				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
+				D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */,
 				D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
 				D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */,
@@ -588,12 +652,12 @@
 				34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */,
 				34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */,
 				34FBA49222CABF8A0047FAEA /* APIKeys.swift in Sources */,
+				D1292AFF22D8FFDA00FAFD1E /* Theming.swift in Sources */,
 				D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */,
-				D127F08122D50601002C7931 /* ThemeProvider.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */,
+				D129537422DA4DAA00AD5C1E /* DarkModeConformingViews.swift in Sources */,
 				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,
-				D127F08522D50AEA002C7931 /* StudySwipeTheme.swift in Sources */,
 				34DA7B9122CD4A8200AD2A63 /* ColorIconTitleProviding.swift in Sources */,
 				34FBA49422CAC0B20047FAEA /* UIView+Constraints.swift in Sources */,
 				34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */,

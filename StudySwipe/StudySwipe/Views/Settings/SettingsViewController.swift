@@ -1,20 +1,22 @@
 //
-//  PerformanceViewController.swift
+//  SettingsViewController.swift
 //  StudySwipe
 //
-//  Created by Benjamin Hakes on 7/2/19.
+//  Created by Benjamin Hakes on 7/12/19.
 //  Copyright © 2019 Dillon McElhinney. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class PerformanceViewController: UIViewController, PerformanceTableViewDelegate {
+class SettingsViewController: UIViewController, SettingsTableViewDelegate {
+    
     
     static let animationDistance: CGFloat = 800
     
     var tableViewContainer: UIView!
     var tableViewContainerConstraint: NSLayoutConstraint!
-    var tableViewController: PerformanceTableViewController!
+    var tableViewController: SettingsTableViewController!
     
     let coreDataFetchController = CoreDataFetchController()
     
@@ -38,7 +40,7 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
         
         let label = DMCLabel()
-        label.text = "Performance"
+        label.text = "Settings"
         label.font = UIFont.boldSystemFont(ofSize: 48)
         label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
         
@@ -48,15 +50,25 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         tableViewContainerConstraint.isActive = true
         headerView.constrainToSiblingView(tableViewContainer, above: 0)
         
-        tableViewController = PerformanceTableViewController(style: .grouped)
+        tableViewController = SettingsTableViewController(style: .grouped)
         tableViewController.delegate = self
         add(tableViewController, toView: tableViewContainer)
         
     }
-
+    
 }
 
-extension PerformanceViewController: Themed {
+extension SettingsViewController: DarkModeCellDelegate {
+    func darkModeDidChange() {
+        self.view.setNeedsLayout()
+        self.view.setNeedsDisplay()
+    }
+    
+    
+}
+
+
+extension SettingsViewController: Themed {
     func applyTheme(_ theme: AppTheme) {
         themedStatusBarStyle = theme.statusBarStyle
         setNeedsStatusBarAppearanceUpdate()

@@ -15,6 +15,7 @@ class PerformanceTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: cellID)
         
         setupViews()
+        setUpTheming()
     }
     
     override func awakeFromNib() {
@@ -31,8 +32,8 @@ class PerformanceTableViewCell: UITableViewCell {
     
     private func setupViews() {
         addSubview(stackView)
-        titleLabel.textColor = .gray
-        masteredLabel.textColor = .gray
+//        titleLabel.textColor = .gray
+//        masteredLabel.textColor = .gray
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,14 +46,12 @@ class PerformanceTableViewCell: UITableViewCell {
     var stackViewLeadingAnchor: NSLayoutConstraint?
     var stackViewTrailingAnchor: NSLayoutConstraint?
     
-    let progressView: UIProgressView = {
-        let progressView = UIProgressView(progressViewStyle: .default)
-        progressView.progressTintColor = UIColor.blue
-        progressView.trackTintColor = UIColor.init(white: 0.92, alpha: 1)
+    let progressView: DMCProgessView = {
+        let progressView = DMCProgessView(progressViewStyle: .default)
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
-        progressView.layer.cornerRadius = 5
+        progressView.layer.cornerRadius = 3
         progressView.clipsToBounds = true
-        progressView.layer.sublayers![1].cornerRadius = 5
+        progressView.layer.sublayers![1].cornerRadius = 3
         progressView.subviews[1].clipsToBounds = true
         return progressView
     }()
@@ -60,6 +59,8 @@ class PerformanceTableViewCell: UITableViewCell {
     var masteredLabel: UILabel = UILabel()
     lazy var subStackView: UIStackView = {
         var sv = UIStackView(arrangedSubviews: [titleLabel, masteredLabel])
+        titleLabel.textColor = .fadedTextColor
+        masteredLabel.textColor = .fadedTextColor
         sv.alignment = .fill
         sv.axis = .horizontal
         sv.spacing = 8
@@ -114,4 +115,13 @@ class PerformanceTableViewCell: UITableViewCell {
         }
     }
     
+}
+
+
+extension PerformanceTableViewCell: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        backgroundColor = theme.backgroundColor
+        
+    }
 }

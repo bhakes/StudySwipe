@@ -16,8 +16,8 @@ class SelectionCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    lazy var colorView: UIView = {
-        let colorView = UIView()
+    lazy var colorView: GradientView = {
+        let colorView = GradientView()
         return colorView
     }()
     
@@ -38,6 +38,7 @@ class SelectionCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        setUpTheming()
     }
     
     private func setupViews() {
@@ -65,10 +66,20 @@ class SelectionCollectionViewCell: UICollectionViewCell {
     private func updateViews() {
         guard let item = item else { return }
         
-        colorView.backgroundColor = item.color()
+//        colorView.backgroundColor = item.color()
+        colorView.setupGradient(startColor: item.color().lightened(by: 0.25), endColor: item.color().darkened(by: 0.1), startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1))
         
         titleLabel.text = item.title()
         
         imageView.image = item.icon()
+    }
+}
+
+
+extension SelectionCollectionViewCell: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        backgroundColor = theme.backgroundColor
+        
     }
 }

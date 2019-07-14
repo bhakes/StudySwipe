@@ -11,10 +11,6 @@ import CoreData
 
 class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource, StopwatchDelegate {
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     // MARK: - Properties
     private var dismissButton: UIButton!
     private var titleLabel: UILabel!
@@ -25,6 +21,12 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     private var stopwatch: Stopwatch!
     
     var cardContainer: SwipeableCardViewContainer!
+    
+    private var themedStatusBarStyle: UIStatusBarStyle?
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return themedStatusBarStyle ?? super.preferredStatusBarStyle
+    }
+    
     var infoBar: UIView!
     var closeButtonAction: (() -> Void)?
     
@@ -62,6 +64,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         super.viewDidLoad()
         
         setupViews()
+        setUpTheming()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,7 +94,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     func card(forItemAtIndex index: Int) -> SwipeableCard {
-        let card = SwipeableCard()
+        let card = QuestionCard()
         card.backgroundColor = .white
         
         let question = questions[index]
@@ -101,6 +104,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     // MARK: - Swipeable Card View Delegate
     func card(_ card: SwipeableCard, didCommitSwipeInDirection direction: SwipeDirection) {
+        guard let card = card as? QuestionCard else {
+            fatalError("The card is a different type that expected")
+        }
         questionCount += 1
         if questionCount > 2 { hideArrows() }
         guard let observation = testObservation else { return }
@@ -128,6 +134,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     // MARK: Private Methods
     private func setupViews() {
         
+        
         // Set up info bar, a place to put the title, buttons, timer, etc
         infoBar = UIView()
         infoBar.constrainToSuperView(view, top: 0, leading: 0, trailing: 0, height: 60)
@@ -151,18 +158,21 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         infoStackView.addArrangedSubview(dismissButton)
         
         // Set up arrow images
-        needsWorkImageView = UIImageView(image: UIImage(named: "needs-work"))
-        needsWorkImageView.tintColor = .fadedTextColor
-        needsWorkImageView.contentMode = .scaleAspectFit
-        
-        needsWorkImageView.constrainToSuperView(view, bottom: 4, leading: 4, height: 60, width: 200)
-        
         gotItImageView = UIImageView(image: UIImage(named: "got-it"))
         gotItImageView.tintColor = .fadedTextColor
+       
         gotItImageView.contentMode = .scaleAspectFit
         
         gotItImageView.constrainToSuperView(view, bottom: 4, trailing: 4, height: 60, width: 200)
         
+        needsWorkImageView = UIImageView(image: UIImage(named: "needs-work"))
+        needsWorkImageView.tintColor = .fadedTextColor
+       
+        needsWorkImageView.contentMode = .scaleAspectFit
+
+        needsWorkImageView.constrainToSuperView(view, bottom: 4, leading: 4, height: 60, width: 200)
+        
+        needsWorkImageView.superview?.bringSubviewToFront(needsWorkImageView)
         // Set up card container
         // This is done last so that it sits over the other elements
         cardContainer = SwipeableCardViewContainer()
@@ -172,18 +182,21 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         cardContainer.dataSource = self
         cardContainer.delegate = self
         
+        
         // Record start time
         startTime = Date()
         
         // Set things that depend on whether or not this is a test
         if testObservation != nil {
-            view.backgroundColor = .testBackground
+            view.backgroundColor = AppThemeProvider.shared.currentTheme == AppTheme.dark ? AppThemeProvider.shared.currentTheme.backgroundColor : .testBackground
             stopwatch = Stopwatch()
             stopwatch.delegate = self
             stopwatch.start()
         } else {
-            view.backgroundColor = .white
+           view.backgroundColor = AppThemeProvider.shared.currentTheme == AppTheme.dark ? AppThemeProvider.shared.currentTheme.backgroundColor : .white
         }
+        
+        
         
         updateViews()
     }
@@ -228,4 +241,13 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
 extension String {
     fileprivate static let quitTestAlertTitle = "Are you sure you want to quit?"
     fileprivate static let quitTestAlertMessage = "Your data thus far will be saved, you will lose out on the remaining questions."
+}
+
+
+extension TestViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        themedStatusBarStyle = theme.statusBarStyle
+        setNeedsStatusBarAppearanceUpdate()
+
+    }
 }
