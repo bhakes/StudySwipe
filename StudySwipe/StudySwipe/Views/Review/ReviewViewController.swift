@@ -12,10 +12,10 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
     
     static let animationDistance: CGFloat = 900
     
-    var collectionViewContainer: UIView!
+    var collectionViewContainer: DMCView!
     var collectionViewContainerConstraint: NSLayoutConstraint!
     var collectionViewController: ReviewSelectionCollectionViewController!
-    var testViewContainer: UIView!
+    var testViewContainer: DMCView!
     var testViewContainerConstraint: NSLayoutConstraint!
     var testViewController: TestViewController!
     
@@ -69,7 +69,6 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
         
         // Set up collection view and container
         collectionViewContainer = DMCView()
-        collectionViewContainer.backgroundColor = .gray
         collectionViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
         collectionViewContainerConstraint = collectionViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         collectionViewContainerConstraint.isActive = true
@@ -80,7 +79,7 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
         add(collectionViewController, toView: collectionViewContainer)
         
         // Set up test view container
-        testViewContainer = UIView()
+        testViewContainer = DMCView()
         
         testViewContainer.constrainToSuperView(view, leading: 0, trailing: 0, equalHeight: 0)
         testViewContainerConstraint = testViewContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: ReviewViewController.animationDistance)
@@ -117,10 +116,7 @@ extension ReviewViewController: Themed {
         themedStatusBarStyle = theme.statusBarStyle
         setNeedsStatusBarAppearanceUpdate()
         
-//        navigationBar.barTintColor = theme.barBackgroundColor
-//        navigationBar.tintColor = theme.barForegroundColor
-//        navigationBar.titleTextAttributes = [
-//            NSAttributedStringKey.foregroundColor: theme.barForegroundColor
-//        ]
+        view.backgroundColor = theme.backgroundColor
+
     }
 }

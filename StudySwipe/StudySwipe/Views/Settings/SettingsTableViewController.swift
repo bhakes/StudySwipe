@@ -22,8 +22,10 @@ class SettingsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(DMCTableViewCell.self, forCellReuseIdentifier: cellID)
         tableView.register(DarkModeTableViewCell.self, forCellReuseIdentifier: darkCellID)
+        
+        setUpTheming()
         
     }
 
@@ -48,9 +50,10 @@ class SettingsTableViewController: UITableViewController {
         let view = DMCView()
         view.translatesAutoresizingMaskIntoConstraints = true
        
-        let label = DMCLabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = true
         label.font = .boldSystemFont(ofSize: 20)
+        label.textColor = .fadedTextColor
         view.addSubview(label)
         
         switch section {
@@ -80,12 +83,13 @@ class SettingsTableViewController: UITableViewController {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: darkCellID, for: indexPath) as? DarkModeTableViewCell else { fatalError("Could not dequeue cell as DarkModeCellDelegate")}
             cell.delegate = self
-
+            cell.selectionStyle = .none
             return cell
             
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
             cell.textLabel?.text = "This should not be a section yet."
+            cell.selectionStyle = .none
             
             return cell
         }
@@ -121,4 +125,12 @@ extension SettingsTableViewController: DarkModeCellDelegate {
     }
     
     
+}
+
+extension SettingsTableViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        self.view.backgroundColor = theme.backgroundColor
+        
+    }
 }

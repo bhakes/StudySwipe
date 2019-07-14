@@ -43,7 +43,6 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
         
         tableViewContainer = DMCView()
-        tableViewContainer.backgroundColor = .gray
         tableViewContainer.constrainToSuperView(view, leading: 0, trailing:0, equalHeight: -headerHeight)
         tableViewContainerConstraint = tableViewContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         tableViewContainerConstraint.isActive = true
@@ -62,10 +61,7 @@ extension PerformanceViewController: Themed {
         themedStatusBarStyle = theme.statusBarStyle
         setNeedsStatusBarAppearanceUpdate()
         
-        //        navigationBar.barTintColor = theme.barBackgroundColor
-        //        navigationBar.tintColor = theme.barForegroundColor
-        //        navigationBar.titleTextAttributes = [
-        //            NSAttributedStringKey.foregroundColor: theme.barForegroundColor
-        //        ]
+        view.backgroundColor = theme.backgroundColor
+
     }
 }

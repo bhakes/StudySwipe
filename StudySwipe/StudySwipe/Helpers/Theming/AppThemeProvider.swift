@@ -20,6 +20,7 @@ final class AppThemeProvider: ThemeProvider {
         }
         set {
             setNewTheme(newValue)
+            setKeyFor(newValue)
         }
     }
     
@@ -28,6 +29,7 @@ final class AppThemeProvider: ThemeProvider {
         // this could read directly from UserDefaults to get
         // the user's last theme choice.
         theme = SubscribableValue<AppTheme>(value: .light)
+        loadThemeFromUserDefaults()
     }
     
     private func setNewTheme(_ newTheme: AppTheme) {
@@ -52,7 +54,32 @@ final class AppThemeProvider: ThemeProvider {
             return
         }
         currentTheme = nextTheme
+        
     }
+    
+    private func loadThemeFromUserDefaults() {
+        let defaults = UserDefaults.standard
+        let theme = defaults.object(forKey:"Theme") as? String
+        if theme == "dark" {
+            self.theme = SubscribableValue<AppTheme>(value: .dark)
+            self.availableThemes = [.dark, .light]
+        } else {
+            self.theme = SubscribableValue<AppTheme>(value: .light)
+            self.availableThemes = [.light, .dark]
+        }
+    }
+    
+    private func setKeyFor(_ appTheme: AppTheme){
+        let defaults = UserDefaults.standard
+        
+        if appTheme == AppTheme.dark {
+            defaults.set("dark", forKey: "Theme")
+        } else {
+            defaults.set("light", forKey: "Theme")
+        }
+    }
+    
+    
 }
 
 extension Themed where Self: AnyObject {

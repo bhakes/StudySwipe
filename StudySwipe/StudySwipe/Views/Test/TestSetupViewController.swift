@@ -72,7 +72,7 @@ class TestSetupViewController: UIViewController {
         mainStack.constrainToSuperView(view, bottom: 20, leading: 20, trailing: 20)
         mainStack.constrainToSiblingView(titleLabel, below: 20)
         
-        let spacer1 = UIView()
+        let spacer1 = DMCView()
         mainStack.addArrangedSubview(spacer1)
         
         // Set up Quote Stack
@@ -100,7 +100,7 @@ class TestSetupViewController: UIViewController {
         
         quoteStack.addArrangedSubview(authorLabel)
         
-        let spacer2 = UIView()
+        let spacer2 = DMCView()
         mainStack.addArrangedSubview(spacer2)
         
         let stackView = UIStackView()
@@ -110,7 +110,7 @@ class TestSetupViewController: UIViewController {
         stackView.constrain(width: 240)
         mainStack.addArrangedSubview(stackView)
         
-        let spacer3 = UIView()
+        let spacer3 = DMCView()
         mainStack.addArrangedSubview(spacer3)
         
         // Set up Difficulty Segmented Control
@@ -128,7 +128,7 @@ class TestSetupViewController: UIViewController {
         questionNumberLabel.textColor = .fadedTextColor
         stackView.addArrangedSubview(questionNumberLabel)
         
-        let sliderContainer = UIView()
+        let sliderContainer = DMCView()
         sliderContainer.backgroundColor = .accentColor
         sliderContainer.layer.cornerRadius = 8
         stackView.addArrangedSubview(sliderContainer)
@@ -157,7 +157,7 @@ class TestSetupViewController: UIViewController {
         startTestButton.constrain(width: 120)
         mainStack.addArrangedSubview(startTestButton)
         
-        let spacer4 = UIView()
+        let spacer4 = DMCView()
         mainStack.addArrangedSubview(spacer4)
         
         spacer1.constrainToSiblingView(spacer2, equalHeight: 0)
@@ -187,10 +187,6 @@ extension TestSetupViewController: Themed {
         themedStatusBarStyle = theme.statusBarStyle
         setNeedsStatusBarAppearanceUpdate()
         
-        //        navigationBar.barTintColor = theme.barBackgroundColor
-        //        navigationBar.tintColor = theme.barForegroundColor
-        //        navigationBar.titleTextAttributes = [
-        //            NSAttributedStringKey.foregroundColor: theme.barForegroundColor
-        //        ]
+        view.backgroundColor = theme.backgroundColor
     }
 }

@@ -12,25 +12,32 @@ struct AppTheme {
     var statusBarStyle: UIStatusBarStyle
     var barBackgroundColor: UIColor
     var barForegroundColor: UIColor
+    var cellBackgroundColor: UIColor
     var backgroundColor: UIColor
     var textColor: UIColor
+    var trackTintColor: UIColor
 }
 
 extension AppTheme {
     static let light = AppTheme(
         statusBarStyle: .`default`,
-        barBackgroundColor: .white,
-        barForegroundColor: .black,
-        backgroundColor: UIColor(white: 0.9, alpha: 1),
-        textColor: .darkText
+        barBackgroundColor: .groupTableViewBackground,
+        barForegroundColor: .accentColor,
+        cellBackgroundColor: .groupTableViewBackground,
+        backgroundColor: .white,
+        textColor: .black,
+        trackTintColor: .groupTableViewBackground
     )
     
     static let dark = AppTheme(
         statusBarStyle: .lightContent,
-        barBackgroundColor: UIColor(white: 0, alpha: 1),
+        barBackgroundColor: .black,
         barForegroundColor: .white,
-        backgroundColor: UIColor(white: 0.2, alpha: 1),
-        textColor: .lightText
+        cellBackgroundColor: UIColor(white: 0.2, alpha: 1.0),
+        backgroundColor: .black,
+        textColor: .fadedTextColor,
+        trackTintColor: .fadedTextColor
+        
     )
 }
 

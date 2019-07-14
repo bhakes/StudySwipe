@@ -18,6 +18,7 @@ class DarkModeTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: darkCellID)
         
         setupViews()
+        setUpTheming()
     }
     
     override func awakeFromNib() {
@@ -37,10 +38,8 @@ class DarkModeTableViewCell: UITableViewCell {
     
     private func setupViews() {
         
-        let label = DMCLabel()
         label.text = "Dark Mode"
         
-        let darkModeSwitch = UISwitch()
         darkModeSwitch.isOn = AppThemeProvider.shared.currentTheme == AppTheme.dark ? true : false
         darkModeSwitch.addTarget(self, action: #selector(darkModeSwitchChanged(sender:)), for: .valueChanged)
         
@@ -51,20 +50,23 @@ class DarkModeTableViewCell: UITableViewCell {
        
     }
     
-    @objc func darkModeSwitchChanged(sender: UISwitch) {
-//        if sender.isOn {
-//            print("Dark Mode has been turned on.")
-//            ThemeController.shared.currentTheme = .dark
-//        } else {
-//            print("Dark Mode has been turned off.")
-//            ThemeController.shared.currentTheme = .light
-//        }
-//        delegate?.darkModeDidChange()
-        
+    @objc func darkModeSwitchChanged(sender: DMCSwitch) {
+
         AppThemeProvider.shared.nextTheme()
+        
     }
     
     let darkCellID = "darkCellID"
     var delegate: DarkModeCellDelegate?
+    let darkModeSwitch = DMCSwitch()
+    let label = DMCLabel()
+}
 
+
+extension DarkModeTableViewCell: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        backgroundColor = theme.cellBackgroundColor
+
+    }
 }

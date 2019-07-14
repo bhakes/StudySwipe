@@ -65,3 +65,69 @@ extension DMCTabBarController: Themed {
         
     }
 }
+
+class DMCTableViewCell: UITableViewCell {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setUpTheming()
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Init(coder:) has not been implemented")
+    }
+}
+
+extension DMCTableViewCell: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        backgroundColor = theme.backgroundColor
+        
+    }
+}
+
+class DMCProgessView: UIProgressView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpTheming()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension DMCProgessView: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        trackTintColor = theme.trackTintColor
+        
+    }
+}
+
+class DMCSwitch: UISwitch {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setUpTheming()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension DMCSwitch: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        onTintColor = theme.textColor
+        
+    }
+}

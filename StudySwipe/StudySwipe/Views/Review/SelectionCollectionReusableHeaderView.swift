@@ -19,6 +19,7 @@ class SelectionCollectionReusableHeaderView: UICollectionReusableView {
         super.init(frame: frame)
         
         setupViews()
+        setUpTheming()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,5 +31,13 @@ class SelectionCollectionReusableHeaderView: UICollectionReusableView {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         titleLabel.textColor = .fadedTextColor
         titleLabel.constrainToSuperView(self, bottom: 0, leading: 20, trailing: 20)
+    }
+}
+
+extension SelectionCollectionReusableHeaderView: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        backgroundColor = theme.backgroundColor
+        
     }
 }

@@ -80,8 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settingsTVC = SettingsViewController()
         
         let tabBarController = DMCTabBarController()
-//        tabBarController.view.backgroundColor = .white
-//        tabBarController.tabBar.tintColor = .accentColor
         
         // Add them to the tab bar controller
         tabBarController.viewControllers = [reviewVC, testSetupVC, performanceVC, settingsTVC]
@@ -99,9 +97,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         settingsTVC.tabBarItem.title = "Settings"
         settingsTVC.tabBarItem.image = UIImage(named: "settings")
         
+        
+        
         // Set up the window
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = tabBarController
+        
         window?.makeKeyAndVisible()
     }
 }

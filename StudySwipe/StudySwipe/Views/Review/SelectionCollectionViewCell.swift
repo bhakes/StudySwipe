@@ -38,6 +38,7 @@ class SelectionCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViews()
+        setUpTheming()
     }
     
     private func setupViews() {
@@ -71,5 +72,14 @@ class SelectionCollectionViewCell: UICollectionViewCell {
         titleLabel.text = item.title()
         
         imageView.image = item.icon()
+    }
+}
+
+
+extension SelectionCollectionViewCell: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        backgroundColor = theme.backgroundColor
+        
     }
 }

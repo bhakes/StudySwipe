@@ -81,7 +81,6 @@
 		D1EF436222D99C4D0044D960 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436122D99C4D0044D960 /* SettingsViewController.swift */; };
 		D1EF436422D9A8B80044D960 /* DarkModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */; };
 		D1F408AE22D7E94E00C4AC3C /* FunctionalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */; };
-		D1F408B022D7E9CC00C4AC3C /* FunctionalStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F408AF22D7E9CC00C4AC3C /* FunctionalStyling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,7 +172,6 @@
 		D1EF436122D99C4D0044D960 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeTableViewCell.swift; sourceTree = "<group>"; };
 		D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalHelpers.swift; sourceTree = "<group>"; };
-		D1F408AF22D7E9CC00C4AC3C /* FunctionalStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalStyling.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -491,7 +489,6 @@
 			isa = PBXGroup;
 			children = (
 				D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */,
-				D1F408AF22D7E9CC00C4AC3C /* FunctionalStyling.swift */,
 			);
 			path = "Functional Helpers";
 			sourceTree = "<group>";
@@ -647,7 +644,6 @@
 				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
 				D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */,
-				D1F408B022D7E9CC00C4AC3C /* FunctionalStyling.swift in Sources */,
 				D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
 				D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */,
@@ -823,7 +819,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
+				DEVELOPMENT_TEAM = S5U94G8XN2;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -842,7 +838,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
+				DEVELOPMENT_TEAM = S5U94G8XN2;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

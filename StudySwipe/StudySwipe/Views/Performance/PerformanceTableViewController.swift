@@ -24,6 +24,7 @@ class PerformanceTableViewController: UITableViewController {
         super.viewDidLoad()
         
         setupViews()
+        setUpTheming()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,8 +66,8 @@ class PerformanceTableViewController: UITableViewController {
         view.constrain(height: 60)
         let label = UILabel()
         label.text = "Progress towards mastery"
-        label.font = UIFont.boldSystemFont(ofSize: 24)
         label.textColor = .fadedTextColor
+        label.font = UIFont.boldSystemFont(ofSize: 24)
         label.constrainToSuperView(view, bottom: 0, leading: 20, trailing: 20)
         return view
         
@@ -84,6 +85,7 @@ class PerformanceTableViewController: UITableViewController {
         }
         
         cell.category = category
+        cell.selectionStyle = .none
         if category == .All {
             cell.categoryQuestions = self.allQuestions
             cell.categoryMasteredQuestions = self.correctlyAnsweredQuestions
@@ -110,4 +112,13 @@ class PerformanceTableViewController: UITableViewController {
     
     
 
+}
+
+
+extension PerformanceTableViewController: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        
+        self.view.backgroundColor = theme.backgroundColor
+        
+    }
 }
