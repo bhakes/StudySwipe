@@ -128,7 +128,7 @@ class TestSetupViewController: UIViewController {
         questionNumberLabel.textColor = .fadedTextColor
         stackView.addArrangedSubview(questionNumberLabel)
         
-        let sliderContainer = DMCView()
+        let sliderContainer = UIView()
         sliderContainer.backgroundColor = .accentColor
         sliderContainer.layer.cornerRadius = 8
         stackView.addArrangedSubview(sliderContainer)
