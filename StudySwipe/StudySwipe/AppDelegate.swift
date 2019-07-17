@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
                 
         if Reachability.isConnectedToNetwork(){
-            // do anything we need to
+            QuestionNetworkController.shared.getQuestions { _, _ in }
             
         } else{
             print("Internet Connection not Available!")
