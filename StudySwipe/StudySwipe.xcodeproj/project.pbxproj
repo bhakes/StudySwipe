@@ -18,6 +18,8 @@
 		34DA7B9122CD4A8200AD2A63 /* ColorIconTitleProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */; };
 		34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */; };
 		34DED65322D6CDB60059867A /* NotificationName+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DED65222D6CDB60059867A /* NotificationName+Custom.swift */; };
+		34E63FD722DD7CAD008F2304 /* Down.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E63FD422DD7C92008F2304 /* Down.framework */; };
+		34E63FD822DD7CAD008F2304 /* Down.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34E63FD422DD7C92008F2304 /* Down.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */; };
 		34E7F65922D2EE63000D9E4A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F65822D2EE63000D9E4A /* GradientView.swift */; };
 		34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */; };
@@ -91,7 +93,42 @@
 			remoteGlobalIDString = 347FDC0C22CA5F3E004F6656;
 			remoteInfo = StudySwipe;
 		};
+		34E63FD322DD7C92008F2304 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E63FCE22DD7C92008F2304 /* Down.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8A569F401E6B3E50008BE2AC;
+			remoteInfo = Down;
+		};
+		34E63FD522DD7C92008F2304 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E63FCE22DD7C92008F2304 /* Down.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8AFAEAFB1E6E32E900E09B68;
+			remoteInfo = DownTests;
+		};
+		34E63FD922DD7CAD008F2304 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 34E63FCE22DD7C92008F2304 /* Down.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8A569F3F1E6B3E50008BE2AC;
+			remoteInfo = Down;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		34E63FCD22DD7C3D008F2304 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				34E63FD822DD7CAD008F2304 /* Down.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		347FDC0D22CA5F3E004F6656 /* StudySwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudySwipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +146,7 @@
 		34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIconTitleProviding.swift; sourceTree = "<group>"; };
 		34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		34DED65222D6CDB60059867A /* NotificationName+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Custom.swift"; sourceTree = "<group>"; };
+		34E63FCE22DD7C92008F2304 /* Down.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Down.xcodeproj; path = "../Frameworks/Down-master/Down.xcodeproj"; sourceTree = "<group>"; };
 		34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		34E7F65822D2EE63000D9E4A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
@@ -179,6 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34E63FD722DD7CAD008F2304 /* Down.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +237,7 @@
 				347FDC0F22CA5F3E004F6656 /* StudySwipe */,
 				347FDC2422CA5F40004F6656 /* StudySwipeTests */,
 				347FDC0E22CA5F3E004F6656 /* Products */,
+				34E63FCE22DD7C92008F2304 /* Down.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -246,6 +286,15 @@
 				34E7F65822D2EE63000D9E4A /* GradientView.swift */,
 			);
 			path = "UI Helpers";
+			sourceTree = "<group>";
+		};
+		34E63FCF22DD7C92008F2304 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				34E63FD422DD7C92008F2304 /* Down.framework */,
+				34E63FD622DD7C92008F2304 /* DownTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		34FBA48A22CA7D600047FAEA /* Card Swiping */ = {
@@ -503,10 +552,12 @@
 				347FDC0922CA5F3E004F6656 /* Sources */,
 				347FDC0A22CA5F3E004F6656 /* Frameworks */,
 				347FDC0B22CA5F3E004F6656 /* Resources */,
+				34E63FCD22DD7C3D008F2304 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				34E63FDA22DD7CAD008F2304 /* PBXTargetDependency */,
 			);
 			name = StudySwipe;
 			productName = StudySwipe;
@@ -561,6 +612,12 @@
 			mainGroup = 347FDC0422CA5F3E004F6656;
 			productRefGroup = 347FDC0E22CA5F3E004F6656 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 34E63FCF22DD7C92008F2304 /* Products */;
+					ProjectRef = 34E63FCE22DD7C92008F2304 /* Down.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				347FDC0C22CA5F3E004F6656 /* StudySwipe */,
@@ -568,6 +625,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		34E63FD422DD7C92008F2304 /* Down.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Down.framework;
+			remoteRef = 34E63FD322DD7C92008F2304 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		34E63FD622DD7C92008F2304 /* DownTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DownTests.xctest;
+			remoteRef = 34E63FD522DD7C92008F2304 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		347FDC0B22CA5F3E004F6656 /* Resources */ = {
@@ -683,6 +757,11 @@
 			isa = PBXTargetDependency;
 			target = 347FDC0C22CA5F3E004F6656 /* StudySwipe */;
 			targetProxy = 347FDC2222CA5F40004F6656 /* PBXContainerItemProxy */;
+		};
+		34E63FDA22DD7CAD008F2304 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Down;
+			targetProxy = 34E63FD922DD7CAD008F2304 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -817,6 +896,7 @@
 		347FDC2B22CA5F40004F6656 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5U94G8XN2;
@@ -836,6 +916,7 @@
 		347FDC2C22CA5F40004F6656 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5U94G8XN2;
