@@ -34,9 +34,9 @@ class PillView: UIView {
         
         super.init(frame: frame)
         
-        textLabel.constrainToFill(self, top: 4, bottom: 4, leading: 4, trailing: 4)
+        textLabel.constrainToFill(self, top: 8, bottom: 8, leading: 12, trailing: 12)
         backgroundColor = color
-        layer.cornerRadius = (textLabel.font.lineHeight + 8) / 2
+        layer.cornerRadius = (textLabel.font.lineHeight + 16) / 2
         
         self.isUserInteractionEnabled = false
     }
