@@ -16,31 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let qnc = QuestionNetworkController.shared
-        let qfc = CoreDataFetchController()
-        
+                
         if Reachability.isConnectedToNetwork(){
-//            print("Internet Connection Available!")
-            qnc.getQuestions { _,_ in }
-            if let newQuestions = qfc.makeTest(with: "TempTest", count: 10)?.questions {
-                for _ in newQuestions {
-//                    print(q.question ?? "")
-                }
-            }
+            QuestionNetworkController.shared.getQuestions { _, _ in }
             
-//            if let correctlyAnsweredQuestions = qfc.getQuestionAnsweredCorrectly() {
-//                for c in correctlyAnsweredQuestions {
-//                    print(c.answer)
-//                }
-//            }
-            
-        }else{
+        } else{
             print("Internet Connection not Available!")
         }
-        
-        // TODO: Move this somewhere else
-        UITabBar.appearance().tintColor = .accentColor
         
         setupTabBarController()
         
