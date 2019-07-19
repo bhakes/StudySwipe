@@ -14,8 +14,7 @@ class TestSetupViewController: UIViewController {
     
     var quoteLabel: UILabel!
     var authorLabel: UILabel!
-    var masteredLabel: UILabel!
-    var masteredSwitch: UISwitch!
+    
     var segmentedControl: UISegmentedControl!
     var questionNumberLabel: UILabel!
     var questionSlider: UISlider!
@@ -147,27 +146,6 @@ class TestSetupViewController: UIViewController {
         
         questionSlider.constrainToSuperView(sliderContainer, top: 8, bottom: 8, leading: 20, trailing: 20)
         
-        
-        masteredLabel = UILabel()
-        masteredLabel.numberOfLines = 1
-        masteredLabel.textColor = .fadedTextColor
-        masteredLabel.textAlignment = .left
-        masteredLabel.text = "Include mastered cards: "
-        masteredLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        
-        
-        masteredSwitch = UISwitch()
-        masteredSwitch.onTintColor = .accentColor
-        masteredSwitch.isOn = true
-        
-        let isMasteredStackView = UIStackView(arrangedSubviews: [masteredLabel, masteredSwitch])
-        isMasteredStackView.axis = .horizontal
-        isMasteredStackView.spacing = 12
-        
-        isMasteredStackView.constrain(width: 240)
-        stackView.addArrangedSubview(isMasteredStackView)
-        
-        
         // Set up Start Test Button
         let startTestButton = UIButton(type: .system)
         startTestButton.setTitle("Start Test", for: .normal)
@@ -194,7 +172,7 @@ class TestSetupViewController: UIViewController {
     }
     
     private func startTest(difficulty: Difficulty = .All, numberOfQuestions number: Int) {
-        let (test, observation) = coreDataFetchController.makeTestAndObservation(with: "New \(number) Question Test", difficulties: [difficulty], count: number, random: true, notMasteredOnly: !masteredSwitch.isOn)
+        let (test, observation) = coreDataFetchController.makeTestAndObservation(with: "New \(number) Question Test", difficulties: [difficulty], count: number, random: true)
         let testViewController = TestViewController()
         testViewController.coreDataFetchController = coreDataFetchController
         testViewController.testObservation = observation

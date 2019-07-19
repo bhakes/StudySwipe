@@ -37,7 +37,7 @@ class QuestionCard: SwipeableCard {
         borderView.constrainToSuperView(self, top: borderSpacing, bottom: borderSpacing, leading: borderSpacing, trailing: borderSpacing)
         
         questionContainer = UIView()
-        questionContainer.constrainToSuperView(self, top: 20, bottom: 48, leading: 0, trailing: 0)
+        questionContainer.constrainToSuperView(self, top: 20, bottom: 48, leading: 20, trailing: 20)
         
         let downView = try? DownView(frame: .zero, markdownString: "### \(question.question ?? sampleText)")
         downView?.backgroundColor = .clear
