@@ -16,7 +16,7 @@ class CoreDataFetchController {
     
     // MARK: InterviewTest Manipulation Methods
     
-    func makeTest(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false) -> InterviewTest? {
+    func makeTest(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false, notMasteredOnly: Bool? = false) -> InterviewTest? {
         
         defer {
             do {
@@ -26,14 +26,14 @@ class CoreDataFetchController {
             }
         }
         
-        guard let questions = getFilteredQuestions(difficulties: difficulties, categories: categories, tracks: tracks, count: count, random: random) else { return nil }
+        guard let questions = getFilteredQuestions(difficulties: difficulties, categories: categories, tracks: tracks, count: count, random: random, notMasteredOnly: notMasteredOnly) else { return nil }
         
         let newTest = InterviewTest(questions: questions, title: title)
         
         return newTest
     }
     
-    func makeTestAndObservation(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false) -> (InterviewTest?, InterviewTestObservation?) {
+    func makeTestAndObservation(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false, notMasteredOnly: Bool? = false) -> (InterviewTest?, InterviewTestObservation?) {
         
         defer {
             do {
@@ -43,7 +43,7 @@ class CoreDataFetchController {
             }
         }
         
-        guard let questions = getFilteredQuestions(difficulties: difficulties, categories: categories, tracks: tracks, count: count, random: random) else { return (nil, nil) }
+        guard let questions = getFilteredQuestions(difficulties: difficulties, categories: categories, tracks: tracks, count: count, random: random, notMasteredOnly: notMasteredOnly) else { return (nil, nil) }
         
         let newTest = InterviewTest(questions: questions, title: title)
         guard let newTestObservation = makeTestObservation(with: newTest) else { return (newTest, nil)}
@@ -131,7 +131,7 @@ class CoreDataFetchController {
      
      
      */
-    func getFilteredQuestions(difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false) -> [Question]? {
+    func getFilteredQuestions(difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false, notMasteredOnly: Bool? = false) -> [Question]? {
         
         var result: [Question]? = nil // create an Question array named 'result' that will store the entries you find in the Persistent Store
         
@@ -201,6 +201,21 @@ class CoreDataFetchController {
                 }
             }
             
+            
+            // add is mastered predicate
+            
+            var notMasteredOnlyPredicate: NSPredicate?
+            
+            if let notMasteredOnly = notMasteredOnly, notMasteredOnly == true {
+                let questionObservations: [QuestionObservation] = getAllQuestionObservations() ?? []
+                
+                var filteredQuestionObs: [QuestionObservation] = Array(Set(questionObservations)) // create an QuestionObservation array named 'result' that will store the entries you find in the Persistent Store
+                filteredQuestionObs = filteredQuestionObs.filter({ $0.response == Response.correct.rawValue })
+                let uuidArray = filteredQuestionObs.map { $0.questionID?.uuidString }
+                notMasteredOnlyPredicate = NSPredicate(format: "NOT(%K IN %@)", "questionID", uuidArray)
+            }
+
+            
             // Create a subPredicate array and append each of the component predicates if available
             var subPredicates: [NSPredicate] = []
             if let difficultyPredicate = difficultyPredicate {
@@ -211,6 +226,9 @@ class CoreDataFetchController {
             }
             if let trackPredicate = trackPredicate {
                 subPredicates.append(trackPredicate)
+            }
+            if let notMasteredOnlyPredicate = notMasteredOnlyPredicate {
+                subPredicates.append(notMasteredOnlyPredicate)
             }
             
             // if the subPredicates array is greater than zero, create and AND compound predicate and add that compound predicate to the fetchRequest.predicate property
