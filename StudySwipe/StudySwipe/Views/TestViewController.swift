@@ -243,9 +243,11 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     private func displayPillView(for question: Question) {
         guard let category = Category(rawValue: question.category ?? "") else { return }
         let pillView = PillView(color: category.color(), text: "+1 \(category.title())")
+        pillView.borderColor = .white
+        pillView.shadowOpacity = 0.3
         pillView.alpha = 0
         
-        pillView.constrainToSuperView(view, top: 8, centerX: 0)
+        pillView.constrainToSuperView(view, bottom: 200, trailing: 8)
         
         let fadeIn = {
             pillView.alpha = 1

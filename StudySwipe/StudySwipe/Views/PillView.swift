@@ -13,8 +13,17 @@ class PillView: UIView {
     var color: UIColor {
         didSet { backgroundColor = color }
     }
+    
+    var borderColor: UIColor = .clear {
+        didSet { layer.borderColor = borderColor.cgColor }
+    }
+    
+    var shadowOpacity: Float = 0 {
+        didSet { layer.shadowOpacity = shadowOpacity }
+    }
+    
     var text: String? {
-        didSet { textLabel.text = text }
+        didSet { updateTextLabel() }
     }
     
     var textColor: UIColor = .white {
@@ -37,12 +46,21 @@ class PillView: UIView {
         textLabel.constrainToFill(self, top: 8, bottom: 8, leading: 12, trailing: 12)
         backgroundColor = color
         layer.cornerRadius = (textLabel.font.lineHeight + 16) / 2
+        layer.borderWidth = 2
+        layer.borderColor = borderColor.cgColor
+        layer.shadowRadius = 10
+        layer.shadowOffset = CGSize(width: 2, height: 5)
         
         self.isUserInteractionEnabled = false
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func updateTextLabel() {
+        textLabel.text = text
+        textLabel.sizeToFit()
     }
     
 }
