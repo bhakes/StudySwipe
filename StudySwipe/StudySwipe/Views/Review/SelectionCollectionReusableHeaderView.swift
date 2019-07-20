@@ -30,6 +30,7 @@ class SelectionCollectionReusableHeaderView: UICollectionReusableView {
     private func setupViews() {
         titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
         titleLabel.textColor = .fadedTextColor
+        titleLabel.sizeToFit()
         titleLabel.constrainToSuperView(self, bottom: 0, leading: 20, trailing: 20)
     }
 }
