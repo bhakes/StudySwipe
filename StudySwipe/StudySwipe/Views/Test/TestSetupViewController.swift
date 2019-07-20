@@ -144,14 +144,13 @@ class TestSetupViewController: UIViewController {
         
         questionSlider.constrainToSuperView(sliderContainer, top: 8, bottom: 8, leading: 20, trailing: 20)
         
-        
+        // add masterLabel & switch
         masteredLabel = UILabel()
         masteredLabel.numberOfLines = 1
         masteredLabel.textColor = .fadedTextColor
         masteredLabel.textAlignment = .left
         masteredLabel.text = "Include mastered cards: "
         masteredLabel.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        
         
         masteredSwitch = UISwitch()
         masteredSwitch.onTintColor = .accentColor
@@ -163,7 +162,6 @@ class TestSetupViewController: UIViewController {
         
         isMasteredStackView.constrain(width: 240)
         stackView.addArrangedSubview(isMasteredStackView)
-        
         
         // Set up Start Test Button
         let startTestButton = UIButton(type: .system)

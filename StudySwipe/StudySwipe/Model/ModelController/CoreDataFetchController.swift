@@ -201,6 +201,7 @@ class CoreDataFetchController {
                 }
             }
             
+            
             // add is mastered predicate
             
             var notMasteredOnlyPredicate: NSPredicate?
@@ -213,6 +214,7 @@ class CoreDataFetchController {
                 let uuidArray = filteredQuestionObs.map { $0.questionID?.uuidString }
                 notMasteredOnlyPredicate = NSPredicate(format: "NOT(%K IN %@)", "questionID", uuidArray)
             }
+
             
             // Create a subPredicate array and append each of the component predicates if available
             var subPredicates: [NSPredicate] = []
