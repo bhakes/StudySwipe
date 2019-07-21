@@ -60,7 +60,7 @@ class TestConfigurationViewController: UIViewController {
     // MARK: - Private Methods
     private func setupViews() {
         
-        view.backgroundColor = .white
+        self.view = DMCView()
         
         // Set up Title Label
         let titleLabel = DMCLabel()
@@ -91,7 +91,7 @@ class TestConfigurationViewController: UIViewController {
         layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
         optionsCollectionViewController = TestConfigurationCollectionViewController(collectionViewLayout: layout)
 
-        let optionsView = UIView()
+        let optionsView = DMCView()
         optionsView.backgroundColor = .gray
         mainStack.addArrangedSubview(optionsView)
         optionsView.constrainToSiblingView(mainStack, equalWidth: 0)

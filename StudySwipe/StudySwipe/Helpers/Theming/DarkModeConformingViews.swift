@@ -29,6 +29,25 @@ extension DMCView: Themed {
     }
 }
 
+class DMCCollectionView: UICollectionView {
+    
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: layout)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+
+extension DMCCollectionView: Themed {
+    func applyTheme(_ theme: AppTheme) {
+        backgroundColor = theme.backgroundColor
+        
+    }
+}
+
 
 class DMCLabel: UILabel {
     
