@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Make the View Controllers
         let reviewVC = ReviewViewController()
-        let testSetupVC = TestSetupViewController()
+        let testSetupVC = TestConfigurationViewController()
         let performanceVC = PerformanceViewController()
         let settingsTVC = SettingsViewController()
         
@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         settingsTVC.tabBarItem.title = "Settings"
         settingsTVC.tabBarItem.image = UIImage(named: "settings")
         
-        
+        tabBarController.selectedIndex = 0
         
         // Set up the window
         window = UIWindow(frame: UIScreen.main.bounds)

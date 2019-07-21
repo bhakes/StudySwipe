@@ -24,7 +24,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     private var themedStatusBarStyle: UIStatusBarStyle?
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return themedStatusBarStyle ?? super.preferredStatusBarStyle
+        return .lightContent
     }
     
     var infoBar: UIView!
@@ -116,8 +116,20 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         let response: Response = direction.horizontalPosition == .right ? .correct : .incorrect
         guard let questionID = question.questionID else { fatalError("The Question does not have a questionID")}
         
-        _ = coreDataFetchController?.recordQuestionObservation(with: response, for: questionID, with: Int(duration), in: observation)
-        
+        if let cdfc = coreDataFetchController {
+            
+            // check to see if the question has been mastered
+            let isMastered = cdfc.questionIsMastered(for: question)
+            
+            // record the question observation
+            _ = cdfc.recordQuestionObservation(with: response, for: questionID, with: Int(duration), in: observation)
+            
+            // if the repose was "correct" & the question wasn't previously mastered
+            if response == .correct && isMastered == false {
+                    displayPillView(for: question)
+            }
+            
+        }
         // Reset timer for the next question
         startTime = Date()
     }
@@ -133,7 +145,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     // MARK: Private Methods
     private func setupViews() {
-        
         
         // Set up info bar, a place to put the title, buttons, timer, etc
         infoBar = UIView()
@@ -160,19 +171,15 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         // Set up arrow images
         gotItImageView = UIImageView(image: UIImage(named: "got-it"))
         gotItImageView.tintColor = .fadedTextColor
-       
         gotItImageView.contentMode = .scaleAspectFit
-        
         gotItImageView.constrainToSuperView(view, bottom: 4, trailing: 4, height: 60, width: 200)
         
         needsWorkImageView = UIImageView(image: UIImage(named: "needs-work"))
         needsWorkImageView.tintColor = .fadedTextColor
-       
         needsWorkImageView.contentMode = .scaleAspectFit
-
         needsWorkImageView.constrainToSuperView(view, bottom: 4, leading: 4, height: 60, width: 200)
-        
         needsWorkImageView.superview?.bringSubviewToFront(needsWorkImageView)
+        
         // Set up card container
         // This is done last so that it sits over the other elements
         cardContainer = SwipeableCardViewContainer()
@@ -181,7 +188,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         cardContainer.alpha = 0
         cardContainer.dataSource = self
         cardContainer.delegate = self
-        
         
         // Record start time
         startTime = Date()
@@ -233,6 +239,32 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
                 self.needsWorkImageView.alpha = 0
                 self.gotItImageView.alpha = 0
             }
+        }
+    }
+    
+    private func displayPillView(for question: Question) {
+        guard let category = Category(rawValue: question.category ?? "") else { return }
+        let pillView = PillView(color: category.color(), text: "+1 \(category.title())")
+        pillView.borderColor = .white
+        pillView.shadowOpacity = 0.3
+        pillView.alpha = 0
+        
+        pillView.constrainToSuperView(view, bottom: 340, trailing: 8)
+        
+        let fadeIn = {
+            pillView.alpha = 1
+        }
+        
+        let fadeOut = {
+            pillView.alpha = 0
+        }
+        
+        let completion: (Bool) -> Void = { _ in
+            pillView.removeFromSuperview()
+        }
+        
+        UIView.animate(withDuration: 0.2, animations: fadeIn) { _ in
+            UIView.animate(withDuration: 0.3, delay: 0.5, animations: fadeOut, completion: completion)
         }
     }
     

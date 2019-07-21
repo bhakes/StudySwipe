@@ -18,6 +18,11 @@
 		34DA7B9122CD4A8200AD2A63 /* ColorIconTitleProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */; };
 		34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */; };
 		34DED65322D6CDB60059867A /* NotificationName+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DED65222D6CDB60059867A /* NotificationName+Custom.swift */; };
+		34E2B99222E0FF190009CC01 /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E2B99122E0FF190009CC01 /* PillView.swift */; };
+		34E2B99522E10EDA0009CC01 /* TestConfigurationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E2B99422E10EDA0009CC01 /* TestConfigurationCollectionViewController.swift */; };
+		34E2B99722E110210009CC01 /* TestConfigurationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E2B99622E110210009CC01 /* TestConfigurationCollectionViewCell.swift */; };
+		34E2B99922E115800009CC01 /* CenterAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E2B99822E115800009CC01 /* CenterAlignedCollectionViewFlowLayout.swift */; };
+		34E2B99B22E11A760009CC01 /* TestConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E2B99A22E11A760009CC01 /* TestConfigurationViewController.swift */; };
 		34E63FD722DD7CAD008F2304 /* Down.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34E63FD422DD7C92008F2304 /* Down.framework */; };
 		34E63FD822DD7CAD008F2304 /* Down.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 34E63FD422DD7C92008F2304 /* Down.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */; };
@@ -146,6 +151,11 @@
 		34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorIconTitleProviding.swift; sourceTree = "<group>"; };
 		34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		34DED65222D6CDB60059867A /* NotificationName+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Custom.swift"; sourceTree = "<group>"; };
+		34E2B99122E0FF190009CC01 /* PillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
+		34E2B99422E10EDA0009CC01 /* TestConfigurationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfigurationCollectionViewController.swift; sourceTree = "<group>"; };
+		34E2B99622E110210009CC01 /* TestConfigurationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfigurationCollectionViewCell.swift; sourceTree = "<group>"; };
+		34E2B99822E115800009CC01 /* CenterAlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterAlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		34E2B99A22E11A760009CC01 /* TestConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfigurationViewController.swift; sourceTree = "<group>"; };
 		34E63FCE22DD7C92008F2304 /* Down.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Down.xcodeproj; path = "../Frameworks/Down-master/Down.xcodeproj"; sourceTree = "<group>"; };
 		34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCard.swift; sourceTree = "<group>"; };
 		34E7F65822D2EE63000D9E4A /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -284,6 +294,7 @@
 				34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */,
 				34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */,
 				34E7F65822D2EE63000D9E4A /* GradientView.swift */,
+				34E2B99822E115800009CC01 /* CenterAlignedCollectionViewFlowLayout.swift */,
 			);
 			path = "UI Helpers";
 			sourceTree = "<group>";
@@ -331,6 +342,9 @@
 			isa = PBXGroup;
 			children = (
 				34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */,
+				34E2B99A22E11A760009CC01 /* TestConfigurationViewController.swift */,
+				34E2B99422E10EDA0009CC01 /* TestConfigurationCollectionViewController.swift */,
+				34E2B99622E110210009CC01 /* TestConfigurationCollectionViewCell.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -488,6 +502,7 @@
 				34FBA4A022CBCF0C0047FAEA /* Test */,
 				34FBA49D22CBADEC0047FAEA /* Review */,
 				D194E96122CA951D001EED6C /* Onboarding */,
+				34E2B99122E0FF190009CC01 /* PillView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -683,11 +698,13 @@
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
+				34E2B99922E115800009CC01 /* CenterAlignedCollectionViewFlowLayout.swift in Sources */,
 				34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */,
 				D1292B0422D9000700FAFD1E /* SubscribableValue.swift in Sources */,
 				34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */,
 				D1EF436222D99C4D0044D960 /* SettingsViewController.swift in Sources */,
 				D1BA3E7822CBE627001B1BD7 /* PerformanceTableViewController.swift in Sources */,
+				34E2B99222E0FF190009CC01 /* PillView.swift in Sources */,
 				D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */,
 				D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */,
 				D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */,
@@ -696,6 +713,7 @@
 				D194E93D22CA7538001EED6C /* Difficulty.swift in Sources */,
 				D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */,
 				D1F408AE22D7E94E00C4AC3C /* FunctionalHelpers.swift in Sources */,
+				34E2B99722E110210009CC01 /* TestConfigurationCollectionViewCell.swift in Sources */,
 				34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */,
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
 				34DED65322D6CDB60059867A /* NotificationName+Custom.swift in Sources */,
@@ -715,6 +733,7 @@
 				34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */,
 				34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */,
 				D194E98422CADD94001EED6C /* CoreDataFetchController.swift in Sources */,
+				34E2B99B22E11A760009CC01 /* TestConfigurationViewController.swift in Sources */,
 				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
 				D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */,
@@ -736,6 +755,7 @@
 				34FBA49422CAC0B20047FAEA /* UIView+Constraints.swift in Sources */,
 				34FBA48922CA7D440047FAEA /* SwipeableCardViewContainer.swift in Sources */,
 				D1BA3E7C22CBE949001B1BD7 /* PerformanceViewController.swift in Sources */,
+				34E2B99522E10EDA0009CC01 /* TestConfigurationCollectionViewController.swift in Sources */,
 				34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */,
 				D194E98022CAC86A001EED6C /* Reachability.swift in Sources */,
 				34DA7B8B22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift in Sources */,
