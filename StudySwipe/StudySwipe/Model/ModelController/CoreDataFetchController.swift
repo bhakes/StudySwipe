@@ -519,6 +519,23 @@ class CoreDataFetchController {
     }
     
     
+    /// Returns a Bool as to whether or not the question has been correctly answered or not
+    func questionIsMastered(for question: Question) -> Bool {
+        
+        // get all the question observations, if there are none then it must be a newly mastered question
+        guard let questionObservations = getAllQuestionObservations() else { return false }
+        
+        // filter the questionObservations for the questionID and a "correct" response
+        let filteredQuestions = questionObservations.compactMap {
+            return ($0.questionID == question.questionID && Response(rawValue: $0.response ?? "incorrect") == .correct) ? true : nil
+        }
+        
+        // if the recently updated questionObservartion is the only "correct" response observation to that question ID, then
+        return filteredQuestions.count > 0 ? true : false
+
+    }
+    
+    
     
     
     
