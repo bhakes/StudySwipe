@@ -26,14 +26,15 @@ class TestConfigurationCollectionViewController: UICollectionViewController {
         self.collectionView!.register(TestConfigurationCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         self.collectionView.register(SelectionCollectionReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
-
-        collectionView.backgroundColor = .white
+        
+        collectionView.backgroundView = DMCView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         resetSelection()
+        
     }
     
     func resetSelection() {
