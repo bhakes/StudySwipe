@@ -249,7 +249,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         pillView.shadowOpacity = 0.3
         pillView.alpha = 0
         
-        pillView.constrainToSuperView(view, bottom: 340, trailing: 8)
+        pillView.constrainToSuperView(view, safeArea: true, top: 20, centerX: 0)
         
         let fadeIn = {
             pillView.alpha = 1
