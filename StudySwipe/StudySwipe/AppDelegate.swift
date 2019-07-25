@@ -84,14 +84,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Add them to the tab bar controller
         tabBarController.viewControllers = [reviewVC, testSetupVC, performanceVC, settingsTVC]
         
+        if let masteryUpdates = loadMasteryUpdatesFromUserDefaults() {
+            tabBarController.tabBar.items?[2].badgeValue = "\(masteryUpdates)"
+        }
+        
         // Set up the tab bar items
-        reviewVC.tabBarItem.title = "Review"
+        reviewVC.tabBarItem.title = "Study"
         reviewVC.tabBarItem.image = UIImage(named: "literature")
         
         testSetupVC.tabBarItem.title = "Test"
         testSetupVC.tabBarItem.image = UIImage(named: "play")
         
-        performanceVC.tabBarItem.title = "Performance"
+        performanceVC.tabBarItem.title = "Track"
         performanceVC.tabBarItem.image = UIImage(named: "bar_chart")
         
         settingsTVC.tabBarItem.title = "Settings"

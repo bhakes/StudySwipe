@@ -263,6 +263,24 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             pillView.removeFromSuperview()
         }
         
+        if let pVC = self.presentingViewController as? DMCTabBarController {
+            // In this case we want to modify the badge number of the third tab:
+            
+            let tabItem = pVC.tabBar.items?[2]
+            if let value = tabItem?.badgeValue, value != "" {
+                if let uintValue = UInt.init(value) {
+                    tabItem?.badgeValue = "\(uintValue + 1)"
+                    setMasteryUpdatesToUserDefaults(uintValue + 1)
+                } else {
+                    tabItem?.badgeValue = "1"
+                }
+                
+            } else {
+                tabItem?.badgeValue = "1"
+            }
+            
+        }
+        
         UIView.animate(withDuration: 0.2, animations: fadeIn) { _ in
             UIView.animate(withDuration: 0.3, delay: 0.5, animations: fadeOut, completion: completion)
         }

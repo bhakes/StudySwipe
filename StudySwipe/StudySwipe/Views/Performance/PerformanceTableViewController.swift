@@ -65,7 +65,7 @@ class PerformanceTableViewController: UITableViewController {
         let view = DMCView()
         view.constrain(height: 60)
         let label = UILabel()
-        label.text = "Progress towards mastery"
+        label.text = "Your progress towards mastery"
         label.textColor = .fadedTextColor
         label.font = UIFont.boldSystemFont(ofSize: 24)
         label.constrainToSuperView(view, bottom: 0, leading: 20, trailing: 20)
