@@ -31,14 +31,21 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         setUpTheming()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateBadge()
+    }
+    
     private func setupViews() {
+    
+        updateBadge()
         
         let headerHeight: CGFloat = 80
         let headerView = DMCView()
         headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
         
         let label = DMCLabel()
-        label.text = "Performance"
+        label.text = "Track"
         label.font = UIFont.boldSystemFont(ofSize: 48)
         label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
         
@@ -52,6 +59,13 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         tableViewController.delegate = self
         add(tableViewController, toView: tableViewContainer)
         
+    }
+    
+    private func updateBadge() {
+        if let pVC = tabBarController as? DMCTabBarController {
+            pVC.tabBar.items?[2].badgeValue = nil
+            setMasteryUpdatesToUserDefaults(nil)
+        }
     }
 
 }

@@ -18,22 +18,9 @@ class PerformanceTableViewCell: UITableViewCell {
         setUpTheming()
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0))
-    }
-    
     private func setupViews() {
         addSubview(stackView)
-//        titleLabel.textColor = .gray
-//        masteredLabel.textColor = .gray
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -46,6 +33,7 @@ class PerformanceTableViewCell: UITableViewCell {
     var stackViewLeadingAnchor: NSLayoutConstraint?
     var stackViewTrailingAnchor: NSLayoutConstraint?
     
+    var isInitialLoad: Bool = true
     let progressView: DMCProgessView = {
         let progressView = DMCProgessView(progressViewStyle: .default)
         progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
@@ -80,7 +68,14 @@ class PerformanceTableViewCell: UITableViewCell {
     var correctCategoryCount: Int = 0
     var progressPercentage: Double = 0.0 {
         didSet {
-            progressView.progress = Float(self.progressPercentage)
+            if isInitialLoad {
+                progressView.progress = Float(self.progressPercentage)
+                isInitialLoad = false
+            } else {
+                UIView.animate(withDuration: 3) {
+                    self.progressView.setProgress(Float(self.progressPercentage), animated: true)
+                }
+            }
         }
     }
     var numberOfQuestions: Int = 0

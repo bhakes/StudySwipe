@@ -62,7 +62,7 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
         headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
         
         let label = DMCLabel()
-        label.text = "Pick a topic"
+        label.text = "Study a topic"
         label.font = UIFont.boldSystemFont(ofSize: 48)
         
         label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
