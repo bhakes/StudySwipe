@@ -31,12 +31,14 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         setUpTheming()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateBadge()
+    }
+    
     private func setupViews() {
-        
-        if let pVC = tabBarController as? DMCTabBarController {
-            pVC.tabBar.items?[2].badgeValue = nil
-            setMasteryUpdatesToUserDefaults(nil)
-        }
+    
+        updateBadge()
         
         let headerHeight: CGFloat = 80
         let headerView = DMCView()
@@ -57,6 +59,13 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         tableViewController.delegate = self
         add(tableViewController, toView: tableViewContainer)
         
+    }
+    
+    private func updateBadge() {
+        if let pVC = tabBarController as? DMCTabBarController {
+            pVC.tabBar.items?[2].badgeValue = nil
+            setMasteryUpdatesToUserDefaults(nil)
+        }
     }
 
 }
