@@ -52,6 +52,7 @@
 		D1292B0422D9000700FAFD1E /* SubscribableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0322D9000700FAFD1E /* SubscribableValue.swift */; };
 		D1292B0622D9000F00FAFD1E /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0522D9000F00FAFD1E /* Weak.swift */; };
 		D129537422DA4DAA00AD5C1E /* DarkModeConformingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D129537322DA4DAA00AD5C1E /* DarkModeConformingViews.swift */; };
+		D18E406322EA174600D48713 /* MasteryBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E406222EA174600D48713 /* MasteryBadge.swift */; };
 		D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */; };
 		D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93122CA70BF001EED6C /* CoreDataStack.swift */; };
 		D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93322CA715E001EED6C /* HTTPMethod.swift */; };
@@ -184,6 +185,7 @@
 		D1292B0322D9000700FAFD1E /* SubscribableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribableValue.swift; sourceTree = "<group>"; };
 		D1292B0522D9000F00FAFD1E /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		D129537322DA4DAA00AD5C1E /* DarkModeConformingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConformingViews.swift; sourceTree = "<group>"; };
+		D18E406222EA174600D48713 /* MasteryBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryBadge.swift; sourceTree = "<group>"; };
 		D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
 		D194E93122CA70BF001EED6C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D194E93322CA715E001EED6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */,
 				34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */,
 				34DED65222D6CDB60059867A /* NotificationName+Custom.swift */,
+				D18E406222EA174600D48713 /* MasteryBadge.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
 				D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */,
+				D18E406322EA174600D48713 /* MasteryBadge.swift in Sources */,
 				D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
 				D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */,
