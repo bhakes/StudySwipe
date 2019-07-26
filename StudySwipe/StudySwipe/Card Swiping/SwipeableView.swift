@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SwipeableView: UIView {
+class SwipeableView: UIView, UIGestureRecognizerDelegate {
     
     var delegate: SwipeableViewDelegate?
     
@@ -69,6 +69,7 @@ class SwipeableView: UIView {
         
         // Tap Gesture Recognizer
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapRecognized(_:)))
+        tapGestureRecognizer.delegate = self
         self.tapGestureRecognizer = tapGestureRecognizer
         addGestureRecognizer(tapGestureRecognizer)
     }
@@ -188,6 +189,10 @@ class SwipeableView: UIView {
     }
     
     // MARK: - Tap Gesture Recognizer
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
     
     @objc private func tapRecognized(_ recognizer: UITapGestureRecognizer) {
         delegate?.didTap(view: self)
