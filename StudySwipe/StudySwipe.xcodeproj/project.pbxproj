@@ -178,6 +178,7 @@
 		34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionTableViewController.swift; sourceTree = "<group>"; };
 		34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
+		D121D8A122ED05980061E713 /* StudySwipe 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudySwipe 2.xcdatamodel"; sourceTree = "<group>"; };
 		D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeProvider.swift; sourceTree = "<group>"; };
 		D1292AFE22D8FFDA00FAFD1E /* Theming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theming.swift; sourceTree = "<group>"; };
@@ -1035,9 +1036,10 @@
 		D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D121D8A122ED05980061E713 /* StudySwipe 2.xcdatamodel */,
 				D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */,
 			);
-			currentVersion = D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */;
+			currentVersion = D121D8A122ED05980061E713 /* StudySwipe 2.xcdatamodel */;
 			path = StudySwipe.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

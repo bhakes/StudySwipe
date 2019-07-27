@@ -15,6 +15,7 @@ extension QuestionObservation {
                      questionID: UUID,
                      timeInterval: TimeInterval,
                      timestamp: Date = Date(),
+                     testID: UUID,
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         
@@ -24,6 +25,7 @@ extension QuestionObservation {
         self.questionID = questionID
         self.timeInterval = Double(timeInterval)
         self.timestamp = timestamp
+        self.testID = testID
         
     }
     

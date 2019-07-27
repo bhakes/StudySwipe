@@ -228,7 +228,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     private func dismissTest(action: UIAlertAction! = nil) {
         if testObservation != nil {
-            coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
+            let (test, questions) = coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!) ?? (testObservation!, nil)
+            questions.map { print($0) }
+            print(test)
         }
         dismiss(animated: true)
     }
