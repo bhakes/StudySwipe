@@ -229,8 +229,12 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     private func dismissTest(action: UIAlertAction! = nil) {
         if testObservation != nil {
             coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
+            let summaryVC = TestSummaryViewController()
+            summaryVC.testObservation = testObservation
+            present(summaryVC, animated: true)
+        } else {
+            dismiss(animated: true)
         }
-        dismiss(animated: true)
     }
     
     private func hideArrows() {

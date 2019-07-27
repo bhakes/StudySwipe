@@ -39,9 +39,7 @@ class SettingsViewController: UIViewController, SettingsTableViewDelegate {
         let headerView = DMCView()
         headerView.constrainToSuperView(view, centerX: 0, equalWidth: 0, height: headerHeight)
         
-        let label = DMCLabel()
-        label.text = "Settings"
-        label.font = UIFont.boldSystemFont(ofSize: 48)
+        let label = UILabel.label(for: .title, with: "Settings")
         label.constrainToSuperView(headerView, safeArea: false, top: 20, leading: 20, trailing: 20)
         
         tableViewContainer = DMCView()

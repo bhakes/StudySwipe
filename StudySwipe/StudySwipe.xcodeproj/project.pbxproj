@@ -11,6 +11,8 @@
 		347FDC1822CA5F40004F6656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1722CA5F40004F6656 /* Assets.xcassets */; };
 		347FDC1B22CA5F40004F6656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */; };
 		347FDC2622CA5F40004F6656 /* StudySwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */; };
+		34D7C1FE22ECE6C1005990C7 /* TestSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7C1FD22ECE6C1005990C7 /* TestSummaryViewController.swift */; };
+		34D7C20122ECE7F4005990C7 /* UILabel+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7C20022ECE7F4005990C7 /* UILabel+Custom.swift */; };
 		34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */; };
 		34DA7B8B22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */; };
 		34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */; };
@@ -145,6 +147,8 @@
 		347FDC2122CA5F40004F6656 /* StudySwipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudySwipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySwipeTests.swift; sourceTree = "<group>"; };
 		347FDC2722CA5F40004F6656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34D7C1FD22ECE6C1005990C7 /* TestSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSummaryViewController.swift; sourceTree = "<group>"; };
+		34D7C20022ECE7F4005990C7 /* UILabel+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Custom.swift"; sourceTree = "<group>"; };
 		34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+StandardAlerts.swift"; sourceTree = "<group>"; };
 		34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewController.swift; sourceTree = "<group>"; };
 		34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -292,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				34FBA49722CB10540047FAEA /* UIViewController+Container.swift */,
+				34D7C20022ECE7F4005990C7 /* UILabel+Custom.swift */,
 				34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */,
 				34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */,
 				34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */,
@@ -347,6 +352,7 @@
 				34E2B99A22E11A760009CC01 /* TestConfigurationViewController.swift */,
 				34E2B99422E10EDA0009CC01 /* TestConfigurationCollectionViewController.swift */,
 				34E2B99622E110210009CC01 /* TestConfigurationCollectionViewCell.swift */,
+				34D7C1FD22ECE6C1005990C7 /* TestSummaryViewController.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -698,6 +704,7 @@
 				D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */,
 				D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */,
 				D1292B0222D8FFFA00FAFD1E /* Array+Extension.swift in Sources */,
+				34D7C1FE22ECE6C1005990C7 /* TestSummaryViewController.swift in Sources */,
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
 				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
@@ -719,6 +726,7 @@
 				34E2B99722E110210009CC01 /* TestConfigurationCollectionViewCell.swift in Sources */,
 				34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */,
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
+				34D7C20122ECE7F4005990C7 /* UILabel+Custom.swift in Sources */,
 				34DED65322D6CDB60059867A /* NotificationName+Custom.swift in Sources */,
 				D1EF436422D9A8B80044D960 /* DarkModeTableViewCell.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,

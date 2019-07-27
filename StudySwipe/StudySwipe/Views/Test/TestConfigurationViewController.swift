@@ -63,10 +63,7 @@ class TestConfigurationViewController: UIViewController {
         self.view = DMCView()
         
         // Set up Title Label
-        let titleLabel = DMCLabel()
-        titleLabel.text = "Take a Test"
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 48)
-        
+        let titleLabel = UILabel.label(for: .title, with: "Take a Test")
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
         
         // Set up Main Stack
