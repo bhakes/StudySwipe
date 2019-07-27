@@ -124,7 +124,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             // record the question observation
             _ = cdfc.recordQuestionObservation(with: response, for: questionID, with: Int(duration), in: observation)
             
-            // if the repose was "correct" & the question wasn't previously mastered
+            // if the response was "correct" & the question wasn't previously mastered
             if response == .correct && isMastered == false {
                     displayPillView(for: question)
             }

@@ -112,7 +112,7 @@ class TestConfigurationViewController: UIViewController {
         
         questionSlider = UISlider()
         questionSlider.minimumValue = 5
-        questionSlider.maximumValue = 30
+        questionSlider.maximumValue = 50
         questionSlider.setValue(10, animated: false)
         questionSlider.tintColor = .white
         questionSlider.maximumTrackTintColor = .white
