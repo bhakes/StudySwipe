@@ -13,6 +13,7 @@
 		347FDC2622CA5F40004F6656 /* StudySwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */; };
 		34D7C1FE22ECE6C1005990C7 /* TestSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7C1FD22ECE6C1005990C7 /* TestSummaryViewController.swift */; };
 		34D7C20122ECE7F4005990C7 /* UILabel+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7C20022ECE7F4005990C7 /* UILabel+Custom.swift */; };
+		34D7C20322ECEE41005990C7 /* UIButton+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7C20222ECEE41005990C7 /* UIButton+Custom.swift */; };
 		34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */; };
 		34DA7B8B22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */; };
 		34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */; };
@@ -149,6 +150,7 @@
 		347FDC2722CA5F40004F6656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D7C1FD22ECE6C1005990C7 /* TestSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSummaryViewController.swift; sourceTree = "<group>"; };
 		34D7C20022ECE7F4005990C7 /* UILabel+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Custom.swift"; sourceTree = "<group>"; };
+		34D7C20222ECEE41005990C7 /* UIButton+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Custom.swift"; sourceTree = "<group>"; };
 		34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+StandardAlerts.swift"; sourceTree = "<group>"; };
 		34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewController.swift; sourceTree = "<group>"; };
 		34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 			children = (
 				34FBA49722CB10540047FAEA /* UIViewController+Container.swift */,
 				34D7C20022ECE7F4005990C7 /* UILabel+Custom.swift */,
+				34D7C20222ECEE41005990C7 /* UIButton+Custom.swift */,
 				34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */,
 				34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */,
 				34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */,
@@ -747,6 +750,7 @@
 				34E2B99B22E11A760009CC01 /* TestConfigurationViewController.swift in Sources */,
 				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
+				34D7C20322ECEE41005990C7 /* UIButton+Custom.swift in Sources */,
 				D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */,
 				D18E406322EA174600D48713 /* MasteryBadge.swift in Sources */,
 				D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */,

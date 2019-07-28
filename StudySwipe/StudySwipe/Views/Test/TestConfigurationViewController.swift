@@ -141,8 +141,6 @@ class TestConfigurationViewController: UIViewController {
         isMasteredStackView.constrain(width: 240)
         mainStack.addArrangedSubview(isMasteredStackView)
         
-        
-        
         // Set up Buttons
         let buttonStack = UIStackView()
         buttonStack.axis = .horizontal
@@ -150,24 +148,16 @@ class TestConfigurationViewController: UIViewController {
         
         mainStack.addArrangedSubview(buttonStack)
         
-        resetButton = UIButton(type: .system)
-        resetButton.setTitle("Reset", for: .normal)
-        resetButton.setTitleColor(.white, for: .normal)
-        resetButton.backgroundColor = .warningColor
+        resetButton = UIButton.button(for: .warning, with: "Reset")
         resetButton.addTarget(self, action: #selector(resetOptions), for: .touchUpInside)
-        resetButton.layer.cornerRadius = 8
         resetButton.constrain(width: 120)
         
         buttonStack.addArrangedSubview(resetButton)
         //        resetButton.isHidden = true
         
         // Set up Start Test Button
-        let startTestButton = UIButton(type: .system)
-        startTestButton.setTitle("Start Test", for: .normal)
-        startTestButton.setTitleColor(.white, for: .normal)
-        startTestButton.backgroundColor = .accentColor
+        let startTestButton = UIButton.button(for: .normal, with: "Start Test")
         startTestButton.addTarget(self, action: #selector(startCustomTest), for: .touchUpInside)
-        startTestButton.layer.cornerRadius = 8
         
         startTestButton.constrain(width: 120)
         
