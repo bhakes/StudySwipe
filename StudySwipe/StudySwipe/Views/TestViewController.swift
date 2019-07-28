@@ -234,6 +234,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             present(summaryVC, animated: true)
         } else {
             dismiss(animated: true)
+            let (test, questions) = coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!) ?? (testObservation!, nil)
+            questions.map { print($0) }
+            print(test)
         }
     }
     

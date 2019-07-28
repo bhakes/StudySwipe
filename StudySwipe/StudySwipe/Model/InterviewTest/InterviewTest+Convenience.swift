@@ -14,7 +14,7 @@ extension InterviewTest {
     convenience init(questions: [Question],
                      title: String,
                      timestamp: Date? = Date(),
-                     testID: UUID? = UUID(),
+                     testID: UUID = UUID(),
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         
