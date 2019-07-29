@@ -66,11 +66,14 @@ class CoreDataFetchController {
                 print("Failed to save to core data with error: \(error)")
             }
         }
-        testObservation.questionObservations?.append(questionObs)
+        guard var newQuestionObs = testObservation.questionObservation?.array as? [QuestionObservation] else { return }
+        newQuestionObs.append(questionObs)
+        testObservation.questionObservation = NSOrderedSet(array: newQuestionObs)
+        
         testObservation.finishTimestamp = Date()
     }
     
-    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) -> (InterviewTestObservation, [QuestionObservation]?) {
+    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) -> (InterviewTestObservation) {
         print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {
@@ -83,9 +86,7 @@ class CoreDataFetchController {
         testObs.isCompleted = true
         testObs.finishTimestamp = Date()
         
-        guard let testID = testObs.testID else { return ( testObs, nil)}
-        let testQuestionsObs = getQuestionObservationsByTestID(with: testID)
-        return (testObs, testQuestionsObs)
+        return testObs
         
     }
     
