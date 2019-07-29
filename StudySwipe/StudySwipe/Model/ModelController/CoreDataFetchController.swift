@@ -66,9 +66,9 @@ class CoreDataFetchController {
                 print("Failed to save to core data with error: \(error)")
             }
         }
-        guard var newQuestionObs = testObservation.questionObservations?.array as? [QuestionObservation] else { return }
+        guard var newQuestionObs = testObservation.questionObservation?.array as? [QuestionObservation] else { return }
         newQuestionObs.append(questionObs)
-        testObservation.questionObservations = NSOrderedSet(array: newQuestionObs)
+        testObservation.questionObservation = NSOrderedSet(array: newQuestionObs)
         
         testObservation.finishTimestamp = Date()
     }

@@ -52,7 +52,7 @@
 		D1292B0422D9000700FAFD1E /* SubscribableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0322D9000700FAFD1E /* SubscribableValue.swift */; };
 		D1292B0622D9000F00FAFD1E /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0522D9000F00FAFD1E /* Weak.swift */; };
 		D129537422DA4DAA00AD5C1E /* DarkModeConformingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D129537322DA4DAA00AD5C1E /* DarkModeConformingViews.swift */; };
-		D12EF23822EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D12EF23622EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld */; };
+		D12EF24222EF51180028C5C4 /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D12EF23D22EF51180028C5C4 /* StudySwipe.xcdatamodeld */; };
 		D18E406322EA174600D48713 /* MasteryBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E406222EA174600D48713 /* MasteryBadge.swift */; };
 		D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93122CA70BF001EED6C /* CoreDataStack.swift */; };
 		D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93322CA715E001EED6C /* HTTPMethod.swift */; };
@@ -185,7 +185,10 @@
 		D1292B0322D9000700FAFD1E /* SubscribableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribableValue.swift; sourceTree = "<group>"; };
 		D1292B0522D9000F00FAFD1E /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		D129537322DA4DAA00AD5C1E /* DarkModeConformingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConformingViews.swift; sourceTree = "<group>"; };
-		D12EF23722EF3E8B0028C5C4 /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
+		D12EF23E22EF51180028C5C4 /* StudySwipe 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudySwipe 3.xcdatamodel"; sourceTree = "<group>"; };
+		D12EF23F22EF51180028C5C4 /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
+		D12EF24022EF51180028C5C4 /* StudySwipe 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudySwipe 2.xcdatamodel"; sourceTree = "<group>"; };
+		D12EF24122EF51180028C5C4 /* StudySwipe 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudySwipe 4.xcdatamodel"; sourceTree = "<group>"; };
 		D18E406222EA174600D48713 /* MasteryBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryBadge.swift; sourceTree = "<group>"; };
 		D194E93122CA70BF001EED6C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D194E93322CA715E001EED6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -396,7 +399,7 @@
 		D194E92622CA6D80001EED6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D12EF23622EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld */,
+				D12EF23D22EF51180028C5C4 /* StudySwipe.xcdatamodeld */,
 				D194E97622CAA5F0001EED6C /* NetworkingStructs */,
 				D194E95A22CA8BC2001EED6C /* InterviewTestObservation */,
 				D194E95522CA877E001EED6C /* TestAnalytics */,
@@ -687,7 +690,7 @@
 			files = (
 				D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */,
 				34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */,
-				D12EF23822EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld in Sources */,
+				D12EF24222EF51180028C5C4 /* StudySwipe.xcdatamodeld in Sources */,
 				34E7F65922D2EE63000D9E4A /* GradientView.swift in Sources */,
 				D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */,
 				D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */,
@@ -1032,12 +1035,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D12EF23622EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld */ = {
+		D12EF23D22EF51180028C5C4 /* StudySwipe.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D12EF23722EF3E8B0028C5C4 /* StudySwipe.xcdatamodel */,
+				D12EF23E22EF51180028C5C4 /* StudySwipe 3.xcdatamodel */,
+				D12EF23F22EF51180028C5C4 /* StudySwipe.xcdatamodel */,
+				D12EF24022EF51180028C5C4 /* StudySwipe 2.xcdatamodel */,
+				D12EF24122EF51180028C5C4 /* StudySwipe 4.xcdatamodel */,
 			);
-			currentVersion = D12EF23722EF3E8B0028C5C4 /* StudySwipe.xcdatamodel */;
+			currentVersion = D12EF24122EF51180028C5C4 /* StudySwipe 4.xcdatamodel */;
 			path = StudySwipe.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

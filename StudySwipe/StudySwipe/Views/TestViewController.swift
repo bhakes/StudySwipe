@@ -231,7 +231,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             
             testObservation = coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
             
-            let questions = testObservation?.questionObservations?.array as? [QuestionObservation]
+            let questions = testObservation?.questionObservation?.array as? [QuestionObservation]
             print(questions?.compactMap{ $0.response })
 
         }
