@@ -52,8 +52,8 @@
 		D1292B0422D9000700FAFD1E /* SubscribableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0322D9000700FAFD1E /* SubscribableValue.swift */; };
 		D1292B0622D9000F00FAFD1E /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292B0522D9000F00FAFD1E /* Weak.swift */; };
 		D129537422DA4DAA00AD5C1E /* DarkModeConformingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D129537322DA4DAA00AD5C1E /* DarkModeConformingViews.swift */; };
+		D12EF23822EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D12EF23622EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld */; };
 		D18E406322EA174600D48713 /* MasteryBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E406222EA174600D48713 /* MasteryBadge.swift */; };
-		D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */; };
 		D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93122CA70BF001EED6C /* CoreDataStack.swift */; };
 		D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93322CA715E001EED6C /* HTTPMethod.swift */; };
 		D194E93622CA71B6001EED6C /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E93522CA71B6001EED6C /* Response.swift */; };
@@ -178,7 +178,6 @@
 		34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionTableViewController.swift; sourceTree = "<group>"; };
 		34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
-		D121D8A122ED05980061E713 /* StudySwipe 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudySwipe 2.xcdatamodel"; sourceTree = "<group>"; };
 		D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeProvider.swift; sourceTree = "<group>"; };
 		D1292AFE22D8FFDA00FAFD1E /* Theming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theming.swift; sourceTree = "<group>"; };
@@ -186,8 +185,8 @@
 		D1292B0322D9000700FAFD1E /* SubscribableValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribableValue.swift; sourceTree = "<group>"; };
 		D1292B0522D9000F00FAFD1E /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
 		D129537322DA4DAA00AD5C1E /* DarkModeConformingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeConformingViews.swift; sourceTree = "<group>"; };
+		D12EF23722EF3E8B0028C5C4 /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
 		D18E406222EA174600D48713 /* MasteryBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryBadge.swift; sourceTree = "<group>"; };
-		D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
 		D194E93122CA70BF001EED6C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D194E93322CA715E001EED6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		D194E93522CA71B6001EED6C /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
@@ -397,6 +396,7 @@
 		D194E92622CA6D80001EED6C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D12EF23622EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld */,
 				D194E97622CAA5F0001EED6C /* NetworkingStructs */,
 				D194E95A22CA8BC2001EED6C /* InterviewTestObservation */,
 				D194E95522CA877E001EED6C /* TestAnalytics */,
@@ -404,7 +404,6 @@
 				D194E94522CA7852001EED6C /* InterviewTest */,
 				D194E94422CA781C001EED6C /* QuestionAnalytics */,
 				D194E94122CA76D8001EED6C /* QuestionObservation */,
-				D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */,
 				D194E93122CA70BF001EED6C /* CoreDataStack.swift */,
 				34FBA49122CABF890047FAEA /* APIKeys.swift */,
 				D194E93922CA744F001EED6C /* CustomTypes */,
@@ -688,10 +687,10 @@
 			files = (
 				D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */,
 				34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */,
+				D12EF23822EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld in Sources */,
 				34E7F65922D2EE63000D9E4A /* GradientView.swift in Sources */,
 				D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */,
 				D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */,
-				D194E92922CA6DA1001EED6C /* StudySwipe.xcdatamodeld in Sources */,
 				D194E97C22CABB4C001EED6C /* CoreDataImporter.swift in Sources */,
 				D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */,
 				D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */,
@@ -1033,13 +1032,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D194E92722CA6DA1001EED6C /* StudySwipe.xcdatamodeld */ = {
+		D12EF23622EF3E8B0028C5C4 /* StudySwipe.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D121D8A122ED05980061E713 /* StudySwipe 2.xcdatamodel */,
-				D194E92822CA6DA1001EED6C /* StudySwipe.xcdatamodel */,
+				D12EF23722EF3E8B0028C5C4 /* StudySwipe.xcdatamodel */,
 			);
-			currentVersion = D121D8A122ED05980061E713 /* StudySwipe 2.xcdatamodel */;
+			currentVersion = D12EF23722EF3E8B0028C5C4 /* StudySwipe.xcdatamodel */;
 			path = StudySwipe.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
