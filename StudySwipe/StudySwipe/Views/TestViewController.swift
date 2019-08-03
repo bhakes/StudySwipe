@@ -228,24 +228,15 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     
     private func dismissTest(action: UIAlertAction! = nil) {
         if testObservation != nil {
-            let (test, questions) = coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!) ?? (testObservation!, nil)
+            coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
             let summaryVC = TestSummaryViewController()
-            summaryVC.testObservation = test
+            summaryVC.testObservation = testObservation
             let rootView = self.presentingViewController
             dismiss(animated: true) {
                 rootView?.present(summaryVC, animated: true)
             }
         } else {
             dismiss(animated: true)
-            let (test, questions) = coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!) ?? (testObservation!, nil)
-            questions?.forEach { print($0) }
-            print(test)
-            
-            testObservation = coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
-            
-            let questions = testObservation?.questionObservation?.array as? [QuestionObservation]
-            print(questions?.compactMap{ $0.response })
-
         }
     }
     

@@ -153,7 +153,6 @@ class TestConfigurationViewController: UIViewController {
         resetButton.constrain(width: 120)
         
         buttonStack.addArrangedSubview(resetButton)
-        //        resetButton.isHidden = true
         
         // Set up Start Test Button
         let startTestButton = UIButton.button(for: .normal, with: "Start Test")
@@ -164,14 +163,8 @@ class TestConfigurationViewController: UIViewController {
         buttonStack.addArrangedSubview(startTestButton)
     }
     
-    //    private func updateQuote() {
-    //        let (author, quote) = Quotes.getNewQuote()
-    //        quoteLabel.text = "\"\(quote)\""
-    //        authorLabel.text = "– \(author)"
-    //    }
-    
     private func startTest(difficulties: [Difficulty] = [.All], categories: [Category] = [.All], numberOfQuestions number: Int, notMasteredOnly: Bool = false) {
-        let (test, observation) = coreDataFetchController.makeTestAndObservation(with: "New \(number) Question Test", difficulties: difficulties, categories: categories, count: number, random: true, notMasteredOnly: notMasteredOnly)
+        let (test, observation) = coreDataFetchController.makeTestAndObservation(with: "\(number) Question Test", difficulties: difficulties, categories: categories, count: number, random: true, notMasteredOnly: notMasteredOnly)
         
         guard test?.questions?.count ?? 0 > 0 else {
             // TODO: Handle having a test with no questions.

@@ -12,19 +12,33 @@ class TestSummaryViewController: UIViewController {
     
     var dismissHandler: (() -> Void)?
     
-    var testObservation: InterviewTestObservation?
+    var testObservation: InterviewTestObservation! {
+        didSet {
+            viewModel = TestObservationViewModel(interviewTestObservation: testObservation)
+        }
+    }
+
+    var viewModel: TestObservationViewModel!
     
-    var titleLabel: DMCLabel = {
+    private var titleLabel: DMCLabel = {
         let label = UILabel.label(for: .title, with: "Summary")
         
         return label
     }()
     
-    var dismissButton: UIButton = {
+    private var dismissButton: UIButton = {
         let button = UIButton.button(for: .normal, with: "Okay")
         button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         
         return button
+    }()
+
+    private lazy var testTitleLabel: DMCLabel = {
+        let label = UILabel.label(for: .header2)
+        label.numberOfLines = 0
+        label.text = viewModel.duration
+
+        return label
     }()
 
     override func viewDidLoad() {
@@ -35,13 +49,14 @@ class TestSummaryViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
 
     private func setupViews() {
         view = DMCView()
         
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
+        testTitleLabel.constrainToSuperView(view, leading: 20, trailing: 20)
+        testTitleLabel.constrainToSiblingView(titleLabel, below: 0)
         
         dismissButton.constrainToSuperView(view, bottom: 20, centerX: 0, width: 120)
     }

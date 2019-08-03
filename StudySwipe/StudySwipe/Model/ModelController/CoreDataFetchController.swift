@@ -73,7 +73,7 @@ class CoreDataFetchController {
         testObservation.finishTimestamp = Date()
     }
     
-    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) -> (InterviewTestObservation) {
+    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) {
         print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {
@@ -85,9 +85,6 @@ class CoreDataFetchController {
         
         testObs.isCompleted = true
         testObs.finishTimestamp = Date()
-        
-        return testObs
-        
     }
     
     // MARK: QuestionObservation Manipulation Methods
