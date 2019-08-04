@@ -10,13 +10,20 @@ import UIKit
 
 class LabelledProgressView: UIView {
 
-    private(set) var total: Int = 0
-
-    private(set) var correct: Int = 0
+    var progressTint: UIColor = .blue {
+        didSet {
+            progressView.progressTintColor = progressTint
+        }
+    }
 
     var title: String = "" {
         didSet { titleLabel.text = title }
     }
+
+    private(set) var total: Int = 0
+
+    private(set) var correct: Int = 0
+
 
     private let outerStackView: UIStackView = {
         let stackView = UIStackView()
@@ -55,6 +62,12 @@ class LabelledProgressView: UIView {
         progressView.subviews[1].clipsToBounds = true
         return progressView
     }()
+
+    convenience init(title: String = "", total: Int = 0) {
+        self.init(frame: .zero)
+        self.title = title
+        self.total = total
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

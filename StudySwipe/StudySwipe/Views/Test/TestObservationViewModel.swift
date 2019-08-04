@@ -20,7 +20,7 @@ class TestObservationViewModel {
 
     var testObservation: InterviewTestObservation {
         didSet {
-            categories = summarizeCategories()
+            summarizedCategories = summarizeCategories()
         }
     }
 
@@ -33,7 +33,7 @@ class TestObservationViewModel {
         return [testObservation.title, durationString].compactMap{$0}.joined(separator: " – ")
     }
 
-    lazy var categories: [CategoryViewModel] = summarizeCategories()
+    lazy var summarizedCategories: [CategoryViewModel] = summarizeCategories()
 
     struct CategoryViewModel {
         let color: UIColor
