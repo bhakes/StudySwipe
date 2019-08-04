@@ -41,6 +41,23 @@ class TestSummaryViewController: UIViewController {
         return label
     }()
 
+    private lazy var progressStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: progressViews)
+        stackView.axis = .vertical
+        stackView.spacing = 8
+
+        return stackView
+    }()
+
+    private lazy var progressViews: [LabelledProgressView] = viewModel.categories.map {
+        let progressView = LabelledProgressView()
+        progressView.title = $0.title
+        progressView.updateProgress(total: $0.total)
+        // TODO: Update Color
+
+        return progressView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -49,6 +66,7 @@ class TestSummaryViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        viewModel.categories.enumerated().forEach { progressViews[$0.offset].updateProgress(correct: $0.element.correct, animated: true) }
     }
 
     private func setupViews() {
@@ -57,6 +75,8 @@ class TestSummaryViewController: UIViewController {
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
         testTitleLabel.constrainToSuperView(view, leading: 20, trailing: 20)
         testTitleLabel.constrainToSiblingView(titleLabel, below: 0)
+        progressStackView.constrainToSuperView(view, leading: 20, trailing: 20)
+        progressStackView.constrainToSiblingView(testTitleLabel, below: 20)
         
         dismissButton.constrainToSuperView(view, bottom: 20, centerX: 0, width: 120)
     }

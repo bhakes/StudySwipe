@@ -10,7 +10,7 @@ import UIKit
 
 extension UILabel {
     enum LabelType {
-        case title, header1, header2
+        case title, header1, header2, body
     }
     
     static func label(for labelType: LabelType, with string: String? = nil) -> DMCLabel {
@@ -25,6 +25,9 @@ extension UILabel {
             label.font = UIFont.boldSystemFont(ofSize: 36)
         case .header2:
             label.font = UIFont.boldSystemFont(ofSize: 24)
+            label.textColor = .fadedTextColor
+        case .body:
+            label.font = UIFont.systemFont(ofSize: 17)
             label.textColor = .fadedTextColor
         }
         
