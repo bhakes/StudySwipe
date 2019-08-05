@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		34286DDA22F6725C0061C4C8 /* LabelledProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34286DD922F6725C0061C4C8 /* LabelledProgressView.swift */; };
+		345AE05F22F7CA4300E6C69F /* QuestionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE05E22F7CA4300E6C69F /* QuestionSummaryView.swift */; };
 		347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC1022CA5F3E004F6656 /* AppDelegate.swift */; };
 		347FDC1822CA5F40004F6656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1722CA5F40004F6656 /* Assets.xcassets */; };
 		347FDC1B22CA5F40004F6656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */; };
@@ -143,6 +144,7 @@
 
 /* Begin PBXFileReference section */
 		34286DD922F6725C0061C4C8 /* LabelledProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledProgressView.swift; sourceTree = "<group>"; };
+		345AE05E22F7CA4300E6C69F /* QuestionSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSummaryView.swift; sourceTree = "<group>"; };
 		347FDC0D22CA5F3E004F6656 /* StudySwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudySwipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347FDC1022CA5F3E004F6656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		347FDC1722CA5F40004F6656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -524,6 +526,7 @@
 				D194E96122CA951D001EED6C /* Onboarding */,
 				34E2B99122E0FF190009CC01 /* PillView.swift */,
 				34286DD922F6725C0061C4C8 /* LabelledProgressView.swift */,
+				345AE05E22F7CA4300E6C69F /* QuestionSummaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
 				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
 				34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */,
+				345AE05F22F7CA4300E6C69F /* QuestionSummaryView.swift in Sources */,
 				34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */,
 				D194E98422CADD94001EED6C /* CoreDataFetchController.swift in Sources */,
 				34E2B99B22E11A760009CC01 /* TestConfigurationViewController.swift in Sources */,

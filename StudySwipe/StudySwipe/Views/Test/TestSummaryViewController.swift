@@ -40,11 +40,17 @@ class TestSummaryViewController: UIViewController {
 
         return label
     }()
+    
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        
+        return scrollView
+    }()
 
     private lazy var progressStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: progressViews)
         stackView.axis = .vertical
-        stackView.spacing = 8
+        stackView.spacing = 12
 
         return stackView
     }()
@@ -52,9 +58,26 @@ class TestSummaryViewController: UIViewController {
     private lazy var progressViews: [LabelledProgressView] = viewModel.summarizedCategories.map {
         let progressView = LabelledProgressView(total: $0.total)
         progressView.title = $0.title
-        progressView.progressTint = .accentColor
+        progressView.progressTint = $0.color
 
         return progressView
+    }
+    
+    private lazy var questionStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: questionViews)
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        
+        return stackView
+    }()
+    
+    private lazy var questionViews: [QuestionSummaryView] = viewModel.summarizedQuestions.map {
+        let questionView = QuestionSummaryView()
+        questionView.color = $0.color
+        questionView.isCorrect = $0.isCorrect
+        questionView.question = $0.question
+        
+        return questionView
     }
 
     override func viewDidLoad() {
@@ -76,6 +99,8 @@ class TestSummaryViewController: UIViewController {
         testTitleLabel.constrainToSiblingView(titleLabel, below: 0)
         progressStackView.constrainToSuperView(view, leading: 20, trailing: 20)
         progressStackView.constrainToSiblingView(testTitleLabel, below: 20)
+        questionStackView.constrainToSuperView(view, leading: 20, trailing: 20)
+        questionStackView.constrainToSiblingView(progressStackView, below: 20)
         
         dismissButton.constrainToSuperView(view, bottom: 20, centerX: 0, width: 120)
     }

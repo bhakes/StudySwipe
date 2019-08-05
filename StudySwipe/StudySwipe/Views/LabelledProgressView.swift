@@ -29,6 +29,7 @@ class LabelledProgressView: UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 8
+        stackView.alignment = .fill
 
         return stackView
     }()
@@ -49,17 +50,18 @@ class LabelledProgressView: UIView {
 
     private let masteredLabel: DMCLabel = {
         let label = UILabel.label(for: .body, with: "0 of 0")
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
 
         return label
     }()
 
     private let progressView: DMCProgessView = {
         let progressView = DMCProgessView(progressViewStyle: .default)
-        progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
         progressView.layer.cornerRadius = 3
         progressView.clipsToBounds = true
         progressView.layer.sublayers![1].cornerRadius = 3
         progressView.subviews[1].clipsToBounds = true
+        progressView.transform = progressView.transform.scaledBy(x: 1, y: 4)
         return progressView
     }()
 
