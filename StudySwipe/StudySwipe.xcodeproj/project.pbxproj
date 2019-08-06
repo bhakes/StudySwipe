@@ -189,6 +189,8 @@
 		D12EF23F22EF51180028C5C4 /* StudySwipe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudySwipe.xcdatamodel; sourceTree = "<group>"; };
 		D12EF24022EF51180028C5C4 /* StudySwipe 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudySwipe 2.xcdatamodel"; sourceTree = "<group>"; };
 		D12EF24122EF51180028C5C4 /* StudySwipe 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudySwipe 4.xcdatamodel"; sourceTree = "<group>"; };
+		D13059AA22F93ADC00DBFAD1 /* StudySwipe 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudySwipe 5.xcdatamodel"; sourceTree = "<group>"; };
+		D13059AC22F93B0900DBFAD1 /* StudySwipe 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "StudySwipe 6.xcdatamodel"; sourceTree = "<group>"; };
 		D18E406222EA174600D48713 /* MasteryBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasteryBadge.swift; sourceTree = "<group>"; };
 		D194E93122CA70BF001EED6C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		D194E93322CA715E001EED6C /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -1038,12 +1040,14 @@
 		D12EF23D22EF51180028C5C4 /* StudySwipe.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				D13059AC22F93B0900DBFAD1 /* StudySwipe 6.xcdatamodel */,
+				D13059AA22F93ADC00DBFAD1 /* StudySwipe 5.xcdatamodel */,
 				D12EF23E22EF51180028C5C4 /* StudySwipe 3.xcdatamodel */,
 				D12EF23F22EF51180028C5C4 /* StudySwipe.xcdatamodel */,
 				D12EF24022EF51180028C5C4 /* StudySwipe 2.xcdatamodel */,
 				D12EF24122EF51180028C5C4 /* StudySwipe 4.xcdatamodel */,
 			);
-			currentVersion = D12EF24122EF51180028C5C4 /* StudySwipe 4.xcdatamodel */;
+			currentVersion = D13059AC22F93B0900DBFAD1 /* StudySwipe 6.xcdatamodel */;
 			path = StudySwipe.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -20,7 +20,7 @@ extension InterviewTest {
         
         self.init(context:context)
         
-        self.questions = questions
+        self.questions = NSOrderedSet(array: questions)
         self.title = title
         self.timestamp = timestamp
         self.testID = testID
