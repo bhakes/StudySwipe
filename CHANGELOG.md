@@ -7,10 +7,11 @@
 
 ## Changed
 - Changed scroll view in markdown views on cards to not bounce. Makes it so the view only scrolls if the content is bigger than the view.
-- Updated constraint helpers to not default to `safeArea` (mostly because it seems to cause issues with content in scroll views.)
+
 
 ## TODO
 - [ ] Write some tests
+- [ ] Updated constraint helpers to not default to `safeArea` (mostly because it seems to cause issues with content in scroll views.)
 
 -----
 ## Added

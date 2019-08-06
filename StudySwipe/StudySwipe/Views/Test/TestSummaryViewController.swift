@@ -97,12 +97,16 @@ class TestSummaryViewController: UIViewController {
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
         testTitleLabel.constrainToSuperView(view, leading: 20, trailing: 20)
         testTitleLabel.constrainToSiblingView(titleLabel, below: 0)
-        progressStackView.constrainToSuperView(view, leading: 20, trailing: 20)
-        progressStackView.constrainToSiblingView(testTitleLabel, below: 20)
-        questionStackView.constrainToSuperView(view, leading: 20, trailing: 20)
-        questionStackView.constrainToSiblingView(progressStackView, below: 20)
+        scrollView.constrainToSuperView(view, leading: 0, trailing: 0)
+        scrollView.constrainToSiblingView(testTitleLabel, below: 12)
+        progressStackView.constrainToSuperView(scrollView, safeArea: false, top: 0, leading: 20)
+        progressStackView.constrainToSiblingView(view, leading: 20, trailing: 20)
+        questionStackView.constrainToSuperView(scrollView, safeArea: false, bottom: 0, leading: 20)
+        questionStackView.constrainToSiblingView(progressStackView, below: 20, equalWidth: 0)
         
         dismissButton.constrainToSuperView(view, bottom: 20, centerX: 0, width: 120)
+        dismissButton.constrainToSiblingView(scrollView, below: 20)
+        view.translatesAutoresizingMaskIntoConstraints = true
     }
     
     @objc func dismissView() {
