@@ -48,7 +48,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
                 // Present an alert?
                 return
             }
-            self.questions = questions
+            self.questions = Array(questions) as! [Question]
         }
     }
     
@@ -234,7 +234,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             
             let questionObs = testObservation?.questionObservation?.array as? [QuestionObservation]
             print(questionObs?.compactMap{ $0.response })
-            print(testObservation?.interviewTest?.questions?.compactMap { $0.category })
 
         }
         dismiss(animated: true)
