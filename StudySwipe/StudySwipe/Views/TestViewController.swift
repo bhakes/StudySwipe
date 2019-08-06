@@ -206,19 +206,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         updateViews()
     }
-
-    private func loadQuestions() {
-        let fetchRequest: NSFetchRequest<Question> = Question.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "question", ascending: true)]
-        let moc = CoreDataStack.shared.mainContext
-        moc.performAndWait {
-            do {
-                questions = try moc.fetch(fetchRequest)
-            } catch {
-                print("Error loading questions: \(error)")
-            }
-        }
-    }
     
     private func updateViews() {
         guard isViewLoaded else { return }
@@ -231,6 +218,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
             let summaryVC = TestSummaryViewController()
             summaryVC.testObservation = testObservation
+            
             let rootView = self.presentingViewController
             dismiss(animated: true) {
                 rootView?.present(summaryVC, animated: true)

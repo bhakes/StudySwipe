@@ -42,17 +42,9 @@ class QuestionCard: SwipeableCard {
         let downView = try? DownView(frame: .zero, markdownString: "### \(question.question ?? sampleText)")
         downView?.backgroundColor = .clear
         downView?.scrollView.backgroundColor = .clear
+        downView?.scrollView.bounces = false
         downView?.isOpaque = false
         downView?.constrainToFill(questionContainer)
-//        let questionLabel = UILabel()
-//        questionLabel.text = question.question ?? sampleText
-//        questionLabel.numberOfLines = 0
-//        questionLabel.font = UIFont.systemFont(ofSize: 32)
-//        questionLabel.lineBreakMode = .byWordWrapping
-//        questionLabel.textAlignment = .center
-//        questionLabel.textColor = .white
-        
-//        questionLabel.constrainToSuperView(questionContainer, leading: 0, trailing: 0, centerY: 0)
         
         answerContainer = UIView()
         answerContainer.isHidden = true
@@ -62,18 +54,9 @@ class QuestionCard: SwipeableCard {
         let answerView = try? DownView(frame: .zero, markdownString: "\(question.answer ?? sampleText)")
         answerView?.backgroundColor = .clear
         answerView?.scrollView.backgroundColor = .clear
+        answerView?.scrollView.bounces = false
         answerView?.isOpaque = false
         answerView?.constrainToFill(answerContainer)
-        
-//        answerTextView = UITextView()
-//        answerTextView.text = question.answer ?? ""
-//        answerTextView.font = UIFont.systemFont(ofSize: 20)
-//        answerTextView.textAlignment = .center
-//        answerTextView.isEditable = false
-//        answerTextView.textColor = .white
-//        answerTextView.backgroundColor = .clear
-//
-//        answerTextView.constrainToSuperView(answerContainer, top: 0, bottom: 0, leading: 0, trailing: 0)
         
         instructionLabel = UILabel()
         instructionLabel.textAlignment = .center
