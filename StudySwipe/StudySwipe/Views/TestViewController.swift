@@ -114,7 +114,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         let duration = DateInterval(start: startTime, end: Date()).duration
         let response: Response = direction.horizontalPosition == .right ? .correct : .incorrect
-        guard let questionID = question.questionID else { fatalError("The Question does not have a questionID")}
         
         if let cdfc = coreDataFetchController {
             
@@ -122,7 +121,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             let isMastered = cdfc.questionIsMastered(for: question)
             
             // record the question observation
-            _ = cdfc.recordQuestionObservation(with: response, for: questionID, with: Int(duration), in: observation)
+            _ = cdfc.recordQuestionObservation(with: response, for: question, with: Int(duration), in: observation)
             
             // if the repose was "correct" & the question wasn't previously mastered
             if response == .correct && isMastered == false {
@@ -202,8 +201,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
            view.backgroundColor = AppThemeProvider.shared.currentTheme == AppTheme.dark ? AppThemeProvider.shared.currentTheme.backgroundColor : .white
         }
         
-        
-        
         updateViews()
     }
 
@@ -233,7 +230,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             testObservation = coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!, for:test)
             
             let questionObs = testObservation?.questionObservation?.array as? [QuestionObservation]
-            print(questionObs?.compactMap{ $0.response })
+            print(questionObs?.compactMap{ $0.question?.answer})
 
         }
         dismiss(animated: true)
