@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC1022CA5F3E004F6656 /* AppDelegate.swift */; };
+		34286DDA22F6725C0061C4C8 /* LabelledProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34286DD922F6725C0061C4C8 /* LabelledProgressView.swift */; };
+		345AE05F22F7CA4300E6C69F /* QuestionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE05E22F7CA4300E6C69F /* QuestionSummaryView.swift */; };
 		347FDC1822CA5F40004F6656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1722CA5F40004F6656 /* Assets.xcassets */; };
 		347FDC1B22CA5F40004F6656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */; };
 		347FDC2622CA5F40004F6656 /* StudySwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */; };
+		349EBD1822F611650057B093 /* TestObservationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349EBD1722F611650057B093 /* TestObservationViewModel.swift */; };
+		34D7C1FE22ECE6C1005990C7 /* TestSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7C1FD22ECE6C1005990C7 /* TestSummaryViewController.swift */; };
+		34D7C20122ECE7F4005990C7 /* UILabel+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7C20022ECE7F4005990C7 /* UILabel+Custom.swift */; };
+		34D7C20322ECEE41005990C7 /* UIButton+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D7C20222ECEE41005990C7 /* UIButton+Custom.swift */; };
 		34DA7B8922CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */; };
 		34DA7B8B22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */; };
 		34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */; };
@@ -28,6 +33,7 @@
 		34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */; };
 		34E7F65922D2EE63000D9E4A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F65822D2EE63000D9E4A /* GradientView.swift */; };
 		34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */; };
+		34F1AB0722FA60B3003E4B88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC1022CA5F3E004F6656 /* AppDelegate.swift */; };
 		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
 		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
 		34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */; };
@@ -137,6 +143,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		34286DD922F6725C0061C4C8 /* LabelledProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledProgressView.swift; sourceTree = "<group>"; };
+		345AE05E22F7CA4300E6C69F /* QuestionSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSummaryView.swift; sourceTree = "<group>"; };
 		347FDC0D22CA5F3E004F6656 /* StudySwipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudySwipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		347FDC1022CA5F3E004F6656 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		347FDC1722CA5F40004F6656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +153,10 @@
 		347FDC2122CA5F40004F6656 /* StudySwipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudySwipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudySwipeTests.swift; sourceTree = "<group>"; };
 		347FDC2722CA5F40004F6656 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		349EBD1722F611650057B093 /* TestObservationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestObservationViewModel.swift; sourceTree = "<group>"; };
+		34D7C1FD22ECE6C1005990C7 /* TestSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSummaryViewController.swift; sourceTree = "<group>"; };
+		34D7C20022ECE7F4005990C7 /* UILabel+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Custom.swift"; sourceTree = "<group>"; };
+		34D7C20222ECEE41005990C7 /* UIButton+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Custom.swift"; sourceTree = "<group>"; };
 		34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+StandardAlerts.swift"; sourceTree = "<group>"; };
 		34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionCollectionViewController.swift; sourceTree = "<group>"; };
 		34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -297,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				34FBA49722CB10540047FAEA /* UIViewController+Container.swift */,
+				34D7C20022ECE7F4005990C7 /* UILabel+Custom.swift */,
+				34D7C20222ECEE41005990C7 /* UIButton+Custom.swift */,
 				34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */,
 				34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */,
 				34DA7B8822CBFAFC00AD2A63 /* UIAlertController+StandardAlerts.swift */,
@@ -352,6 +366,8 @@
 				34E2B99A22E11A760009CC01 /* TestConfigurationViewController.swift */,
 				34E2B99422E10EDA0009CC01 /* TestConfigurationCollectionViewController.swift */,
 				34E2B99622E110210009CC01 /* TestConfigurationCollectionViewCell.swift */,
+				34D7C1FD22ECE6C1005990C7 /* TestSummaryViewController.swift */,
+				349EBD1722F611650057B093 /* TestObservationViewModel.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -511,6 +527,8 @@
 				34FBA49D22CBADEC0047FAEA /* Review */,
 				D194E96122CA951D001EED6C /* Onboarding */,
 				34E2B99122E0FF190009CC01 /* PillView.swift */,
+				34286DD922F6725C0061C4C8 /* LabelledProgressView.swift */,
+				345AE05E22F7CA4300E6C69F /* QuestionSummaryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -690,6 +708,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F1AB0722FA60B3003E4B88 /* AppDelegate.swift in Sources */,
 				D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */,
 				34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */,
 				D12EF24222EF51180028C5C4 /* StudySwipe.xcdatamodeld in Sources */,
@@ -703,8 +722,8 @@
 				D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */,
 				D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */,
 				D1292B0222D8FFFA00FAFD1E /* Array+Extension.swift in Sources */,
+				34D7C1FE22ECE6C1005990C7 /* TestSummaryViewController.swift in Sources */,
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
-				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
 				34E2B99922E115800009CC01 /* CenterAlignedCollectionViewFlowLayout.swift in Sources */,
 				34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */,
@@ -724,7 +743,9 @@
 				34E2B99722E110210009CC01 /* TestConfigurationCollectionViewCell.swift in Sources */,
 				34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */,
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,
+				34D7C20122ECE7F4005990C7 /* UILabel+Custom.swift in Sources */,
 				34DED65322D6CDB60059867A /* NotificationName+Custom.swift in Sources */,
+				34286DDA22F6725C0061C4C8 /* LabelledProgressView.swift in Sources */,
 				D1EF436422D9A8B80044D960 /* DarkModeTableViewCell.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
@@ -733,17 +754,20 @@
 				D1292B0622D9000F00FAFD1E /* Weak.swift in Sources */,
 				34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */,
 				34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */,
+				349EBD1822F611650057B093 /* TestObservationViewModel.swift in Sources */,
 				34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
 				D1292AFB22D8FFC300FAFD1E /* AppTheme.swift in Sources */,
 				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
 				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
 				34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */,
+				345AE05F22F7CA4300E6C69F /* QuestionSummaryView.swift in Sources */,
 				34FBA48722CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift in Sources */,
 				D194E98422CADD94001EED6C /* CoreDataFetchController.swift in Sources */,
 				34E2B99B22E11A760009CC01 /* TestConfigurationViewController.swift in Sources */,
 				34FBA48E22CA89BC0047FAEA /* TestViewController.swift in Sources */,
 				D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */,
+				34D7C20322ECEE41005990C7 /* UIButton+Custom.swift in Sources */,
 				D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */,
 				D18E406322EA174600D48713 /* MasteryBadge.swift in Sources */,
 				D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */,
@@ -756,7 +780,6 @@
 				34FBA49222CABF8A0047FAEA /* APIKeys.swift in Sources */,
 				D1292AFF22D8FFDA00FAFD1E /* Theming.swift in Sources */,
 				D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */,
-				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */,
 				D129537422DA4DAA00AD5C1E /* DarkModeConformingViews.swift in Sources */,
 				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,
@@ -928,7 +951,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S5U94G8XN2;
+				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -948,7 +971,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S5U94G8XN2;
+				DEVELOPMENT_TEAM = 2SS9AYZ8LT;
 				INFOPLIST_FILE = StudySwipe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

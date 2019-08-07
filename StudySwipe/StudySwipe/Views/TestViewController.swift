@@ -123,7 +123,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             // record the question observation
             _ = cdfc.recordQuestionObservation(with: response, for: question, with: Int(duration), in: observation)
             
-            // if the repose was "correct" & the question wasn't previously mastered
+            // if the response was "correct" & the question wasn't previously mastered
             if response == .correct && isMastered == false {
                     displayPillView(for: question)
             }
@@ -203,19 +203,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         updateViews()
     }
-
-    private func loadQuestions() {
-        let fetchRequest: NSFetchRequest<Question> = Question.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "question", ascending: true)]
-        let moc = CoreDataStack.shared.mainContext
-        moc.performAndWait {
-            do {
-                questions = try moc.fetch(fetchRequest)
-            } catch {
-                print("Error loading questions: \(error)")
-            }
-        }
-    }
     
     private func updateViews() {
         guard isViewLoaded else { return }
@@ -224,16 +211,18 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     private func dismissTest(action: UIAlertAction! = nil) {
-        if testObservation != nil {
-            
-            guard let test = test else { return }
-            testObservation = coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!, for:test)
-            
-            let questionObs = testObservation?.questionObservation?.array as? [QuestionObservation]
-            print(questionObs?.compactMap{ $0.question?.answer})
-
+        if testObservation != nil, let test = test {
+            coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!, for: test)
+            let summaryVC = TestSummaryViewController()
+            summaryVC.testObservation = testObservation
+    
+            let rootView = self.presentingViewController
+            dismiss(animated: true) {
+                rootView?.present(summaryVC, animated: true)
+            }
+        } else {
+            dismiss(animated: true)
         }
-        dismiss(animated: true)
     }
     
     private func hideArrows() {

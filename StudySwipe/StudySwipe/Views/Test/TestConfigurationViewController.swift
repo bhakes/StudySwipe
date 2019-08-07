@@ -63,10 +63,7 @@ class TestConfigurationViewController: UIViewController {
         self.view = DMCView()
         
         // Set up Title Label
-        let titleLabel = DMCLabel()
-        titleLabel.text = "Take a Test"
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 48)
-        
+        let titleLabel = UILabel.label(for: .title, with: "Take a Test")
         titleLabel.constrainToSuperView(view, top: 20, leading: 20, trailing: 20)
         
         // Set up Main Stack
@@ -112,7 +109,7 @@ class TestConfigurationViewController: UIViewController {
         
         questionSlider = UISlider()
         questionSlider.minimumValue = 5
-        questionSlider.maximumValue = 30
+        questionSlider.maximumValue = 50
         questionSlider.setValue(10, animated: false)
         questionSlider.tintColor = .white
         questionSlider.maximumTrackTintColor = .white
@@ -144,8 +141,6 @@ class TestConfigurationViewController: UIViewController {
         isMasteredStackView.constrain(width: 240)
         mainStack.addArrangedSubview(isMasteredStackView)
         
-        
-        
         // Set up Buttons
         let buttonStack = UIStackView()
         buttonStack.axis = .horizontal
@@ -153,38 +148,23 @@ class TestConfigurationViewController: UIViewController {
         
         mainStack.addArrangedSubview(buttonStack)
         
-        resetButton = UIButton(type: .system)
-        resetButton.setTitle("Reset", for: .normal)
-        resetButton.setTitleColor(.white, for: .normal)
-        resetButton.backgroundColor = .warningColor
+        resetButton = UIButton.button(for: .warning, with: "Reset")
         resetButton.addTarget(self, action: #selector(resetOptions), for: .touchUpInside)
-        resetButton.layer.cornerRadius = 8
         resetButton.constrain(width: 120)
         
         buttonStack.addArrangedSubview(resetButton)
-        //        resetButton.isHidden = true
         
         // Set up Start Test Button
-        let startTestButton = UIButton(type: .system)
-        startTestButton.setTitle("Start Test", for: .normal)
-        startTestButton.setTitleColor(.white, for: .normal)
-        startTestButton.backgroundColor = .accentColor
+        let startTestButton = UIButton.button(for: .normal, with: "Start Test")
         startTestButton.addTarget(self, action: #selector(startCustomTest), for: .touchUpInside)
-        startTestButton.layer.cornerRadius = 8
         
         startTestButton.constrain(width: 120)
         
         buttonStack.addArrangedSubview(startTestButton)
     }
     
-    //    private func updateQuote() {
-    //        let (author, quote) = Quotes.getNewQuote()
-    //        quoteLabel.text = "\"\(quote)\""
-    //        authorLabel.text = "– \(author)"
-    //    }
-    
     private func startTest(difficulties: [Difficulty] = [.All], categories: [Category] = [.All], numberOfQuestions number: Int, notMasteredOnly: Bool = false) {
-        let (test, observation) = coreDataFetchController.makeTestAndObservation(with: "New \(number) Question Test", difficulties: difficulties, categories: categories, count: number, random: true, notMasteredOnly: notMasteredOnly)
+        let (test, observation) = coreDataFetchController.makeTestAndObservation(with: "\(number) Question Test", difficulties: difficulties, categories: categories, count: number, random: true, notMasteredOnly: notMasteredOnly)
         
         guard test?.questions?.count ?? 0 > 0 else {
             // TODO: Handle having a test with no questions.

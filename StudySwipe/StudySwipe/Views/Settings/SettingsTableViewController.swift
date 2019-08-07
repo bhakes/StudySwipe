@@ -50,10 +50,7 @@ class SettingsTableViewController: UITableViewController {
         let view = DMCView()
         view.translatesAutoresizingMaskIntoConstraints = true
        
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = true
-        label.font = .boldSystemFont(ofSize: 20)
-        label.textColor = .fadedTextColor
+        let label = UILabel.label(for: .header2)
         view.addSubview(label)
         
         switch section {
