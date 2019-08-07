@@ -48,7 +48,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
                 // Present an alert?
                 return
             }
-            self.questions = questions
+            self.questions = Array(questions) as! [Question]
         }
     }
     
@@ -114,7 +114,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         let duration = DateInterval(start: startTime, end: Date()).duration
         let response: Response = direction.horizontalPosition == .right ? .correct : .incorrect
-        guard let questionID = question.questionID else { fatalError("The Question does not have a questionID")}
         
         if let cdfc = coreDataFetchController {
             
@@ -122,7 +121,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             let isMastered = cdfc.questionIsMastered(for: question)
             
             // record the question observation
-            _ = cdfc.recordQuestionObservation(with: response, for: questionID, with: Int(duration), in: observation)
+            _ = cdfc.recordQuestionObservation(with: response, for: question, with: Int(duration), in: observation)
             
             // if the response was "correct" & the question wasn't previously mastered
             if response == .correct && isMastered == false {
@@ -202,8 +201,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
            view.backgroundColor = AppThemeProvider.shared.currentTheme == AppTheme.dark ? AppThemeProvider.shared.currentTheme.backgroundColor : .white
         }
         
-        
-        
         updateViews()
     }
     
@@ -218,7 +215,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
             let summaryVC = TestSummaryViewController()
             summaryVC.testObservation = testObservation
-            
+    
             let rootView = self.presentingViewController
             dismiss(animated: true) {
                 rootView?.present(summaryVC, animated: true)

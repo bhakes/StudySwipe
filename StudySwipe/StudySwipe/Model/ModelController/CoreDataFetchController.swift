@@ -73,7 +73,7 @@ class CoreDataFetchController {
         testObservation.finishTimestamp = Date()
     }
     
-    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) {
+    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation, for test: InterviewTest) -> (InterviewTestObservation) {
         print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {
@@ -83,13 +83,14 @@ class CoreDataFetchController {
             }
         }
         
+        testObs.interviewTest = test
         testObs.isCompleted = true
         testObs.finishTimestamp = Date()
     }
     
     // MARK: QuestionObservation Manipulation Methods
     
-    private func makeQuestionObservation(with response: Response, for questionID: UUID, in duration: TimeInterval? = nil, for testID: UUID) -> QuestionObservation? {
+    private func makeQuestionObservation(with response: Response, for question: Question, in duration: TimeInterval? = nil, for testID: UUID) -> QuestionObservation? {
         defer {
             do {
                 try CoreDataStack.shared.save()
@@ -97,13 +98,14 @@ class CoreDataFetchController {
                 print("Failed to save to core data with error: \(error)")
             }
         }
-        let newQuestionObservation = QuestionObservation(response: response, questionID: questionID, timeInterval: duration ?? 0, testID: testID)
+        guard let questionID = question.questionID else { return nil }
+        let newQuestionObservation = QuestionObservation(response: response, question: question, questionID: questionID, timeInterval: duration ?? 0, testID: testID)
         return newQuestionObservation
     }
     
-    func recordQuestionObservation(with response: Response, for questionID: UUID, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
+    func recordQuestionObservation(with response: Response, for question: Question, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
         
-        print("Recording observation with repsonse: \(response), for questionID: \(questionID.uuidString), with duration: \(duration ?? -1)")
+        print("Recording observation with repsonse: \(response), for questionID: \(question.questionID?.uuidString ?? "N/A"), with duration: \(duration ?? -1)")
         defer {
             do {
                 try CoreDataStack.shared.save()
@@ -112,7 +114,7 @@ class CoreDataFetchController {
             }
         }
         
-        guard let testID = testObs.testID, let newQuestionObs = makeQuestionObservation(with: response, for: questionID, for: testID ) else { return false }
+        guard let testID = testObs.testID, let newQuestionObs = makeQuestionObservation(with: response, for: question, for: testID ) else { return false }
         addQuestionObservation(to: testObs, for: newQuestionObs)
         
         return true
