@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		34286DDA22F6725C0061C4C8 /* LabelledProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34286DD922F6725C0061C4C8 /* LabelledProgressView.swift */; };
 		345AE05F22F7CA4300E6C69F /* QuestionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345AE05E22F7CA4300E6C69F /* QuestionSummaryView.swift */; };
-		347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC1022CA5F3E004F6656 /* AppDelegate.swift */; };
 		347FDC1822CA5F40004F6656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1722CA5F40004F6656 /* Assets.xcassets */; };
 		347FDC1B22CA5F40004F6656 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 347FDC1922CA5F40004F6656 /* LaunchScreen.storyboard */; };
 		347FDC2622CA5F40004F6656 /* StudySwipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC2522CA5F40004F6656 /* StudySwipeTests.swift */; };
@@ -34,6 +33,7 @@
 		34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */; };
 		34E7F65922D2EE63000D9E4A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E7F65822D2EE63000D9E4A /* GradientView.swift */; };
 		34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */; };
+		34F1AB0722FA60B3003E4B88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347FDC1022CA5F3E004F6656 /* AppDelegate.swift */; };
 		34FBA47B22CA7C230047FAEA /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47A22CA7C230047FAEA /* SwipeableView.swift */; };
 		34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */; };
 		34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */; };
@@ -708,6 +708,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34F1AB0722FA60B3003E4B88 /* AppDelegate.swift in Sources */,
 				D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */,
 				34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */,
 				D12EF24222EF51180028C5C4 /* StudySwipe.xcdatamodeld in Sources */,
@@ -723,7 +724,6 @@
 				D1292B0222D8FFFA00FAFD1E /* Array+Extension.swift in Sources */,
 				34D7C1FE22ECE6C1005990C7 /* TestSummaryViewController.swift in Sources */,
 				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
-				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
 				34E2B99922E115800009CC01 /* CenterAlignedCollectionViewFlowLayout.swift in Sources */,
 				34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */,
@@ -780,7 +780,6 @@
 				34FBA49222CABF8A0047FAEA /* APIKeys.swift in Sources */,
 				D1292AFF22D8FFDA00FAFD1E /* Theming.swift in Sources */,
 				D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */,
-				347FDC1122CA5F3E004F6656 /* AppDelegate.swift in Sources */,
 				34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */,
 				D129537422DA4DAA00AD5C1E /* DarkModeConformingViews.swift in Sources */,
 				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,

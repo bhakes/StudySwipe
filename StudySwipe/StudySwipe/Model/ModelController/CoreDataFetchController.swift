@@ -73,7 +73,7 @@ class CoreDataFetchController {
         testObservation.finishTimestamp = Date()
     }
     
-    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation, for test: InterviewTest) -> (InterviewTestObservation) {
+    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation, for test: InterviewTest) {
         print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {

@@ -59,7 +59,7 @@ class TestObservationViewModel {
         let questions = questionObservations.compactMap { $0.question }
         if questions.isEmpty { return sampleCategories }
         let categories = Set(questions.compactMap{ $0.category }.compactMap{ Category(rawValue: $0) })
-        let viewModels = categories.map { cat -> CategoryViewModel in
+        return categories.map { cat -> CategoryViewModel in
             let questions = questionObservations.filter{ $0.question?.category == cat.description }
             let correct = questions.filter { $0.response == Response.correct.rawValue }
             return CategoryViewModel(color: cat.color(),
@@ -67,8 +67,6 @@ class TestObservationViewModel {
                               correct: correct.count,
                               title: cat.title())
         }
-
-        return viewModels
     }
     
     private let sampleCategories = [
@@ -79,7 +77,13 @@ class TestObservationViewModel {
     ]
     
     private func summarizeQuestions() -> [QuestionViewModel] {
-        return sampleQuestions
+        guard let questionObservations = testObservation.questionObservation?.array as? Array<QuestionObservation> else { return sampleQuestions }
+        return questionObservations.map { ob -> QuestionViewModel in
+            let color = Category(rawValue: ob.question?.category ?? "All")!.color()
+            let isCorrect = ob.response == Response.correct.rawValue
+            let question = ob.question?.question ?? "Couldn't find the question"
+            return QuestionViewModel(color: color, isCorrect: isCorrect, question: question)
+        }
     }
     
     private let sampleQuestions = [
