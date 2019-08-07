@@ -14,6 +14,8 @@
 - [ ] Updated constraint helpers to not default to `safeArea` (mostly because it seems to cause issues with content in scroll views.)
 
 -----
+# Proposed Template
+
 ## Added
 - Added some cool new feature
 
