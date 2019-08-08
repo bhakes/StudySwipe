@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18F132" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="InterviewTest" representedClassName="InterviewTest" syncable="YES" codeGenerationType="class">
+        <attribute name="questions" optional="YES" attributeType="Transformable" customClassName="[Question]" syncable="YES"/>
+        <attribute name="testID" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="interviewTestObservation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterviewTestObservation" inverseName="interviewTest" inverseEntity="InterviewTestObservation" syncable="YES"/>
+    </entity>
+    <entity name="InterviewTestObservation" representedClassName="InterviewTestObservation" syncable="YES" codeGenerationType="class">
+        <attribute name="finishTimestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="isCompleted" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="startTimestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="testID" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="interviewTest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterviewTest" inverseName="interviewTestObservation" inverseEntity="InterviewTest" syncable="YES"/>
+        <relationship name="questionObservation" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="QuestionObservation" inverseName="interviewTestObservation" inverseEntity="QuestionObservation" syncable="YES"/>
+    </entity>
+    <entity name="Question" representedClassName="Question" syncable="YES" codeGenerationType="class">
+        <attribute name="answer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="difficulty" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="question" attributeType="String" syncable="YES"/>
+        <attribute name="questionID" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="track" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="questionObservation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QuestionObservation" inverseName="question" inverseEntity="QuestionObservation" syncable="YES"/>
+    </entity>
+    <entity name="QuestionObservation" representedClassName="QuestionObservation" syncable="YES" codeGenerationType="class">
+        <attribute name="questionID" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="response" optional="YES" attributeType="String" customClassName="Response" syncable="YES"/>
+        <attribute name="testID" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="timeInterval" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="interviewTestObservation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterviewTestObservation" inverseName="questionObservation" inverseEntity="InterviewTestObservation" syncable="YES"/>
+        <relationship name="question" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="questionObservation" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="InterviewTest" positionX="60.98828125" positionY="18.30859375" width="128" height="120"/>
+        <element name="InterviewTestObservation" positionX="-81" positionY="27" width="128" height="150"/>
+        <element name="Question" positionX="-90" positionY="18" width="128" height="150"/>
+        <element name="QuestionObservation" positionX="-311.140625" positionY="50" width="128" height="150"/>
+    </elements>
+</model>

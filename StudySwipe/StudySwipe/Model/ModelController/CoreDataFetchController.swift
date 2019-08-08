@@ -59,12 +59,21 @@ class CoreDataFetchController {
     }
     
     private func addQuestionObservation(to testObservation: InterviewTestObservation, for questionObs: QuestionObservation){
+        defer {
+            do {
+                try CoreDataStack.shared.save()
+            } catch {
+                print("Failed to save to core data with error: \(error)")
+            }
+        }
+        guard var newQuestionObs = testObservation.questionObservation?.array as? [QuestionObservation] else { return }
+        newQuestionObs.append(questionObs)
+        testObservation.questionObservation = NSOrderedSet(array: newQuestionObs)
         
-        testObservation.questionObservations?.append(questionObs)
         testObservation.finishTimestamp = Date()
     }
     
-    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation) {
+    func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation, for test: InterviewTest) {
         print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {
@@ -74,22 +83,29 @@ class CoreDataFetchController {
             }
         }
         
+        testObs.interviewTest = test
         testObs.isCompleted = true
         testObs.finishTimestamp = Date()
-        
     }
     
     // MARK: QuestionObservation Manipulation Methods
     
-    private func makeQuestionObservation(with response: Response, for questionID: UUID, in duration: TimeInterval? = nil) -> QuestionObservation? {
-        
-        let newQuestionObservation = QuestionObservation(response: response, questionID: questionID, timeInterval: duration ?? 0)
+    private func makeQuestionObservation(with response: Response, for question: Question, in duration: TimeInterval? = nil, for testID: UUID) -> QuestionObservation? {
+        defer {
+            do {
+                try CoreDataStack.shared.save()
+            } catch {
+                print("Failed to save to core data with error: \(error)")
+            }
+        }
+        guard let questionID = question.questionID else { return nil }
+        let newQuestionObservation = QuestionObservation(response: response, question: question, questionID: questionID, timeInterval: duration ?? 0, testID: testID)
         return newQuestionObservation
     }
     
-    func recordQuestionObservation(with response: Response, for questionID: UUID, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
+    func recordQuestionObservation(with response: Response, for question: Question, with duration: Int? = nil, in testObs: InterviewTestObservation) -> Bool {
         
-        print("Recording observation with repsonse: \(response), for questionID: \(questionID.uuidString), with duration: \(duration ?? -1)")
+        print("Recording observation with repsonse: \(response), for questionID: \(question.questionID?.uuidString ?? "N/A"), with duration: \(duration ?? -1)")
         defer {
             do {
                 try CoreDataStack.shared.save()
@@ -98,7 +114,7 @@ class CoreDataFetchController {
             }
         }
         
-        guard let newQuestionObs = makeQuestionObservation(with: response, for: questionID ) else { return false }
+        guard let testID = testObs.testID, let newQuestionObs = makeQuestionObservation(with: response, for: question, for: testID ) else { return false }
         addQuestionObservation(to: testObs, for: newQuestionObs)
         
         return true
@@ -282,7 +298,7 @@ class CoreDataFetchController {
         return result
     }
     
-    func getQuestionObservationsByUUID(with uuid: UUID) -> [QuestionObservation]? {
+    func getQuestionObservationsByTestID(with testID: UUID) -> [QuestionObservation]? {
         
         var result: [QuestionObservation]? = nil // create an QuestionObservation array named 'result' that will store the entries you find in the Persistent Store
         
@@ -290,7 +306,7 @@ class CoreDataFetchController {
             
             let fetchRequest: NSFetchRequest<QuestionObservation> = QuestionObservation.fetchRequest() // create an QuestionObservation NSFetchRequest
             
-            let uuidPredicate = NSPredicate(format: "questionID == %@", uuid.uuidString)
+            let uuidPredicate = NSPredicate(format: "testID == %@", testID.uuidString)
             fetchRequest.predicate = uuidPredicate
             
             do { // in the current (background) context, perform the fetch request from the persistent store
@@ -534,11 +550,6 @@ class CoreDataFetchController {
         return filteredQuestions.count > 0 ? true : false
 
     }
-    
-    
-    
-    
-    
     
     let context: NSManagedObjectContext
 }

@@ -48,7 +48,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
                 // Present an alert?
                 return
             }
-            self.questions = questions
+            self.questions = Array(questions) as! [Question]
         }
     }
     
@@ -114,7 +114,6 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         let duration = DateInterval(start: startTime, end: Date()).duration
         let response: Response = direction.horizontalPosition == .right ? .correct : .incorrect
-        guard let questionID = question.questionID else { fatalError("The Question does not have a questionID")}
         
         if let cdfc = coreDataFetchController {
             
@@ -122,9 +121,9 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
             let isMastered = cdfc.questionIsMastered(for: question)
             
             // record the question observation
-            _ = cdfc.recordQuestionObservation(with: response, for: questionID, with: Int(duration), in: observation)
+            _ = cdfc.recordQuestionObservation(with: response, for: question, with: Int(duration), in: observation)
             
-            // if the repose was "correct" & the question wasn't previously mastered
+            // if the response was "correct" & the question wasn't previously mastered
             if response == .correct && isMastered == false {
                     displayPillView(for: question)
             }
@@ -202,22 +201,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
            view.backgroundColor = AppThemeProvider.shared.currentTheme == AppTheme.dark ? AppThemeProvider.shared.currentTheme.backgroundColor : .white
         }
         
-        
-        
         updateViews()
-    }
-
-    private func loadQuestions() {
-        let fetchRequest: NSFetchRequest<Question> = Question.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "question", ascending: true)]
-        let moc = CoreDataStack.shared.mainContext
-        moc.performAndWait {
-            do {
-                questions = try moc.fetch(fetchRequest)
-            } catch {
-                print("Error loading questions: \(error)")
-            }
-        }
     }
     
     private func updateViews() {
@@ -227,10 +211,18 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     }
     
     private func dismissTest(action: UIAlertAction! = nil) {
-        if testObservation != nil {
-            coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!)
+        if testObservation != nil, let test = test {
+            coreDataFetchController?.finishTestAndFinalizeObservation(&testObservation!, for: test)
+            let summaryVC = TestSummaryViewController()
+            summaryVC.testObservation = testObservation
+    
+            let rootView = self.presentingViewController
+            dismiss(animated: true) {
+                rootView?.present(summaryVC, animated: true)
+            }
+        } else {
+            dismiss(animated: true)
         }
-        dismiss(animated: true)
     }
     
     private func hideArrows() {

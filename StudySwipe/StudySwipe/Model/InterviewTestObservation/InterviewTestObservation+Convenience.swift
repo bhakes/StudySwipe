@@ -13,7 +13,7 @@ extension InterviewTestObservation {
     
     convenience init(finishTimestamp: Date,
                      startTimestamp: Date,
-                     testID: UUID? = UUID(),
+                     testID: UUID = UUID(),
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         self.init(context:context)

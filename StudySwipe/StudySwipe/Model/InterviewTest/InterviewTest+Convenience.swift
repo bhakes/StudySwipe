@@ -14,13 +14,13 @@ extension InterviewTest {
     convenience init(questions: [Question],
                      title: String,
                      timestamp: Date? = Date(),
-                     testID: UUID? = UUID(),
+                     testID: UUID = UUID(),
                      context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         
         self.init(context:context)
         
-        self.questions = questions
+        self.questions = NSOrderedSet(array: questions)
         self.title = title
         self.timestamp = timestamp
         self.testID = testID
