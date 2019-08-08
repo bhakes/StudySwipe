@@ -4,10 +4,10 @@
 - Added summary view to the end of tests
 - Added `LabelledProgressView` to display a labelled progress bar with an animatable value
 - Add `QuestionSummaryView` to display the summary of a question after a test.
-- Refactored the `CoreDataFetchController` and `CoreData` model to leverage relationships over `[Transformable]` managed object types.
 
 ## Changed
 - Changed scroll view in markdown views on cards to not bounce. Makes it so the view only scrolls if the content is bigger than the view.
+- Refactored the `CoreDataFetchController` and `CoreData` model to leverage relationships over `[Transformable]` managed object types.
 
 ## TODO
 - Write some tests
