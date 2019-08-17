@@ -69,7 +69,6 @@
 		D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E94222CA76FA001EED6C /* QuestionObservation+Convenience.swift */; };
 		D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E94622CA7879001EED6C /* InterviewTest+Convenience.swift */; };
 		D194E95222CA85A3001EED6C /* QuestionAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95122CA85A3001EED6C /* QuestionAnalytics.swift */; };
-		D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95322CA86F0001EED6C /* TestAnalytics.swift */; };
 		D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */; };
 		D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95822CA8865001EED6C /* Question+Convenience.swift */; };
 		D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95B22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift */; };
@@ -213,7 +212,6 @@
 		D194E94222CA76FA001EED6C /* QuestionObservation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuestionObservation+Convenience.swift"; sourceTree = "<group>"; };
 		D194E94622CA7879001EED6C /* InterviewTest+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewTest+Convenience.swift"; sourceTree = "<group>"; };
 		D194E95122CA85A3001EED6C /* QuestionAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnalytics.swift; sourceTree = "<group>"; };
-		D194E95322CA86F0001EED6C /* TestAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAnalytics.swift; sourceTree = "<group>"; };
 		D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepresentation.swift; sourceTree = "<group>"; };
 		D194E95822CA8865001EED6C /* Question+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Question+Convenience.swift"; sourceTree = "<group>"; };
 		D194E95B22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewTestObservation+Convenience.swift"; sourceTree = "<group>"; };
@@ -420,7 +418,6 @@
 				D12EF23D22EF51180028C5C4 /* StudySwipe.xcdatamodeld */,
 				D194E97622CAA5F0001EED6C /* NetworkingStructs */,
 				D194E95A22CA8BC2001EED6C /* InterviewTestObservation */,
-				D194E95522CA877E001EED6C /* TestAnalytics */,
 				D194E94822CA78D1001EED6C /* Question */,
 				D194E94522CA7852001EED6C /* InterviewTest */,
 				D194E94422CA781C001EED6C /* QuestionAnalytics */,
@@ -489,14 +486,6 @@
 				D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */,
 			);
 			path = Question;
-			sourceTree = "<group>";
-		};
-		D194E95522CA877E001EED6C /* TestAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				D194E95322CA86F0001EED6C /* TestAnalytics.swift */,
-			);
-			path = TestAnalytics;
 			sourceTree = "<group>";
 		};
 		D194E95A22CA8BC2001EED6C /* InterviewTestObservation */ = {
@@ -716,7 +705,6 @@
 				D194E94322CA76FA001EED6C /* QuestionObservation+Convenience.swift in Sources */,
 				D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */,
 				D194E97C22CABB4C001EED6C /* CoreDataImporter.swift in Sources */,
-				D194E95422CA86F0001EED6C /* TestAnalytics.swift in Sources */,
 				D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */,
 				D194E95222CA85A3001EED6C /* QuestionAnalytics.swift in Sources */,
 				D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */,
