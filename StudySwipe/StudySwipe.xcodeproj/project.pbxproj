@@ -50,7 +50,6 @@
 		34FBA49822CB10540047FAEA /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49722CB10540047FAEA /* UIViewController+Container.swift */; };
 		34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */; };
 		34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */; };
-		34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */; };
 		D1292AFB22D8FFC300FAFD1E /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */; };
 		D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */; };
 		D1292AFF22D8FFDA00FAFD1E /* Theming.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFE22D8FFDA00FAFD1E /* Theming.swift */; };
@@ -90,7 +89,6 @@
 		D1BA3E7C22CBE949001B1BD7 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */; };
 		D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */; };
 		D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */; };
-		D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */; };
 		D1EF436222D99C4D0044D960 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436122D99C4D0044D960 /* SettingsViewController.swift */; };
 		D1EF436422D9A8B80044D960 /* DarkModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -187,7 +185,6 @@
 		34FBA49722CB10540047FAEA /* UIViewController+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
 		34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionTableViewController.swift; sourceTree = "<group>"; };
 		34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
-		34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSetupViewController.swift; sourceTree = "<group>"; };
 		D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeProvider.swift; sourceTree = "<group>"; };
 		D1292AFE22D8FFDA00FAFD1E /* Theming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theming.swift; sourceTree = "<group>"; };
@@ -232,7 +229,6 @@
 		D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 		D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewCell.swift; sourceTree = "<group>"; };
 		D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsController.swift; sourceTree = "<group>"; };
-		D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		D1EF436122D99C4D0044D960 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,7 +354,6 @@
 		34FBA4A022CBCF0C0047FAEA /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				34FBA4A122CBCF270047FAEA /* TestSetupViewController.swift */,
 				34E2B99A22E11A760009CC01 /* TestConfigurationViewController.swift */,
 				34E2B99422E10EDA0009CC01 /* TestConfigurationCollectionViewController.swift */,
 				34E2B99622E110210009CC01 /* TestConfigurationCollectionViewCell.swift */,
@@ -432,7 +427,6 @@
 				D1292AF922D8FF9D00FAFD1E /* Theming */,
 				D194E97322CA9F38001EED6C /* Networking Helpers */,
 				34DA7B8722CBFACC00AD2A63 /* UI Helpers */,
-				D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */,
 				34EE9ECE22D38B7E00F84B10 /* Stopwatch.swift */,
 				34DED65222D6CDB60059867A /* NotificationName+Custom.swift */,
 				D18E406222EA174600D48713 /* MasteryBadge.swift */,
@@ -717,13 +711,11 @@
 				D1EF436422D9A8B80044D960 /* DarkModeTableViewCell.swift in Sources */,
 				D194E94722CA7879001EED6C /* InterviewTest+Convenience.swift in Sources */,
 				D194E98722CB9476001EED6C /* SettingsTableViewController.swift in Sources */,
-				D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */,
 				34FBA49622CB0D210047FAEA /* ReviewViewController.swift in Sources */,
 				D1292B0622D9000F00FAFD1E /* Weak.swift in Sources */,
 				34EE9ECF22D38B7E00F84B10 /* Stopwatch.swift in Sources */,
 				34DA7B8F22CC733100AD2A63 /* SelectionCollectionReusableHeaderView.swift in Sources */,
 				349EBD1822F611650057B093 /* TestObservationViewModel.swift in Sources */,
-				34FBA4A222CBCF270047FAEA /* TestSetupViewController.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
 				D1292AFB22D8FFC300FAFD1E /* AppTheme.swift in Sources */,
 				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
