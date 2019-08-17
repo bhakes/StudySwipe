@@ -71,13 +71,6 @@
 		D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */; };
 		D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95822CA8865001EED6C /* Question+Convenience.swift */; };
 		D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95B22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift */; };
-		D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */; };
-		D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96222CA9532001EED6C /* AlertOnboarding.swift */; };
-		D194E96522CA955A001EED6C /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96422CA955A001EED6C /* Alert.swift */; };
-		D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96622CA9576001EED6C /* AlertChildPageViewController.swift */; };
-		D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */; };
-		D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96A22CA95C9001EED6C /* AlertPageViewController.swift */; };
-		D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96C22CA95FF001EED6C /* WalkthroughViewController.swift */; };
 		D194E97022CA9A1D001EED6C /* QuestionNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */; };
 		D194E97522CA9F61001EED6C /* APICallType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97422CA9F61001EED6C /* APICallType.swift */; };
 		D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D194E97722CAA623001EED6C /* NetworkingStructs.swift */; };
@@ -211,13 +204,6 @@
 		D194E95622CA87A4001EED6C /* QuestionRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionRepresentation.swift; sourceTree = "<group>"; };
 		D194E95822CA8865001EED6C /* Question+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Question+Convenience.swift"; sourceTree = "<group>"; };
 		D194E95B22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterviewTestObservation+Convenience.swift"; sourceTree = "<group>"; };
-		D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOnboardingDelegate.swift; sourceTree = "<group>"; };
-		D194E96222CA9532001EED6C /* AlertOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOnboarding.swift; sourceTree = "<group>"; };
-		D194E96422CA955A001EED6C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
-		D194E96622CA9576001EED6C /* AlertChildPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertChildPageViewController.swift; sourceTree = "<group>"; };
-		D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPageViewDelegate.swift; sourceTree = "<group>"; };
-		D194E96A22CA95C9001EED6C /* AlertPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPageViewController.swift; sourceTree = "<group>"; };
-		D194E96C22CA95FF001EED6C /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionNetworkController.swift; sourceTree = "<group>"; };
 		D194E97422CA9F61001EED6C /* APICallType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallType.swift; sourceTree = "<group>"; };
 		D194E97722CAA623001EED6C /* NetworkingStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingStructs.swift; sourceTree = "<group>"; };
@@ -489,8 +475,6 @@
 		D194E95D22CA94D4001EED6C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				D194E95E22CA94EF001EED6C /* AlertOnboardingDelegate.swift */,
-				D194E96822CA9599001EED6C /* AlertPageViewDelegate.swift */,
 				34DA7B9022CD4A8200AD2A63 /* ColorIconTitleProviding.swift */,
 			);
 			path = Protocols;
@@ -504,24 +488,11 @@
 				34FBA48D22CA89BC0047FAEA /* TestViewController.swift */,
 				34FBA4A022CBCF0C0047FAEA /* Test */,
 				34FBA49D22CBADEC0047FAEA /* Review */,
-				D194E96122CA951D001EED6C /* Onboarding */,
 				34E2B99122E0FF190009CC01 /* PillView.swift */,
 				34286DD922F6725C0061C4C8 /* LabelledProgressView.swift */,
 				345AE05E22F7CA4300E6C69F /* QuestionSummaryView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		D194E96122CA951D001EED6C /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				D194E96222CA9532001EED6C /* AlertOnboarding.swift */,
-				D194E96422CA955A001EED6C /* Alert.swift */,
-				D194E96622CA9576001EED6C /* AlertChildPageViewController.swift */,
-				D194E96A22CA95C9001EED6C /* AlertPageViewController.swift */,
-				D194E96C22CA95FF001EED6C /* WalkthroughViewController.swift */,
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		D194E96E22CA99A3001EED6C /* ModelController */ = {
@@ -673,7 +644,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				34F1AB0722FA60B3003E4B88 /* AppDelegate.swift in Sources */,
-				D194E96B22CA95C9001EED6C /* AlertPageViewController.swift in Sources */,
 				34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */,
 				D12EF24222EF51180028C5C4 /* StudySwipe.xcdatamodeld in Sources */,
 				34E7F65922D2EE63000D9E4A /* GradientView.swift in Sources */,
@@ -686,8 +656,6 @@
 				D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */,
 				D1292B0222D8FFFA00FAFD1E /* Array+Extension.swift in Sources */,
 				34D7C1FE22ECE6C1005990C7 /* TestSummaryViewController.swift in Sources */,
-				D194E96522CA955A001EED6C /* Alert.swift in Sources */,
-				D194E96D22CA95FF001EED6C /* WalkthroughViewController.swift in Sources */,
 				34E2B99922E115800009CC01 /* CenterAlignedCollectionViewFlowLayout.swift in Sources */,
 				34DA7B9322CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift in Sources */,
 				D1292B0422D9000700FAFD1E /* SubscribableValue.swift in Sources */,
@@ -695,7 +663,6 @@
 				D1EF436222D99C4D0044D960 /* SettingsViewController.swift in Sources */,
 				D1BA3E7822CBE627001B1BD7 /* PerformanceTableViewController.swift in Sources */,
 				34E2B99222E0FF190009CC01 /* PillView.swift in Sources */,
-				D194E96322CA9532001EED6C /* AlertOnboarding.swift in Sources */,
 				D194E95722CA87A4001EED6C /* QuestionRepresentation.swift in Sources */,
 				D194E93422CA715E001EED6C /* HTTPMethod.swift in Sources */,
 				D194E93622CA71B6001EED6C /* Response.swift in Sources */,
@@ -718,7 +685,6 @@
 				349EBD1822F611650057B093 /* TestObservationViewModel.swift in Sources */,
 				D194E93B22CA7471001EED6C /* Category.swift in Sources */,
 				D1292AFB22D8FFC300FAFD1E /* AppTheme.swift in Sources */,
-				D194E96922CA9599001EED6C /* AlertPageViewDelegate.swift in Sources */,
 				34FBA48C22CA7DD80047FAEA /* SwipeableCard.swift in Sources */,
 				34E7F65722D2C7F0000D9E4A /* QuestionCard.swift in Sources */,
 				345AE05F22F7CA4300E6C69F /* QuestionSummaryView.swift in Sources */,
@@ -732,14 +698,12 @@
 				D18E406322EA174600D48713 /* MasteryBadge.swift in Sources */,
 				D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */,
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
-				D194E95F22CA94EF001EED6C /* AlertOnboardingDelegate.swift in Sources */,
 				34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */,
 				D194E97522CA9F61001EED6C /* APICallType.swift in Sources */,
 				34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */,
 				34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */,
 				34FBA49222CABF8A0047FAEA /* APIKeys.swift in Sources */,
 				D1292AFF22D8FFDA00FAFD1E /* Theming.swift in Sources */,
-				D194E96722CA9576001EED6C /* AlertChildPageViewController.swift in Sources */,
 				34FBA48322CA7CC80047FAEA /* CGRect+SwipableAdditions.swift in Sources */,
 				D129537422DA4DAA00AD5C1E /* DarkModeConformingViews.swift in Sources */,
 				34FBA48522CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift in Sources */,
