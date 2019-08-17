@@ -93,7 +93,6 @@
 		D1BA3E8422CC6F47001B1BD7 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */; };
 		D1EF436222D99C4D0044D960 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436122D99C4D0044D960 /* SettingsViewController.swift */; };
 		D1EF436422D9A8B80044D960 /* DarkModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */; };
-		D1F408AE22D7E94E00C4AC3C /* FunctionalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,7 +235,6 @@
 		D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		D1EF436122D99C4D0044D960 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeTableViewCell.swift; sourceTree = "<group>"; };
-		D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,7 +414,6 @@
 			isa = PBXGroup;
 			children = (
 				D12EF23D22EF51180028C5C4 /* StudySwipe.xcdatamodeld */,
-				D194E97622CAA5F0001EED6C /* NetworkingStructs */,
 				D194E95A22CA8BC2001EED6C /* InterviewTestObservation */,
 				D194E94822CA78D1001EED6C /* Question */,
 				D194E94522CA7852001EED6C /* InterviewTest */,
@@ -433,7 +430,6 @@
 			isa = PBXGroup;
 			children = (
 				D1292AF922D8FF9D00FAFD1E /* Theming */,
-				D1F408AC22D7E90900C4AC3C /* Functional Helpers */,
 				D194E97322CA9F38001EED6C /* Networking Helpers */,
 				34DA7B8722CBFACC00AD2A63 /* UI Helpers */,
 				D1BA3E8322CC6F47001B1BD7 /* Quotes.swift */,
@@ -552,24 +548,9 @@
 				D194E93322CA715E001EED6C /* HTTPMethod.swift */,
 				D194E97422CA9F61001EED6C /* APICallType.swift */,
 				D194E97F22CAC86A001EED6C /* Reachability.swift */,
-			);
-			path = "Networking Helpers";
-			sourceTree = "<group>";
-		};
-		D194E97622CAA5F0001EED6C /* NetworkingStructs */ = {
-			isa = PBXGroup;
-			children = (
 				D194E97722CAA623001EED6C /* NetworkingStructs.swift */,
 			);
-			path = NetworkingStructs;
-			sourceTree = "<group>";
-		};
-		D1F408AC22D7E90900C4AC3C /* Functional Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				D1F408AD22D7E94E00C4AC3C /* FunctionalHelpers.swift */,
-			);
-			path = "Functional Helpers";
+			path = "Networking Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -727,7 +708,6 @@
 				34FBA49822CB10540047FAEA /* UIViewController+Container.swift in Sources */,
 				D194E93D22CA7538001EED6C /* Difficulty.swift in Sources */,
 				D194E93222CA70BF001EED6C /* CoreDataStack.swift in Sources */,
-				D1F408AE22D7E94E00C4AC3C /* FunctionalHelpers.swift in Sources */,
 				34E2B99722E110210009CC01 /* TestConfigurationCollectionViewCell.swift in Sources */,
 				34DA7B8D22CC440D00AD2A63 /* SelectionCollectionViewCell.swift in Sources */,
 				D194E93822CA7225001EED6C /* Track.swift in Sources */,

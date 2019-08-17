@@ -91,7 +91,7 @@ extension QuestionNetworkController {
         
         switch apiCallType {
             
-        // questions
+        // GET questions
         case .GETQuestions:
             
             let url = baseURL
