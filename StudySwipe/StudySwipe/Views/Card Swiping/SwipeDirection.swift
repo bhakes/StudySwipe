@@ -19,10 +19,6 @@ enum SwipeDirection: CaseIterable {
     case bottomLeft
     case bottomRight
     
-    static var allDirections: [SwipeDirection] {
-        return [.left, .right, .up, .down, .topLeft, .topRight, .bottomLeft, .bottomRight]
-    }
-    
     var horizontalPosition: HorizontalPosition {
         switch self {
         case .left:
