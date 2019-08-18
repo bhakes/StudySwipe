@@ -48,7 +48,6 @@
 		34FBA49422CAC0B20047FAEA /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */; };
 		34FBA49622CB0D210047FAEA /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49522CB0D210047FAEA /* ReviewViewController.swift */; };
 		34FBA49822CB10540047FAEA /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49722CB10540047FAEA /* UIViewController+Container.swift */; };
-		34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */; };
 		34FBA49F22CBCD030047FAEA /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */; };
 		D1292AFB22D8FFC300FAFD1E /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */; };
 		D1292AFD22D8FFCF00FAFD1E /* AppThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */; };
@@ -174,7 +173,6 @@
 		34FBA49322CAC0B20047FAEA /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		34FBA49522CB0D210047FAEA /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		34FBA49722CB10540047FAEA /* UIViewController+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
-		34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSelectionTableViewController.swift; sourceTree = "<group>"; };
 		34FBA49E22CBCD030047FAEA /* UIColor+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
 		D1292AFA22D8FFC300FAFD1E /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		D1292AFC22D8FFCF00FAFD1E /* AppThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppThemeProvider.swift; sourceTree = "<group>"; };
@@ -323,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				34FBA49522CB0D210047FAEA /* ReviewViewController.swift */,
-				34FBA49922CB10930047FAEA /* ReviewSelectionTableViewController.swift */,
 				34DA7B8A22CC2D0600AD2A63 /* ReviewSelectionCollectionViewController.swift */,
 				34DA7B9222CD4B0A00AD2A63 /* ReviewSelectionCollectionViewDelegate.swift */,
 				34DA7B8C22CC440D00AD2A63 /* SelectionCollectionViewCell.swift */,
@@ -708,7 +705,6 @@
 				34FBA48122CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift in Sources */,
 				34FBA47F22CA7C7A0047FAEA /* SwipeDirection.swift in Sources */,
 				D194E97522CA9F61001EED6C /* APICallType.swift in Sources */,
-				34FBA49A22CB10930047FAEA /* ReviewSelectionTableViewController.swift in Sources */,
 				34FBA47D22CA7C630047FAEA /* SwipeableViewDelegate.swift in Sources */,
 				34FBA49222CABF8A0047FAEA /* APIKeys.swift in Sources */,
 				D1292AFF22D8FFDA00FAFD1E /* Theming.swift in Sources */,
