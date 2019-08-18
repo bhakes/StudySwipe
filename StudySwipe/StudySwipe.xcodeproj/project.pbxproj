@@ -80,7 +80,6 @@
 		D1BA3E7822CBE627001B1BD7 /* PerformanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */; };
 		D1BA3E7C22CBE949001B1BD7 /* PerformanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */; };
 		D1BA3E7F22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */; };
-		D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */; };
 		D1EF436222D99C4D0044D960 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436122D99C4D0044D960 /* SettingsViewController.swift */; };
 		D1EF436422D9A8B80044D960 /* DarkModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -212,7 +211,6 @@
 		D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewController.swift; sourceTree = "<group>"; };
 		D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceViewController.swift; sourceTree = "<group>"; };
 		D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTableViewCell.swift; sourceTree = "<group>"; };
-		D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsController.swift; sourceTree = "<group>"; };
 		D1EF436122D99C4D0044D960 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D1EF436322D9A8B80044D960 /* DarkModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -514,7 +512,6 @@
 				D194E96F22CA9A1D001EED6C /* QuestionNetworkController.swift */,
 				D194E97B22CABB4C001EED6C /* CoreDataImporter.swift */,
 				D194E98322CADD94001EED6C /* CoreDataFetchController.swift */,
-				D1BA3E8122CC2502001B1BD7 /* AnalyticsController.swift */,
 			);
 			name = ModelController;
 			path = Model/ModelController;
@@ -664,7 +661,6 @@
 				D194E97822CAA623001EED6C /* NetworkingStructs.swift in Sources */,
 				D194E97C22CABB4C001EED6C /* CoreDataImporter.swift in Sources */,
 				D194E95922CA8865001EED6C /* Question+Convenience.swift in Sources */,
-				D1BA3E8222CC2502001B1BD7 /* AnalyticsController.swift in Sources */,
 				D194E95C22CA8BE0001EED6C /* InterviewTestObservation+Convenience.swift in Sources */,
 				D1292B0222D8FFFA00FAFD1E /* Array+Extension.swift in Sources */,
 				34D7C1FE22ECE6C1005990C7 /* TestSummaryViewController.swift in Sources */,

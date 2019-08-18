@@ -14,6 +14,7 @@ class QuestionNetworkController {
     // MARK: - Private Methods
     static let shared = QuestionNetworkController()
     private init (){}
+    
     /*
      Generic apiRequest
      */
