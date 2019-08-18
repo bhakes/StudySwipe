@@ -99,11 +99,8 @@ class PerformanceTableViewController: UITableViewController {
     lazy var questionObservations: [QuestionObservation] = {
         return coreDataFetchController.getAllQuestionObservations() ?? []
     }()
-    
-    
 
 }
-
 
 extension PerformanceTableViewController: Themed {
     func applyTheme(_ theme: AppTheme) {
