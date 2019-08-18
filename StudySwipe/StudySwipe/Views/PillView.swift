@@ -10,28 +10,7 @@ import UIKit
 
 class PillView: UIView {
     
-    var color: UIColor {
-        didSet { backgroundColor = color }
-    }
-    
-    var borderColor: UIColor = .clear {
-        didSet { layer.borderColor = borderColor.cgColor }
-    }
-    
-    var shadowOpacity: Float = 0 {
-        didSet { layer.shadowOpacity = shadowOpacity }
-    }
-    
-    var text: String? {
-        didSet { updateTextLabel() }
-    }
-    
-    var textColor: UIColor = .white {
-        didSet { textLabel.textColor = textColor }
-    }
-    
-    private var textLabel: UILabel
-
+    // MARK: - Initializers
     init(frame: CGRect = .zero, color: UIColor = .clear, text: String? = nil) {
         self.color = color
         
@@ -58,6 +37,31 @@ class PillView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Properties
+    var color: UIColor {
+        didSet { backgroundColor = color }
+    }
+    
+    var borderColor: UIColor = .clear {
+        didSet { layer.borderColor = borderColor.cgColor }
+    }
+    
+    var shadowOpacity: Float = 0 {
+        didSet { layer.shadowOpacity = shadowOpacity }
+    }
+    
+    var text: String? {
+        didSet { updateTextLabel() }
+    }
+    
+    var textColor: UIColor = .white {
+        didSet { textLabel.textColor = textColor }
+    }
+    
+    private var textLabel: UILabel
+    
+    
+    // MARK: - Methods
     private func updateTextLabel() {
         textLabel.text = text
         textLabel.sizeToFit()

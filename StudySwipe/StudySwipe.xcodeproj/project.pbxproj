@@ -336,8 +336,8 @@
 			isa = PBXGroup;
 			children = (
 				34FBA48D22CA89BC0047FAEA /* TestViewController.swift */,
-				D13877792308B3DD007C0C19 /* TestSummary */,
 				D13877782308B3CC007C0C19 /* TestConfiguration */,
+				D13877792308B3DD007C0C19 /* TestSummary */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -377,8 +377,8 @@
 		D13877792308B3DD007C0C19 /* TestSummary */ = {
 			isa = PBXGroup;
 			children = (
-				349EBD1722F611650057B093 /* TestObservationViewModel.swift */,
 				34D7C1FD22ECE6C1005990C7 /* TestSummaryViewController.swift */,
+				349EBD1722F611650057B093 /* TestObservationViewModel.swift */,
 			);
 			path = TestSummary;
 			sourceTree = "<group>";
@@ -404,8 +404,8 @@
 		D17188A122D3C988006D4CBA /* Performance */ = {
 			isa = PBXGroup;
 			children = (
-				D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */,
 				D1BA3E7B22CBE949001B1BD7 /* PerformanceViewController.swift */,
+				D1BA3E7722CBE627001B1BD7 /* PerformanceTableViewController.swift */,
 				D1BA3E7D22CC0E9A001B1BD7 /* PerformanceTableViewCell.swift */,
 			);
 			path = Performance;
