@@ -8,12 +8,25 @@
 
 import UIKit
 
+/// A 👋 Swipeable Card that inherits from `SwipeableView`
 class SwipeableCard: SwipeableView {
+    
+    // MARK: - Initializers
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("Init from coder not implemented")
     }
     
+    
+    /**
+     Initializes a new 👋 Swipeable Card that inherits from `SwipeableView`.
+     
+     - Parameters:
+     - frame: The frame of the new 👋 Swipeable Card
+     
+     - Returns: A beautiful, 👋 Swipeable Card,
+     custom-built just for you.
+     */
     override init(frame: CGRect) {
         super.init(frame: frame)
 

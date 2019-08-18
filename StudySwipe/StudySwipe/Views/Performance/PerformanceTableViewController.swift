@@ -89,7 +89,7 @@ class PerformanceTableViewController: UITableViewController {
     
     // MARK: - Properties
     let cellID = "cellID"
-    var coreDataFetchController: CoreDataFetchController = CoreDataFetchController()
+    var coreDataFetchController: CoreDataFetchController = CoreDataFetchController.init()
     lazy var allQuestions: [Question] = {
         return coreDataFetchController.getAllQuestion() ?? []
     }()

@@ -10,7 +10,7 @@ import UIKit
 
 class TestConfigurationViewController: UIViewController {
 
-    let coreDataFetchController = CoreDataFetchController()
+    let coreDataFetchController = CoreDataFetchController.init()
     
     var quoteLabel: UILabel!
     var authorLabel: UILabel!

@@ -8,9 +8,22 @@
 
 import UIKit
 
+/// A class that implements chips in a pill-like 💊 form
 class PillView: UIView {
     
     // MARK: - Initializers
+    
+    /**
+     Initializes a new 💊-View with the provided parts and specifications.
+     
+     - Parameters:
+        - frame: The frame size of the 💊-View
+        - color: The color of the 💊-View
+        - text: The text that will show inside the 💊-View
+     
+     - Returns: A beautiful, 💊-View,
+     custom-built just for you.
+     */
     init(frame: CGRect = .zero, color: UIColor = .clear, text: String? = nil) {
         self.color = color
         
@@ -38,30 +51,43 @@ class PillView: UIView {
     }
     
     // MARK: - Properties
+    
+    /// The color of the 💊-View
     var color: UIColor {
         didSet { backgroundColor = color }
     }
     
+    /// The border color of the 💊-View
     var borderColor: UIColor = .clear {
         didSet { layer.borderColor = borderColor.cgColor }
     }
     
+    /// The shadowOpacity of the 💊-View
     var shadowOpacity: Float = 0 {
         didSet { layer.shadowOpacity = shadowOpacity }
     }
     
+    /// The text string to display in a label inside the 💊-View
     var text: String? {
         didSet { updateTextLabel() }
     }
     
+    /// The textLabel color inside the 💊-View
     var textColor: UIColor = .white {
         didSet { textLabel.textColor = textColor }
     }
     
+    /// The textLabel inside the 💊-View
     private var textLabel: UILabel
     
     
     // MARK: - Methods
+    
+    /**
+     Update the text label with the current text and size the text to fit the 💊-View
+    
+     - Precondition: `text` should have already been set.
+     */
     private func updateTextLabel() {
         textLabel.text = text
         textLabel.sizeToFit()

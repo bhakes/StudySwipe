@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let qnc = QuestionNetworkController.shared
-        let qfc = CoreDataFetchController()
+        let qfc = CoreDataFetchController.init()
         
         if Reachability.isConnectedToNetwork(){
 //            print("Internet Connection Available!")

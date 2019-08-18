@@ -9,7 +9,7 @@
 import Foundation
 import CoreGraphics
 
-enum SwipeDirection {
+enum SwipeDirection: CaseIterable {
     case left
     case right
     case up

@@ -9,19 +9,23 @@
 import UIKit
 import Down
 
+/// A 👋 Swipeable Question Card that inherits from `SwipeableCard`
 class QuestionCard: SwipeableCard {
     
+    // MARK: - Properties
+    var answerTextView: UITextView!
+    var instructionLabel: UILabel!
     var question: Question? {
         didSet {
             updateViews()
         }
     }
-    var answerTextView: UITextView!
-    var instructionLabel: UILabel!
     
     private var questionContainer: UIView!
     private var answerContainer: UIView!
     private var isAnswerHidden = true
+    
+    // MARK: - Methods
     
     func updateViews() {
         guard let question = question,

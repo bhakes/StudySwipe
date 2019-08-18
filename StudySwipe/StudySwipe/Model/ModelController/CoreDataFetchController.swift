@@ -9,13 +9,24 @@
 import Foundation
 import CoreData
 
+/// A Controller for fetching managed objects associated with the StudySwipe.xcdatamodeld from Core Data
 class CoreDataFetchController {
     
+    
+    /**
+     Creates a new instance of the CoreDataFetchController, a controller for fetching managed objects like `Question`s, `InterviewTest`s, and others, from the StudySwipe CoreData model.
+     
+     - Parameter context: An `NSManagedObjectContext` which defaults to `CoreDataStack.shared.mainContext`.
+     
+     - Returns: A new CoreDataFetchController instance.
+     */
     init(context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.context = context
     }
     
     // MARK: InterviewTest Manipulation Methods
+    
+    
     
     func makeTest(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false, notMasteredOnly: Bool? = false) -> InterviewTest? {
         
