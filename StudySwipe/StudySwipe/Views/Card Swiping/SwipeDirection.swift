@@ -9,7 +9,7 @@
 import Foundation
 import CoreGraphics
 
-enum SwipeDirection {
+enum SwipeDirection: CaseIterable {
     case left
     case right
     case up
@@ -18,10 +18,6 @@ enum SwipeDirection {
     case topRight
     case bottomLeft
     case bottomRight
-    
-    static var allDirections: [SwipeDirection] {
-        return [.left, .right, .up, .down, .topLeft, .topRight, .bottomLeft, .bottomRight]
-    }
     
     var horizontalPosition: HorizontalPosition {
         switch self {

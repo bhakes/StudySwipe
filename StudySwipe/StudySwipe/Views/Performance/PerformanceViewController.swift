@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PerformanceViewController: UIViewController, PerformanceTableViewDelegate {
+class PerformanceViewController: UIViewController {
     
     static let animationDistance: CGFloat = 800
     
@@ -16,7 +16,7 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
     var tableViewContainerConstraint: NSLayoutConstraint!
     var tableViewController: PerformanceTableViewController!
     
-    let coreDataFetchController = CoreDataFetchController()
+    let coreDataFetchController = CoreDataFetchController.init()
     
     private var themedStatusBarStyle: UIStatusBarStyle?
     
@@ -54,7 +54,6 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         headerView.constrainToSiblingView(tableViewContainer, above: 0)
         
         tableViewController = PerformanceTableViewController(style: .grouped)
-        tableViewController.delegate = self
         add(tableViewController, toView: tableViewContainer)
         
     }

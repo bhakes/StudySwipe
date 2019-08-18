@@ -19,7 +19,7 @@ class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDeleg
     var testViewContainerConstraint: NSLayoutConstraint!
     var testViewController: TestViewController!
     
-    let coreDataFetchController = CoreDataFetchController()
+    let coreDataFetchController = CoreDataFetchController.init()
     
     private var themedStatusBarStyle: UIStatusBarStyle?
     

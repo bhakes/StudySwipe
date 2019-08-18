@@ -19,7 +19,6 @@ func loadMasteryUpdatesFromUserDefaults() -> UInt? {
     }
 }
 
-
 func setMasteryUpdatesToUserDefaults(_ uint: UInt? = nil) {
     let defaults = UserDefaults.standard
     if let uint = uint {

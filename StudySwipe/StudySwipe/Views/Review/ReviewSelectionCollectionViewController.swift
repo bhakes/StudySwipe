@@ -48,7 +48,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         case 1:
             headerView.titleLabel.text = "Difficulty"
         default:
-            fatalError("There should only be \(ReviewSelectionTableViewController.sectionNumber) sections")
+            fatalError("There should only be \(ReviewSelectionCollectionViewController.sectionNumber) sections")
         }
         
         return headerView
@@ -61,7 +61,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         case 1:
             return Difficulty.allCases.count
         default:
-            fatalError("There should only be \(ReviewSelectionTableViewController.sectionNumber) sections")
+            fatalError("There should only be \(ReviewSelectionCollectionViewController.sectionNumber) sections")
         }
     }
 
@@ -77,7 +77,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         case 1:
             item = Difficulty.allCases[indexPath.row]
         default:
-            fatalError("There should only be \(ReviewSelectionTableViewController.sectionNumber) sections")
+            fatalError("There should only be \(ReviewSelectionCollectionViewController.sectionNumber) sections")
         }
         
         cell.item = item
@@ -95,7 +95,7 @@ class ReviewSelectionCollectionViewController: UICollectionViewController, UICol
         case 1:
             difficulty = Difficulty.allCases[indexPath.row]
         default:
-            fatalError("There should only be \(ReviewSelectionTableViewController.sectionNumber) sections")
+            fatalError("There should only be \(ReviewSelectionCollectionViewController.sectionNumber) sections")
         }
         delegate?.collectionView(collectionView, didSelectItemAt: indexPath, difficulty: difficulty, category: category)
     }

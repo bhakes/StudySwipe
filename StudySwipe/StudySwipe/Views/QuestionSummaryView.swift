@@ -10,19 +10,36 @@ import UIKit
 
 class QuestionSummaryView: UIView {
     
+    // MARK: - Initializers
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layoutViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        layoutViews()
+    }
+    
+    // MARK: - Properties
+    var color: UIColor = .accentColor
+    var isCorrect: Bool = false {
+        didSet {
+            updateViews()
+        }
+    }
+    
     var question: String? {
         didSet {
             questionLabel.text = question
         }
     }
     
-    var color: UIColor = .accentColor
-    
-    var isCorrect: Bool = false {
-        didSet {
-            updateViews()
-        }
-    }
+    private let questionLabel: DMCLabel = {
+        let label = UILabel.label(for: .body)
+        
+        return label
+    }()
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -40,32 +57,8 @@ class QuestionSummaryView: UIView {
         return imageView
     }()
     
-    private let questionLabel: DMCLabel = {
-        let label = UILabel.label(for: .body)
-        
-        return label
-    }()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        layoutViews()
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        layoutViews()
-    }
-    
-    private func layoutViews() {
-        imageView.constrain(height: 30, width: 30)
-        
-        stackView.constrainToFill(self)
-        stackView.addArrangedSubview(imageView)
-        stackView.addArrangedSubview(questionLabel)
-        
-        updateViews()
-    }
-    
+    // MARK: - Methods
     private func updateViews() {
         if isCorrect {
             imageView.image = UIImage(named: "ok")
@@ -75,5 +68,17 @@ class QuestionSummaryView: UIView {
             imageView.tintColor = .fadedTextColor
         }
     }
+    
+    private func layoutViews() {
+        
+        imageView.constrain(height: 30, width: 30)
+        stackView.constrainToFill(self)
+        stackView.addArrangedSubview(imageView)
+        stackView.addArrangedSubview(questionLabel)
+        
+        updateViews()
+    }
+    
+    
 
 }

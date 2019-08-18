@@ -14,6 +14,7 @@ class QuestionNetworkController {
     // MARK: - Private Methods
     static let shared = QuestionNetworkController()
     private init (){}
+    
     /*
      Generic apiRequest
      */
@@ -91,7 +92,7 @@ extension QuestionNetworkController {
         
         switch apiCallType {
             
-        // questions
+        // GET questions
         case .GETQuestions:
             
             let url = baseURL

@@ -111,7 +111,7 @@ class SwipeableView: UIView, UIGestureRecognizerDelegate {
     
     private var dragDirection: SwipeDirection? {
         let normalizedDragPoint = panGestureTranslation.normalizedDistanceForSize(bounds.size)
-        return SwipeDirection.allDirections.reduce((distance: CGFloat.infinity, direction: nil), { closest, direction -> (CGFloat, SwipeDirection?) in
+        return SwipeDirection.allCases.reduce((distance: CGFloat.infinity, direction: nil), { closest, direction -> (CGFloat, SwipeDirection?) in
             let distance = direction.point.distanceTo(normalizedDragPoint)
             if distance < closest.distance {
                 return (distance, direction)

@@ -10,13 +10,10 @@ import UIKit
 
 class TestConfigurationViewController: UIViewController {
 
-    let coreDataFetchController = CoreDataFetchController()
+    let coreDataFetchController = CoreDataFetchController.init()
     
-    var quoteLabel: UILabel!
-    var authorLabel: UILabel!
     var masteredLabel: UILabel!
     var masteredSwitch: UISwitch!
-    var segmentedControl: UISegmentedControl!
     var questionNumberLabel: UILabel!
     var questionSlider: UISlider!
     var resetButton: UIButton!
