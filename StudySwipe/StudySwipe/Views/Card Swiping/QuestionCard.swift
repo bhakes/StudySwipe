@@ -13,6 +13,8 @@ import Down
 class QuestionCard: SwipeableCard {
     
     // MARK: - Properties
+    
+    /// A `UITextView` that holds the answer content.
     var answerTextView: UITextView!
     var instructionLabel: UILabel!
     var question: Question? {
@@ -20,7 +22,7 @@ class QuestionCard: SwipeableCard {
             updateViews()
         }
     }
-    
+   
     private var questionContainer: UIView!
     private var answerContainer: UIView!
     private var isAnswerHidden = true
@@ -28,6 +30,7 @@ class QuestionCard: SwipeableCard {
     // MARK: - Methods
     
     func updateViews() {
+        
         guard let question = question,
             let categoryString = question.category,
             let cardColor = Category(rawValue: categoryString)?.color() else { return }
@@ -43,11 +46,13 @@ class QuestionCard: SwipeableCard {
         questionContainer = UIView()
         questionContainer.constrainToSuperView(self, top: 20, bottom: 48, leading: 0, trailing: 0)
         
+        // Try to build a `DownView` from the question text.
         let downView = try? DownView(frame: .zero, markdownString: "### \(question.question ?? sampleText)")
         downView?.backgroundColor = .clear
         downView?.scrollView.backgroundColor = .clear
         downView?.scrollView.bounces = false
         downView?.isOpaque = false
+        // Constrain the `DownView` into the questionContainer
         downView?.constrainToFill(questionContainer)
         
         answerContainer = UIView()
@@ -55,11 +60,13 @@ class QuestionCard: SwipeableCard {
         
         answerContainer.constrainToSuperView(self, top: 20, bottom: 48, leading: 0, trailing: 0)
         
+        // Try to build a `DownView` from the answer text.
         let answerView = try? DownView(frame: .zero, markdownString: "\(question.answer ?? sampleText)")
         answerView?.backgroundColor = .clear
         answerView?.scrollView.backgroundColor = .clear
         answerView?.scrollView.bounces = false
         answerView?.isOpaque = false
+        // Constrain the `DownView` into the answerContainer
         answerView?.constrainToFill(answerContainer)
         
         instructionLabel = UILabel()
@@ -73,10 +80,11 @@ class QuestionCard: SwipeableCard {
         
     }
     
+    /// Flip the Question Card and show/hide content accordingly
     func handleTap() {
         toggleAnswerTextLabel()
     }
-    
+    /// Toggle the `isAnswerHidden` flag and show/hide content accordingly
     private func toggleAnswerTextLabel() {
         isAnswerHidden.toggle()
         questionContainer.isHidden = !isAnswerHidden

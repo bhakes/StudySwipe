@@ -56,7 +56,7 @@ class TestSummaryViewController: UIViewController {
     }()
 
     private lazy var progressViews: [LabelledProgressView] = viewModel.summarizedCategories.map {
-        let progressView = LabelledProgressView(total: $0.total)
+        let progressView = LabelledProgressView.init(total: $0.total)
         progressView.title = $0.title
         progressView.progressTint = $0.color
 
@@ -88,7 +88,8 @@ class TestSummaryViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.summarizedCategories.enumerated().forEach { progressViews[$0.offset].updateProgress(correct: $0.element.correct, animated: true) }
+        viewModel.summarizedCategories.enumerated().forEach {
+            progressViews[$0.offset].updateProgress(correct: $0.element.correct, animated: true) }
     }
 
     private func setupViews() {

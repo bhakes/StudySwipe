@@ -22,10 +22,9 @@ class SwipeableCard: SwipeableView {
      Initializes a new 👋 Swipeable Card that inherits from `SwipeableView`.
      
      - Parameters:
-     - frame: The frame of the new 👋 Swipeable Card
+        - frame: The frame of the new 👋 Swipeable Card
      
-     - Returns: A beautiful, 👋 Swipeable Card,
-     custom-built just for you.
+     - Returns: A beautiful, 👋 Swipeable Card, custom-built just for you.
      */
     override init(frame: CGRect) {
         super.init(frame: frame)

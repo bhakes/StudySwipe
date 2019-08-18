@@ -38,8 +38,8 @@ class PillView: UIView {
         textLabel.constrainToFill(self, top: 8, bottom: 8, leading: 12, trailing: 12)
         backgroundColor = color
         layer.cornerRadius = (textLabel.font.lineHeight + 16) / 2
-        layer.borderWidth = 2
         layer.borderColor = borderColor.cgColor
+        layer.borderWidth = 2
         layer.shadowRadius = 10
         layer.shadowOffset = CGSize(width: 2, height: 5)
         
@@ -85,8 +85,6 @@ class PillView: UIView {
     
     /**
      Update the text label with the current text and size the text to fit the 💊-View
-    
-     - Precondition: `text` should have already been set.
      */
     private func updateTextLabel() {
         textLabel.text = text
