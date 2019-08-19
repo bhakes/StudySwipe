@@ -305,14 +305,9 @@
 			children = (
 				34E7F65622D2C7F0000D9E4A /* QuestionCard.swift */,
 				34FBA48B22CA7DD80047FAEA /* SwipeableCard.swift */,
-				34FBA47A22CA7C230047FAEA /* SwipeableView.swift */,
-				34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */,
-				34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */,
-				34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */,
-				34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */,
-				34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */,
-				34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */,
-				34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */,
+				D12B8942230AD7B9009D07AD /* SwipeableView */,
+				D12B8940230AD786009D07AD /* SwipeableCardViewContainer */,
+				D12B8943230AD81E009D07AD /* Swipable Helpers */,
 			);
 			path = "Card Swiping";
 			sourceTree = "<group>";
@@ -359,6 +354,35 @@
 				D1292B0522D9000F00FAFD1E /* Weak.swift */,
 			);
 			path = "Theming Helpers";
+			sourceTree = "<group>";
+		};
+		D12B8940230AD786009D07AD /* SwipeableCardViewContainer */ = {
+			isa = PBXGroup;
+			children = (
+				34FBA48822CA7D440047FAEA /* SwipeableCardViewContainer.swift */,
+				34FBA48422CA7CFB0047FAEA /* SwipeableCardViewDelegate.swift */,
+				34FBA48622CA7D1E0047FAEA /* SwipeableCardViewDataSource.swift */,
+			);
+			path = SwipeableCardViewContainer;
+			sourceTree = "<group>";
+		};
+		D12B8942230AD7B9009D07AD /* SwipeableView */ = {
+			isa = PBXGroup;
+			children = (
+				34FBA47A22CA7C230047FAEA /* SwipeableView.swift */,
+				34FBA47C22CA7C630047FAEA /* SwipeableViewDelegate.swift */,
+			);
+			path = SwipeableView;
+			sourceTree = "<group>";
+		};
+		D12B8943230AD81E009D07AD /* Swipable Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				34FBA47E22CA7C7A0047FAEA /* SwipeDirection.swift */,
+				34FBA48022CA7CAF0047FAEA /* CGPoint+SwipeableAdditions.swift */,
+				34FBA48222CA7CC80047FAEA /* CGRect+SwipableAdditions.swift */,
+			);
+			path = "Swipable Helpers";
 			sourceTree = "<group>";
 		};
 		D13877782308B3CC007C0C19 /* TestConfiguration */ = {
