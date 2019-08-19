@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController, SettingsTableViewDelegate {
     var tableViewContainerConstraint: NSLayoutConstraint!
     var tableViewController: SettingsTableViewController!
     
-    let coreDataFetchController = CoreDataFetchController.init()
+    let coreDataFetchController = CoreDataFetchController()
     
     private var themedStatusBarStyle: UIStatusBarStyle?
     

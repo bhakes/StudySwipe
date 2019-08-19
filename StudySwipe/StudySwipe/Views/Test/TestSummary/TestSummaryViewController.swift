@@ -56,7 +56,7 @@ class TestSummaryViewController: UIViewController {
     }()
 
     private lazy var progressViews: [LabelledProgressView] = viewModel.summarizedCategories.map {
-        let progressView = LabelledProgressView.init(total: $0.total)
+        let progressView = LabelledProgressView(total: $0.total)
         progressView.title = $0.title
         progressView.progressTint = $0.color
 

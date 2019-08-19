@@ -16,7 +16,7 @@ class PerformanceViewController: UIViewController {
     var tableViewContainerConstraint: NSLayoutConstraint!
     var tableViewController: PerformanceTableViewController!
     
-    let coreDataFetchController = CoreDataFetchController.init()
+    let coreDataFetchController = CoreDataFetchController()
     
     private var themedStatusBarStyle: UIStatusBarStyle?
     
