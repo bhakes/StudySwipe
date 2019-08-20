@@ -10,7 +10,7 @@ import UIKit
 
 class TestConfigurationViewController: UIViewController {
 
-    let coreDataFetchController = CoreDataFetchController.init()
+    let coreDataFetchController = CoreDataFetchController()
     
     var masteredLabel: UILabel!
     var masteredSwitch: UISwitch!

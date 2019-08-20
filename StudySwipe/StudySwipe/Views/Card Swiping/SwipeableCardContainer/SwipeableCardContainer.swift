@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
+class SwipeableCardContainer: UIView, SwipeableViewDelegate {
     
     static let distanceScale: CGFloat = 0.05
     
@@ -16,13 +16,13 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
     
     static var preferredWidth: CGFloat = 300.0
     
-    var dataSource: SwipeableCardViewDataSource? {
+    var dataSource: SwipeableCardContainerDataSource? {
         didSet {
             reloadData()
         }
     }
     
-    var delegate: SwipeableCardViewDelegate?
+    var delegate: SwipeableCardContainerDelegate?
     
     private var cardViews: [SwipeableCard] = []
     
@@ -54,7 +54,7 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
         let numberOfCards = dataSource.numberOfCards()
         remainingCards = numberOfCards
         
-        for index in 0..<min(numberOfCards, SwipeableCardViewContainer.numberOfVisibleCards) {
+        for index in 0..<min(numberOfCards, SwipeableCardContainer.numberOfVisibleCards) {
             addCardView(cardView: dataSource.card(forItemAtIndex: index), atIndex: index)
         }
         
@@ -83,15 +83,15 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
     
     private func calculateFrame() -> CGRect {
         let x = bounds.origin.x
-        let y = bounds.origin.y + 2 * SwipeableCardViewContainer.verticalInset
+        let y = bounds.origin.y + 2 * SwipeableCardContainer.verticalInset
         let width = bounds.size.width
-        let height = bounds.size.height - 2 * SwipeableCardViewContainer.verticalInset
+        let height = bounds.size.height - 2 * SwipeableCardContainer.verticalInset
         return CGRect(x: x, y: y, width: width, height: height)
     }
     
     private func transform(forCardView cardView: SwipeableCard, atIndex index: Int) -> CGAffineTransform {
-        let verticalInset = CGFloat(index) * SwipeableCardViewContainer.verticalInset * 2
-        let scale = 1 - (SwipeableCardViewContainer.distanceScale * CGFloat(index))
+        let verticalInset = CGFloat(index) * SwipeableCardContainer.verticalInset * 2
+        let scale = 1 - (SwipeableCardContainer.distanceScale * CGFloat(index))
         
         return CGAffineTransform.identity.translatedBy(x: 0, y: -verticalInset).scaledBy(x: scale, y: scale)
     }
@@ -100,7 +100,7 @@ class SwipeableCardViewContainer: UIView, SwipeableViewDelegate {
 
 // MARK: - SwipeableViewDelegate
 
-extension SwipeableCardViewContainer {
+extension SwipeableCardContainer {
     
     func didTap(view: SwipeableView) {
         let flipDuration = 0.35

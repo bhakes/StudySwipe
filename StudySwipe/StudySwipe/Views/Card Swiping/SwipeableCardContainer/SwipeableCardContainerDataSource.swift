@@ -10,7 +10,7 @@ import UIKit
 
 /// A DataSource for providing all of the information required
 /// for SwipeableCardViewContainer to layout a series of cards.
-protocol SwipeableCardViewDataSource: class {
+protocol SwipeableCardContainerDataSource: class {
     
     /// Determines the number of cards to be added into the
     /// SwipeableCardViewContainer. Not all cards will initially
@@ -36,7 +36,7 @@ protocol SwipeableCardViewDataSource: class {
     
 }
 
-extension SwipeableCardViewDataSource {
+extension SwipeableCardContainerDataSource {
     func viewForEmptyCards() -> UIView? {
         return nil
     }

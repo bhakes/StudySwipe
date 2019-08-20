@@ -27,7 +27,22 @@ class CoreDataFetchController {
     // MARK: InterviewTest Manipulation Methods
     
     
-    
+    /**
+     Initializes a new 📝 `InterviewTest` with filter options provided.
+     
+     - Parameters:
+         - title: The title of the 📝.
+         - difficulties: An array of difficulties to test based on. Defaults to a one element array of `[.All]`.
+         - categories: An array of categories to test based on. Defaults to a one element array of `[.All]`.
+         - tracks: An array of tracks to test based on. Defaults to a one element array of `[.All]`.
+         - count: An `Int?` test question count. Defaults to `nil`.
+         - random: A `Bool` that, if true, will suffle the cards. Defaults to `false`.
+         - notMasteredOnly: An `Bool?` that, if true, will suffle the cards. Defaults to `false`.
+     
+     - Returns: A beautiful, new 📝 `InterviewTest`, custom-built just for you.
+     - Remark: This does not create a `TestObservation`
+     - SeeAlso: `makeTestAndObservation`
+     */
     func makeTest(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false, notMasteredOnly: Bool? = false) -> InterviewTest? {
         
         defer {
@@ -45,6 +60,21 @@ class CoreDataFetchController {
         return newTest
     }
     
+    /**
+     Initializes a new 📝 `InterviewTest` and 👀 `InterviewTestObservation` with filter options provided. If initialization fails either, this method returns `nil` for each that failed.
+     
+     - Parameters:
+         - title: The title of the 📝.
+         - difficulties: An array of difficulties to test based on. Defaults to a one element array of `[.All]`.
+         - categories: An array of categories to test based on. Defaults to a one element array of `[.All]`.
+         - tracks: An array of tracks to test based on. Defaults to a one element array of `[.All]`.
+         - count: An `Int?` test question count. Defaults to `nil`.
+         - random: A `Bool` that, if true, will suffle the cards. Defaults to `false`.
+         - notMasteredOnly: An `Bool?` that, if true, will suffle the cards. Defaults to `false`.
+     
+     - Returns: A beautiful, new 📝 `InterviewTest?` and 👀 `InterviewTestObservation?`, custom-built just for you.
+     - SeeAlso: `makeTest`
+     */
     func makeTestAndObservation(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false, notMasteredOnly: Bool? = false) -> (InterviewTest?, InterviewTestObservation?) {
         
         defer {
@@ -85,8 +115,16 @@ class CoreDataFetchController {
         testObservation.finishTimestamp = Date()
     }
     
+    
+    /**
+     Updates additional properties on the 👀 `InterviewTestObservation` with a given 📝 `InterviewTest` and saves the completed `InterviewTestObservation` to CoreData.
+     
+     - Parameters:
+         - _: A mutable version of the 👀 `InterviewTestObservation` that you want to finalize.
+         - for: An `InterviewTest`.
+     
+     */
     func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation, for test: InterviewTest) {
-        print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {
                 try CoreDataStack.shared.save()
