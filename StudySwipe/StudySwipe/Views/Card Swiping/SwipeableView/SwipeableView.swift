@@ -12,7 +12,7 @@ class SwipeableView: UIView, UIGestureRecognizerDelegate {
     
     var delegate: SwipeableViewDelegate?
     
-    // MARK: Gesture Recognizer
+    // MARK: - Gesture Recognizer Properties
     
     private var panGestureRecognizer: UIPanGestureRecognizer?
     
@@ -20,7 +20,7 @@ class SwipeableView: UIView, UIGestureRecognizerDelegate {
     
     private var tapGestureRecognizer: UITapGestureRecognizer?
     
-    // MARK: Drag Animation Settings
+    // MARK: - Drag Animation Properties
     
     static var maximumRotation: CGFloat = 1.0
     
@@ -30,7 +30,7 @@ class SwipeableView: UIView, UIGestureRecognizerDelegate {
     
     static var swipePercentageMargin: CGFloat = 0.7
     
-    // MARK: Card Finalize Swipe Animation
+    // MARK: - Card Finalize Swipe Animation Properties
     
     static var finalizeSwipeActionAnimationDuration: TimeInterval = 0.2
     

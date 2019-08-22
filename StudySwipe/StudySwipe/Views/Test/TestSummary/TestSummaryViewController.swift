@@ -10,16 +10,30 @@ import UIKit
 
 class TestSummaryViewController: UIViewController {
     
-    var dismissHandler: (() -> Void)?
+    // MARK: - LifeCycle Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupViews()
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.summarizedCategories.enumerated().forEach {
+            progressViews[$0.offset].updateProgress(correct: $0.element.correct, animated: true) }
+    }
+    
+    // MARK: - Properties
+    var viewModel: TestObservationViewModel!
+    
+    var dismissHandler: (() -> Void)?
+
     var testObservation: InterviewTestObservation! {
         didSet {
             viewModel = TestObservationViewModel(interviewTestObservation: testObservation)
         }
     }
 
-    var viewModel: TestObservationViewModel!
-    
     private var titleLabel: DMCLabel = {
         let label = UILabel.label(for: .title, with: "Summary")
         
@@ -80,17 +94,7 @@ class TestSummaryViewController: UIViewController {
         return questionView
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setupViews()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        viewModel.summarizedCategories.enumerated().forEach {
-            progressViews[$0.offset].updateProgress(correct: $0.element.correct, animated: true) }
-    }
+    // MARK: - Methods
 
     private func setupViews() {
         view = DMCView()

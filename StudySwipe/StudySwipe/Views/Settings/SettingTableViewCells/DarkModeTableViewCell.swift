@@ -14,11 +14,16 @@ protocol DarkModeCellDelegate {
 
 class DarkModeTableViewCell: UITableViewCell {
 
+    // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: darkCellID)
         
         setupViews()
         setUpTheming()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("Init(coder:) has not been implemented")
     }
     
     override func awakeFromNib() {
@@ -28,18 +33,19 @@ class DarkModeTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("Init(coder:) has not been implemented")
-    }
+    // MARK: - Properties
+    let darkCellID = "darkCellID"
+    var delegate: DarkModeCellDelegate?
+    let darkModeSwitch = DMCSwitch()
+    let label = DMCLabel()
     
+    // MARK: - Methods
     private func setupViews() {
         
         label.text = "Dark Mode"
-        
         darkModeSwitch.isOn = AppThemeProvider.shared.currentTheme == AppTheme.dark ? true : false
         darkModeSwitch.addTarget(self, action: #selector(darkModeSwitchChanged(sender:)), for: .valueChanged)
         
@@ -51,21 +57,14 @@ class DarkModeTableViewCell: UITableViewCell {
     }
     
     @objc func darkModeSwitchChanged(sender: DMCSwitch) {
-
         AppThemeProvider.shared.nextTheme()
         
     }
     
-    let darkCellID = "darkCellID"
-    var delegate: DarkModeCellDelegate?
-    let darkModeSwitch = DMCSwitch()
-    let label = DMCLabel()
 }
-
 
 extension DarkModeTableViewCell: Themed {
     func applyTheme(_ theme: AppTheme) {
-        
         backgroundColor = theme.cellBackgroundColor
 
     }

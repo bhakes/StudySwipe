@@ -10,6 +10,7 @@ import UIKit
 
 class ReviewViewController: UIViewController, ReviewSelectionCollectionViewDelegate {
     
+    // MARK: - Properties
     static let animationDistance: CGFloat = 900
     
     var collectionViewContainer: DMCView!

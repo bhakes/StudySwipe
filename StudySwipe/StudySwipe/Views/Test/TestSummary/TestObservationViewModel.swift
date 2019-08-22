@@ -8,8 +8,18 @@
 
 import UIKit
 
+/// A ViewModel for a TestObservation
 class TestObservationViewModel {
+    
+    // MARK: - Initializer
+    init (interviewTestObservation: InterviewTestObservation) {
+        self.testObservation = interviewTestObservation
+    }
 
+    // MARK: - Properties
+    lazy var summarizedCategories: [CategoryViewModel] = summarizeCategories()
+    lazy var summarizedQuestions: [QuestionViewModel] = summarizeQuestions()
+    
     static var timeFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .positional
@@ -33,41 +43,6 @@ class TestObservationViewModel {
         }
         return [testObservation.title, durationString].compactMap{$0}.joined(separator: " – ")
     }
-
-    lazy var summarizedCategories: [CategoryViewModel] = summarizeCategories()
-    lazy var summarizedQuestions: [QuestionViewModel] = summarizeQuestions()
-
-    struct CategoryViewModel {
-        let color: UIColor
-        let total: Int
-        let correct: Int
-        let title: String
-    }
-    
-    struct QuestionViewModel {
-        let color: UIColor
-        let isCorrect: Bool
-        let question: String
-    }
-
-    init (interviewTestObservation: InterviewTestObservation) {
-        self.testObservation = interviewTestObservation
-    }
-
-    private func summarizeCategories() -> [CategoryViewModel] {
-        guard let questionObservations = testObservation.questionObservation?.array as? Array<QuestionObservation> else { return sampleCategories }
-        let questions = questionObservations.compactMap { $0.question }
-        if questions.isEmpty { return sampleCategories }
-        let categories = Set(questions.compactMap{ $0.category }.compactMap{ Category(rawValue: $0) })
-        return categories.map { cat -> CategoryViewModel in
-            let questions = questionObservations.filter{ $0.question?.category == cat.description }
-            let correct = questions.filter { $0.response == Response.correct.rawValue }
-            return CategoryViewModel(color: cat.color(),
-                              total: questions.count,
-                              correct: correct.count,
-                              title: cat.title())
-        }
-    }
     
     private let sampleCategories = [
         CategoryViewModel(color: .swift, total: 4, correct: 2, title: "Swift"),
@@ -75,16 +50,6 @@ class TestObservationViewModel {
         CategoryViewModel(color: .categoryDefault3, total: 3, correct: 1, title: "Objective-C"),
         CategoryViewModel(color: .categoryDefault4, total: 1, correct: 1, title: "Foundation")
     ]
-    
-    private func summarizeQuestions() -> [QuestionViewModel] {
-        guard let questionObservations = testObservation.questionObservation?.array as? Array<QuestionObservation> else { return sampleQuestions }
-        return questionObservations.map { ob -> QuestionViewModel in
-            let color = Category(rawValue: ob.question?.category ?? "All")!.color()
-            let isCorrect = ob.response == Response.correct.rawValue
-            let question = ob.question?.question ?? "Couldn't find the question"
-            return QuestionViewModel(color: color, isCorrect: isCorrect, question: question)
-        }
-    }
     
     private let sampleQuestions = [
         QuestionViewModel(color: .swift, isCorrect: true, question: "This would be the first question."),
@@ -98,4 +63,47 @@ class TestObservationViewModel {
         QuestionViewModel(color: .categoryDefault4, isCorrect: false, question: "This would be the ninth question."),
         QuestionViewModel(color: .categoryDefault5, isCorrect: false, question: "This would be the tenth question."),
     ]
+    
+    // MARK: - ViewModels
+    
+    struct CategoryViewModel {
+        let color: UIColor
+        let total: Int
+        let correct: Int
+        let title: String
+    }
+    
+    struct QuestionViewModel {
+        let color: UIColor
+        let isCorrect: Bool
+        let question: String
+    }
+    
+    // MARK: - Methods
+    
+    private func summarizeCategories() -> [CategoryViewModel] {
+        guard let questionObservations = testObservation.questionObservation?.array as? Array<QuestionObservation> else { return sampleCategories }
+        let questions = questionObservations.compactMap { $0.question }
+        if questions.isEmpty { return sampleCategories }
+        let categories = Set(questions.compactMap{ $0.category }.compactMap{ Category(rawValue: $0) })
+        return categories.map { cat -> CategoryViewModel in
+            let questions = questionObservations.filter{ $0.question?.category == cat.description }
+            let correct = questions.filter { $0.response == Response.correct.rawValue }
+            return CategoryViewModel(color: cat.color(),
+                                     total: questions.count,
+                                     correct: correct.count,
+                                     title: cat.title())
+        }
+    }
+    
+    private func summarizeQuestions() -> [QuestionViewModel] {
+        guard let questionObservations = testObservation.questionObservation?.array as? Array<QuestionObservation> else { return sampleQuestions }
+        return questionObservations.map { ob -> QuestionViewModel in
+            let color = Category(rawValue: ob.question?.category ?? "All")!.color()
+            let isCorrect = ob.response == Response.correct.rawValue
+            let question = ob.question?.question ?? "Couldn't find the question"
+            return QuestionViewModel(color: color, isCorrect: isCorrect, question: question)
+        }
+    }
+
 }
