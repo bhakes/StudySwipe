@@ -14,11 +14,15 @@ protocol StopwatchDelegate: class {
 
 class Stopwatch {
     
-    weak var delegate: StopwatchDelegate?
+    // MARK: - Initializers
     
-    var formattedTime: String {
-        return Stopwatch.timeFormatter.string(from: timeCount) ?? "0:00"
+    init(timeCount: TimeInterval = 0, countUp: Bool = true) {
+        self.timeCount = timeCount
+        self.countUp = countUp
     }
+    
+    // MARK: - Properties
+    weak var delegate: StopwatchDelegate?
     
     private var timer: Timer?
     private let countUp: Bool
@@ -26,15 +30,11 @@ class Stopwatch {
         didSet { notifyDelegate() }
     }
     
-    init(timeCount: TimeInterval = 0, countUp: Bool = true) {
-        self.timeCount = timeCount
-        self.countUp = countUp
+    var formattedTime: String {
+        return Stopwatch.timeFormatter.string(from: timeCount) ?? "0:00"
     }
-    
-    deinit {
-        stop()
-    }
-    
+
+    // MARK: - Methods
     func start() {
         pause()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] _ in
@@ -62,6 +62,7 @@ class Stopwatch {
         delegate?.stopwatch(self, didChangeTimeTo: timeCount)
     }
     
+    // MARK: - Class Variables
     static var timeFormatter: DateComponentsFormatter = {
         let formatter = DateComponentsFormatter()
         formatter.unitsStyle = .positional
@@ -69,5 +70,10 @@ class Stopwatch {
         formatter.allowedUnits = [.minute, .second]
         return formatter
     }()
+    
+    // MARK: - Deinitializer
+    deinit {
+        stop()
+    }
     
 }

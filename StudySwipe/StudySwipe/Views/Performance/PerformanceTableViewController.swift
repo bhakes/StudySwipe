@@ -9,16 +9,9 @@
 import UIKit
 import CoreData
 
-protocol PerformanceTableViewDelegate: class {
-    
-}
-
 class PerformanceTableViewController: UITableViewController {
 
     static let sectionNumber = 1
-    
-    weak var delegate: PerformanceTableViewDelegate?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,11 +99,8 @@ class PerformanceTableViewController: UITableViewController {
     lazy var questionObservations: [QuestionObservation] = {
         return coreDataFetchController.getAllQuestionObservations() ?? []
     }()
-    
-    
 
 }
-
 
 extension PerformanceTableViewController: Themed {
     func applyTheme(_ theme: AppTheme) {

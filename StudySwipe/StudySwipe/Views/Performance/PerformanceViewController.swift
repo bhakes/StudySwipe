@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PerformanceViewController: UIViewController, PerformanceTableViewDelegate {
+class PerformanceViewController: UIViewController {
     
     static let animationDistance: CGFloat = 800
     
@@ -54,7 +54,6 @@ class PerformanceViewController: UIViewController, PerformanceTableViewDelegate 
         headerView.constrainToSiblingView(tableViewContainer, above: 0)
         
         tableViewController = PerformanceTableViewController(style: .grouped)
-        tableViewController.delegate = self
         add(tableViewController, toView: tableViewContainer)
         
     }

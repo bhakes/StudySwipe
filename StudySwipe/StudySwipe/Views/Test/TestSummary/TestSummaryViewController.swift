@@ -88,7 +88,8 @@ class TestSummaryViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.summarizedCategories.enumerated().forEach { progressViews[$0.offset].updateProgress(correct: $0.element.correct, animated: true) }
+        viewModel.summarizedCategories.enumerated().forEach {
+            progressViews[$0.offset].updateProgress(correct: $0.element.correct, animated: true) }
     }
 
     private func setupViews() {

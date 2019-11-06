@@ -9,13 +9,40 @@
 import Foundation
 import CoreData
 
+/// A Controller for fetching managed objects associated with the StudySwipe.xcdatamodeld from Core Data
 class CoreDataFetchController {
+    
+    
+    /**
+     Creates a new instance of the CoreDataFetchController, a controller for fetching managed objects like `Question`s, `InterviewTest`s, and others, from the StudySwipe CoreData model.
+     
+     - Parameter context: An `NSManagedObjectContext` which defaults to `CoreDataStack.shared.mainContext`.
+     
+     - Returns: A new CoreDataFetchController instance.
+     */
     init(context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.context = context
     }
     
     // MARK: InterviewTest Manipulation Methods
     
+    
+    /**
+     Initializes a new 📝 `InterviewTest` with filter options provided.
+     
+     - Parameters:
+         - title: The title of the 📝.
+         - difficulties: An array of difficulties to test based on. Defaults to a one element array of `[.All]`.
+         - categories: An array of categories to test based on. Defaults to a one element array of `[.All]`.
+         - tracks: An array of tracks to test based on. Defaults to a one element array of `[.All]`.
+         - count: An `Int?` test question count. Defaults to `nil`.
+         - random: A `Bool` that, if true, will suffle the cards. Defaults to `false`.
+         - notMasteredOnly: An `Bool?` that, if true, will suffle the cards. Defaults to `false`.
+     
+     - Returns: A beautiful, new 📝 `InterviewTest`, custom-built just for you.
+     - Remark: This does not create a `TestObservation`
+     - SeeAlso: `makeTestAndObservation`
+     */
     func makeTest(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false, notMasteredOnly: Bool? = false) -> InterviewTest? {
         
         defer {
@@ -33,6 +60,21 @@ class CoreDataFetchController {
         return newTest
     }
     
+    /**
+     Initializes a new 📝 `InterviewTest` and 👀 `InterviewTestObservation` with filter options provided. If initialization fails either, this method returns `nil` for each that failed.
+     
+     - Parameters:
+         - title: The title of the 📝.
+         - difficulties: An array of difficulties to test based on. Defaults to a one element array of `[.All]`.
+         - categories: An array of categories to test based on. Defaults to a one element array of `[.All]`.
+         - tracks: An array of tracks to test based on. Defaults to a one element array of `[.All]`.
+         - count: An `Int?` test question count. Defaults to `nil`.
+         - random: A `Bool` that, if true, will suffle the cards. Defaults to `false`.
+         - notMasteredOnly: An `Bool?` that, if true, will suffle the cards. Defaults to `false`.
+     
+     - Returns: A beautiful, new 📝 `InterviewTest?` and 👀 `InterviewTestObservation?`, custom-built just for you.
+     - SeeAlso: `makeTest`
+     */
     func makeTestAndObservation(with title: String, difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false, notMasteredOnly: Bool? = false) -> (InterviewTest?, InterviewTestObservation?) {
         
         defer {
@@ -73,8 +115,16 @@ class CoreDataFetchController {
         testObservation.finishTimestamp = Date()
     }
     
+    
+    /**
+     Updates additional properties on the 👀 `InterviewTestObservation` with a given 📝 `InterviewTest` and saves the completed `InterviewTestObservation` to CoreData.
+     
+     - Parameters:
+         - _: A mutable version of the 👀 `InterviewTestObservation` that you want to finalize.
+         - for: An `InterviewTest`.
+     
+     */
     func finishTestAndFinalizeObservation(_ testObs: inout InterviewTestObservation, for test: InterviewTest) {
-        print("Finalizing test observation: \(testObs.testID!)")
         defer {
             do {
                 try CoreDataStack.shared.save()
@@ -217,9 +267,7 @@ class CoreDataFetchController {
                 }
             }
             
-            
-            // add is mastered predicate
-            
+            // add isMastered predicate
             var notMasteredOnlyPredicate: NSPredicate?
             
             if let notMasteredOnly = notMasteredOnly, notMasteredOnly == true {
@@ -231,7 +279,6 @@ class CoreDataFetchController {
                 notMasteredOnlyPredicate = NSPredicate(format: "NOT(%K IN %@)", "questionID", uuidArray)
             }
 
-            
             // Create a subPredicate array and append each of the component predicates if available
             var subPredicates: [NSPredicate] = []
             if let difficultyPredicate = difficultyPredicate {
@@ -279,7 +326,6 @@ class CoreDataFetchController {
     
     // MARK: QuestionObservation Fetch Methods
     
-    
     func getAllQuestionObservations() -> [QuestionObservation]? {
         
         var result: [QuestionObservation]? = nil // create an QuestionObservation array named 'result' that will store the entries you find in the Persistent Store
@@ -298,189 +344,7 @@ class CoreDataFetchController {
         return result
     }
     
-    func getQuestionObservationsByTestID(with testID: UUID) -> [QuestionObservation]? {
-        
-        var result: [QuestionObservation]? = nil // create an QuestionObservation array named 'result' that will store the entries you find in the Persistent Store
-        
-        self.context.performAndWait {
-            
-            let fetchRequest: NSFetchRequest<QuestionObservation> = QuestionObservation.fetchRequest() // create an QuestionObservation NSFetchRequest
-            
-            let uuidPredicate = NSPredicate(format: "testID == %@", testID.uuidString)
-            fetchRequest.predicate = uuidPredicate
-            
-            do { // in the current (background) context, perform the fetch request from the persistent store
-                result = try self.context.fetch(fetchRequest) // assign the (error-throwing) fetch request, done on the background context, to result
-            } catch {
-                NSLog("Error fetching list of QuestionObservations: \(error)") // if the fetch request throws an error, NSLog it
-            }
-            
-        }
-        return result
-    }
-    
-    func getFilteredQuestionObservations(difficulties: [Difficulty] = [.All], categories: [Category] = [.All], tracks: [Track] = [.All], count: Int? = nil, random: Bool = false) -> [QuestionObservation]? {
-        
-        var result: [QuestionObservation]? = nil // create an Question array named 'result' that will store the entries you find in the Persistent Store
-        
-        self.context.performAndWait {
-            
-            let fetchRequest: NSFetchRequest<QuestionObservation> = QuestionObservation.fetchRequest() // create an Question NSFetchRequest
-            
-            // add the difficulty predicateInitializer 'init(_:)' requires that 'Difficulty' conform to 'LosslessStringConvertible'
-            var difficultyPredicate: NSPredicate?
-            
-            switch difficulties {
-            case [.All]:
-                break
-            default:
-                switch difficulties.count {
-                case 0:
-                    break
-                case 1:
-                    difficultyPredicate = NSPredicate(format: "question.difficulty == %@", argumentArray: difficulties.map { $0.description })
-                case 2:
-                    difficultyPredicate = NSPredicate(format: "(question.difficulty == %@) OR (question.difficulty == %@)", argumentArray: difficulties.map { $0.description })
-                default:
-                    break
-                }
-            }
-            
-            
-            // add the categories predicates
-            var categoryPredicate: NSPredicate?
-            var categoryFormat: String = ""
-            switch categories {
-            case [.All]:
-                break
-            default:
-                switch categories.count {
-                case 0:
-                    break
-                case 1:
-                    categoryPredicate = NSPredicate(format: "question.category == %@", argumentArray: categories.map { $0.description })
-                default:
-                    for _ in 0..<(categories.count - 1) {
-                        categoryFormat += "(question.category == %@) OR "
-                    }
-                    categoryFormat += "(question.category == %@)"
-                    categoryPredicate = NSPredicate(format: categoryFormat, argumentArray: categories.map { $0.description })
-                }
-            }
-            
-            // add the track predicates
-            var trackPredicate: NSPredicate?
-            var trackFormat: String = ""
-            switch tracks {
-            case [.All]:
-                break
-            default:
-                switch tracks.count {
-                case 0:
-                    break
-                case 1:
-                    trackPredicate = NSPredicate(format: "question.track == %@", argumentArray: tracks.map { $0.description })
-                default:
-                    for _ in 0..<(tracks.count - 1) {
-                        trackFormat += "(question.track == %@) OR "
-                    }
-                    trackFormat += "(question.track == %@)"
-                    trackPredicate = NSPredicate(format: trackFormat, argumentArray: tracks.map { $0.description })
-                }
-            }
-            
-            // Create a subPredicate array and append each of the component predicates if available
-            var subPredicates: [NSPredicate] = []
-            if let difficultyPredicate = difficultyPredicate {
-                subPredicates.append(difficultyPredicate)
-            }
-            if let categoryPredicate = categoryPredicate {
-                subPredicates.append(categoryPredicate)
-            }
-            if let trackPredicate = trackPredicate {
-                subPredicates.append(trackPredicate)
-            }
-            
-            // if the subPredicates array is greater than zero, create and AND compound predicate and add that compound predicate to the fetchRequest.predicate property
-            if subPredicates.count > 0 {
-                let andPredicate = NSCompoundPredicate(type: .and, subpredicates: subPredicates)
-                fetchRequest.predicate = andPredicate
-            }
-            
-            do { // in the current (background) context, perform the fetch request from the persistent store
-                result = try self.context.fetch(fetchRequest) // assign the (error-throwing) fetch request, done on the background context, to result
-            } catch {
-                NSLog("Error fetching list of QuestionObservations: \(error)") // if the fetch request throws an error, NSLog it
-            }
-            
-            // if there are no results, early return
-            guard var result = result else { return }
-            
-            // randomize and truncate the results accordingly
-            if let count = count {
-                if random {
-                    result = result.count > count ? Array(result.shuffled().prefix(count)) : result
-                } else {
-                    result = result.count > count ? Array(result.prefix(count)) : result
-                }
-            } else {
-                if random {
-                    result = Array(result.shuffled())
-                }
-            }
-            
-        }
-        return result
-    }
-    
-    
-    
-    
-    // MARK: InterviewTestObservation Fetch Methods
-    
-    func getAllInterviewTestObservations() -> [InterviewTestObservation]? {
-        
-        var result: [InterviewTestObservation]? = nil // create an InterviewTestObservation array named 'result' that will store the entries you find in the Persistent Store
-        
-        self.context.performAndWait {
-            
-            let fetchRequest: NSFetchRequest<InterviewTestObservation> = InterviewTestObservation.fetchRequest() // create an InterviewTestObservation NSFetchRequest
-            
-            do { // in the current (background) context, perform the fetch request from the persistent store
-                result = try self.context.fetch(fetchRequest) // assign the (error-throwing) fetch request, done on the background context, to result
-            } catch {
-                NSLog("Error fetching list of QuestionObservations: \(error)") // if the fetch request throws an error, NSLog it
-            }
-            
-        }
-        return result
-    }
-    
-    func getInterviewTestObservationsByUUID(with testID: UUID) -> [InterviewTestObservation]? {
-        
-        var result: [InterviewTestObservation]? = nil // create an InterviewTestObservation array named 'result' that will store the entries you find in the Persistent Store
-        
-        self.context.performAndWait {
-            
-            let fetchRequest: NSFetchRequest<InterviewTestObservation> = InterviewTestObservation.fetchRequest() // create an InterviewTestObservation NSFetchRequest
-            
-            let uuidPredicate = NSPredicate(format: "testID == %@", testID.uuidString)
-            fetchRequest.predicate = uuidPredicate
-            
-            do { // in the current (background) context, perform the fetch request from the persistent store
-                result = try self.context.fetch(fetchRequest) // assign the (error-throwing) fetch request, done on the background context, to result
-            } catch {
-                NSLog("Error fetching list of InterviewTestObservation: \(error)") // if the fetch request throws an error, NSLog it
-            }
-            
-        }
-        return result
-    }
-    
-    
-    //
     func getQuestionAnsweredCorrectly(categories: [Category] = [.All]) -> [Question]? {
-        
         
         var result: [Question]? = nil
         

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TestViewController: UIViewController, SwipeableCardViewDelegate, SwipeableCardViewDataSource, StopwatchDelegate {
+class TestViewController: UIViewController, SwipeableCardContainerDelegate, SwipeableCardContainerDataSource, StopwatchDelegate {
     
     // MARK: - Properties
     private var dismissButton: UIButton!
@@ -20,7 +20,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
     private var questionCount = 0
     private var stopwatch: Stopwatch!
     
-    var cardContainer: SwipeableCardViewContainer!
+    var cardContainer: SwipeableCardContainer!
     
     private var themedStatusBarStyle: UIStatusBarStyle?
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -133,7 +133,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         startTime = Date()
     }
     
-    func cardViewContainer(_ cardViewContainer: SwipeableCardViewContainer, isEmpty: Bool) {
+    func cardViewContainer(_ cardViewContainer: SwipeableCardContainer, isEmpty: Bool) {
         closeTest(isCompleted: true)
     }
     
@@ -181,7 +181,7 @@ class TestViewController: UIViewController, SwipeableCardViewDelegate, Swipeable
         
         // Set up card container
         // This is done last so that it sits over the other elements
-        cardContainer = SwipeableCardViewContainer()
+        cardContainer = SwipeableCardContainer()
         cardContainer.constrainToSuperView(view, bottom: 60, leading: 20, trailing: 20)
         cardContainer.constrainToSiblingView(infoBar, below: 0)
         cardContainer.alpha = 0
@@ -293,3 +293,4 @@ extension TestViewController: Themed {
 
     }
 }
+
