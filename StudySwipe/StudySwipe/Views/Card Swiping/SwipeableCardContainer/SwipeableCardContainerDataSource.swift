@@ -10,7 +10,7 @@ import UIKit
 
 /// A DataSource for providing all of the information required
 /// for SwipeableCardViewContainer to layout a series of cards.
-protocol SwipeableCardContainerDataSource: class {
+protocol SwipeableCardContainerDataSource: AnyObject {
     
     /// Determines the number of cards to be added into the
     /// SwipeableCardViewContainer. Not all cards will initially

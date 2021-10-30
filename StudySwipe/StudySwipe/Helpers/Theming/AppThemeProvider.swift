@@ -28,7 +28,7 @@ final class AppThemeProvider: ThemeProvider {
         // We'll default to the light theme to start with, but
         // this could read directly from UserDefaults to get
         // the user's last theme choice.
-        theme = SubscribableValue<AppTheme>(value: .light)
+        theme = SubscribableValue<AppTheme>(value: .dark)
         loadThemeFromUserDefaults()
     }
     
@@ -54,7 +54,6 @@ final class AppThemeProvider: ThemeProvider {
             return
         }
         currentTheme = nextTheme
-        
     }
     
     private func loadThemeFromUserDefaults() {

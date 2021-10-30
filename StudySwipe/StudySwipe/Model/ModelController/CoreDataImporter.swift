@@ -25,7 +25,9 @@ class CoreDataImporter {
             // Load all the questions
             for questionRepresentation in questionRepresentations {
                 _ = Question(questionRepresentation: questionRepresentation, context: self.context)
-                Category.addNonEmptyCategory(questionRepresentation.category.category)
+                if let category = Category(rawValue: questionRepresentation.category) {
+                    Category.addNonEmptyCategory(category)
+                }
             }
             
             // Save the context
@@ -42,10 +44,10 @@ class CoreDataImporter {
     
     
     private func updateQuestion(question: Question, with questionRepresentation: QuestionRepresentation) {
-        question.answer = questionRepresentation.answer.answer
-        question.category = questionRepresentation.category.category.rawValue
-        question.difficulty = questionRepresentation.difficulty.difficulty.rawValue
-        question.question = questionRepresentation.question.question
+        question.answer = questionRepresentation.answer
+        question.category = questionRepresentation.category
+        question.difficulty = questionRepresentation.difficulty
+        question.question = questionRepresentation.question
     }
 
     

@@ -1,0 +1,1671 @@
+{
+  "range": "Questions!A2:G200",
+  "majorDimension": "ROWS",
+  "values": [
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Concurrency",
+      "3fa3865d-ac37-4232-846f-03e4b0148253",
+      "iOSDeveloper",
+      "Medium",
+      "What is a `DispatchGroup`?",
+      "A `DispatchGroup` allows for aggregate synchronization of work. We can use them to submit multiple different work items and track when they all complete, even though they might run on different queues. This behavior can be helpful when progress can’t be made until all of the specified tasks are complete. — Apple’s Documentation\n\nIf your app needs to wait on a couple of asynchronous or synchronous operations before proceeding, you can use `DispatchGroup`."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Concurrency",
+      "b83686ed-3a2c-4c8b-ad67-f4d4ee96d06e",
+      "iOSDeveloper",
+      "Medium",
+      "What is `QualityOfService` and what is its purpose?",
+      "QoS – `QualityofService`\n\nQoS can applied all over iOS. One can prioritize queues, thread objects, dispatch queues and POSIX threads. By assigning the correct priority for the work, iOS apps remain quick, snappy and responsive."
+    ],
+    [
+      "https://github.com/onthecodepath/iOS-Interview-Questions",
+      "CoreData",
+      "ee8b4951-d98e-4ec7-b02b-64b410c767da",
+      "iOSDeveloper",
+      "Easy",
+      "What is `CoreData`?",
+      "`CoreData` is a framework that is used to manage model layer objects. It has the ability to persist object graphs to a persistent store. Data is organized into relational entity-attribute model."
+    ],
+    [
+      "https://github.com/onthecodepath/iOS-Interview-Questions",
+      "CoreData",
+      "385a3c2a-35ac-4069-ba96-39ecee8c8b7e",
+      "iOSDeveloper",
+      "Medium",
+      "When would you use `CoreData` over `UserDefaults`?",
+      "`UserDefaults` is typically used to store small bits of data (settings, preferences, etc.). \n\n`CoreData` is used to store most other data that needs to be persisted."
+    ],
+    [
+      "https://github.com/onthecodepath/iOS-Interview-Questions",
+      "CoreData",
+      "1ccec773-eecd-45b8-b6b2-23b0ed5881e4",
+      "iOSDeveloper",
+      "Medium",
+      "What is an `NSManagedObjectContext`?",
+      "It is the central object in the `CoreData` stack.\n\nIt is used to create and fetch managed objects, and to manage undo and redo operations. Although it is allowed to have multiple managed object contexts, there is typically at most one managed object to represent any given record in a persistent store."
+    ],
+    [
+      "https://github.com/onthecodepath/iOS-Interview-Questions",
+      "CoreData",
+      "71a72773-3329-4ee0-87cc-005e7f061819",
+      "iOSDeveloper",
+      "Medium",
+      "What is an `NSFetchRequest`?",
+      "`NSFetchRequest` is the class responsible for fetching from `CoreData`.\n\nFetch requests can be used to fetch a set of objects meeting a certain criteria, individual values and more."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-2-45f952230b9f",
+      "CoreData",
+      "446c9527-8e7e-4743-bd44-81cb1f673f39",
+      "iOSDeveloper",
+      "Medium",
+      "What is an `NSFetchedResultsController`?",
+      "`NSFetchedResultsController` is a controller, but it’s not a view controller. It has no user interface. Its purpose is to make developers’ lives easier by abstracting away much of the code needed to synchronize a table view with a data source backed by `CoreData`.\n\nSet up an `NSFetchedResultsController` correctly, and your table will mimic its data source without you have to write more than a few lines of code."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-2-45f952230b9f",
+      "CoreData",
+      "719691cb-675e-4f1e-9554-34b41872e8ce",
+      "iOSDeveloper",
+      "Medium",
+      "Explain what an `NSPersistentContainer` is",
+      "An `NSPersistentContainer` creates and returns a container, having loaded the store for the application to it.\n\nThis property is optional since there are legitimate error conditions that could cause the creation of the store to fail."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/50-interview-questions-every-ios-developer-should-know-part-2-7c200f84d168",
+      "CoreData",
+      "b17bddc4-a1b3-4e9a-92f4-3c1d0562dbb6",
+      "iOSDeveloper",
+      "Hard",
+      "Compare and contrast `perform(_:)` and `performAndWait(_:)`",
+      "`perform(_:)` is asynchronous, in that it returns immediately, and the closure parameter is executed at some time in the future, on some undisclosed thread. All blocks given to the MOC via `perform(_:)` will execute in the order they were added.\n\n`performAndWait(_:)` is synchronous, in that the calling thread will wait until the closure parameter has executed before returning. Whether the block runs in some other thread, or runs in the calling thread is not all that important, and is an implementation detail that can’t be trusted."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "CoreData",
+      "fb95df1a-8204-4cc3-bb63-8581f2d1868e",
+      "iOSDeveloper",
+      "Hard",
+      "What are the two basic things that are needed to create an `NSFetchRequest` in `CoreData`?",
+      "`EntityName`, `SortDescriptor`/`NSPredicate`"
+    ],
+    [
+      "https://github.com/onthecodepath/iOS-Interview-Questions",
+      "Debugging",
+      "4c7799ae-cee0-4e1c-b8ca-87d759ee5e89",
+      "iOSDeveloper",
+      "Easy",
+      "What are some ways of debugging in iOS?",
+      "- `NSLog` and `print` functions can be used for output into console.\n- Breakpoints can also be used together with the Debug bar and Variables view as an alternative.\n- Senior devs often use other tools such as Instruments and Crash Logs instead of the two above."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/50-interview-questions-every-ios-developer-should-know-part-2-7c200f84d168",
+      "Debugging",
+      "b31c9606-448e-4eb7-885b-89f9dba2ffd8",
+      "iOSDeveloper",
+      "Hard",
+      "What does the `p` command do in lldb?",
+      "The `p` command (a.k.a. `expr --` ) takes the arguments it is given, compiles them as though they were a source code expression written in the context of the current frame, executes the result — either by running an interpreter on the result of the compilation if that is possible, or by JITing the result of the compilation, inserting it into the target program, and running it there. Then it prints the result of the evaluation."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/50-interview-questions-every-ios-developer-should-know-part-2-7c200f84d168",
+      "Debugging",
+      "69cb1c56-54b5-4b13-8608-9942bec9f8cc",
+      "iOSDeveloper",
+      "Medium",
+      "What does the `po` command do in lldb?",
+      "The `po` command (a.k.a. `expr -o --` ) does everything that `p` does, but instead of printing the result, if the result is a pointer to an ObjC object, it calls that object’s `description` method, and prints the string returned by that method(*). Similarly, if the result is a CF object, it will call `CFShow` and print the result of that. If both these attempts fail, it will go ahead and print the result as `p` would have."
+    ],
+    [
+      "https://github.com/onthecodepath/iOS-Interview-Questions",
+      "Design Patterns",
+      "de1eb1c3-4cc6-4a87-afe6-4a98935e64d7",
+      "iOSDeveloper",
+      "Easy",
+      "What is the Singleton pattern?",
+      "The Singleton design pattern ensures that only one instance exists for a given class and that there’s a global access point to that instance. It usually uses lazy loading to create the single instance when it’s needed the first time."
+    ],
+    [
+      "https://github.com/onthecodepath/iOS-Interview-Questions",
+      "Design Patterns",
+      "9acc3884-4a1d-4425-a0ab-380f2dc6d49b",
+      "iOSDeveloper",
+      "Easy",
+      "What is the Delegation pattern?",
+      "The delegation pattern is a powerful pattern used in building iOS applications. The basic idea is that one object will act on another object's behalf or in coordination with another object.\n\nThe delegating object typically keeps a reference to the other object (delegate) and sends a message to it at the appropriate time. It is important to note that they have a one to one relationship."
+    ],
+    [
+      "https://developer.apple.com/library/archive/documentation/General/Conceptual/Devpedia-CocoaApp/TargetAction.html",
+      "Design Patterns",
+      "06d62265-3853-4723-98b0-6e063e79ef33",
+      "iOSDeveloper",
+      "Easy",
+      "What is the Target-Action pattern?",
+      "Target-action is a design pattern in which an object holds the information necessary to send a message to another object when an event occurs. \n\nThe stored information consists of two items of data: an action selector, which identifies the method to be invoked, and a target, which is the object to receive the message. The message sent when the event occurs is called an action message. Although the target can be any object, even a framework object, it is typically a custom controller that handles the action message in an application-specific way."
+    ],
+    [
+      "https://github.com/onthecodepath/iOS-Interview-Questions",
+      "Design Patterns",
+      "65988f91-3838-462d-bba6-a1bc7883f3a5",
+      "iOSDeveloper",
+      "Easy",
+      "What is the MVC pattern?",
+      "MVC stands for Model-View-Controller. It is a software architecture pattern for implementing user interfaces.\n\nMVC consists of three layers: the model, the view, and the controller.\n\n- The model layer is typically where the data resides (persistence, model objects, etc)\n- The view layer is typically where all the UI interface lies. Things like displaying buttons and numbers belong in the view layer. The view layer does not know anything about the model layer and vice versa.\n- The controller acts as the middle man. It responds to the user input and performs interactions on the data model objects. The controller receives the input, optionally validates it, and then passes the input to the model."
+    ],
+    [
+      "https://github.com/onthecodepath/iOS-Interview-Questions",
+      "Design Patterns",
+      "948fd4ee-4f67-430c-a186-40f4c6041edd",
+      "iOSDeveloper",
+      "Easy",
+      "What is MVVM?",
+      "MVVM stands for Model-View-ViewModel. It is a software architecture pattern for implementing user interfaces.\n\nMVVM is an augmented version of MVC where the presentation logic is moved out of the controller and into the view model. The view model is responsible for handling most, if not all, of the view's display logic."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-2-45f952230b9f",
+      "Design Patterns",
+      "39191884-149e-4ead-8583-79ca82594ef7",
+      "iOSDeveloper",
+      "Easy",
+      "What problems does delegation solve?",
+      "The core purpose of the delegate pattern is to allow an object to communicate back to its owner in a decoupled way. \n\nBy not requiring an object to know the concrete type of its owner, we can write code that is much easier to reuse and maintain."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/50-interview-questions-every-ios-developer-should-know-part-2-7c200f84d168",
+      "Design Patterns",
+      "e989044e-b2f0-4575-91e4-c2d9c5c6682a",
+      "iOSDeveloper",
+      "Medium",
+      "What are some examples of singletons provided by the system frameworks?",
+      "Several Cocoa framework classes are singletons. They include `NSFileManager`, `NSWorkspace`, and, in `UIKit`, `UIApplication` and `UIAccelerometer`."
+    ],
+    [
+      "AI Interview App",
+      "Foundation",
+      "2e269cb8-1e8a-4dce-a266-166e6c4dd182",
+      "iOSDeveloper",
+      "Medium",
+      "What are the components that make up an `NSError` object?",
+      "There are three components of an `NSError` object:\n- A domain,\n- An error code and,\n- A user info dictionary.\n\nThe domain is a string that identifies what categories of errors this error is coming from.\n"
+    ],
+    [
+      "AI Interview App",
+      "Foundation",
+      "21d8832b-3664-40d6-b694-0888290bc3af",
+      "iOSDeveloper",
+      "Medium",
+      "What does KVC stand for and what is it?",
+      "KVC stands for \"Key-Value Coding\".\n\nIt's a mechanism by which an object's properties can be accessed using strings at runtime rather than having to statically know the property names at development time."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-2-45f952230b9f",
+      "Memory Management",
+      "67a2f32a-7100-4f72-bb8b-439bf0511849",
+      "iOSDeveloper",
+      "Medium",
+      "What is ARC?",
+      "ARC stands for _Automatic Reference Counting_ and is Apple's means of tracking and managing your app’s memory usage, specifically its managing of class instances that are allocated to the heap.\n\nARC automatically frees up the memory used by class instances when those instances are no longer needed. Specifically, it only frees up memory for class instances when their retain count, i.e., the number of strong references to that instance, is zero."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Memory Management",
+      "4d3f422c-0a6f-4a81-ba31-46528bbc86ee",
+      "iOSDeveloper",
+      "Hard",
+      "What is a retention-cycle or circular reference? How can you avoid it?",
+      "A circular reference happens when two instances hold a strong reference to each other, causing a memory leak because neither of the two instances will ever be deallocated. \n\nThe reason is that you cannot deallocate an instance as long as there's a strong reference to it, but each instance keeps the other alive because of its strong reference.\n\nYou'd solve the problem by breaking the strong circular reference by replacing one of the strong references with a `weak` or an `unowned` reference."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Notifications",
+      "d24ca917-7989-4a12-b881-a1f9f05362e3",
+      "iOSDeveloper",
+      "Medium",
+      "Please explain the types of notifications in iOS",
+      "There are two type of notifications: Remote and Local.\n\nRemote notification requires connection to a server.\n\nLocal notifications don’t require server connection. Local notifications happen on device."
+    ],
+    [
+      "IT Interview Questions",
+      "Objective-C",
+      "5b7b60ff-0385-4554-b218-0e24e999550c",
+      "iOSDeveloper",
+      "Hard",
+      "What does the `@dynamic` keyword do in Objective-C?",
+      "You use the `@dynamic` keyword to tell the compiler that you will fulfill the API contract implied by a property either by providing method implementations directly or at runtime using other mechanisms such as dynamic loading of code or dynamic method resolution. It suppresses the warnings that the compiler would otherwise generate if it can't find a suitable implementation.\n\nYou should use it only if you know that the methods will be available at runtime."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "73a4654b-bd74-4c58-8d9d-dd56b76fe1e2",
+      "iOSDeveloper",
+      "Hard",
+      "What is a formal protocol in Obj-C?",
+      "A formal protocol declares a list of methods that client classes are expected to implement. Formal protocols have their own declaration, adoption, and type-checking syntax. You can designate methods whose implementation is required or optional with the `@required` and `@optional` keywords. Subclasses inherit formal protocols adopted by their ancestors. A formal protocol can also adopt other protocols. Formal protocols are an extension to the Objective-C language."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "0b20ab1f-664b-473e-84ab-dff2b54c2ef8",
+      "iOSDeveloper",
+      "Hard",
+      "What is an informal protocol in Obj-C?",
+      "An informal protocol is a category on NSObject, which implicitly makes almost all objects adopters of the protocol. (A category is a language feature that enables you to add methods to a class without subclassing it.) Implementation of the methods in an informal protocol is optional. Before invoking a method, the calling object checks to see whether the target object implements it. Until optional protocol methods were introduced in Objective-C 2.0, informal protocols were essential to the way Foundation and AppKit classes implemented delegation."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "613bb1e9-7bd6-4050-b572-fef8a04562b6",
+      "iOSDeveloper",
+      "Hard",
+      "What does `#import` do? How does it differ from `#include`?",
+      "`#import` ensures that a file is only ever included once so that you never have a problem with recursive includes."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "a19a1709-692c-4f65-9ed2-f93aca382b75",
+      "iOSDeveloper",
+      "Easy",
+      "What does `@synthesize` do in Obj-C?",
+      "`@synthesize` creates a getter and a setter for the variable. This lets you specify some attributes for your variables and when you `@synthesize` that property to the variable you generate the getter and setter for the variable."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "d035637f-fadf-422a-abbd-4febc0d2ffa3",
+      "iOSDeveloper",
+      "Easy",
+      "How do you call a method in Obj-C?",
+      "calling the method is like this:\n```objc\n[className methodName]\n```"
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "c89d37cd-b7eb-495c-ba10-38a5502d702b",
+      "iOSDeveloper",
+      "Medium",
+      "What is dot notation in Obj-C?",
+      "The dot syntax is just a shortcut for calling getters and setters.\nThat is, these mean the same thing:\n```objc\n[foo length]\nfoo.length\n```\nand so do:\n```objc\n[foo setLength:5]\nfoo.length = 5\n```\n"
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "40c96802-4145-42e2-bbe0-05783012b916",
+      "iOSDeveloper",
+      "Hard",
+      "What is an `atomic` synthesized property in Obj-C?",
+      "`atomic` is the default behavior. It will ensure the present process is completed by the CPU, before another process accesses the variable. It is not fast, as it ensures the process is completed entirely"
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "5f29fb9d-783b-4757-92d1-80625878d6b8",
+      "iOSDeveloper",
+      "Hard",
+      "What is a `non-atomic` synthesized property in Obj-C?",
+      "`non-atomic` is NOT the default behavior. It is faster, but not thread-safe. May result in unexpected behavior when two different process access the same variable at the same time."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "d64c8c5c-e9ad-46ec-a9c3-93e6442b5f05",
+      "iOSDeveloper",
+      "Medium",
+      "What is KVO?",
+      "Key-Value-Observing (KVO) allows you to observe changes to a property or value.\n\nTo observe a property using KVO you would identify to property with a string; i.e., using KVC. Therefore, the observable object must be KVC compliant."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "a42814e0-4738-4dab-9cbc-db047cfc0527",
+      "iOSDeveloper",
+      "Easy",
+      "Does Obj-C support function overloading?",
+      "Objective-C does not support method overloading, so you have to use different method names."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "1421c558-c58d-4ed3-954e-6ddac2b57a77",
+      "iOSDeveloper",
+      "Medium",
+      "Should you retain a delegate?",
+      "The rule is generally not to retain it because it’s already retained elsewhere and it is more important that you avoid retain cycles."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "f3444137-ecbb-4f11-9438-f2e9bf95a7ea",
+      "iOSDeveloper",
+      "Hard",
+      "What is an `@autoreleasepool` block in Obj-C? ",
+      "The `NSAutoreleasePool` class is used to support Cocoa’s reference-counted memory management system. An autorelease pool stores objects that are sent a release message when the pool itself is drained.\n\nIf you use Automatic Reference Counting (ARC), you cannot use autorelease pools directly. Instead, you use `@autoreleasepool` blocks.\n`@autoreleasepool` blocks are more efficient than using an instance of NSAutoreleasePool directly and you can also use them even if you do not use ARC."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "88ab3366-d85a-4f3a-8ba9-856cf1107a4c",
+      "iOSDeveloper",
+      "Medium",
+      "What happens when you invole a method on a nil pointer in Obj-C?",
+      "A message sent to a `nil` object is perfectly acceptable in Objective-C, it’s treated as a no-op. There is no way to flag it as an error because it’s not an error, in fact it can be a very useful feature of the language. It returns `0`, `nil`, a structure filled with 0s, etc."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "c0b3e950-c39f-4528-98d5-1fb93819d0e3",
+      "iOSDeveloper",
+      "Easy",
+      "What is toll-free bridging and when is it useful?",
+      "Toll-free bridging means that the data structures are interchangeable. It is just as simple as casting — that’s the “toll-free” part. Anyplace you can use the type on one side of the bridge, you can use the other. So, for example, you can create a `CFString` and then send `NSString` messages to it, or you can create an `NSArray` and pass the array to `CFArray` functions."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "58931134-872a-4336-b5be-bff18d12c2e8",
+      "iOSDeveloper",
+      "Medium",
+      "What is class introspection?",
+      "Class Introspection: It is the ability to provide information about objects/classes at runtime . Objective C runtime supports introspection. A small sample of the type of information provided by the ObjC runtime:\n1. names of methods of class from a class object\n2. information about method arguments\n3. implementation(IMP) of individual methods of a class\n4. Information about instance variables of a class"
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "135ff409-72eb-41d9-a7e9-68d047d3d974",
+      "iOSDeveloper",
+      "Medium",
+      "What is class reflection?",
+      "It is the ability to add new classes and to add/modify interfaces of existing classes. It also includes the ability to modify the relationship between classes. \n\nFor example, the objC runtime allows new classes to be added, methods to be added to a class and instance variables to be added to a class created at runtime. It also allows the superclass of a class to be replaced by another class."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "257735e3-f2bf-4a1f-9093-47e721ac9310",
+      "iOSDeveloper",
+      "Medium",
+      "What is swizzling?",
+      "The term “Swizzling” in Objective-C refers to exchanging the implementation of two methods(class or instance) at runtime. So if you apply introspection to access method implementations and reflection to actually exchange the implementations, you are swizzling."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "Objective-C",
+      "4b06340a-dcbe-41b5-9e38-85e4bda81bba",
+      "iOSDeveloper",
+      "Medium",
+      "What is the `isa` member?",
+      "Objective-C objects are basically C structs. Each one contains a field called `isa`, which is a pointer to the class that the object is an instance of (that’s how the object and Objective-C runtime knows what kind of object it is)."
+    ],
+    [
+      "AI Interview App",
+      "OOP",
+      "2afe858c-62d3-43cf-ac08-e15cfdfac9e7",
+      "iOSDeveloper",
+      "Easy",
+      "What is Inheritance?",
+      "Inheritance allows a class to be defined that has a certain set of characteristics (such as methods and instance variables) and then other classes to be created which are derived from that class.\n\nThe derived class inherits all of the features of the parent class and typically then adds some features of its own."
+    ],
+    [
+      "https://career.guru99.com/top-50-oops-interview-questions/",
+      "OOP",
+      "1199c92e-b74c-45a5-8c6b-7c3c40e9ed06",
+      "iOSDeveloper",
+      "Medium",
+      "What is Encapsulation?",
+      "Encapsulation is one of the main concepts of object oriented programming. An object contains all its data which is hidden. Access to that hidden data can be restricted in various levels."
+    ],
+    [
+      "https://career.guru99.com/top-50-oops-interview-questions/",
+      "OOP",
+      "58f6938c-71a7-4756-9614-b2d9ba61cb94",
+      "iOSDeveloper",
+      "Medium",
+      "What is Abstraction?",
+      "Abstraction is the process of concealing the complex logic by defining the code in a separate private method to hide its implementation. The functionality can then be used called by using its method identifier."
+    ],
+    [
+      "https://career.guru99.com/top-50-oops-interview-questions/",
+      "OOP",
+      "5fb21978-6e16-46ba-a2a9-e5e337feb33b",
+      "iOSDeveloper",
+      "Medium",
+      "What is Polymorphism?",
+      "Polymorphism is assigning behavior or value in a subclass to something that was already declared in the main class. And the ability for that subclass to be treated as itself or as its superclass. Simply, polymorphism means taking more than one form."
+    ],
+    [
+      "https://www.educba.com/oop-interview-questions/",
+      "OOP",
+      "988d868c-1476-42d8-a073-5b3afe2efe38",
+      "iOSDeveloper",
+      "Hard",
+      "What is operator overloading?",
+      "Operator overloading is sometimes called as ad-hoc polymorphism. It means that different operators will have different mechanism based on the placement of operators and the arguments. For example:\n```swift\n\"1\" + \"2\" = \"12\"\n1 + 2 = 3\n```"
+    ],
+    [
+      "https://www.educba.com/oop-interview-questions/",
+      "OOP",
+      "27cdcb64-78d8-4c66-af90-35e6a99bdc05",
+      "iOSDeveloper",
+      "Medium",
+      "What are some advantages of OOP?",
+      "Some benefits of OOP are: modularity, extensibility, simplicity, reusability, maintainability, etc. It helps to reduce complex problems to easily solvable part and gives the code some structure. It helps to decouple complex functionalities using different classes and implementation methods around the application. It also makes maintaining your code over time easier (as long as you keep things organized)."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "OOP",
+      "927b9a8c-d0f9-4db3-ad5b-1cfcc4ee481c",
+      "iOSDeveloper",
+      "Easy",
+      "What is initialization?",
+      "The process that involves setting an initial value for each stored property on that instance and performing any other setup or it is required before the new instance is ready for use.\n\ne.g.: keyword:\n\n```swift\ninit() {\n\n// code initialization here.\n\n}\n```"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "OOP",
+      "02a99544-6868-48e5-8a09-1d29b38266b1",
+      "iOSDeveloper",
+      "Easy",
+      "What is Method Overloading?",
+      "It defines a method with the same name many times with different arguments."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "OOP",
+      "f94c8ef7-b9dc-49f3-9b31-5db4ba725143",
+      "iOSDeveloper",
+      "Easy",
+      "What is Method Overridding?",
+      "If we define a method in a class, and we know that a subclass might need to provide a different version of the method. When a subclass provides a different implementation of the method defined in a superclass, with the same name, arguments and return type, that is called Overriding. The implementation in the subclass overwrites the code provided in the superclass."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-2-45f952230b9f",
+      "Swift",
+      "3f619737-95e7-4d2a-af0f-cc2aac5162af",
+      "iOSDeveloper",
+      "Medium",
+      "How is an `inout` parameter different from a regular parameter?",
+      "A Inout passes by reference while a regular parameter passes by value. To pass an inout parameter to a function, append the `&` character to the front of the parameter at the call site.\n\nFor example:\n```swift\nimport UIKit\n\nvar num1: Int = 1\nvar char1: Character = \"a\"\n\nfunc changeNumber(\nvar num: Int) {\n    num = 2\n    print(num) // 2\n    print(num1) // 1\n}\nchangeNumber(num1)\n\nfunc changeChar(\ninout char: Character) {\n    char = \"b\"\n    print(char) // b\n    print(char1) // b\n}\nchangeChar(&char1)\n```"
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-2-45f952230b9f",
+      "Swift",
+      "828d68ae-f4f3-4df6-a108-eb2f3a94eba1",
+      "iOSDeveloper",
+      "Easy",
+      "Explain forced unwrapping",
+      "If we defined a property as optional, then to get the value from this variable, we will have to unwrap it. This just means putting an exclamation mark `!` at the end of the variable.\n\nFor example:\n```swift\nvar legoBricksSold: Int? \n= 400_000_000_000\nvar numberSold \n= legoBricksSold!\n```"
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-2-45f952230b9f",
+      "Swift",
+      "f0e3ef97-1b36-4780-8fea-50a90c4ab626",
+      "iOSDeveloper",
+      "Medium",
+      "Please explain the `final` keyword into the class?",
+      "By adding the keyword final in front of the method name, we prevent the method from being overridden. If we can replace the final class keyword with a single word static and get the same behavior."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-2-45f952230b9f",
+      "Swift",
+      "0b02c566-4422-4da3-b48c-acb621fb455a",
+      "iOSDeveloper",
+      "Medium",
+      "What's the difference between an `@escaping` closure and regular closure?",
+      "The lifecycle of a non-escaping closure is simple:\n- Pass a closure into a function\n- The function runs the closure (or not)\n- The function returns\n\nWith an `@escaping` closure, inside the function, you can still run the closure (or not); however, the closure itself is stored someplace that will outlive the function. There are several ways to have a closure escape its containing function:\n\n- Asynchronous execution: If you execute the closure asynchronously on a dispatch queue, the queue will hold onto the closure for you. You have no idea when the closure will be executed and there’s no guarantee it will complete before the function returns.\n- Storage: Storing the closure to a global variable, property, or any other bit of storage that lives on past the function call means the closure has also escaped.\n\n"
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "99e7e33d-edbe-4dca-9b4d-7c2f9bbfe567",
+      "iOSDeveloper",
+      "Easy",
+      "Explain labeled statements",
+      "Using a labeled statement, we can specify which control structure we want to break no matter how deeply you nest our loops. This also works with continue. If we have a complex structure that contains nested for loops, a labeled statement will allow us to break from an outer loop and continue on with the execution of the method."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "e9346623-f74d-4a7a-8715-5cadf99a1de6",
+      "iOSDeveloper",
+      "Easy",
+      "What does the `map(_:)` function do?",
+      "`map(_:)` returns an array of results after transforming each element in the sequence using the provided closure.\n\nHere, `map` is used first to convert the names in the array to lowercase strings and then to count their characters:\n```swift\nlet cast = \n[\"Vivien\", \"Marlon\", \"Kim\", \"Karl\"]\nlet lowercaseNames = \ncast.map { $0.lowercased() }\n// 'lowercaseNames' == \n[\"vivien\", \"marlon\", \"kim\", \"karl\"]\nlet letterCounts = \ncast.map { $0.count }\n// 'letterCounts' == [6, 6, 3, 4]\n```"
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "d37cf34f-8922-4a63-a6ca-5295ea352d6b",
+      "iOSDeveloper",
+      "Easy",
+      "What does the `filter(_:)` function do?",
+      "`filter(_:)` returns an array containing, in order, the elements of the sequence that satisfy the given predicate.\n\nBelow, `filter` is used to include only names shorter than five characters.\n```swift\nlet cast = \n[\"Vivien\", \"Marlon\", \"Kim\", \"Karl\"]\nlet shortNames = \ncast.filter { $0.count \u003c 5 }\n\nprint(shortNames)\n// Prints \"[\"Kim\", \"Karl\"]\"\n```"
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "d9e67d3d-afbe-4cf5-9b41-3be88d5561e2",
+      "iOSDeveloper",
+      "Easy",
+      "What does the `reduce(_: _:)` function do?",
+      "`reduce(_:_:)` returns the result of combining the elements of the sequence using the given closure.\n\nFor example, you can use this method on an array of numbers to find their sum or product.\n\n```swift\nlet numbers = [1, 2, 3, 4]\nlet numberSum = \nnumbers.reduce(0, { x, y in\n    x + y\n})\n// numberSum == 10\n```\n\nWhen `numbers.reduce(_:_:)` is called, the following steps occur:\n\n- The `nextPartialResult` closure is called with `initialResult`, 0 in this case, and the first element of numbers, returning the sum: 1.\n- The closure is called again repeatedly with the previous call's return value and each element of the sequence.\n- When the sequence is exhausted, the last value returned from the closure is returned to the caller."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "cdc5ca98-d76d-4b12-a77e-7ee7b2027a47",
+      "iOSDeveloper",
+      "Easy",
+      "What does the `sorted(_:)` function do?",
+      "Returns an array of the elements in the sequence sorted based on the provided closure predicate."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "90e2286b-ddfc-454d-ac4e-c8e93d981c4c",
+      "iOSDeveloper",
+      "Easy",
+      "What does the `enumerated(_:)` function do?",
+      "Returns a sequence of pairs (n, x), where n represents a consecutive integer starting at zero and x represents an element of the sequence.\n\nFor example:\n```swift\nfor (n, c) in \"Swift\".enumerated() {\n    print(\"\\(n): '\\(c)'\")\n}\n// Prints \"0: 'S'\"\n// Prints \"1: 'w'\"\n// Prints \"2: 'i'\"\n// Prints \"3: 'f'\"\n// Prints \"4: 't'\"\n```"
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "2ef154c8-8290-4d22-a01f-af3cd402a142",
+      "iOSDeveloper",
+      "Easy",
+      "What does _nil coalescing_ refer to?",
+      "_Nil coalescing_ is an operator used to guarantee that an optional contains a value.\n\nIf the optional has a value, the nil coalescing operator will unwrap it. If the optional’s value is nil, it will assign it a default value instead.\n\nSimply insert the `??` symbol between the optional and the default value. As follows:\n```swift\nvar myOptional: String?\nlet myExample = myOptional \n?? \"this string is my default value\"\n```"
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "2a246f16-c2c9-4762-b759-d69bf3b7167a",
+      "iOSDeveloper",
+      "Hard",
+      "What is the difference `Any` and `AnyObject` ?",
+      "According to Apple’s Swift documentation:\n\n`Any` can represent an instance of any type at all, including function types and optional types.\n\n`AnyObject` can represent an instance of any class type."
+    ],
+    [
+      "AI Interview App",
+      "Swift",
+      "e7801293-307a-4ac3-ae74-ded39d656014",
+      "iOSDeveloper",
+      "Medium",
+      "What does the `lazy` keyword in Swift mean?",
+      "The initial value of a `lazy` stored property is calculated only when the property is called for the first time.\n\n\n``` swift\nclass DataManager {\n    lazy var importer = Importer()\n    var data = [String]()\n    // the DataManager class \n    // would provide data \n    // management functionality\n    // here\n}\n```"
+    ],
+    [
+      "https://medium.com/@abhimuralidharan/lazy-var-in-ios-swift-96c75cb8a13a",
+      "Swift",
+      "a99055a1-5e2c-44db-858e-d8c7110de203",
+      "iOSDeveloper",
+      "Medium",
+      "What are a few advantages of a `lazy` property over a stored property?",
+      "There are a few advantage of a `lazy` property over a stored property.\n\n1. The closure associated to the `lazy` property is executed only if you read that property. So if for some reason that property is not used (maybe because of some decision of the user) you avoid unnecessary allocation and computation.\n2. You can populate a `lazy` property with the value of a stored property.\n3. Important to note: You can use self inside the closure of a `lazy` property. It will not cause any retain cycles. The reason is that the immediately applied closure {}() is considered @noescape. It does not retain the captured self."
+    ],
+    [
+      "AI Interview App",
+      "Swift",
+      "ac534165-7e1c-4746-a9b5-4fd0233a7336",
+      "iOSDeveloper",
+      "Medium",
+      "What does the `defer` keyword in Swift mean?",
+      "`defer` provides a safe and easy way to declare a block that will be executed only when execution leaves the current scope.\n\n`defer` is usually used to cleanup the code after execution. This might involve deallocating container, releasing memory, or closing a file or network connection."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "77f2e7b0-4cf8-44f2-8ec6-15e6e8b8c01f",
+      "iOSDeveloper",
+      "Medium",
+      "When do you use optional chaining vs. `if let` or `guard`?",
+      "We use optional chaining when we do not really care if the operation fails; otherwise, we use `if let` or `guard`. Optional chaining lets us run code only if our optional has a value."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "53f8b880-3138-47a8-983b-5d3b8552fad9",
+      "iOSDeveloper",
+      "Medium",
+      "What are optionals and what problem do they solve?",
+      "An optional is a type that represents either a wrapped value or `nil`, the absence of a value.\n\nUnder the hood, an optional is a just an enum looks like this:\n```swift\npublic enum Optional\u003cWrapped\u003e :\n _Reflectable, NilLiteralConvertible {\n  case None\n  case Some(Wrapped)\n  // ...\n}\n```\n\nSwift gives a very convenient way of making a property optional. Just append a `?` to a type.\n```swift\nlet notOptionalInt: Int = 1\nlet optionalInt: Int?\n```\n\nOptionals provide Swift with more safety, as they allow us to write code that appropriately handles both cases of the optional. This prevents unnecessary crashing at runtime if a stored property unexpectedly contained a `nil`."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "c2129ed2-c2ef-4433-99ed-2f4e18dfbb31",
+      "iOSDeveloper",
+      "Easy",
+      "Summarize the main differences between a structure and a class.",
+      "You can summarize the differences as:\n- Classes support inheritance; structures don't.\n- Classes are reference types; structures are value types."
+    ],
+    [
+      "",
+      "Swift",
+      "33f80f7c-061f-4a30-94c4-58567adf20f6",
+      "iOSDeveloper",
+      "Medium",
+      "What are the only reference types in Swift?",
+      "Classes and closures."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "cd12e1d0-8c18-4e30-a957-902383eff3fb",
+      "iOSDeveloper",
+      "Hard",
+      "What are generics and which problem do they solve?",
+      "In Swift, you can use generics in both functions and data types, e.g. in classes, structures or enumerations.\n\nGenerics solve the problem of code duplication. When you have a method that takes one type of parameter, it's common to duplicate it to accommodate a parameter of a different type.\n\nFor example, in the following code the second function is a \"clone\" of the first, except it accepts strings instead of integers.\n```swift\nfunc areIntEqual(\n        _ x: Int,\n        _ y: Int) -\u003e Bool {\n  return x == y\n}\n\nfunc areStringsEqual(\n        _ x: String,\n        _ y: String) -\u003e Bool {\n  return x == y\n}\n\nareStringsEqual(\"ray\", \"ray\") //true\nareIntEqual(1, 1) //true\n```\nBy adopting generics, you can combine the two functions into one and keep type safety at the same time. Here's the generic implementation:\n```swift\nfunc areTheyEqual\u003cT: Equatable\u003e(\n        _ x: T,\n        _ y: T) -\u003e Bool {\n  return x == y\n}\n\nareTheyEqual(\"ray\", \"ray\")\nareTheyEqual(1, 1)\n```\nSince you're testing equality in this case, you restrict the parameters to any type that implements the `Equatable` protocol. This code achieves the intended result and prevents passing parameters of a different type."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "d8900180-9cf5-43d3-b6e9-dff385a1fa96",
+      "iOSDeveloper",
+      "Medium",
+      "When is a reasonable time to use an implicitly unwrapped optional?",
+      "When you cannot initialize a property that is not `nil` by nature at instantiation time. \n\nA typical example is an Interface Builder outlet, which always initializes after its owner. In this specific case — assuming it's properly configured in Interface Builder — you've guaranteed that the outlet is non-`nil` before you use it."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "fc056bbf-6dd0-4073-a6c9-12031e9da48c",
+      "iOSDeveloper",
+      "Medium",
+      "Can you add a stored property to a type by using an extension?",
+      "No, it's not possible.\n\nYou can use an extension to add new behavior to an existing type, but not to alter either the type itself or its interface. If you add a stored property, you'd need extra memory to store the new value. An extension cannot manage such a task.\n\nYou can add computed properties however."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "fa6e5377-b92c-4d7b-a579-514be20b0efe",
+      "iOSDeveloper",
+      "Medium",
+      "What is a `protocol` in Swift?",
+      "A `protocol` is a type that defines a blueprint of methods, properties and other requirements. A class, structure or enumeration can then adopt the protocol to implement those requirements.\nA type that adopts the requirements of a protocol conforms to that protocol. The protocol doesn't implement any functionality itself, but rather defines the functionality. You can extend a protocol to provide a default implementation of some of the requirements or additional functionality that conforming types can take advantage of."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "0f9a0e67-0eb5-4514-a1e5-c3ed82d048df",
+      "iOSDeveloper",
+      "Hard",
+      "Are closures value or reference types?",
+      "Closures are reference types. If you assign a closure to a variable and you copy the variable into another variable, you also copy a reference to the same closure and its capture list."
+    ],
+    [
+      "https://medium.com/swift2go/10-questions-that-you-will-be-asked-in-your-ios-developer-swift-interview-f157892486d0",
+      "Swift",
+      "eccf705c-e192-41e4-b577-4b3a16ff22a3",
+      "iOSDeveloper",
+      "Easy",
+      "What are the various ways to unwrap an optional? How do they rate in terms of safety?",
+      "1. force unwraping with !  —  unsafe\n```swift\nlet home: Home?\nlet newHome = home! \n```\n2. Implicitly unwrapped property declaration  — unsafe-ish\n```swift\nlet unsafeConstant: String! \n```\n\n3. Optional binding  —  safe\n```swift\nif let id = id {\n // do something\n}\n```\n\n4. Optional chaining  — safe\n``` swift\nlet newValue = home?.value\n```\n\n5. Nil coalescing operator  —  safe\n```swift\nlet name: String? = nil\nlet unwrpName = name ?? \"Anon\"\n```\n\n6. Guard statement  —  safe\n```swift\nguard let id = id else { return }\n```\n\n7. Optional pattern  —  safe \n```swift\nlet arrayOfOptInts: [Int?]\n = [nil, 2, 3, nil, 5]\n// Match only non-nil values.\nfor case let num? in arrayOfOptInts {\n    print(\"Found a \\(num)\")\n}\n// Found a 2\n// Found a 3\n// Found a 5\n```"
+    ],
+    [
+      "https://medium.com/swift2go/10-questions-that-you-will-be-asked-in-your-ios-developer-swift-interview-f157892486d0",
+      "Swift",
+      "d604e8e2-a0cb-4cdb-9474-dbe7036a443c",
+      "iOSDeveloper",
+      "Easy",
+      "What does it mean for a function to be a *higher-order function* in Swift?",
+      "A *higher-order function* is a function that takes another function as one (or more) of its parameters."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Swift",
+      "5223dfed-ddf4-4190-8560-ba65bf5f12b0",
+      "iOSDeveloper",
+      "Medium",
+      "What are the _control transfer statements_ in Swift?",
+      "`break`, `continue`, `fallthrough`, `return`, `throw`"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Swift",
+      "8ee8c823-d8fd-44b8-bc40-f4ba63b784d4",
+      "iOSDeveloper",
+      "Medium",
+      "Explain some of the basic features of Swift?",
+      "Variables are always initialized before use.\n\n-Memory is managed automatically.\n\n-Arrays and integers are checked for overflow.\n\n-`switch` statement can be used instead of using `if` statement.\n\n-It eliminates the classes that are in unsafe mode."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Swift",
+      "334b7303-ffe2-4d11-a975-2bf34d5f153c",
+      "iOSDeveloper",
+      "Medium",
+      "Will this code compile?\n\n```swift\nenum Position {\ncase first = 1\ncase second = 2\ncase third = 3\n}\n```",
+      " *No*.\n\nAn enum case cannot have a raw value if the enum does not have a raw type.\n\n```swift\n// fixed code\nenum Position: Int {\ncase first = 1\ncase second = 2\ncase third = 3\n}\n```"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Swift",
+      "423d89a8-b471-4d95-b661-d87d8ca9f14f",
+      "iOSDeveloper",
+      "Hard",
+      "Define Static Binding and Dynamic Binding?",
+      "Static Binding: It is resolved at “Compile time” Method overloading is an example of static binding.\n\nDynamic Binding: It is virtual binding resolved at a “Run Time”. Method overriding is an example of Dynamic Binding."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-2-45f952230b9f",
+      "UIKit",
+      "707e766e-076b-4964-b0ea-f4dc6deb7bb0",
+      "iOSDeveloper",
+      "Easy",
+      "What is the difference between `UICollectionView`s & `UITableView`s?",
+      "`TableView`s display a list of items, in a single column, a vertical fashion, and limited to vertical or horizontal scrolling only.\n\n`CollectionView`s also display a list of items, however, they can have multiple columns and rows."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "UIKit",
+      "1f6dc093-2af6-4b09-a0b0-e2fef45ce8ff",
+      "iOSDeveloper",
+      "Easy",
+      "What is AutoLayout?",
+      "AutoLayout provides a flexible and powerful layout system that describes how views and the UI controls calculates the size and position in the hierarchy."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/interview-questions-every-ios-developer-should-know-part-1-7742af7be1ad",
+      "UIKit",
+      "a684d7c1-deaa-4d7f-bf7d-cd03d70fe490",
+      "iOSDeveloper",
+      "Hard",
+      "What is the difference between `UIWindow` and `UIView`?",
+      "`Window`s do not have any visible content themselves but provide a basic container for your application’s views. `UIView`s define a portion of a window that you want to fill with some content. Typically, there is only one window in an iOS application."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/50-interview-questions-every-ios-developer-should-know-part-2-7c200f84d168",
+      "UIKit",
+      "642b308f-2e79-4338-8dd4-a60bc9e7e658",
+      "iOSDeveloper",
+      "Medium",
+      "What is the difference between `bounds` and `frame`?",
+      "The bounds of an `UIView` is the rectangle, expressed as a location (x,y) and size (width,height) relative to its own coordinate system (0,0). The frame of an `UIView` is the rectangle, expressed as a location (x,y) and size (width,height) relative to the superview it is contained within."
+    ],
+    [
+      "https://medium.com/@gauravtaywade/50-interview-questions-every-ios-developer-should-know-part-2-7c200f84d168",
+      "UIKit",
+      "fad9661d-cd9b-4b6a-a59d-f4bc81c357da",
+      "iOSDeveloper",
+      "Hard",
+      "When would you subclass `UIControl` instead of `UIView`?",
+      "The `UIControl` class adds more support for interactivity. Most importantly, it adds the target/action pattern. Looking at the concrete subclasses, we can see buttons, date pickers, text fields, and more. When creating interactive controls, you often want to subclass a descendant of `UIControl` rather than `UIView`."
+    ],
+    [
+      "https://roadfiresoftware.com/2015/01/ios-essentials-the-uiviewcontroller-lifecycle/",
+      "UIKit",
+      "4539e351-5b37-4f73-929d-367f5bae8de8",
+      "iOSDeveloper",
+      "Easy",
+      "When is `viewDidLoad()` called? What should you put there?",
+      "`viewDidLoad()` is called when the view controller's view has been loaded into memory. This method is called only once during the life of the view controller object. It’s a great place to do any view initialization or setup you didn’t do elsewhere."
+    ],
+    [
+      "https://roadfiresoftware.com/2015/01/ios-essentials-the-uiviewcontroller-lifecycle/",
+      "UIKit",
+      "c3cbdba1-e41a-4a03-8a42-3d1a758738a9",
+      "iOSDeveloper",
+      "Easy",
+      "When is `viewWillAppear(_:)` called? What should you put there?",
+      "`viewWillAppear(_:)` is called just before the view controller's view appears on the screen to the user, every time it will appear on screen. It is a good place to do any last-minute view updating."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "UIKit",
+      "a2291886-882f-4e19-a920-ad1b102fee29",
+      "iOSDeveloper",
+      "Medium",
+      "List the main `UITableViewDataSource` methods needed to display data in a `UITableView`.",
+      "1. `numberOfSections`\n2. `numberOfRowsInSection`\n3. `cellForRowAtIndexPath`"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Concurrency",
+      "ebfbc5e3-065a-4d36-80bc-c6c89a74f342",
+      "iOSDeveloper",
+      "Medium",
+      "What is deadlock?",
+      "A deadlock is a situation where two different threads/processes are dependent on one another for completion, and, thus, both are never completed."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Design Patterns",
+      "2df83478-ee57-4590-9ec3-d25b2af5f715",
+      "iOSDeveloper",
+      "Medium",
+      "What are some of the design patterns in iOS",
+      "- Singleton\n- Delegate\n- Model View Controller\n- Observer\n- Facade\n- Command\n- Template Method"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Design Patterns",
+      "607be8fd-7640-4ecd-8a6e-9529003215ab",
+      "iOSDeveloper",
+      "Easy",
+      "What are some ways to pass data between view controllers?",
+      "1. Segue, via the `prepareForSegue` method (Forward)\n2. Delegate (Backward)\n3. Setting variable directly (Forward)"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Concurrency",
+      "ef2b1be0-c998-4de5-8dcb-d8b593647c82",
+      "iOSDeveloper",
+      "Hard",
+      "What are the Levels of Prority in QoS?",
+      "- Highest: User Interactive\n- 2nd: User Initiated\n- 3rd: Utility\n- 4th: Background"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Concurrency",
+      "c2f0d5dc-ad5c-469d-82dd-07137755c827",
+      "iOSDeveloper",
+      "Medium",
+      "What are the different type of `DispatchQueue`s?",
+      "1. *Serial*: execute one task at a time in the sequential order.\n\n2. *Concurrent*: execute one or more tasks concurrently.\n\n3. *Main dispatch queue*: executes tasks on the application’s main thread."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Foundation",
+      "8d77b802-445c-42bd-8cb6-69b6e3d89749",
+      "iOSDeveloper",
+      "Medium",
+      "What are the different states of an iOS application?",
+      "1. Not running\n2. Inactive\n3. Active\n4. Background\n5. Suspended"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Foundation",
+      "ef208d15-9c69-41ca-acbf-4ce1ebbab9b2",
+      "iOSDeveloper",
+      "Hard",
+      "What are the different application lifecycle states for an iOS app?",
+      "1. `application(_:willFinishLaunchingWithOptions:)`\n2. `application(_:didFinishLaunchingWithOptions:)`\n3. `applicationDidBecomeActive(_:)`\n4. `applicationWillResignActive(_:)`\n5. `applicationDidEnterBackground(_:)`\n6. `applicationWillEnterForeground(_:)`\n7. `applicationWillTerminate(_:)`"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "UIKit",
+      "e1aa7266-05d1-4fdc-bcdf-574f193c4082",
+      "iOSDeveloper",
+      "Medium",
+      "What are the different view lifecycle states?",
+      "1. `loadView()`\n2. `loadViewIfNeeded()` \n3. `viewDidLoad()`\n4. `viewWillAppear(_:)`\n5. `viewWillLayoutSubviews()`\n6. `viewDidLayoutSubviews()`\n7. `viewDidAppear(_:)`\n8. `viewWillDisappear(_:)`\n9. `viewDidDisappear(_:)`"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Objective-C",
+      "0813d745-9601-4bf7-86a1-5ec2c1202505",
+      "iOSDeveloper",
+      "Hard",
+      "What are categories in Objective-C?",
+      "Categories provide the ability to add functionality to an object without changing the actual object.\n\nCategories are similar to Extensions in Swift."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "UIKit",
+      "0046feb9-da94-4c7a-8d3d-26eee7f61b64",
+      "iOSDeveloper",
+      "Easy",
+      "What is an `@IBOutlet` and an `@IBAction`?",
+      "`@IBOutlet` (i.e. Interface Builder Outlet) is a variable which is a reference to a UI component.\n\n`@IBAction` (i.e. Interface Builder Action) is a function which is called when a specific user interaction occurs."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Foundation",
+      "247ffaa8-1a7b-46c3-b7b5-dfacc7a7a874",
+      "iOSDeveloper",
+      "Medium",
+      "What is a bundle in iOS?",
+      "A bundle is a directory in the file system that contains the all executable code and related resources such as images and sounds together in one place."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Swift",
+      "cdafd051-f71c-40e6-9c03-f1b471970f0e",
+      "iOSDeveloper",
+      "Medium",
+      "When would it be appropriate to use the `deinit` keyword in Swift?",
+      "`deinit` can be used if you need to do some action or cleanup before deallocating an object.\n\nFor example:\n\n```swift\nclass PolitePerson {\n        deinit {\n                print(\"I'm going to make\n this place cleaner than when I found it!\")\n                // some cleaning up task\n        }\n}\n```"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Foundation",
+      "30ce6c56-2208-4382-8cf4-a2911307ba15",
+      "iOSDeveloper",
+      "Medium",
+      "What's the difference between `Keychain` and `UserDefaults`?",
+      "In `Keychain`: If user removed the app from device  the saved username and password still is there.\n\nIn `UserDefaults`: If user removed the app from device the saved username and password also removed."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Foundation",
+      "c190ead1-6722-40e5-9f6d-d65585152aa3",
+      "iOSDeveloper",
+      "Easy",
+      "What is a Bundle ID?",
+      "The Bundle ID, or bundle identifier, is the unique string that identifies an application in Apple's ecosystem. This means that no two applications can have the same bundle identifier.\n\nTo avoid conflicts, Apple encourages developers to use reverse domain name notation for choosing an application's bundle identifier.\n\nSome examples could include:\n```swift\ncom.abcco.widget\ncom.janedoe.janeapp\n```"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Foundation",
+      "e717c4fe-f6a7-47d5-919d-c168a8babec4",
+      "iOSDeveloper",
+      "Hard",
+      "What is \"App Thinning\", and how does it reduce your app's size?",
+      "App thinning is concept that refers to reducing the app size for downloading. Using the following methods can reduce the app size:\n\n- App Slicing\n- Bitcode\n- On-Demand Resource"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "CoreData",
+      "a1844915-a4b8-478f-b8ce-68faf4d690bb",
+      "iOSDeveloper",
+      "Medium",
+      "What is the difference between `CoreData` and SQLite?",
+      "`CoreData` is a framework that can be used for managing an object graph. \n\n`CoreData` is not a database. \n\n`CoreData` can use a SQLite database as its persistent store, but it also has support for other persistent store types, including a binary store and an in-memory store. SQLite is a lightweight relational database."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "UIKit",
+      "dcba0ba1-b33a-4849-9853-1648d0b7f673",
+      "iOSDeveloper",
+      "Medium",
+      "How could you switch from one storyboard to another?",
+      "By using segue and Storyboard Reference we can switch from one storyboard to another storyboard."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Objective-C",
+      "645f37ac-0076-4e1d-b2a7-28768dbb6ffe",
+      "iOSDeveloper",
+      "Hard",
+      "What does `id` represent in Objective-C?",
+      "id is a type of any data type. It specifies a reference to any Objective-C object "
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Design Patterns",
+      "7f8917b9-0e35-4497-9cb6-e4615776a873",
+      "iOSDeveloper",
+      "Medium",
+      "What is the difference between the Cocoa and Cocoa Touch?",
+      "Cocoa includes `Foundation` and `AppKit` frameworks for developing applications that run on Mac OS X.\n\nCocoa Touch includes `Foundation` and `UIKit` frameworks for developing applications that run on iPhone, iPad, and Apple Watch."
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Memory Management",
+      "5ee6a1ad-bcf1-4029-b624-430ca067bb41",
+      "iOSDeveloper",
+      "Medium",
+      "What are the different property types (e.g., weak)?",
+      "- `strong`\n- `weak`\n- `assign`\n- `copy`\n- `retain`\n- `atomic`\n- `non atomic`"
+    ],
+    [
+      "https://www.gangboard.com/blog/ios-interview-questions-and-answers/",
+      "Swift",
+      "3129e3b5-25f2-48a1-a5a5-fbb820d7c3ad",
+      "iOSDeveloper",
+      "Easy",
+      "What are tuples in Swift?",
+      "Tuples are temporary containers for multiple values. Tuples are comma-separated list of types, enclosed in parentheses. In other words, a tuple groups multiple values into a single compound value.\n\nEx:\n```swift\nlet twoIntTuple = (1, 2)\nlet threeStringTupe =\n (\"One\", \"Two\", \"Three\")\n```"
+    ],
+    [
+      "https://career.guru99.com/top-15-swift-interview-questions/",
+      "Swift",
+      "6c5dc383-9737-4f97-9981-059ad111e04d",
+      "iOSDeveloper",
+      "Medium",
+      "What are the collection types available in Swift?",
+      "In Swift, collection types come in two varieties: `Array` and `Dictionary`\n\n`Array`: You can create an `Array` of a single type or an `Array` with multiple types. Ex:\n```swift\nvar cardName : [String] = \n[ “Robert”, “Lisa”, “Kevin”]\n\n// Swift can infer [String] so we can also write it as:\n\nvar cardNames: = \n[“Robert”, “Lisa”, “Kevin”]\n// inferred as an Array of Strings\n```\n\n`Dictionary`: It is similar to a Hash table in other programming language. A `Dictionary` enables you to store key-value pairs and access the value by providing the key:\n```swift\nvar cards = \n[ “Bob”: 22, “Lisa” : 24,\n and “Ben”: 26]\n```"
+    ],
+    [
+      "https://www.toptal.com/swift/interview-questions",
+      "Swift",
+      "94d9f37b-65fb-4dd0-9ff8-a829c01d9790",
+      "iOSDeveloper",
+      "Medium",
+      "What’s the difference between enum raw values and enum associated values?",
+      "Raw values are used to associate constant (literal) values to enum cases. The value type is part of the enum type, and each enum case must specify a unique raw value (duplicate values are not allowed).\n\nThe following example shows an enum with raw values of type Int:\n```swift\nenum IntEnum : Int {\n    case ONE = 1\n    case TWO = 2\n    case THREE = 3\n}\n```\nAn enum value can be converted to its raw value by using the `rawValue` property:\n```swift\nvar enumVar: IntEnum = \nIntEnum.TWO\nvar rawValue: Int = \nenumVar.rawValue\n```\nA raw value can be converted to an enum instance by using a dedicated initializer:\n```swift\nvar enumVar: IntEnum? = \nIntEnum(rawValue: 1)\n```\n\nAssociated values are used to associate arbitrary data to a specific enum case. Each enum case can have zero or more associated values, declared as a tuple in the case definition:\n```swift\nenum AssociatedEnum {\n    case EMPTY\n    case WITH_INT(value: Int)\n    case WITH_TUPLE(value: Int,\n text: String, data: [Float])\n}\n```\nWhereas the type(s) associated to a case are part of the enum declaration, the associated value(s) are instance specific, meaning that an enum case can have different associated values for different enum instances."
+    ],
+    [
+      "https://www.onlineinterviewquestions.com/swift-interview-questions-answers/",
+      "Objective-C",
+      "469968ac-93dd-4132-9ec1-f0f0b27edf36",
+      "iOSDeveloper",
+      "Medium",
+      "How can Objective-C code be called from Swift?",
+      "Follow the following steps:\n\nStep 1: Add Objective-C Implementation --.m: First of all, add a .m file to the class and then name it CustomObject.m.\n\nStep 2: Add Bridging Header: At the time of adding your .m file, you receive a prompt with three options of YES, NO and cancel. You need to select YES\n\nStep 3: Add Objective-C Header --.h: After that Add one more .h file and name it CustomObject.h.\n\nStep 4: Build your Objective-C Class\n\nIn CustomObject.h\n\n#import \u003cFoundation/Foundation.h\u003e\n@interface CustomObject : NSObject\n@property (strong, nonatomic) id someProperty;\n- (void) someMethod;\n@end\nIn CustomObject.m\n#import \"CustomObject.h\"\n@implementation CustomObject \n- (void) someMethod {\n    NSLog(@\"SomeMethod Ran\");\n}\n@end\nStep 5: The next step is to add Class to Bridging-Header\n\nIn YourProject-Bridging-Header.h\n\n#import \"CustomObject.h\"\nStep 6: At last, use your Object\n\nIn SomeSwiftFile.swift:\n\nvar instanceOfCustomObject: CustomObject = CustomObject()\n\ninstanceOfCustomObject.someProperty = \"Hello World\"\n\nprintln(instanceOfCustomObject.someProperty)\n\ninstanceOfCustomObject.someMethod()\n\nIn the bridging header, there is no need to import explicitly."
+    ],
+    [
+      "https://medium.com/@abhimuralidharan/swift-3-0-1-access-control-9e71d641a56c",
+      "Swift",
+      "68abe6eb-b395-456f-8533-3bff19fd9190",
+      "iOSDeveloper",
+      "Medium",
+      "What are the different levels of _access controls_ in Swift and how do they relate?",
+      "The levels of access controls in Swift are: `open`, `public`, `internal`, `fileprivate`, and `private`.\n\n- `Open` - Least restrictive\n- `Public`\n- `Internal` - The default access level\n- `Fileprivate`\n- `Private` - The most restrictive"
+    ],
+    [
+      "https://medium.com/@abhimuralidharan/swift-3-0-1-access-control-9e71d641a56c",
+      "Swift",
+      "59d37696-8f40-41e2-ae66-1742ffa4a916",
+      "iOSDeveloper",
+      "Medium",
+      "What's the difference between `open` and `public`?",
+      "`public` classes and class members can only be subclassed and overridden within the defining module (target).\n\n`open` classes and class members can be subcassed and overridden both within and outside the defining module (target).\n\nFor example:\n```swift\n//module 1\npublic func A(){}\nopen func B(){}\n//module 2\noverride func A(){} // error\noverride func B(){} // success\n```\n\nNote: Marking a class as `open` explicitly indicates that you’ve considered the impact of code from other modules using that class as a superclass, and that you’ve designed your class’s code accordingly."
+    ],
+    [
+      "https://medium.com/@abhimuralidharan/swift-3-0-1-access-control-9e71d641a56c",
+      "Swift",
+      "b3209034-55b5-44bb-9f3f-d741b220f92f",
+      "iOSDeveloper",
+      "Medium",
+      "What does the `internal` access level mean?",
+      "`internal` classes and members can be accessed anywhere within the same module(target) they are defined. You typically use `internal` access when defining an app’s or a framework’s internal structure.\n\n`internal` is the default access level. Classes, methods, functions, and properties without an access level modier are automatically cast to `internal`. "
+    ],
+    [
+      "https://medium.com/@abhimuralidharan/swift-3-0-1-access-control-9e71d641a56c",
+      "Swift",
+      "86ef5559-3e60-4800-9ce3-1e08ef17703b",
+      "iOSDeveloper",
+      "Medium",
+      "What is the difference between `fileprivate` and `private`?",
+      "`fileprivate` access restricts the use of an entity to its own defining source file. Use `fileprivate` access to hide the implementation details of a specific piece of functionality when those details are used within an entire file.\n\n`private` access restricts the use of an entity to the enclosing declaration, and to extensions of that declaration that are in the same file. \n\nAn example of `fileprivate` usage:\n```swift\n// A.swift\nfileprivate func someFunction() {\n print(\"I will only be called \nfrom inside A.swift file\")\n}\n// viewcontroller.swift\noverride func viewDidLoad() {\n super.viewDidLoad()\nlet obj = A()\n A.someFunction() // error\n}\n```"
+    ],
+    [
+      "https://docs.swift.org/swift-book/LanguageGuide/Properties.html",
+      "Swift",
+      "d62b3836-baf9-4353-b7ba-4e7059871b2d",
+      "iOSDeveloper",
+      "Easy",
+      "What's the difference between a _stored property_ and a _computed property_?",
+      "_Stored properties_ store constant and variable values as part of an instance, whereas computed properties calculate (rather than store) a value."
+    ],
+    [
+      "https://docs.swift.org/swift-book/LanguageGuide/Properties.html",
+      "Swift",
+      "b8e7fea0-3a33-4de4-87b6-4666cd998afb",
+      "iOSDeveloper",
+      "Easy",
+      "How is a _type property_ difference from a  _property_?",
+      "Traditional stored and computed properties are usually associated with instances of a particular type. \n\nHowever, when properties are associated with the type itself, such properties are known as type properties."
+    ],
+    [
+      "https://docs.swift.org/swift-book/LanguageGuide/Properties.html",
+      "Swift",
+      "04d5a7da-26f3-499c-8489-12cd31b9f410",
+      "iOSDeveloper",
+      "Easy",
+      "What keywords do you use to define _stored type properties_ and _computed type properties_?",
+      "You define stored type properties and computed type properties with the `static` keyword. \n\nFor computed type properties for class types, you can use the `class` keyword instead to allow subclasses to override the superclass’s implementation. \n\nThe example below shows the syntax for stored and computed type properties:\n\n```swift\nstruct SomeStructure {\n    static var storedTypeProperty\n = \"Some value.\"\n    static var computedTypeProperty:\n Int {\n        return 1\n    }\n}\nenum SomeEnumeration {\n    static var storedTypeProperty \n= \"Some value.\"\n    static var computedTypeProperty:\n Int {\n        return 6\n    }\n}\nclass SomeClass {\n    static var storedTypeProperty\n = \"Some value.\"\n    static var computedTypeProperty:\n Int {\n        return 27\n    }\n    class var \noverrideableComputedTypeProperty: \nInt {\n        return 107\n    }\n}\n```"
+    ],
+    [
+      "https://docs.swift.org/swift-book/LanguageGuide/Properties.html",
+      "Swift",
+      "3cc0c544-b91c-437a-ae29-cb5ca13c498c",
+      "iOSDeveloper",
+      "Easy",
+      "How can you implement a setter and a getter for a computed property?",
+      "To implement a getter and setter for a computed property in Swift, use the `get` and `set` keywords as follows:\n\n```swift\n//...Class definition stuff...\nvar perimeter: Double {\n    get {\n        return 3.0 * sideLength\n    }\n    set(newPerim) {\n        sideLength = newPerim / 3.0\n    }\n}\n```\n\nIf a computed property’s setter doesn’t define a name for the new value to be set, a default name of newValue is used. See the following example:\n\n```swift\n//...Class definition stuff...\nvar perimeter: Double {\n    get {\n        return 3.0 * sideLength\n    }\n    set {\n        sideLength = newValue / 3.0\n    }\n}\n```\n\n"
+    ],
+    [
+      "https://medium.com/@chetan15aga/swift-protocols-properties-distinction-get-get-set-32a34a7f16e9",
+      "Swift",
+      "bfcd6e25-7861-4f99-8f5e-592eb386faf6",
+      "iOSDeveloper",
+      "Medium",
+      "How would you declare that a `protocol` property had to implement a getter and a setter?",
+      "Gettable and settable properties are indicated by writing { get set } after their type declaration, and gettable properties are indicated by writing { get }.\n\n```swift\nprotocol SomeProtocol {\n    var mustBeSettable:\n Int { get set }\n    var doesNotNeedToBeSettable:\n Int { get }\n}\n```\nNote, with the second property requirement, it is valid for the property to be also settable if this is useful in your code."
+    ],
+    [
+      "https://docs.swift.org/swift-book/LanguageGuide/Protocols.html",
+      "Swift",
+      "a23db037-e031-405c-9850-d952fdcae946",
+      "iOSDeveloper",
+      "Medium",
+      "Can property requirements in `protocol`s be declared as (let) constant properties?",
+      "*No.*\n\nProperty requirements are always declared as variable properties, prefixed with the `var` keyword."
+    ],
+    [
+      "https://www.appcoda.com/design-pattern-behavorial/",
+      "Notifications",
+      "b46ea265-2240-45c8-9714-9b1bdbb6eca6",
+      "iOSDeveloper",
+      "Medium",
+      "`NotificationCenter` relies heavily on what fundamental design pattern?",
+      "The Observer pattern, sometimes called the Publish-Subscribe pattern."
+    ],
+    [
+      "https://www.appcoda.com/design-pattern-behavorial/",
+      "Design Patterns",
+      "d544b9d8-7eee-4f4f-a079-e1f73e7d9e64",
+      "iOSDeveloper",
+      "Medium",
+      "What is the Observer pattern?",
+      "One instance, the _subject_, notifies (many) other instances, the _observers_, of changes to the state of the _subject_.\n\nThe instances participating in this broadcast type communication don't need to know about one another.\n\nThis is sometimes called the Dependents or Publish-Subscribe pattern as interested observers must subscribe to get notifications."
+    ],
+    [
+      "https://www.appcoda.com/design-pattern-behavorial/",
+      "Design Patterns",
+      "8ebbacc7-ea89-4beb-b138-7dae4d16dcb7",
+      "iOSDeveloper",
+      "Medium",
+      "What is the Memento pattern?",
+      "Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.\n\nThe Memento pattern is implemented with three objects: the _originator_, a _caretaker_ and a _memento_. \n\nThe originator is some object that has an internal state. \n\nThe caretaker is going to do something to the originator, but wants to be able to undo the change.\n\nThe caretaker first asks the originator for a memento object. Then it does whatever operation (or sequence of operations) it was going to do. To roll back to the state before the operations, it returns the memento object to the originator. The memento object itself is an opaque object (one which the caretaker cannot, or should not, change). When using this pattern, care should be taken if the originator may change other objects or resources - the memento pattern operates on a single object.\n\nThe Memento pattern is sometimes referred to as the Token pattern."
+    ],
+    [
+      "https://learnappmaking.com/notification-center-how-to-swift/",
+      "Notifications",
+      "59364d29-8ab8-4193-aad6-d2de9298b0aa",
+      "iOSDeveloper",
+      "Medium",
+      "Explain how the `NotificationCenter` works.",
+      "The `NotificationCenter` has three components:\n\nA “listener” that listens for notifications, called an observer\nA “sender” that sends notifications when something happens\nThe notification center itself, that keeps track of observers and notifications\n\nWhat happens:\n1. The listener tells `NotificationCenter` that it wants to observe a notification with `addObserver(_:selector:name:object:)`\n2. Something happens in the sender, like data coming in or a task that completes.\n3. The sender creates a notification and posts it to the `NotificationCenter`.\n4. The `NotificationCenter` notifies the listener, and all other listeners, that a notification it observes has been posted by calling a selector on the respective listeners.\n5. The selector is called, effectively executing a function of the listener."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "5b9d52d8-7566-4ec9-bc0c-4c95387d4ab9",
+      "iOSDeveloper",
+      "Easy",
+      "Simplify the following sorting code as much as possible:\n```swift\nvar animals = \n[\"fish\", \"cat\", \"dog\"]\nanimals.sort { \n(one: String, \ntwo: String) -\u003e Bool in\n    return one \u003c two\n}\nprint(animals)\n```",
+      "The type inference system automatically calculates both the type of the parameters in the closure and the return type, so you can get rid of them:\n```swift\nanimals.sort { \n(one, two) in return one \u003c two \n}\n```\nYou can substitute the $i notation for the parameter names:\n```swift\nanimals.sort { return $0 \u003c $1 }\n```\nIn single statement closures, you can omit the return keyword. The value of the last statement becomes the return value of the closure:\n```swift\nanimals.sort { $0 \u003c $1 }\n```\n\nFinally, since Swift knows that the elements of the array conform to Equatable, you can simply write:\n```swift\nanimals.sort(by: \u003c)\n```"
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "UIKit",
+      "d4e76fd8-85fe-4d42-af83-407fd2e03ad4",
+      "iOSDeveloper",
+      "Easy",
+      "What’s the difference between `v1` and `v2`, and will the last line compile?\n\n```swift\nimport UIKit\n\nvar v1 = UIView()\nv1.alpha = 0.5\n\nlet v2 = UIView()\nv2.alpha = 0.5 // compile error?\n```",
+      "Yes, the last line will compile. v1 is a variable, and you can reassign it to a new instance of `UIView`. With let, you can assign a value only once, so the following code would not compile:\n```swift\nv2 = v1 // Error: v2 is immutable\n```\n\nHowever, `UIView` is a class with reference semantics, so you can mutate the properties of v2 — which means that the last line will compile:\n```swift\nlet v2 = UIView()\nv2.alpha = 0.5 // Yes!\n```"
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "f91bb99e-ac83-4b4a-8d33-1d79618f6240",
+      "iOSDeveloper",
+      "Easy",
+      "Consider the following:\n```swift\nstruct Tutorial {\n  var difficulty: Int = 1\n}\n\nvar tutorial1 = Tutorial()\nvar tutorial2 = tutorial1\ntutorial2.difficulty = 2\n```\n\nWhat are the values of `tutorial1.difficulty` and `tutorial2.difficulty`? Would this be any different if Tutorial was a `class`? Why or why not?",
+      "tutorial1.difficulty is *1*, whereas tutorial2.difficulty is *2*.\n\nStructures in Swift are value types. You copy value types by value rather than reference. The following code creates a copy of tutorial1 and assigns it to tutorial2:\n```swift\nvar tutorial2 = tutorial1\n```\n\nA change to tutorial2 is not reflected in tutorial1.\nIf Tutorial were a class, both tutorial1.difficulty and tutorial2.difficulty would be *2*. Classes in Swift are reference types. When you change a property of tutorial1, you’ll see it reflected in tutorial2 and vice versa."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "4f36582f-f4e6-4231-a0a2-bffa16f26fa2",
+      "iOSDeveloper",
+      "Hard",
+      "Swift allows the creation of recursive enumerations. Here's an example of such an enumeration with a `Node` case that takes two associated value types, `T` and `List`:\n\n```swift\nenum List\u003cT\u003e {\n    case node(T, List\u003cT\u003e)\n}\n```\n\nThis returns a compilation error. What is the missing keyword?\n",
+      "It's the `indirect` keyword that allows for recursive enumeration cases like this:\n```swift\nenum List\u003cT\u003e {\n  indirect case node(T, List\u003cT\u003e)\n}\n```"
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "e7401aaa-e725-41da-9424-113a529e65be",
+      "iOSDeveloper",
+      "Hard",
+      "Define and implement a custom `^^` power operator with the following specifications:\n1. Takes two `Int`s as parameters.\n2. Returns the first parameter raised to the power of the second.\n3. Correctly evaluates the equation using the standard algebraic order of operations.\n4. Ignores the potential for overflow errors.",
+      "You create a new custom operator in two steps: Declaration and implementation.\n\n*Declaration*: The declaration uses the `operator` keyword to specify the type (unary or binary), the sequence of characters composing the operator, its associativity and precedence. Swift 3.0 changed the implementation of precedence to use a precedence group.\nHere, the operator is `^^` and the type is `infix` (binary). Associativity is `right`; in other words, equal precedence `^^` operators should evaluate the equation from right to left.\n\nThere is no predefined standard precedence for exponential operations in Swift. In the standard order of operations for algebra, exponents should calculate before multiplication/division. So you'll need to create a custom precedence that places them higher than multiplication.\n\nHere's the declaration:\n```swift\nprecedencegroup ExponentPrecedence {\n  higherThan: MultiplicationPrecedence\n  associativity: right\n}\ninfix operator ^^: ExponentPrecedence\n```\n*Implementation*: The implementation follows:\n\n```swift\nfunc ^^(base: Int, \nexponent: Int) -\u003e Int {\n  let l = Double(base)\n  let r = Double(exponent)\n  let p = pow(l, r)\n  return Int(p)\n}\n```\nNote that since the code doesn't take overflows into account, if the operation produces a result that `Int` can't represent, such as a value greater than `Int.max`, then a runtime error occurs."
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Swift",
+      "fb09d4a2-4c0b-455c-8c85-0c95b1bcad1c",
+      "iOSDeveloper",
+      "Medium",
+      "To declare a static property or function, you use the `static` modifier on value types. Here's an example for a structure:\n\n```swift\nstruct Sun {\n  static func illuminate() {}\n}\n```\n\nFor classes, it's possible to use either the `static` or the `class` modifier. They achieve the same goal, but in different ways. Can you explain how they differ?",
+      "`static` makes a property or a function static and not overridable. Using `class` lets you override the property or function.\n\nWhen applied to classes, `static` becomes an alias for class final.\n\nFor example, in this code the compiler will complain when you try to override `illuminate()`:\n```swift\nclass Star {\n  class func spin() {}\n  static func illuminate() {}\n}\nclass Sun : Star {\n  override class func spin() {\n    super.spin()\n  }\n  // error: class method \n  // overrides a 'final' class method\n  override static func illuminate() { \n    super.illuminate()\n  }\n}\n```"
+    ],
+    [
+      "https://www.raywenderlich.com/762435-swift-interview-questions-and-answers",
+      "Objective-C",
+      "d08e5d8e-65de-4715-a517-673bd80231fc",
+      "iOSDeveloper",
+      "Medium",
+      "In Objective-C, you declare a constant like this:\n\n```swift\nconst int number = 0;\n```\n\nHere is the Swift counterpart:\n\n```swift\nlet number = 0\n```\n\nWhat are the differences between them?",
+      "A `const` is a variable initialized at compile time with a value or an expression that must be resolved at compilation time.\n\nAn immutable created with `let` is a constant determined at runtime. You can initialize it with a static or a dynamic expression. This allows a declaration such as:\n```swift\nlet higherNumber = number + 5\n```\n\nNote that you can only assign its value once."
+    ],
+    [
+      "https://stackoverflow.com/questions/10373331/nsoperation-vs-grand-central-dispatch",
+      "Concurrency",
+      "829f4b8c-ac66-45b5-afa4-ba947b84b4c9",
+      "iOSDeveloper",
+      "Hard",
+      "Explain the differences and trade-offs of using Grand Central Dispatch (GCD) vs. NSOperation (Operation)?",
+      "`GCD` is a low-level C-based API.\n`NSOperation` and `NSOperationQueue` are Objective-C classes.\n`NSOperationQueue` is Objective-C wrapper over GCD. If you are using `NSOperation`, then you are implicitly using Grand Central Dispatch.\n\n*`GCD` advantage over `NSOperation`*:\n1. *Implementation*: For implementation, `GCD` is very light-weight; `NSOperationQueue` is complex and heavy-weight.\n\n*`NSOperation` advantages over `GCD`*:\n\n1. *Control on Operation*: you can pause, cancel, and resume an `NSOperation`\n\n2. *Dependencies*: you can set up a dependency between two `NSOperations`. An operation will not started until all of its dependencies return true for finished.\n\n3. *State of Operation*: you can monitor the state of an operation or operation queue. States can include ready, executing, or finished.\n\n4. *Max Number of Operation*: you can specify the maximum number of queued operations that can run simultaneously.\n\n*When to Go for `GCD` or `NSOperation`*\n- When you want more control over queue (all above mentioned) use `NSOperation` and;\n- For simple cases where you want less overhead (you just want to do some work \"into the background\" with very little additional work) use `GCD`"
+    ],
+    [
+      "https://www.raywenderlich.com/7586-multiple-managed-object-contexts-with-core-data-tutorial",
+      "CoreData",
+      "e19c09c8-d4f7-442a-8ea5-8493d614302d",
+      "iOSDeveloper",
+      "Medium",
+      "List some scenarios in which having multiple `NSManagedObjectContext`s can be useful.",
+      "1. For long-running tasks, such as exporting data, that will block the main thread of apps that use only a single main-queue managed object context and cause the UI to stutter.\n2. Situations when edits are being made to user data, and it’s helpful to treat a managed object context as a set of changes that the app can discard if it no longer needs them. Using child contexts makes this possible."
+    ],
+    [
+      "https://stackoverflow.com/questions/19183555/thread-1-exc-bad-access-code-1-address-0xf00000c",
+      "Debugging",
+      "6847b515-aeea-49c5-b7c9-a900678e1095",
+      "iOSDeveloper",
+      "Medium",
+      "What does the error message _EXC_BAD_ACCESS_ indicate and what are some examples of how an error like this could happen?",
+      "EXC_BAD_ACCESS means that a message was sent to a point in memory where there’s no instance of a class to execute it. Thus “bad access”.\n\nYou will get EXC_BAD_ACCESS in 3 cases:\n\n- An object is not initialized\n- An object is already released\n- Something else that is not very likely to happen"
+    ],
+    [
+      "SICP, p76",
+      "Design Patterns",
+      "b7262296-2adb-456e-87e4-7e5700b04cdc",
+      "iOSDeveloper",
+      "Hard",
+      "In general, what does it mean for a computational element to have _first-class_ status?",
+      "- The element may be named by variables.\n- The element may be passed as arguments to procedures.\n- The element may be returned as the results of procedures.\n- The element may be included in data structures."
+    ],
+    [
+      "https://medium.com/@duruldalkanat/50-ios-interview-questions-and-answers-part-3-3fad146b6c3d",
+      "Swift",
+      "c17f3b5a-4a90-4c93-af58-b831a1cb3a1f",
+      "iOSDeveloper",
+      "Easy",
+      "What is _optional chaining_?",
+      "Optional chaining is a process for querying and calling properties, methods, and subscripts on an optional that might currently be `nil`. If the optional contains a value, the property, method, or subscript call succeeds; if the optional is `nil`, the property, method, or subscript call returns `nil`. Multiple queries can be chained together, and the entire chain fails gracefully if any link in the chain is `nil`.\n\nTo implement optional chaining, append a `?` to the optional properties, methods, and subscripts in a chain.\n\nThe example below shows how you might utilize optional chaining for a Person class that has an optional array of cats as a property.\n```swift\nif let catCount = jon.cats?.count {\n    print(\"Jon has \\(catCount) cat(s).\")\n} else {\n    print(\"Don't know if Jon has cats.\")\n}\n```\n"
+    ],
+    [
+      "https://learn.lambdaschool.com",
+      "Concurrency",
+      "8b4429d7-2891-4fab-8d7a-32335e101bc6",
+      "iOSDeveloper",
+      "Medium",
+      "What will the following code print out after executing?\n```swift\nimport Foundation\n\nvar x = 5\n\nDispatchQueue.concurrentPerform(\niterations: 5) { _ in\n    var copy = x\n    copy += 1\n    x = copy\n}\n\nprint(x)\n```",
+      "Unfortunately, we can't say for sure what the program will print. This program is said to be _non-deterministic_.\n\nThe 5 concurrent threads that the program creates all try to access the same stored property at potentially the same time. Depending on when they access the stored property x, x may or may not have changed from its original value of 5.\n\nOne fix to this issue would be to use an `NSLock` to lock read/writes to x while executing the closure."
+    ],
+    [
+      "https://learn.lambdaschool.com",
+      "Concurrency",
+      "486bdcf9-5c8a-409c-8bde-a367b4872134",
+      "iOSDeveloper",
+      "Medium",
+      "What will the following code print out after executing?\n```swift\nimport Foundation\n\nvar x = 5\nvar xlock = NSLock()\nDispatchQueue.concurrentPerform(\niterations: 5) { _ in\n    xlock.lock()\n    var copy = x\n    copy += 1\n    x = copy\n    xlock.unlock()\n}\n\nprint(x)\n```",
+      "This code will print out 10.\n\n`xLock` prevents other threads from accessing `x` with `lock()`. When `unlock()` is called, other threads can access `x`, but only one at time, because each thread uses the `xlock`. "
+    ],
+    [
+      "https://learn.lambdaschool.com",
+      "Concurrency",
+      "f3590950-eaa5-41a5-8410-964eede5673c",
+      "iOSDeveloper",
+      "Medium",
+      "What will the following code print out after executing?\n```swift\nimport Foundation\n\nvar x = 5\nvar xlock = NSLock()\nDispatchQueue.concurrentPerform(\niterations: 5) { _ in\n    xlock.lock()\n    var copy = x\n    copy += 1\n    x = copy\n    \n}\n\nprint(x)\n```",
+      "This code won't print anything and will actually continue run until the operating system shuts the program down.\n\nThe first thread locked `x` with the `xLock` and now all the other threads are waiting for `x` to be unlocked, which will never happen."
+    ],
+    [
+      "https://stackoverflow.com/questions/6155951/whats-the-difference-between-deadlock-and-livelock",
+      "Concurrency",
+      "2b61ea8d-930e-4acd-842b-98d84de3caa6",
+      "iOSDeveloper",
+      "Medium",
+      "What is Livelock?",
+      "Livelock is similar to deadlock, except that the states of the processes involved in the livelock constantly change with regard to one another, with none progressing. Livelock is a special case of resource starvation; the general definition only states that a specific process is not progressing.\n\nA handy real-world example of livelock:\n\nTwo people meet in a narrow corridor, and each try to be polite by moving aside to let the other pass. But they end up swaying from side to side without making any progress because they both repeatedly move the same way at the same time."
+    ],
+    [
+      "https://stackoverflow.com/questions/34524/what-is-a-mutex",
+      "Concurrency",
+      "9242bc55-2fc4-4769-99c0-8c702dfddd85",
+      "iOSDeveloper",
+      "Medium",
+      "What is a mutex? What is an example of a Cocoa mutex?",
+      "A mutex is a mutually exclusive flag. It acts as a gate keeper to a section of code allowing one thread in and blocking access to all others. This ensures that the code being controled will only be hit by a single thread at a time. Just be sure to release the mutex when you are done.\n\nAn `NSLock` object implements a basic mutex for Cocoa applications."
+    ],
+    [
+      "https://medium.com/@chetan15aga/ios-concurrency-underlying-truth-1021a0bb2a98",
+      "Concurrency",
+      "dfafae4b-217e-4ed0-ab40-418a4c561210",
+      "iOSDeveloper",
+      "Medium",
+      "What is priority inversion?",
+      "When high-priority work becomes dependent on lower priority work, or it becomes the result of lower priority work, a priority inversion occurs. As a result, blocking, spinning, and polling may occur."
+    ],
+    [
+      "https://www.swiftbysundell.com/posts/avoiding-singletons-in-swift",
+      "Design Patterns",
+      "48f0b633-0808-4ebe-bb5d-14a0002376b8",
+      "iOSDeveloper",
+      "Hard",
+      "The singleton pattern is a popular but somewhat discouraged design pattern. What are some arguments against singletons?",
+      "1. They are globally mutable shared state. If state changes unexpectedly, bugs can start appearing.\n2. The relationship between singletons and their dependent code is not usually well-defined. This can lead to \"spaghetti code\".\n3. Managing their lifecycle can be tricky. Singletons are usually alive during the lifespan of the app, and thus makes testing very difficult."
+    ],
+    [
+      "https://www.swiftbysundell.com/posts/avoiding-singletons-in-swift",
+      "Design Patterns",
+      "a2533eb3-64e0-4bb1-929d-a76541fba5c9",
+      "iOSDeveloper",
+      "Hard",
+      "What are some design pattern strategies for avoiding singletons?",
+      "1. Using *dependency injection*.\n2. Implementing *services*, which are classes that clearly define an API for doing a single thing for an object.\n3. Using *protocols*."
+    ],
+    [
+      "https://davedelong.com/blog/2018/05/09/the-laws-of-core-data/",
+      "CoreData",
+      "6c342641-72da-4217-8bb0-77dca00cb5cc",
+      "iOSDeveloper",
+      "Medium",
+      "Is it okay to use an `NSManagedObject` outside its context's queue?",
+      "*No*. The use of an `NSManagedObject` outside of its context's queue is the source of many `CoreData` bugs.\n\nEach NSMO \"belongs\" to a particular MOC, and every MOC has a `DispatchQueue` it uses to sychronize its internal logic about loading data from its `persistentStoreCoordinator`.\n\nIf you use an NSMO outside of the MOC's queue, then the calls cannot be properly synchronized and protected, which means you're susceptible to a race condition.\n\nThe *only* safe place to use an NSMO is inslide a call to `perform` or `performAndWait` on its MOC."
+    ],
+    [
+      "https://www.hackingwithswift.com/review#start",
+      "Swift",
+      "3f5fc25a-d060-4845-8eca-3746927a16ce",
+      "iOSDeveloper",
+      "Easy",
+      "The code below will create a set with two items – true or false?\n\n```swift\nvar results = \nSet([true, false, true, true])\n```",
+      "*True*.\n\n```swift\nvar results = \nSet([true, false, true, true])\n\nprint(results) \n// prints the set [false, true]\n```"
+    ],
+    [
+      "https://www.hackingwithswift.com/review#start",
+      "Swift",
+      "c7f4165a-d140-4af4-9f9b-cdb25af7e2b1",
+      "iOSDeveloper",
+      "Easy",
+      "The code below will create a set with two items – true or false?\n\n```swift\nlet results\n= Set(1, 1, 2, 2)\n```\n",
+      "*False*. This code won't compile because this call doesn't match any available initializers for `Set`. The developer writing this code probably meant to make an ArrayLiteral like this `[1,1,2,2]`.\n\n```swift\n// fixed code\nvar results = \nSet([1, 1, 2, 2])\n\nprint(results) \n// prints the set [1, 2]\n```"
+    ],
+    [
+      "https://www.hackingwithswift.com/review#start",
+      "Swift",
+      "845b3c52-7091-476c-9fa2-3b92e9111d1b",
+      "iOSDeveloper",
+      "Easy",
+      "This is a valid protocol – true or false?\n\n```swift\nprotocol Swimmable {\n        var depth { get }\n}\n```",
+      "*False*. This protocol does not have a type declaration for the variable depth.\n\n```swift\n// fixed code\nprotocol Swimmable {\n        var depth: Double { get }\n}\n```"
+    ],
+    [
+      "https://www.hackingwithswift.com/review#start",
+      "Swift",
+      "27b2f71b-900d-47d9-b0cd-22bb661a3250",
+      "iOSDeveloper",
+      "Easy",
+      "This is a valid protocol – true or false?\n\n```swift\nprotocol Mailable {\n        var width: \nDouble { get, set }\n        var height: \nDouble { get, set }\n}\n```",
+      "*False*. The `{ get set }` should *not* have a comma inside.\n\n```swift\n// fixed code\nprotocol Mailable {\n        var width: \nDouble { get set }\n        var height: \nDouble { get set }\n}\n```"
+    ],
+    [
+      "https://www.hackingwithswift.com/review#start",
+      "Swift",
+      "4a89ff77-d6e9-4c1f-9fee-b8684ca55a92",
+      "iOSDeveloper",
+      "Easy",
+      "This is a valid protocol – true or false?\n\n```swift\nprotocol Buildable {\n        var numberOfBricks: \nInt { set }\n        var materials: \n[String] { set }\n}\n```",
+      "*False*. It's not possible to create set-only properties in Swift.\n\n```swift\n// fixed code\nprotocol Buildable {\n        var numberOfBricks: \nInt { get set }\n        var materials: \n[String] { get set }\n}\n```"
+    ],
+    [
+      "https://www.hackingwithswift.com/review#start",
+      "Swift",
+      "74da4c98-b927-40b4-be19-61acad00598d",
+      "iOSDeveloper",
+      "Easy",
+      "This code will print a message when an instance of the type is destroyed – true or false?\n\n```swift\nstruct Fairytale {\n        deinit {\n                print(\"And they lived \nhappily ever after.\")\n        }\n}\n```",
+      "*False*. Structs are value types and may not have deinitializers.\n\n```swift\n// fixed code\nclass Fairytale {\n        deinit {\n                print(\"And they lived \nhappily ever after.\")\n        }\n}\n\n```"
+    ],
+    [
+      "https://www.hackingwithswift.com/review#start",
+      "Swift",
+      "2c3e7224-2a56-493e-a170-c334cee8fbdd",
+      "iOSDeveloper",
+      "Medium",
+      "Will this code compile?\n\n```swift\n\nfinal class Landmark { }\nfinal class Monument: \nLandmark { }\n```",
+      "*No*. \n\nAnd error will be thrown when trying to make the Monument subclass: \"Inheritance from a final class 'Landmark'\"\n\nWhen you declare a class as being `final`, no other class can inherit from it."
+    ],
+    [
+      "https://www.swiftbysundell.com/posts/avoiding-race-conditions-in-swift",
+      "Concurrency",
+      "12f941bf-3c01-49ee-af92-05eff358b9e6",
+      "iOSDeveloper",
+      "Easy",
+      "Explain what a *race condition* is and how one can occur.",
+      "A *race condition* happens when the expected completion order of a sequence of operations becomes unpredictable, causing our program logic to end up in an undefined state.\n\nFor example, we might update the UI before its content was fully loaded, or accidentally show a screen only meant for logged in users before the user has been completely logged in."
+    ],
+    [
+      "https://intellipaat.com/blog/interview-question/ios-interview-questions/",
+      "UIKit",
+      "3475b573-2322-4a74-b4c4-66aa2da4821c",
+      "iOSDeveloper",
+      "Medium",
+      "What is the purpose of `reuseIdentifier`? What is the benefit of setting it to a non-nil value?",
+      "- The reuseIdentifier is used to group together similar rows in a `UITableView`; i.e., rows that differ only in their content, but otherwise have similar layouts.\n- A `UITableView` will normally allocate just enough `UITableViewCell` objects to display the content visible in the table.\n- If reuseIdentifier is set to a non-nil value then `UITableView` will first attempt to reuse an already allocated `UITableViewCell` with the same reuseIdentifier when the table view is scrolled.\n- If reuseIdentifier has not been set, the `UITableView` will be forced to allocate new `UITableViewCell` objects for each new item that scrolls into view, potentially leading to laggy animations."
+    ],
+    [
+      "https://www.toptal.com/ios/interview-questions",
+      "UIKit",
+      "e5c1549b-fa9a-41a0-a3b8-b421210093dc",
+      "iOSDeveloper",
+      "Medium",
+      "What are different ways that you can specify the layout of elements in a `UIView`?",
+      "- Using InterfaceBuilder, you can add a XIB file to your project, layout elements within it, and then load the XIB in your application code (either automatically, based on naming conventions, or manually). Also, using InterfaceBuilder you can create a storyboard for your application.\n- You can your own code to use `NSLayoutConstraints` to have elements in a view arranged by Auto Layout.\n- You can create `CGRect`s describing the exact coordinates for each element and pass them to `UIView`’s `- (id)initWithFrame:(CGRect)frame` method."
+    ],
+    [
+      "https://oleb.net/blog/2014/06/core-data-concurrency-debugging/",
+      "Debugging",
+      "d65151b1-70a5-4699-86fd-6cbeb9751c1f",
+      "iOSDeveloper",
+      "Medium",
+      "What does passing `-com.apple.CoreData.ConcurrencyDebug 1` to your app on the command line via Xcode’s Scheme Editor enable?",
+      "Core Data gains the ability to detect and report violations of its concurrency model.\n\nIt works by throwing an exception whenever your app accesses a managed object context or managed object from the wrong dispatch queue.\n\nWhen you launch your app, you should see a message in the console that tells you that the assertions are now enabled:\n\n```\nCoreData: annotation: Core Data multi-threading assertions enabled.\n```"
+    ],
+    [
+      "http://lldb.llvm.org",
+      "Debugging",
+      "a00c71b1-2b2a-49c9-9885-faf29783f5be",
+      "iOSDeveloper",
+      "Medium",
+      "Explain `LLDB`",
+      "LLDB is a next generation, high-performance debugger. It is built as a set of reusable components which highly leverage existing libraries in the larger LLVM Project, such as the Clang expression parser and LLVM disassemble.\n\nLLDB is the default debugger in Xcode on macOS and supports debugging C, Objective-C and C++ on the desktop and iOS devices and simulator."
+    ],
+    [
+      "https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/debugging_tools.html",
+      "Debugging",
+      "4c8709e2-5f7d-4417-8b17-590044b8ac55",
+      "iOSDeveloper",
+      "Easy",
+      "Explain the purpose of the *Main Thread Checker*",
+      "The Main Thread Checker detects invalid usage of UIKit and AppKit APIs from a background thread.\n\nUpdating UI on a thread other than the main thread is a common mistake that can result in missed UI updates, visual defects, data corruptions, and crashes."
+    ],
+    [
+      "https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/debugging_tools.html",
+      "Debugging",
+      "d738a539-0626-42dc-85a1-3a9cf17a02c4",
+      "iOSDeveloper",
+      "Hard",
+      "Explain what enabling the *Thread Sanitizer* does for your app",
+      "The Thread Sanitizer detects data races at run time.\n\nData races occur when multiple threads access the same memory without synchronization and at least one access is a write."
+    ],
+    [
+      "https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/debugging_tools.html",
+      "Debugging",
+      "2d3e1d98-5ddb-4984-883f-596ce54cb838",
+      "iOSDeveloper",
+      "Medium",
+      "What is an Xcode *scheme* and why is it relevant to debugging?",
+      "Xcode schemes control various aspects of the app build process. \n\nThe scheme defaults created when you create a project or target are sufficient for most debugging purposes. However, useful debugging options are configurable in the scheme editor as part of the Run action configuration.\n\nOpen the scheme editor by choosing Product-\u003eScheme-\u003eEdit from main Xcode toolbar."
+    ],
+    [
+      "https://stackoverflow.com/questions/24011575/what-is-the-difference-between-a-weak-reference-and-an-unowned-reference",
+      "Memory Management",
+      "da28bd2a-5464-41c0-916f-242c1893d918",
+      "iOSDeveloper",
+      "Hard",
+      "Explain the difference between a `weak` reference and an `unowned` reference.",
+      "A `weak` reference is a reference that does not keep a strong hold on the instance it refers to, and so does not stop ARC from disposing of the referenced instance. Because weak references are allowed to have “no value”, you must declare every weak reference as having an optional type.\n\nLike `weak` references, an `unowned` reference does not keep a strong hold on the instance it refers to. Unlike a weak reference, however, an unowned reference is assumed to always have a value. Because of this, an unowned reference is always defined as a non-optional type.\n\nUse a `weak` reference whenever it is valid for that reference to become `nil` at some point during its lifetime. Conversely, use an `unowned` reference when you know that the reference will never be nil once it has been set during initialization."
+    ],
+    [
+      "https://stackoverflow.com/questions/24011575/what-is-the-difference-between-a-weak-reference-and-an-unowned-reference",
+      "Memory Management",
+      "4cffe313-0732-4dd1-8d13-3a53577e06d5",
+      "iOSDeveloper",
+      "Hard",
+      "Assume that every `CreditCard` must have a `Customer`. What is wrong with the following code?\n```swift\nclass Customer {\n    var card: CreditCard?\n}\n\nclass CreditCard {\n    \n    init(_ customer: Customer) {\n        self.customer = customer\n    }\n    weak let customer: Customer\n}\n```",
+      "*First*, this code won't compile because `weak` variables need to be optional (e.g., `Customer?`) and must be declared as mutable variables (i.e., `var`) as their value can change at runtime.\n\n*Second*, customer should never be `nil`, and thus the `unowned` keyword is more appropriate.\n\nHere is the updated code:\n```swift\nclass Customer {\n    var card: CreditCard?\n}\n\nclass CreditCard {\n    init(_ customer: Customer) {\n        self.customer = customer\n    }\n    unowned let customer: Customer\n}\n```"
+    ],
+    [
+      "https://medium.com/@agrawalsuneet/mutating-in-swift-7327d8a1cddd",
+      "Swift",
+      "d31dd156-b280-4747-acc7-358e0dd478ab",
+      "iOSDeveloper",
+      "Easy",
+      "What is wrong with the code below?\n\n```swift\nstruct Employee {\n    var name : String\n    var teamName : String\n    init(name: String, \nteamName: String) {\n        self.name = name\n        self.teamName = teamName\n    }\n    func changeTeam(\nnewTeamName : String){\n        self.teamName = newTeamName\n    }\n    \n}\n```",
+      "`Struct`s are value types and are immutable. Therefore, the following code will not compile:\n\n```swift\nself.teamName = newTeamName // error\n```\n\nIn this case, `self` is immutable.\n\nTo fix this we can use the `mutating` keyword in front of the `changeTeam(:)` function declaration.\n```swift\nmutating func changeTeam(\nnewTeamName : String){\n        self.teamName = newTeamName\n    }\n```"
+    ],
+    [
+      "https://www.swiftbysundell.com/posts/mocking-in-swift",
+      "Testing",
+      "7170c1ac-a64b-4e8d-b2cf-6391e5b379f5",
+      "iOSDeveloper",
+      "Medium",
+      "Explain the concept of _Mocking_ and why it is useful.",
+      "_Mocking_ is a technique for writing unit tests in pretty much any language. \n\nWhen mocking an object, we are essentially creating a \"fake\" version of it - with the same API as the real one - in order to more easily be able to assert and verify outcomes in our test cases.\n\nWhether we're testing networking code, code relying on hardware sensors like the accelerometer, or code using system APIs like location services - mocking can enable us to write tests a lot easier, and run them faster in a more predictable way."
+    ],
+    [
+      "https://docs.swift.org/swift-book/LanguageGuide/Closures.html",
+      "Swift",
+      "0ddb1efa-c278-45a3-9ee4-7fda7619eafa",
+      "iOSDeveloper",
+      "Hard",
+      "What will the following code print?\n```swift\nvar a = 0\nvar b = 0\nlet closure = { [a] in\n    print(\"\\(a) \\(b)\")\n}\na = 10\nb = 10\nclosure()\n```",
+      "`0 10`.\n\nThe `[a]` on the first line of the closure is known as the _capture list_ and indicates that the variable `a` was in the closure's capture list.\n\nThe entries in the caputre list are initialized when the closure is created, and for each entry in the capture list, a constant is initialized to the value of the constant or variable that has the same name in the surrounding scope. Thus, subsequent changes to `a` do not impact the value of the capture variable inside the closure.\n\nIf instead the capture list was `[a, b]`, the closure would print `0 0`."
+    ],
+    [
+      "https://docs.swift.org/swift-book/LanguageGuide/Closures.html",
+      "Swift",
+      "012a8af8-0419-416a-97b4-bbcbcb2d9da3",
+      "iOSDeveloper",
+      "Hard",
+      "What will the following code print?\n```swift\nclass SomeClass {\n    var value: Int = 0\n}\nvar x = SomeClass()\nvar y = SomeClass()\nlet closure = { [x] in \n    print(x.value, y.value)\n}\n\nx.value = 10\ny.value = 10\nclosure()\n```",
+      "`10 10`.\n\nUnlike with variables that are passed by value, in which subsequent changes to variables listed in closure _capture lists_ do not change the variables in the closure, reference semantics dictate that any change to a reference variable will actually change the value in the closure.\n\nIf `SomeClass` was instead implemented as a struct, the value inside would remain the same, because structs are passed by value."
+    ],
+    [
+      "https://www.hackingwithswift.com/articles/179/capture-lists-in-swift-whats-the-difference-between-weak-strong-and-unowned-references",
+      "Swift",
+      "8727f2e3-a725-4b46-b228-6b095822bb35",
+      "iOSDeveloper",
+      "Hard",
+      "What is a closure capture list and why, when, and how would it be utilized?",
+      "Closure capture lists are mainly used to avoid strong reference cycles – a.k.a. retain cycles.\n\nThey take the form `[\u003creference_type1?\u003e \u003cvar1\u003e, \u003creference_type2?\u003e \u003cvar2\u003e, ...]` and are placed in front of the variable list and the `in` in the first line of a closure.\n```swift\n/* \nlet closure = { \n[\u003creference_type1?\u003e \u003cvariable1\u003e,\n \u003creference_type2?\u003e \u003cvariable2\u003e, \n...] in\n\n        do something with the variables here\n}\n*/\n```\n\nIt is often the case that one would capture variables in the closure `weak`ly or `unknown`, such as `[weak self]`. This prevents the closure from creating a strong reference to `self` and thereby causing retain cycles."
+    ],
+    [
+      "https://medium.com/@xcadaverx/default-protocol-extension-caveats-88c6ece27fdb",
+      "Swift",
+      "1f813b96-50e0-4fe8-80ec-1c31362ae383",
+      "iOSDeveloper",
+      "Hard",
+      "Say that you've built your own protocol that you want some class to conform to. What tool could be used to provide a default implementation of some of that protocol's required methods?",
+      "This would be a great use case for a protocol extension.\n\n```swift\n// the protocol\nprotocol Foo {\n  func bar()\n}\n// the extension which \n// provides a default \n// implementation of the \n// bar() func\nextension Foo {\n  func bar() {\n    print(\"Foo.bar()\")\n  }\n}\n\nclass SomeFoo: Foo {}\nlet someFoo = SomeFoo()\nsomeFoo.bar() // Foo.bar()\n\n```"
+    ],
+    [
+      "https://www.swiftbysundell.com/basics/unit-testing/",
+      "Testing",
+      "638d0472-2961-42a7-a007-b237b3754622",
+      "iOSDeveloper",
+      "Easy",
+      "Explain the concept of a _Unit Test_ and why it's important?",
+      "A _unit test_ is a function that invokes some of our code, and then asserts that the right thing happens. These functions are implemented within special classes called test cases, which — in the case of Xcode’s default testing framework, `XCTest` — are subclasses of `XCTestCase`.\n\nUsing unit tests, and other forms of automated testing, can be a great way to protect a code base against regressions and reduce the need for manual testing. Unit tests can also be a nice tool to use when trying to reproduce tricky bugs, and to find the source of memory leaks."
+    ],
+    [
+      "https://www.swiftbysundell.com/basics/unit-testing/",
+      "Testing",
+      "edffd6fc-c3c3-4ee8-90e4-9975021f4abb",
+      "iOSDeveloper",
+      "Medium",
+      "What does the \"Given, When, Then\" framework for testing refer to?",
+      "\"Given, When, Then\" is a framework for writing unit tests. \n\nUnits tests written in this framework follow the following prompt: ”Given these conditions, when these actions are performed, then this is the expected outcome”.\n\nBelow is an example of how this framework can be utilized when writing unit tests.\n\n```swift\nfunc testApplyingCoupon() {\n    // Given\n    var product = Product(\nname: \"Book\", \nprice: 25)\n    let coupon = Coupon(\nname: \"Holiday Sale\", \ndiscount: 20)\n\n    // When\n    product.apply(coupon)\n\n    // Then\n    XCTAssertEqual(\nproduct.price, 20)       \n}\n```"
+    ],
+    [
+      "https://www.raywenderlich.com/158-coordinator-tutorial-for-ios-getting-started",
+      "Design Patterns",
+      "4b609c5d-a868-44d1-b65c-d7ac017aee7e",
+      "iOSDeveloper",
+      "Medium",
+      "What is the Coordinator Pattern?",
+      "The idea of the Coordinator pattern is to create a separate entity — a Coordinator — which is responsible for the application’s flow. The Coordinator encapsulates a part of the application. The Coordinator knows nothing of its parent Coordinator, but it can start its child Coordinators.\n\nCoordinators create, present and dismiss UIViewControllers while keeping the UIViewControllers separate and independent. Similar to how UIViewControllers manage UIViews, Coordinators manage UIViewControllers."
+    ],
+    [
+      "https://codeburst.io/declarative-vs-imperative-programming-a8a7c93d9ad2",
+      "Design Patterns",
+      "3fa59893-e7ef-4fe0-a283-5a028dc5c5f8",
+      "iOSDeveloper",
+      "Medium",
+      "Explain the difference between Declarative programming and Imperative programming",
+      "Declarative programming is a programming paradigm … that expresses the logic of a computation without describing its control flow.\n\nImperative programming is a programming paradigm that uses statements that change a program’s state."
+    ],
+    [
+      "https://stackoverflow.com/questions/5166248/ui-testing-vs-unit-testing",
+      "Testing",
+      "56187ff6-8374-409e-8ae5-d17772162f8d",
+      "iOSDeveloper",
+      "Medium",
+      "Explain the difference between Unit Testing and UITesting",
+      "Unit testing aims to test small portions of your code (individual classes / methods) in isolation from the rest of the world.\n\nUI testing may be a different name for system / functional / acceptance testing, where you test the whole system together to ensure it does what it is supposed to do under real life circumstances. (Unless by UI testing you mean usability / look & feel etc. testing, which is typically constrained to details on the UI.)"
+    ],
+    [
+      "https://martinfowler.com/articles/practical-test-pyramid.html",
+      "Testing",
+      "c3eb1d4e-6938-496f-b266-b7f6f926c6ab",
+      "iOSDeveloper",
+      "Hard",
+      "Briefly explain the concept of the _Test Pyramid_ and why it's important",
+      "Tests can be bucketed into three types (starting from the top of the pyramid):\n\n1. User Interface Tests \n2. Service Tests\n3. Unit Tests\n\nThe \"Test Pyramid\" should consist of many Unit Tests, some Service Tests, and few, fully-integrated UI Tests.\n1. Few, slow, integrated, $$$\n2.  ...\n3. Many, fast, not-integrated, $\n\nIf you find that your pyramid is not a \"normally shaped\" pyramid, then you might be writting too many, or too few of one of the types of tests. An unbalanced pyramid could slow development and release cycles and could increase the potential for technical debt later on in the project."
+    ],
+    [
+      "",
+      "Design Patterns",
+      "afb5a32d-2319-4e6b-88f3-6ba148388ce0",
+      "iOSDeveloper",
+      "Medium",
+      "What are the options for dependency management available to iOS Developers?",
+      "1. Swift Package Manager\n2. Carthage\n3. Cocoapods\n4. Manual dependency management (i.e., copy-and-paste)"
+    ],
+    [
+      "https://martinfowler.com/articles/practical-test-pyramid.html#WhatsAUnit",
+      "Testing",
+      "450376ed-f908-4ced-91fc-224f3e92448c",
+      "iOSDeveloper",
+      "Medium",
+      "What is the scope of a _Unit_ in a Unit Test?",
+      "If you're working in a functional language a unit will most likely be a single function. Your unit tests will call a function with different parameters and ensure that it returns the expected values. \n\nIn an object-oriented language a unit can range from a single method to an entire class."
+    ],
+    [
+      "https://blog.bobthedeveloper.io/generic-protocols-with-associated-type-7e2b6e079ee2",
+      "Swift",
+      "0c32ae4e-4e9a-4f1e-80b0-70db7e498719",
+      "iOSDeveloper",
+      "Medium",
+      "Swift is said to be a _type-safe_. In simplest terms, what does this mean?",
+      "Types must be defined before they are compiled."
+    ],
+    [
+      "https://stackoverflow.com/questions/31038759/conditional-binding-if-let-error-initializer-for-conditional-binding-must-hav",
+      "Swift",
+      "89ba1675-31dc-4c2b-89e2-2c32ca0e21a3",
+      "iOSDeveloper",
+      "Easy",
+      "Say that you have the following code:\n```swift\nif let tableView = tableView {\n// more code\n}\n```\nAnd you are presented with an error saying:\n```\nInitializer for conditional binding \nmust have an Optional type, \nnot UITableView.\n```\nExplain what is going wrong.",
+      "`If/let` optional binding only works when the result of the right side of the expression is an optional. If the result of the right side is not an optional, optional binding will fail. The point of this optional binding is to check for `nil` and only use the variable if it's non-`nil`.\n\nIn this case, the tableView parameter is declared as the non-optional type `UITableView`. It is _guaranteed_ to never be `nil`. So optional binding here is unnecessary."
+    ],
+    [
+      "https://www.hackingwithswift.com/example-code/calayer/how-to-round-only-specific-corners-using-maskedcorners",
+      "UIKit",
+      "bdea90df-8e9f-4244-84d5-6469a3951793",
+      "iOSDeveloper",
+      "Easy",
+      "How do you round only specific corners of a view?",
+      "Given a `UIView` named `blueView`, rounding the top-left and bottom-right corners is accomplished by setting the `maskedCorners` property of the view's layer.\n\n```swift\nblueView.backgroundColor = .blue\nblueView.layer.cornerRadius = 25\nblueView.layer.maskedCorners = \n[.layerMinXMinYCorner, .layerMaxXMaxYCorner]\n```"
+    ],
+    [
+      "https://www.hackingwithswift.com/example-code/uikit/what-is-an-indexpath",
+      "UIKit",
+      "d24b0ae4-55e6-4dd1-85b5-2ec2f90ee750",
+      "iOSDeveloper",
+      "Easy",
+      "Describe what an IndexPath is.",
+      "An IndexPath is a list of indexes that together represent the path to a specific location in a tree of nested arrays.\n\nIndexPath are dealt with alot in iOS development, especially when working with `UITableView`s and `UICollectionView`s as many of their delegate callback methods vend `IndexPath` structs that are useful in understanding what cells (i.e., what section and row/item) were selected, scheduled to be displayed on screen, needing to be reloading, etc."
+    ]
+  ]
+}

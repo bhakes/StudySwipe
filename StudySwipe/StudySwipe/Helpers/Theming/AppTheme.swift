@@ -21,12 +21,12 @@ struct AppTheme {
 extension AppTheme {
     static let light = AppTheme(
         statusBarStyle: .`default`,
-        barBackgroundColor: .groupTableViewBackground,
+        barBackgroundColor: .lightText,
         barForegroundColor: .accentColor,
-        cellBackgroundColor: .groupTableViewBackground,
+        cellBackgroundColor: .lightText,
         backgroundColor: .white,
         textColor: .black,
-        trackTintColor: .groupTableViewBackground
+        trackTintColor: .lightGray.lightened(by: 0.4)
     )
     
     static let dark = AppTheme(

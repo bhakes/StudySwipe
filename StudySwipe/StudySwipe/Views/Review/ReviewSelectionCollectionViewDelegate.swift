@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ReviewSelectionCollectionViewDelegate: class {
+protocol ReviewSelectionCollectionViewDelegate: AnyObject {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath, difficulty: Difficulty?, category: Category?)
 }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol StopwatchDelegate: class {
+protocol StopwatchDelegate: AnyObject {
     func stopwatch(_ stopwatch: Stopwatch, didChangeTimeTo: TimeInterval)
 }
 

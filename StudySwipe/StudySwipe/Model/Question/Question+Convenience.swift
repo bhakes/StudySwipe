@@ -34,13 +34,19 @@ extension Question {
     
     convenience init(questionRepresentation: QuestionRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        let answer = questionRepresentation.answer.answer
-        let category = questionRepresentation.category.category
-        let difficulty = questionRepresentation.difficulty.difficulty
-        let question = questionRepresentation.question.question
-        let questionID = questionRepresentation.questionID.questionID
-        let track = questionRepresentation.track.track
+        let answer = questionRepresentation.answer
+        let category = questionRepresentation.category
+        let difficulty = questionRepresentation.difficulty
+        let question = questionRepresentation.question
+        let questionID = questionRepresentation.questionID
+        let track = questionRepresentation.track
         
-        self.init(answer: answer, category: category, difficulty: difficulty, question: question, questionID: questionID, track: track, context: context)
+        self.init(answer: answer,
+                  category: Category(rawValue: category) ?? Category(rawValue: "Other")!,
+                  difficulty: Difficulty(rawValue: difficulty) ?? Difficulty(rawValue: "Medium")!,
+                  question: question,
+                  questionID: UUID(uuidString: questionID),
+                  track: Track(rawValue: track) ?? Track(rawValue: "iOSDeveloper")!,
+                  context: context)
     }
 }

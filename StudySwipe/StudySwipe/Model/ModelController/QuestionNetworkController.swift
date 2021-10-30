@@ -21,6 +21,8 @@ class QuestionNetworkController {
     private func apiRequest<T: Codable>(from urlRequest: URLRequest,
                                         using session: URLSession = URLSession.shared,
                                         completion: @escaping (T?, Error?) -> Void) {
+        
+        
         session.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 completion(nil, error)
@@ -43,6 +45,21 @@ class QuestionNetworkController {
             }.resume()
     }
     
+    func loadJson<T: Decodable>(filename fileName: String,
+                                completion: @escaping (T?, Error?) -> Void) {
+        if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                let decodedObject = try decoder.decode(T.self, from: data)
+                completion(decodedObject, nil)
+            } catch {
+                print("error:\(error)")
+                completion(nil, error)
+            }
+        }
+    }
+    
     
     
     // MARK: - Product Networking
@@ -52,10 +69,7 @@ class QuestionNetworkController {
      */
     func getQuestions(completion: @escaping (QuestionTopLevel?, Error?) -> Void) {
         
-        let request = createRequest(for: .GETQuestions)
-        
-        apiRequest(from: request) { (results: QuestionTopLevel?, error: Error?) in
-            
+        loadJson(filename: "questions") { (results: QuestionTopLevel?, error: Error?) in
             if let error = error {
                 print("Error: \(error)")
                 completion(nil, error)
@@ -65,7 +79,24 @@ class QuestionNetworkController {
                 return completion(nil, nil)
             }
             
-            self.coreDataImporter.syncQuestions(questionRepresentations: results.feed.entry)
+            
+            
+            let questionRepresentations: [QuestionRepresentation] = {
+                return results.values.compactMap { questionArray in
+                    guard questionArray.count == 7 else {
+                        return nil
+                    }
+                    return QuestionRepresentation(answer: questionArray[6],
+                                                  category: questionArray[1],
+                                                  difficulty: questionArray[3],
+                                                  question: questionArray[5],
+                                                  questionID: questionArray[2],
+                                                  track: questionArray[3])
+                }
+            }()
+            
+            
+            self.coreDataImporter.syncQuestions(questionRepresentations: questionRepresentations)
             
             completion(results, nil)
             return
@@ -75,35 +106,6 @@ class QuestionNetworkController {
     
     // MARK: - Properties
     
-    let baseURL =  { () -> URL in
-        let urlString =  "https://spreadsheets.google.com/feeds/list/\(APIKeys.questionsGoogleSheetsKey)/od6/public/values?alt=json"
-        let url = URL(string: urlString)!
-        return url
-    }()
-    
     var coreDataImporter = CoreDataImporter()
     
-}
-
-extension QuestionNetworkController {
-    
-    // URLRequest Creation
-    func createRequest(for apiCallType: APICallType) -> URLRequest {
-        
-        switch apiCallType {
-            
-        // GET questions
-        case .GETQuestions:
-            
-            let url = baseURL
-        
-            // Create a GET request
-            var request = URLRequest(url: url)
-            request.httpMethod = HTTPMethod.GET.rawValue
-            
-            return request
-
-        }
-        
-    }
 }

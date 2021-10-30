@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SettingsTableViewDelegate: class {
+protocol SettingsTableViewDelegate: AnyObject {
     func darkModeDidChange()
 }
 
@@ -80,6 +80,7 @@ class SettingsTableViewController: UITableViewController {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: darkCellID, for: indexPath) as? DarkModeTableViewCell else { fatalError("Could not dequeue cell as DarkModeCellDelegate")}
             cell.delegate = self
+            cell.isUserInteractionEnabled = true
             cell.selectionStyle = .none
             return cell
             
@@ -94,7 +95,11 @@ class SettingsTableViewController: UITableViewController {
         // Configure the cell...
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: darkCellID, for: indexPath) as? DarkModeTableViewCell {
+            cell.darkModeSwitchChanged()
+        }
+    }
     
     // MARK: - Navigation
 

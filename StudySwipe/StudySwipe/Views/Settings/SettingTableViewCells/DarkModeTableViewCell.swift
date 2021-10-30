@@ -37,29 +37,29 @@ class DarkModeTableViewCell: UITableViewCell {
     }
     
     private func setupViews() {
+        self.stackView.subviews.forEach { $0.removeFromSuperview() }
         
-        label.text = "Dark Mode"
+        label.text = "Tap to Change Dark/Light Mode"
         
         darkModeSwitch.isOn = AppThemeProvider.shared.currentTheme == AppTheme.dark ? true : false
-        darkModeSwitch.addTarget(self, action: #selector(darkModeSwitchChanged(sender:)), for: .valueChanged)
         
-        let dMStackView = UIStackView(arrangedSubviews: [label, darkModeSwitch])
-        dMStackView.axis = .horizontal
-        dMStackView.spacing = 8
-        dMStackView.constrainToSuperView(self, top: 2, bottom: 2, leading: 20, trailing: 20)
+        self.stackView = UIStackView(arrangedSubviews: [label])
+        self.stackView.axis = .horizontal
+        self.stackView.spacing = 8
+        self.stackView.constrainToSuperView(self, top: 10, bottom: 10, leading: 20, trailing: 20)
        
     }
     
-    @objc func darkModeSwitchChanged(sender: DMCSwitch) {
+    func darkModeSwitchChanged() {
 
         AppThemeProvider.shared.nextTheme()
-        
     }
     
     let darkCellID = "darkCellID"
     var delegate: DarkModeCellDelegate?
     let darkModeSwitch = DMCSwitch()
     let label = DMCLabel()
+    var stackView = UIStackView()
 }
 
 

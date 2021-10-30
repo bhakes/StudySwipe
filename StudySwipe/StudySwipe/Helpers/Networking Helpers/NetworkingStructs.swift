@@ -9,19 +9,10 @@
 import Foundation
 
 struct QuestionTopLevel: Codable {
-    let feed: FeedLevel
+    let values: [[String]]
     
     enum CodingKeys: String, CodingKey {
-        case feed
-    }
-    
-}
-
-struct FeedLevel: Codable {
-    let entry: [QuestionRepresentation]
-    
-    enum CodingKeys: String, CodingKey {
-        case entry
+        case values
     }
     
 }
